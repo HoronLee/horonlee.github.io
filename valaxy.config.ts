@@ -1,6 +1,7 @@
 import { defineValaxyConfig } from 'valaxy'
 import type { UserThemeConfig } from 'valaxy-theme-yun'
 import { addonWaline } from 'valaxy-addon-waline'
+import { addonComponents } from 'valaxy-addon-components'
 
 // add icons what you will need
 const safelist = [
@@ -67,5 +68,6 @@ export default defineValaxyConfig<UserThemeConfig>({
       // Waline 配置项，参考 https://waline.js.org/reference/client/props.html
       serverURL: 'https://waline.horon.top',
     }),
+    addonComponents(),
   ],
 })
