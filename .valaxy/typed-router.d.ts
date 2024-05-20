@@ -42,6 +42,7 @@ declare module 'vue-router/auto-routes' {
     '/posts/K8S1.27.0-deploy': RouteRecordInfo<'/posts/K8S1.27.0-deploy', '/posts/K8S1/27/0-deploy', Record<never, never>, Record<never, never>>,
     '/posts/Kubernetes-note': RouteRecordInfo<'/posts/Kubernetes-note', '/posts/Kubernetes-note', Record<never, never>, Record<never, never>>,
     '/posts/Kubernetes-sh': RouteRecordInfo<'/posts/Kubernetes-sh', '/posts/Kubernetes-sh', Record<never, never>, Record<never, never>>,
+    '/posts/KubernetesJenkinCICD': RouteRecordInfo<'/posts/KubernetesJenkinCICD', '/posts/KubernetesJenkinCICD', Record<never, never>, Record<never, never>>,
     '/posts/Linux-volume': RouteRecordInfo<'/posts/Linux-volume', '/posts/Linux-volume', Record<never, never>, Record<never, never>>,
     '/posts/Manjaro-note': RouteRecordInfo<'/posts/Manjaro-note', '/posts/Manjaro-note', Record<never, never>, Record<never, never>>,
     '/posts/OpenStack-note': RouteRecordInfo<'/posts/OpenStack-note', '/posts/OpenStack-note', Record<never, never>, Record<never, never>>,
