@@ -4,7 +4,7 @@ title: kubernetes 使用 Jenkins&GitLab 构建 CICD
 date: 2024-05-20 17:24:26
 tags: 
 categories: 
-cover: http://qiniu.horonlee.com/img/Standard-DevOps-CICD.png
+cover: https://qiniu.horonlee.com/img/Standard-DevOps-CICD.png
 password: 
 hide: 
 ---
@@ -479,7 +479,7 @@ git push --set-upstream origin master  # 输入账号密码
 
 刷新GitLab网页可以看到项目已经上传成功了
 
-![图形用户界面, 应用程序  描述已自动生成](http://qiniu.oss.horonlee.com/img/clip_image026.png)
+![图形用户界面, 应用程序  描述已自动生成](https://qiniu.oss.horonlee.com/img/clip_image026.png)
 
 ## 新建流水线
 
@@ -558,7 +558,7 @@ pipeline{
 
 ![图形用户界面, 应用程序  描述已自动生成](https://qiniu.oss.horonlee.com/img/clip_image036.png)
 
-![img](https://qiniu.oss.horonlee.com/img/clip_image037.png) ![图形用户界面, 文本, 应用程序, 电子邮件  描述已自动生成](https://qiniu.oss.horonlee.com/img/clip_image038.png) ![图形用户界面, 应用程序  描述已自动生成](http://qiniu.oss.horonlee.com/img/clip_image039.png)
+![img](https://qiniu.oss.horonlee.com/img/clip_image037.png) ![图形用户界面, 文本, 应用程序, 电子邮件  描述已自动生成](https://qiniu.oss.horonlee.com/img/clip_image038.png) ![图形用户界面, 应用程序  描述已自动生成](https://qiniu.oss.horonlee.com/img/clip_image039.png)
 
 单击“Test→Push events”按钮进行测试![图形用户界面, 文本, 应用程序, 电子邮件  描述已自动生成](https://qiniu.oss.horonlee.com/img/clip_image040.png) 
 
@@ -613,4 +613,3 @@ http://172.30.26.174:30173/
 # 补充
 
 暂无...
-
