@@ -4,7 +4,7 @@ title: kubernetes 使用 Jenkins&GitLab 构建 CICD
 date: 2024-05-20 17:24:26
 tags: 
 categories: 
-cover: https://qiniu.horonlee.com/img/Standard-DevOps-CICD.png
+cover: https://qiniu.oss.horonlee.com/img/Standard-DevOps-CICD.png
 password: 
 hide: 
 ---
