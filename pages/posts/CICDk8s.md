@@ -15,6 +15,7 @@ cover: https://www.kubernetes.org.cn/img/2020/10/jenkins-logo.jpg
 password: 
 hide: 
 ---
+> 此文章已经停止更新，最新的CICD 构建位于：[kubernetes 使用 Jenkins&GitLab 构建 CICD - 皓然小站 (horonlee.com)](https://blog.horonlee.com/posts/KubernetesJenkinCICD)
 # 安装CICD所需资源
 `curl -O http://mirrors.douxuedu.com/competition/BlueOcean.tar.gz && tar -zxf BlueOcean.tar.gz && cp BlueOcean/tools/docker-compose-Linux-x86_64 /usr/bin/docker-compose && docker-compose version && tar -zxf BlueOcean/harbor-offline-installer.tar.gz -C /opt/ && sh /opt/harbor/install.sh && docker login -uadmin -pHarbor12345 172.16.2.90 && docker load -i BlueOcean/images/maven_latest.tar && docker tag maven 172.16.2.90/library/maven && docker push 172.16.2.90/library/maven && docker load -i BlueOcean/images/java_8-jre.tar && docker load -i BlueOcean/images/jenkins_jenkins_latest.tar && docker load -i BlueOcean/images/gitlab_gitlab-ce_latest.tar && kubectl create ns devops`
 

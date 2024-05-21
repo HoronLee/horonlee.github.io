@@ -69,22 +69,20 @@ Containerd从v1.5之后就不推荐了以config.toml作为镜像仓库的配置�
 
 找到此字段并且添加以下内容 (155 行左右，记得缩进)，请对应自己的harbor所在节点地址，也就是Master节点
 
-```
-[plugins."io.containerd.grpc.v1.cri".registry.mirrors]
-  [plugins."io.containerd.grpc.v1.cri".registry.mirrors."172.30.26.174"]
-    endpoint = ["http://172.30.26.174"]
+```yaml
+      [plugins."io.containerd.grpc.v1.cri".registry.mirrors]
+        [plugins."io.containerd.grpc.v1.cri".registry.mirrors."docker.io"]
+          endpoint = ["https://hub-mirror.c.163.com"]
+        [plugins."io.containerd.grpc.v1.cri".registry.mirrors."172.30.26.172"]
+          endpoint = ["https://172.30.26.172"]
 ```
 
 然后重启：
 
 ```
 systemctl daemon-reload
-systemctl restart containerd
+systemctl restart containerd 
 ```
-
-![img](https://qiniu.oss.horonlee.com/img/clip_image001.png)
-
- 
 
 ### 配置镜像仓库非HTTPS登录 (双节点）
 
