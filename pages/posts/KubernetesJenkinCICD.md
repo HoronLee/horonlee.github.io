@@ -465,7 +465,7 @@ http://172.30.26.174:30888/
 ```bash
 yum install git -y
 git config --global user.name "Administrator"
-git config --global user.email [admin@example.com](mailto:admin@example.com)
+git config --global user.email "admin@example.com"
 git init
 git add .
 git commit -m "Initial commit"  # IP地址请改为自己GitLab的IP和端口
