@@ -74,7 +74,7 @@ Containerd从v1.5之后就不推荐了以config.toml作为镜像仓库的配置�
         [plugins."io.containerd.grpc.v1.cri".registry.mirrors."docker.io"]
           endpoint = ["https://hub-mirror.c.163.com"]
         [plugins."io.containerd.grpc.v1.cri".registry.mirrors."172.30.26.172"]
-          endpoint = ["https://172.30.26.172"]
+          endpoint = ["http://172.30.26.172"]
 ```
 
 然后重启：
