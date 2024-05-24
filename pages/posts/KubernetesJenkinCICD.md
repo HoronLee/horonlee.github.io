@@ -1,6 +1,6 @@
 ---
 layout: post
-title: kubernetes 使用 Jenkins&GitLab 构建 CICD
+title: 使用 Jenkins&GitLab 构建 CICD
 date: 2024-05-20 17:24:26
 tags: 
 categories: 

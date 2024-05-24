@@ -40,6 +40,7 @@ declare module 'vue-router/auto-routes' {
     '/posts/Hexo-to-valaxy': RouteRecordInfo<'/posts/Hexo-to-valaxy', '/posts/Hexo-to-valaxy', Record<never, never>, Record<never, never>>,
     '/posts/Java-note': RouteRecordInfo<'/posts/Java-note', '/posts/Java-note', Record<never, never>, Record<never, never>>,
     '/posts/K8S1.27.0-deploy': RouteRecordInfo<'/posts/K8S1.27.0-deploy', '/posts/K8S1/27/0-deploy', Record<never, never>, Record<never, never>>,
+    '/posts/K8sJenkinsSlaveCICD': RouteRecordInfo<'/posts/K8sJenkinsSlaveCICD', '/posts/K8sJenkinsSlaveCICD', Record<never, never>, Record<never, never>>,
     '/posts/Kubernetes-note': RouteRecordInfo<'/posts/Kubernetes-note', '/posts/Kubernetes-note', Record<never, never>, Record<never, never>>,
     '/posts/Kubernetes-sh': RouteRecordInfo<'/posts/Kubernetes-sh', '/posts/Kubernetes-sh', Record<never, never>, Record<never, never>>,
     '/posts/KubernetesJenkinCICD': RouteRecordInfo<'/posts/KubernetesJenkinCICD', '/posts/KubernetesJenkinCICD', Record<never, never>, Record<never, never>>,
