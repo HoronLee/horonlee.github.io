@@ -36,7 +36,9 @@ hide:
 2. [jenkins/inbound-agent - Docker 镜像 |Docker 中心](https://hub.docker.com/r/jenkins/inbound-agent/)
 3. [gitlab/gitlab-ce - Docker Image | Docker Hub](https://hub.docker.com/r/gitlab/gitlab-ce)
 
+所用项目：[YunYouJun/valaxy: 🌌 Next Generation Static Blog Framework (Beta) 下一代静态博客框架（支持页面/配置热重载） (github.com)](https://github.com/YunYouJun/valaxy)，本文更改了 Dockerfile，删除了第一阶段的构建！
 
+---
 
 将 master 节点的`.kube`配置文件拷贝到 worker1 节点，方便后续的工作
 
@@ -217,7 +219,7 @@ helm install gitea gitea/gitea
 
 ### 创建本地项目
 
-下载项目 `wget http://172.30.27.143/CICD/valaxy-blog.tar.gz`
+下载项目 wget http://172.30.27.143/CICD/jenkins-slave/ValaxyBlogProject.tar.gz
 
 解压项目 `tar zxf valaxy-blog.tar.gz`
 
