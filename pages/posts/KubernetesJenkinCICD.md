@@ -2,8 +2,17 @@
 layout: post
 title: 使用 Jenkins&GitLab 构建 CICD
 date: 2024-05-20 17:24:26
-tags: 
-categories: 
+tags:
+    - Linux
+    - Kubernetes
+    - 云计算
+    - CICD
+    - Jenkins
+categories:
+    - 服务器运维
+    - 云计算
+    - k8s
+    - Jenkins
 cover: https://qiniu.oss.horonlee.com/img/Standard-DevOps-CICD.png
 password: 
 hide: 
