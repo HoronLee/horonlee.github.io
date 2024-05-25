@@ -20,7 +20,8 @@ hide:
 - Kubernetes 版本：1.29.5
 - Linux 版本：Linux master 5.15.0-107-generic #117-Ubuntu SMP Fri Apr 26 12:26:49 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
 - 实测可用，几乎是最新的配置方法
-<!-- more -->
+
+> 本文中出现的172.30.27.143地址为本人学校内网环境地址，不公开在外网，请读者忽略，软件包的下载请前往各官网
 
 # 准备工作
 
@@ -125,7 +126,7 @@ systemctl enable docker --now
 
 访问：[Releases · containernetworking/plugins (github.com)](https://link.zhihu.com/?target=https%3A//github.com/containernetworking/plugins/releases)获取最新版本的插件，然后将其安装到`/opt/cni/bin`中
 
-- 下载插件`wget http://172.30.27.143/kubernetes/cni-plugins-linux-amd64-v1.5.0.tgz`
+- 下载插件`curl -O http://172.30.27.143/kubernetes/cni-plugins-linux-amd64-v1.5.0.tgz`
 - 新建软件包目录`mkdir -p /opt/cni/bin`
 - 解压 CNI 软件到指定目录`tar Cxzvf /opt/cni/bin cni-plugins-linux-amd64-v1.5.0.tgz`
 
@@ -249,15 +250,15 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 
 有许多网络插件可以使用（[安装扩展（Addon） | Kubernetes](https://kubernetes.io/zh-cn/docs/concepts/cluster-administration/addons/#networking-and-network-policy)），我们在这里，将选择安装[Calico](https://link.zhihu.com/?target=https%3A//www.tigera.io/project-calico/)插件，其参考文档：[Quickstart for Calico on Kubernetes | Calico Documentation (tigera.io)](https://docs.tigera.io/calico/latest/getting-started/kubernetes/quickstart)（使用最新的 3.28 版本）
 
-1. 安装 Tigera Calico 运算符和自定义资源定义。
+1. 安装 Tigera Calico 运算符和自定义资源定义。`http://172.30.27.143/kubernetes/tigera-operator.yaml`
+
+   > 注意：由于 CRD 捆绑包的大小较大，国内访问 GitHub 也非常慢，且可能会超出请求限制，所以可以将 两个 yaml 文件下载下来，再对其 `create`！
 
    ```bash
    kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/tigera-operator.yaml
    ```
 
-   > 注意：由于 CRD 捆绑包的大小较大，国内访问 GitHub 也非常慢，且可能会超出请求限制，所以可以将 两个 yaml 文件下载下来，再对其 `create`！
-
-2. 通过创建必要的自定义资源来安装 Calico。有关此清单中可用的配置选项的详细信息，请参阅[安装参考](https://docs.tigera.io/calico/latest/reference/installation/api)。
+2. 通过创建必要的自定义资源来安装 Calico。有关此清单中可用的配置选项的详细信息，请参阅[安装参考](https://docs.tigera.io/calico/latest/reference/installation/api)。`http://172.30.27.143/kubernetes/custom-resources.yaml`
 
    ```bash
    kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/custom-resources.yaml
