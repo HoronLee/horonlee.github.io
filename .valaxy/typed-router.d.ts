@@ -53,6 +53,7 @@ declare module 'vue-router/auto-routes' {
     '/posts/Ubuntu-Docker-Compose': RouteRecordInfo<'/posts/Ubuntu-Docker-Compose', '/posts/Ubuntu-Docker-Compose', Record<never, never>, Record<never, never>>,
     '/posts/Ubuntu-Nginx-useage': RouteRecordInfo<'/posts/Ubuntu-Nginx-useage', '/posts/Ubuntu-Nginx-useage', Record<never, never>, Record<never, never>>,
     '/posts/Ubuntu-OpenStack-Yoga-Zed': RouteRecordInfo<'/posts/Ubuntu-OpenStack-Yoga-Zed', '/posts/Ubuntu-OpenStack-Yoga-Zed', Record<never, never>, Record<never, never>>,
+    '/posts/ubuntu22.04-k8s-deploy': RouteRecordInfo<'/posts/ubuntu22.04-k8s-deploy', '/posts/ubuntu22/04-k8s-deploy', Record<never, never>, Record<never, never>>,
     '/posts/XiaoMi-Book-12-4': RouteRecordInfo<'/posts/XiaoMi-Book-12-4', '/posts/XiaoMi-Book-12-4', Record<never, never>, Record<never, never>>,
     '/tags/': RouteRecordInfo<'/tags/', '/tags', Record<never, never>, Record<never, never>>,
   }
