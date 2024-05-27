@@ -54,9 +54,13 @@ hide:
 
 ### 设置JenkinsMaster容忍度
 
-为 master 节点打上标签`jenkins=master`
+> kubernetes 在安装完成后会在 master 节点添加一个名为 control-plane 的污点，这个污点不会容忍任何非指定的 pod 运行在 master 节点，但是我们需要讲 jenkins-master 安排在 master 节点，该怎么做呢？以下是处理思路。
 
-`kubectl label no master jenkins=master`
+最简单的方法就是移除所有节点的 control-plane 污点 `kubectl taint nodes --all node-role.kubernetes.io/control-plane-`，然后再指定`nodeSelector`。(nodeSelector的用法看第二种方法)
+
+>  还有一种方法我更推荐，在生产环境也可以这样操作：
+
+为 master 节点打上标签`jenkins=master`：`kubectl label no master jenkins=master`
 
 在创建 jenkins-master 的时候使用标签选择器，就可以强制让 pod 运行在有 NoSchedule 的Taints 的主节点上
 
@@ -73,22 +77,29 @@ tolerations:
     effect: "NoSchedule"
 ```
 
-> 设置镜像仓库（所有节点都要做）：/etc/containerd/config
+> 设置HTTP访问镜像仓库（所有节点都要做）：/etc/containerd/config
 
-```yaml
-      [plugins."io.containerd.grpc.v1.cri".registry.mirrors]
-        [plugins."io.containerd.grpc.v1.cri".registry.mirrors."docker.io"]
-          endpoint = ["https://hub-mirror.c.163.com"]
-        [plugins."io.containerd.grpc.v1.cri".registry.mirrors."172.30.26.172"]
-          endpoint = ["http://172.30.26.172"]
-```
+Containerd从v1.5之后就不推荐了以config.toml作为镜像仓库的配置文件，这里我们采用新的配置方法
 
 ```bash
-systemctl daemon-reload
-systemctl restart containerd 
+mkdir -p /etc/containerd/certs.d/172.30.26.172
+vim /etc/containerd/certs.d/172.30.26.172/hosts.toml
 ```
 
+在文件中写入以下内容
+
+```toml
+server = "http://172.30.26.172"
+[host."http://172.30.26.172"]
+capabilities = ["pull", "resolve", "push"]
+skip_verify = true
+```
+
+然后重启 `systemctl restart containerd `
+
 ## 安装 Harbor 镜像仓库
+
+> 官方下载地址：[Releases · goharbor/harbor (github.com)](https://github.com/goharbor/harbor/releases)
 
 将harbor-offline-installer-v2.9.4.tgz下载到opt目录下
 
@@ -116,7 +127,7 @@ systemctl restart containerd
 
 访问Harbor
 
-http://http://172.30.26.172/
+http://172.30.26.172/
 
 ​    账号：admin
 
@@ -443,6 +454,7 @@ spec:
       containers:
         - name: jenkins
           image: docker.io/jenkins/jenkins:latest
+          imagePullPolicy: IfNotPresent
           resources:
             limits:
               memory: "2Gi"
@@ -678,12 +690,14 @@ Pod Template 就是 slave 节点将会启动的Pod，我们可以设置多个Pod
 
 #### 设置容器
 
+> 最新 Jenkins 默认如果 pod 名称不设置为 jnlp 的话，会自动启动一个 inbound-agent 镜像来
+
 在刚才的 Pod template settings 中找到`容器列表`选项，点击`添加容器`选择 `Container Template` 
 
 - 名称 `nodejs`
 - Docker 镜像 `172.30.26.172/library/inbound-agent-node:latest`
-- 运行的命令 `jenkins-agent`
-- 命令参数删除 `9999999`
+- 运行的命令 `sleep`
+- 命令参数 `9999999`
 - 勾选 `分配伪终端`
 
 点击下方 Save 完成 Pod Template 的设置
