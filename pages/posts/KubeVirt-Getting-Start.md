@@ -1,14 +1,16 @@
-- [ ] ---
-  layout: post
-  title: KubeVirt入门
-  date: 2024-05-28 14:44:55
-  tags: 
-  categories: 
-  cover: 
-  password: 
-  hide: 
-  ---
+---
+layout: post
+title: KubeVirt入门
+date: 2024-05-30 16:22:50
+tags: 
+categories: 
+cover: 
+password: 
+hide: 
+---
+# 什么是 KubeVirt？
 
+​	KubeVirt 是一个开源项目，它使得虚拟机可以像容器一样被 Kubernetes 部署，消费和管理。它提供了一个统一的平台，让用户可以根据不同的需求，使用容器或者虚拟机来构建云原生应用。KubeVirt 项目于 2016 年启动，由 Red Hat, IBM, Google, Intel, SUSE 等多家公司和组织共同推动和贡献。经过 7 年的不懈努力，KubeVirt 于 2023 年 7 月发布了 v1.0.0 版本，标志着它已经达到了生产就绪的水平，并且有着健康的社区。(在此之前，它已经被很多公司用到了生产环境)
 
 # 为什么选择 KubeVirt？
 
