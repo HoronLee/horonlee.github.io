@@ -65,13 +65,13 @@ random: true
   name: 皓然
   blog: 皓然小站
   desc: 分享生活和技术的点滴
-  email: 1269024821@qq.com
+  email: horonlee@firefox.com
   color: "#5CACEE"
 ```
 
 # 如何申请？
 
-直接在评论区回复即可，按照以下标准：
+直接在评论区回复或者发送邮件到horonlee@firefox.com即可，按照以下标准：
 ```yaml
 - url: https://你的网站地址
   avatar: https://你的网站头像
