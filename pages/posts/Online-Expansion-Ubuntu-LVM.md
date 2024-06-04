@@ -17,7 +17,7 @@ LVM是 Logical Volume Manager（逻辑卷管理）的简写，它是Linux环境�
 
 虚拟机目前只有一块 40G 的硬盘，所以存储不够用了，需要扩容，但是 Ubuntu 使用的是 LVM 来管理硬盘，所以我们需要将添加的硬盘使用 LVM 卷管理来扩容存储空间。
 
-# 添加硬盘
+## 添加硬盘
 
 ```bash
 root@master:~# lsblk
@@ -48,7 +48,7 @@ vdb  252:16   0   50G  0 disk
 
 可以看到我添加了一块硬盘`vdb`，拥有 50G 的空间
 
-# 对新硬盘分区
+## 对新硬盘分区
 
 这里我们使用 fdisk 工具来进行交互式分区
 
@@ -136,7 +136,7 @@ Calling ioctl() to re-read partition table.
 Syncing disks.
 ```
 
-# 创建物理卷PV
+## 创建物理卷PV
 
 通过 lsblk 可以看到vdb 硬盘已经有了一个 vdb1 的分区
 
@@ -180,7 +180,7 @@ root@master:~/kubevirt# pvdisplay
   PV UUID               ksuLmo-uwJI-olt3-w2qo-ZOIZ-IuPJ-ge4AFT
 ```
 
-# 将物理卷PV加入卷组VG
+## 将物理卷PV加入卷组VG
 
 查看卷组
 
@@ -241,7 +241,7 @@ root@master:~/kubevirt# vgdisplay
   VG UUID               yYRukh-rHIp-EmtX-TePI-00i3-Aizq-ttSV8V
 ```
 
-# 扩容已有分区
+## 扩容已有分区
 
 下面是对现有分区进行逻辑卷扩容，我们这里根分区为40G，我们准备扩容根分区查看根分区的LV路径
 
