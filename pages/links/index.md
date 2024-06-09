@@ -52,6 +52,13 @@ links:
     desc: 记录学习、生活和有趣的事
     email: baiwumm#foxmail.com
     color: "#FFB6C1"
+  - url: https://hsad.xyz/
+    avatar: https://hsad.xyz/images/avatar.jpg
+    name: Hsad
+    blog: Hsad's Blog
+    desc: 一个人的世界
+    email: dubian.zzy@outlook.com\
+    color: "#FFEFD5"
 # 也可以是一个 JSON 链接
 # links: https://friends.yunyoujun.cn/links.json
 random: true

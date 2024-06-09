@@ -44,7 +44,7 @@ declare module 'vue-router/auto-routes' {
     '/posts/Kubernetes-note': RouteRecordInfo<'/posts/Kubernetes-note', '/posts/Kubernetes-note', Record<never, never>, Record<never, never>>,
     '/posts/Kubernetes-sh': RouteRecordInfo<'/posts/Kubernetes-sh', '/posts/Kubernetes-sh', Record<never, never>, Record<never, never>>,
     '/posts/KubernetesJenkinCICD': RouteRecordInfo<'/posts/KubernetesJenkinCICD', '/posts/KubernetesJenkinCICD', Record<never, never>, Record<never, never>>,
-    '/posts/KubeVirt-GettingStart': RouteRecordInfo<'/posts/KubeVirt-GettingStart', '/posts/KubeVirt-GettingStart', Record<never, never>, Record<never, never>>,
+    '/posts/KubeVirt-Getting-Start': RouteRecordInfo<'/posts/KubeVirt-Getting-Start', '/posts/KubeVirt-Getting-Start', Record<never, never>, Record<never, never>>,
     '/posts/Linux-volume': RouteRecordInfo<'/posts/Linux-volume', '/posts/Linux-volume', Record<never, never>, Record<never, never>>,
     '/posts/Manjaro-note': RouteRecordInfo<'/posts/Manjaro-note', '/posts/Manjaro-note', Record<never, never>, Record<never, never>>,
     '/posts/Online-Expansion-Ubuntu-LVM': RouteRecordInfo<'/posts/Online-Expansion-Ubuntu-LVM', '/posts/Online-Expansion-Ubuntu-LVM', Record<never, never>, Record<never, never>>,
