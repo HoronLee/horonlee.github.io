@@ -4,7 +4,7 @@ title: KubeVirt入门
 date: 2024-05-30 16:22:50
 tags: 
 categories: 
-cover: 
+cover: https://tse3-mm.cn.bing.net/th/id/OIP-C.B4Rc1aupXxDrxKPfYpOsMQHaDP?rs=1&pid=ImgDetMain
 password: 
 hide: 
 ---
