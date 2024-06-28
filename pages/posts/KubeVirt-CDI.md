@@ -233,7 +233,16 @@ spec:
 
 `kubectl create -f dv_fedora.yml`
 
-在此期间会产生一个用于导入镜像的 pod，可以自行查看，稍等片刻，nfs 共享目录中就会出现指定的目录
+在此期间会产生一个用于导入镜像的 pod，
+
+```bash
+root@worker1:/data/k8s# kubectl get po
+NAME                                    READY   STATUS    RESTARTS      AGE
+importer-fedora40                       1/1     Running   0             70s
+```
+
+稍等片刻，nfs 共享目录中就会出现指定的目录
+
 
 ```bash
 root@master:~/kubevirt# kubectl get pv
