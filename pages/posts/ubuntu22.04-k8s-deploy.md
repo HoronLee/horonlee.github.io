@@ -252,17 +252,13 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 
 1. 安装 Tigera Calico 运算符和自定义资源定义。
 
-   校园内网资源：`http://172.30.27.143/kubernetes/tigera-operator.yaml`
-
    > 注意：由于 CRD 捆绑包的大小较大，国内访问 GitHub 也非常慢，且可能会超出请求限制，所以可以将 两个 yaml 文件下载下来，再对其 `create`！
 
    ```bash
    kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/tigera-operator.yaml
    ```
-
+   
 2. 通过创建必要的自定义资源来安装 Calico。有关此清单中可用的配置选项的详细信息，请参阅[安装参考](https://docs.tigera.io/calico/latest/reference/installation/api)。
-
-   校园内网资源：`http://172.30.27.143/kubernetes/custom-resources.yaml`
 
    > 注意：在创建此清单之前，请阅读其内容并确保其设置适合您的环境。例如 您可能需要更改默认 IP 池 CIDR 以匹配您的容器网络 CIDR。
 
@@ -271,7 +267,7 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
    ```bash
    kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/custom-resources.yaml
    ```
-
+   
 3. 使用以下命令确认所有 Pod 都在运行。（大约需要等待五分钟甚至更长时间来完成运行）
 
    ```bash
