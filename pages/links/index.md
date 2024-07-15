@@ -59,6 +59,12 @@ links:
     desc: 一个人的世界
     email: dubian.zzy@outlook.com\
     color: "#FFEFD5"
+  - url: https://blog.cent1pedee.top/
+    avatar: https://img.cent1pedee.top/img/wechat.jpg
+    name: 煮雪话河山`Blog
+    blog: 煮雪话河山`Blog
+    desc: 如月之恒，如日之升。
+    color: "#7FFFAA"
 # 也可以是一个 JSON 链接
 # links: https://friends.yunyoujun.cn/links.json
 random: true
