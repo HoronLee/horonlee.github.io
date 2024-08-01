@@ -1,0 +1,1316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.horonlee.com/</id>
+    <title>皓然小站</title>
+    <updated>2024-08-01T09:14:24.164Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <author>
+        <name>皓然</name>
+        <email>i@valaxy.site</email>
+        <uri>https://valaxy.site</uri>
+    </author>
+    <link rel="alternate" href="https://blog.horonlee.com/"/>
+    <link rel="self" href="https://blog.horonlee.com/atom.xml"/>
+    <subtitle>分享生活和技术的点滴</subtitle>
+    <logo>https://bu.dusays.com/2023/02/02/63db3598928c2.jpg</logo>
+    <icon>https://blog.horonlee.com/favicon.svg</icon>
+    <rights>CC BY-NC-SA 4.0 2024 © 皓然</rights>
+    <entry>
+        <title type="html"><![CDATA[Ubuntu搭建OpenStack-Yoga(Zed)]]></title>
+        <id>https://blog.horonlee.com/posts/Ubuntu-OpenStack-Yoga-Zed</id>
+        <link href="https://blog.horonlee.com/posts/Ubuntu-OpenStack-Yoga-Zed"/>
+        <updated>2023-02-23T22:30:44.000Z</updated>
+        <content type="html"><![CDATA[<h1>Ubuntu搭建OpenStack-Zed</h1>
+<p>注意：本篇只作为个人笔记，记录搭建过程的一些坑和问题，仅供参考！<br>
+所有服务的密码都是123456。</p>
+<h1>网络配置</h1>
+<ol>
+<li>Nat网卡用于下载文件：192.</li>
+</ol>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Ubuntu-OpenStack-Yoga-Zed" target="_blank">https://blog.horonlee.com/posts/Ubuntu-OpenStack-Yoga-Zed</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.833Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[XiaoMi Book 12.4二合一上手体验]]></title>
+        <id>https://blog.horonlee.com/posts/XiaoMi-Book-12-4</id>
+        <link href="https://blog.horonlee.com/posts/XiaoMi-Book-12-4"/>
+        <updated>2023-02-18T12:14:24.000Z</updated>
+        <content type="html"><![CDATA[<h1>XiaoMiBook1.24二合一</h1>
+<blockquote>
+<p>最近入手了小米新出的Arm二合一笔记本平板（-2999￥），用了一段时间感觉应该写一下使用感受</p>
+</blockquote>
+<h2>外观&amp;手感</h2>
+<p>外观方面个人觉得无可挑剔，正面的黑边宽</p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/XiaoMi-Book-12-4" target="_blank">https://blog.horonlee.com/posts/XiaoMi-Book-12-4</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.833Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[家庭宽带桥接并为路由器配置DDNS]]></title>
+        <id>https://blog.horonlee.com/posts/bridge-router-ddns</id>
+        <link href="https://blog.horonlee.com/posts/bridge-router-ddns"/>
+        <updated>2024-01-30T18:23:04.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>事情起因：寒假一人家在空虚寂寞无聊，于是乎想实现一下之前一直想做的NAS，故开始上网查询、Q群询问大佬，最终完成了一部分目标（汗）。</p>
+</blockquote>
+<p>首先确认自己是否拥有公网IP，电信是比较容易要到的，联通和</p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/bridge-router-ddns" target="_blank">https://blog.horonlee.com/posts/bridge-router-ddns</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.833Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[脚本练习1]]></title>
+        <id>https://blog.horonlee.com/posts/shell-practice</id>
+        <link href="https://blog.horonlee.com/posts/shell-practice"/>
+        <updated>2023-10-09T11:35:31.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>为了练习shell脚本编写能力，我以比赛文档中部署java商城的流程来编写一键脚本，目前写了一半</p>
+</blockquote>
+<!-- more -->
+<pre><code class="language-shell">#!/bin/bash
+
+echo &quot;======开始执行脚本======&quot;
+
+# 使用本脚本之前请保证CentOS的DVD源已正常挂载，且gpmall的资源文件也放在同级目录！
+
+# # 检测yum源状态
+# yum clean all &gt; /dev/null
+# repolist=$(yum repolist)
+# # 检查结果中是否包含&quot;repolist&quot;关键字，表示yum源可用
+# if [[ $repolist == *&quot;repolist: 0&quot;* ]]; then
+#     echo &quot;Yum源不可用&quot;
+# else
+#     # 检查是否有status的值为4070的仓库
+#     if [[ $repolist == *&quot;4,070&quot;* ]]; then
+#         echo &quot;Yum源可用且软件包正常!&quot;
+#     else
+#         echo &quot;Yum源可用但软件包数量异常!&quot;
+#     fi
+# fi
+
+# # 使用SSH连接到远程主机并执行命令
+# ssh $username@$remote_host $command
+
+# 关闭selinux
+setenforce 0
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/sysconfig/selinux
+
+
+# 检查sshpass软件包是否存在
+if [ -f &quot;sshpass-1.06-2.el7.x86_64.rpm&quot; ]; then
+    # 安装当前目录下的sshpass软件包
+    rpm -ivh sshpass-1.06-2.el7.x86_64.rpm
+else
+    # 进入gpmall-cluster文件夹
+    cd gpmall-cluster
+    
+    # 检查sshpass软件包是否存在
+    if [ -f &quot;sshpass-1.06-2.el7.x86_64.rpm&quot; ]; then
+        # 安装gpmall-cluster文件夹中的sshpass软件包
+        rpm -ivh sshpass-1.06-2.el7.x86_64.rpm
+    else
+        echo &quot;未找到sshpass-1.06-2.el7.x86_64.rpm软件包文件，脚本终止!&quot;
+        exit 1
+    fi
+    
+    # 返回上级目录
+    cd ..
+fi
+
+# 更改主机名变量准备
+# 设置免密登录用户名和密码
+echo &quot;接下来请输入更改主机名相关的脚本变量&quot;
+echo &quot;直接回车则采用[用户名: root]&quot;
+read -p &quot;-&gt;请输入免密登录的用户名: &quot; USERNAME
+# 如果用户名为空，则将其设置为默认值root
+if [[ -z $USERNAME ]]; then
+  USERNAME=&quot;root&quot;
+fi
+echo &quot;直接回车则采用[密码: 000000]&quot;
+read -s -p &quot;-&gt;请输入免密登录的密码: &quot; PASSWORD
+echo
+# 如果密码为空，则将其设置为默认值000000
+if [[ -z $PASSWORD ]]; then
+  PASSWORD=&quot;000000&quot;
+fi
+# 网络IP配置
+read -p &quot;-&gt;请输入集群的内网网卡名(直接回车默认eth0): &quot; IntranetNIC
+if [[ -z $IntranetNIC ]]; then
+  IntranetNIC=&quot;eth0&quot;
+fi
+# 执行脚本的节点IP和主机名
+read -p &quot;-&gt;请输入执行脚本的节点IP(直接回车默认eth0的IP): &quot; EXECUTOR_IP
+if [[ -z $EXECUTOR_IP ]]; then
+  EXECUTOR_IP=$(ip addr show $IntranetNIC | grep -oP '(?&lt;=inet\s)\d+(\.\d+){3}')
+
+fi
+read -p &quot;-&gt;请输入执行脚本的节点主机名(直接回车默认mycat): &quot; EXECUTOR_HOSTNAME
+if [[ -z $EXECUTOR_HOSTNAME ]]; then
+  EXECUTOR_HOSTNAME=&quot;mycat&quot;
+fi
+# 子节点1的IP和主机名
+read -p &quot;-&gt;请输入子节点1的IP: &quot; NODE1_IP
+read -p &quot;-&gt;请输入子节点1的主机名(直接回车默认db1): &quot; NODE1_HOSTNAME
+if [[ -z $NODE1_HOSTNAME ]]; then
+  NODE1_HOSTNAME=&quot;db1&quot;
+fi
+# 子节点2的IP和主机名
+read -p &quot;-&gt;请输入子节点2的IP: &quot; NODE2_IP
+read -p &quot;-&gt;请输入子节点2的主机名(直接回车默认db2): &quot; NODE2_HOSTNAME
+if [[ -z $NODE2_HOSTNAME ]]; then
+  NODE2_HOSTNAME=&quot;db2&quot;
+fi
+
+# 执行更改主机名的命令
+echo &quot;&lt;-开始更改各节点的主机名&quot;
+sshpass -p &quot;$PASSWORD&quot; ssh -o StrictHostKeyChecking=no $USERNAME@$EXECUTOR_IP &quot;hostnamectl set-hostname $EXECUTOR_HOSTNAME&quot;
+sshpass -p &quot;$PASSWORD&quot; ssh -o StrictHostKeyChecking=no $USERNAME@$NODE1_IP &quot;hostnamectl set-hostname $NODE1_HOSTNAME&quot;
+sshpass -p &quot;$PASSWORD&quot; ssh -o StrictHostKeyChecking=no $USERNAME@$NODE2_IP &quot;hostnamectl set-hostname $NODE2_HOSTNAME&quot;
+# host批量更改
+# 写入本机host规则到hosts文件
+echo &quot;$EXECUTOR_IP $EXECUTOR_HOSTNAME&quot; &gt;&gt; /etc/hosts
+echo &quot;$NODE1_IP $NODE1_HOSTNAME&quot; &gt;&gt; /etc/hosts
+echo &quot;$NODE2_IP $NODE2_HOSTNAME&quot; &gt;&gt; /etc/hosts
+# 免密登陆
+echo &quot;配置免密登陆&quot;
+# 删除已存在的密钥指纹
+rm -rf /root/.ssh/id_rsa*
+echo &quot;生成新密钥&quot;
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -N ''
+sshpass -p &quot;$PASSWORD&quot; ssh-copy-id -o StrictHostKeyChecking=no root@&quot;$NODE1_HOSTNAME&quot;
+sshpass -p &quot;$PASSWORD&quot; ssh-copy-id -o StrictHostKeyChecking=no root@&quot;$NODE2_HOSTNAME&quot;
+sed -i '3,$d' &quot;/etc/hosts&quot;
+# 拷贝hosts文件到子节点
+scp /etc/hosts root@$NODE1_IP:/etc/hosts
+scp /etc/hosts root@$NODE2_IP:/etc/hosts
+# 测试host连通性
+ping -c 1 $NODE1_HOSTNAME &gt; /dev/null
+if [ $? -eq 0 ]; then
+    echo &quot;节点 ($NODE1_HOSTNAME) 可达.&quot;
+else
+    echo &quot;节点 ($NODE1_HOSTNAME) 不可达.&quot;
+    exit 1
+fi
+
+ping -c 1 $NODE2_HOSTNAME &gt; /dev/null
+if [ $? -eq 0 ]; then
+    echo &quot;节点 ($NODE2_HOSTNAME) 可达.&quot;
+else
+    echo &quot;节点 ($NODE2_HOSTNAME) 不可达.&quot;
+    exit 1
+fi
+
+# 导出变量文件并分发给两个子节点
+echo &quot;分发变量文件&quot;
+cat &lt;&lt; EOF &gt; variables.sh
+USERNAME=$USERNAME
+PASSWORD=$PASSWORD
+EXECUTOR_HOSTNAME=$EXECUTOR_HOSTNAME
+NODE1_HOSTNAME=$NODE1_HOSTNAME
+NODE2_HOSTNAME=$NODE2_HOSTNAME
+EXECUTOR_IP=$EXECUTOR_IP
+NODE1_IP=$NODE1_IP
+NODE2_IP=$NODE2_IP
+EOF
+scp variables.sh root@$NODE1_IP:/root/
+scp variables.sh root@$NODE2_IP:/root/
+
+# 检测是否存在gpmall-cluster文件夹
+if [ -d &quot;gpmall-cluster&quot; ]; then
+    echo &quot;当前目录下已存在gpmall-cluster文件夹，无需解压。&quot;
+    echo &quot;将gpmall仓库转移到/opt&quot;
+    cp -rf /root/gpmall-cluster/gpmall-repo /opt/
+else
+    # 检测是否存在gpmall-cluster.tar.gz压缩包
+    if [ -e &quot;gpmall-cluster.tar.gz&quot; ]; then
+        # 解压gpmall-cluster.tar.gz压缩包
+        echo &quot;正在解压gpmall-cluster.tar.gz压缩包...&quot;
+        tar -zxf gpmall-cluster.tar.gz -C /opt/
+        echo &quot;将gpmall仓库转移到/opt&quot;
+        # cp -rf /root/gpmall-cluster/gpmall-repo /opt/
+    else
+        echo &quot;gpmall-cluster.tar.gz压缩包不存在于本目录，脚本终止。&quot;
+        exit 1
+    fi
+fi
+
+
+# 清空所有主机原有yum源
+mv -f /etc/yum.repos.d/* /media/
+ssh $USERNAME@$NODE1_HOSTNAME mv -f /etc/yum.repos.d/* /media/
+ssh $USERNAME@$NODE2_HOSTNAME mv -f /etc/yum.repos.d/* /media/
+
+# 配置所有yum源
+# 配置主节点yum源
+cat &lt;&lt; EOF &gt; /etc/yum.repos.d/local.repo
+[centos]
+name=centos
+baseurl=http://172.30.26.22/centos/
+gpgcheck=0
+enabled=1
+
+[mariadb]
+name=mariadb
+baseurl=file:///opt/gpmall-repo
+gpgcheck=0
+enabled=1
+EOF
+
+# 安装vsftpd
+yum install -y vsftpd
+# 修改vsftpd的配置文件
+echo &quot;anon_root=/opt/&quot; &gt;&gt; /etc/vsftpd/vsftpd.conf
+# 启动vsftpd并设置开机自启
+systemctl start vsftpd
+systemctl restart vsftpd
+systemctl enable vsftpd
+
+
+# 配置子节点yum源
+touch node.repo
+cat &lt;&lt; EOF &gt; node.repo
+[centos]
+name=centos
+baseurl=http://172.30.26.22/centos/
+gpgcheck=0
+enabled=1
+
+[mariadb]
+name=mariadb
+baseurl=ftp://$EXECUTOR_HOSTNAME/gpmall-repo
+gpgcheck=0
+enabled=1
+EOF
+scp node.repo root@$NODE1_IP:/etc/yum.repos.d/node.repo
+scp node.repo root@$NODE2_IP:/etc/yum.repos.d/node.repo
+rm -rf node.repo
+
+echo &quot;======脚本执行完毕======&quot;
+</code></pre>
+<p>其中sshpass软件包在CentOS基础repo中没有包含，需要update或者从rpm进行安装，在此我推荐一个linux软件包下载网站<a href="https://pkgs.org/">Packages for Linux and Unix (pkgs.org)</a></p>
+<p>里面提供了绝大多数可以直接下载的软件包，并且会列出其依赖包方便安装，十分方便！</p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/shell-practice" target="_blank">https://blog.horonlee.com/posts/shell-practice</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.833Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ubuntu22.04-k8s-deploy]]></title>
+        <id>https://blog.horonlee.com/posts/ubuntu22.04-k8s-deploy</id>
+        <link href="https://blog.horonlee.com/posts/ubuntu22.04-k8s-deploy"/>
+        <updated>2024-05-25T10:24:56.000Z</updated>
+        <content type="html"><![CDATA[<h1>Ubuntu22.04部署K8S</h1>
+<ul>
+<li>Kubernetes 版本：1.29.5</li>
+<li>Linux 版本：Linux master 5.15.0-107-generic #117-Ubuntu SM</li>
+</ul>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/ubuntu22.04-k8s-deploy" target="_blank">https://blog.horonlee.com/posts/ubuntu22.04-k8s-deploy</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.833Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[在k8s中构建CICD]]></title>
+        <id>https://blog.horonlee.com/posts/CICDk8s</id>
+        <link href="https://blog.horonlee.com/posts/CICDk8s"/>
+        <updated>2024-02-27T15:07:00.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>此文章已经停止更新，最新的CICD 构建位于：<a href="https://blog.horonlee.com/posts/KubernetesJenkinCICD">kubernetes 使用 Jenkins&amp;GitLab 构建 CICD - 皓然小站 (horonlee.com)</a></p>
+</blockquote>
+<h1>安装CICD所需资源</h1>
+<p><code>curl -O http://mirrors.douxuedu.com/competition/BlueOcean.tar.gz &amp;&amp; tar -zxf BlueOcean.tar.gz &amp;&amp; cp BlueOcean/tools/docker-compose-Linux-x86_64 /usr/bin/docker-compose &amp;&amp; docker-compose version &amp;&amp; tar -zxf BlueOcean/harbor-offline-installer.tar.gz -C /opt/ &amp;&amp; sh /opt/harbor/install.sh &amp;&amp; docker login -uadmin -pHarbor12345 172.16.2.90 &amp;&amp; docker load -i BlueOcean/images/maven_latest.tar &amp;&amp; docker tag maven 172.16.2.90/library/maven &amp;&amp; docker push 172.16.2.90/library/maven &amp;&amp; docker load -i BlueOcean/images/java_8-jre.tar &amp;&amp; docker load -i BlueOcean/images/jenkins_jenkins_latest.tar &amp;&amp; docker load -i BlueOcean/images/gitlab_gitlab-ce_latest.tar &amp;&amp; kubectl create ns devops</code></p>
+<!-- more -->
+<h1>部署应用</h1>
+<h2>Jenkins部署</h2>
+<p>容器部分<br>
+<code>kubectl create deployment jenkins --image=jenkins/jenkins:latest --namespace=devops --port=8080 --dry-run=client -o yaml &gt;&gt; jenkins.yaml</code><br>
+服务部分<br>
+<code>kubectl create service nodeport jenkins --tcp=8080:8080 --namespace=devops --dry-run=client -o yaml &gt;&gt; jenkins.yaml</code><br>
+修改部分内容</p>
+<pre><code class="language-yaml">      serviceAccountName: jenkins
+        imagePullPolicy: IfNotPresent
+        securityContext: 
+          runAsUser: 0
+          privileged: true
+        volumeMounts:
+        - mountPath: /var/jenkins_home
+          name: jenkinshome
+        - mountPath: /usr/bin/docker
+          name: docker
+        - mountPath: /var/run/docker.sock
+          name: dockersock
+        - mountPath: /usr/bin/kubectl
+          name: kubectl
+        - mountPath: /root/.kube
+          name: kubeconfig
+      volumes:
+      - name: jenkinshome
+        hostPath:
+          path: /home/jenkins_home
+      - name: docker
+        hostPath:
+          path: /usr/bin/docker
+      - name: dockersock
+        hostPath:
+          path: /var/run/docker.sock
+      - name: kubectl
+        hostPath:
+          path: /usr/bin/kubectl
+      - name: kubeconfig
+        hostPath:
+          path: /root/.kube
+---
+    nodePort: 30880
+---
+kubectl create clusterrole jenkins --verb=* --resource=* --namespace=devops --dry-run=client -o yaml &gt;&gt; jenkins.yaml
+---
+kubectl create serviceaccount jenkins --namespace=devops --dry-run=client -o yaml &gt;&gt; jenkins.yaml
+---
+kubectl create clusterrolebinding jenkins --clusterrole=jenkins --serviceaccount=devops:jenkins --namespace=devops --dry-run=client -o yaml &gt;&gt; jenkins.yaml
+</code></pre>
+<h2>GitLab部署</h2>
+<p>容器部分<br>
+<code>kubectl create deployment gitlab --image=gitlab/gitlab-ce:latest --port=80 --namespace=devops --dry-run=client -o yaml &gt;&gt; gitlab.yaml</code><br>
+服务部分<br>
+<code>kubectl create service nodeport gitlab --tcp=80:80 --namespace=devops --dry-run=client -o yaml &gt;&gt; gitlab.yaml</code><br>
+修改部分内容</p>
+<pre><code>        env:
+        - name: GITLAB_ROOT_PASSWORD
+          value: admin@123
+        - name: GITLAB_PORT
+          value: &quot;80&quot;
+</code></pre>
+<h2>Jenkinsfile流水线</h2>
+<pre><code>pipeline{
+    agent none
+    stages{
+        stage('mvn-build'){
+            agent {
+                docker {
+                    image '10.26.15.244/library/maven'
+                    args '-v /root/.m2:/root/.m2'
+                }
+            }
+            steps{
+                sh 'cp -rfv /opt/repository /root/.m2/ &amp;&amp; ls -l /root/.m2/repository'
+                sh 'mvn package -DskipTests'
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
+            }
+        }
+        stage('image-build'){
+            agent any
+            steps{
+                sh 'cd gateway &amp;&amp; docker build -t 10.26.15.244/springcloud/gateway -f Dockerfile .'
+                sh 'cd config &amp;&amp; docker build -t 10.26.15.244/springcloud/config -f Dockerfile .'
+                sh 'docker login 10.26.15.244 -u=admin -p=Harbor12345'
+                sh 'docker push 10.26.15.244/springcloud/gateway'
+                sh 'docker push 10.26.15.244/springcloud/config'
+            }
+        }
+        stage('cloud-deploy'){
+            agent any
+            steps{
+                sh 'kubectl create ns springcloud'
+                sh 'kubectl apply -f yaml/deployment/gateway-deployment.yaml'
+                sh 'kubectl apply -f yaml/deployment/config-deployment.yaml'
+                sh 'kubectl apply -f yaml/svc/gateway-svc.yaml'
+                sh 'kubectl apply -f yaml/svc/config-svc.yaml'
+            }
+        }
+    }
+}
+</code></pre>
+<h1>使用NFS和PVC持久化存储Jenkins数据</h1>
+<h2>配置NFS服务</h2>
+<p>Worker节点</p>
+<pre><code class="language-bash">mkdir /opt/jenkins_home
+vi /etc/exports
+写入：/opr/jenkins_home *(rw,sync,no_root_squash)
+systemctl enable nfs-server --now
+</code></pre>
+<p>Master节点</p>
+<pre><code class="language-bash">mkdir /opt/jenkins_home
+mount nfs-server-ip:/opt/jenkins_home /opt/jenkins_home
+df -Th | grep jenkins
+输出：$nfs-server-ip-address:/opt/jenkins_home nfs4 40G 19G 22G 46% /opt/jenkins_home
+</code></pre>
+<h2>nfs-storage实现Jenkins持久化存储</h2>
+<p>在deployment下方加上卷挂载信息</p>
+<pre><code class="language-yaml">        volumeMounts:
+        - name: jenkins
+          mountPath: /var/jenkins_home
+      volumes:
+      - name: jenkins
+        persistentVolumeClaim:
+          claimName: jenkins-pvc
+</code></pre>
+<p>创建pv.yaml</p>
+<pre><code class="language-yaml">apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: jenkins-pv
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    server: $nfs-server-ip-address
+    path: /opt/jenkins_home
+</code></pre>
+<p>创建pvc.yaml</p>
+<pre><code class="language-yaml">apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jenkins-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+</code></pre>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/CICDk8s" target="_blank">https://blog.horonlee.com/posts/CICDk8s</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CentOS搭建OpenStack-Queen手记]]></title>
+        <id>https://blog.horonlee.com/posts/CentOS-OpenStack-Queen手记</id>
+        <link href="https://blog.horonlee.com/posts/CentOS-OpenStack-Queen手记"/>
+        <updated>2022-12-06T20:41:18.000Z</updated>
+        <content type="html"><![CDATA[<h1>OpenStack-Queen版本搭建</h1>
+<ul>
+<li>系统：CentOS7.5-1804</li>
+<li>硬件环境：
+<ul>
+<li>i7-12700H &amp; 16G-RAM</li>
+</ul>
+</li>
+<li>软件环境：
+<ul>
+<li>VT-d开启 &amp; VT-x未</li>
+</ul>
+</li>
+</ul>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/CentOS-OpenStack-Queen手记" target="_blank">https://blog.horonlee.com/posts/CentOS-OpenStack-Queen手记</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CentOS7安装配置docker]]></title>
+        <id>https://blog.horonlee.com/posts/CentOS7-docker</id>
+        <link href="https://blog.horonlee.com/posts/CentOS7-docker"/>
+        <updated>2022-11-27T14:46:08.000Z</updated>
+        <summary type="html"><![CDATA[CentOS7安装配置docker以及更改配置文件]]></summary>
+        <content type="html"><![CDATA[<h2>CentOS下安装和配置Dcoker有一些麻烦，故本人请教学长后打算写下一些经验</h2>
+<h3>step 1：安装必要的一些系统工具</h3>
+<p><strong>先获得管理员Bash权限：</strong><code>su root</code></p>
+<pre><code class="language-bas"></code></pre>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/CentOS7-docker" target="_blank">https://blog.horonlee.com/posts/CentOS7-docker</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[使用Docker部署NextCloud]]></title>
+        <id>https://blog.horonlee.com/posts/Docker-NextCloud</id>
+        <link href="https://blog.horonlee.com/posts/Docker-NextCloud"/>
+        <updated>2022-12-20T15:30:00.000Z</updated>
+        <content type="html"><![CDATA[<h1>使用docker-compose创建、配置nextcloud</h1>
+<p>参考博文（docker-compose来源）：<a href="https://blog.csdn.net/shangyexin/article/det">https://blog.csdn.net/shangyexin/article/det</a></p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Docker-NextCloud" target="_blank">https://blog.horonlee.com/posts/Docker-NextCloud</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Docker镜像的封装和制作]]></title>
+        <id>https://blog.horonlee.com/posts/Docker-images</id>
+        <link href="https://blog.horonlee.com/posts/Docker-images"/>
+        <updated>2022-11-29T08:29:08.000Z</updated>
+        <summary type="html"><![CDATA[使用Dockerfile来制作docker镜像]]></summary>
+        <content type="html"><![CDATA[<h1>Ubuntu环境下制作自己的Docker镜像——MC服务器</h1>
+<blockquote>
+<p>制作Docker镜像一般有2种方法：<br>
+1. 使用DockerHub仓库中已有的环境，安装自己使用的软件环境后完成image创</p>
+</blockquote>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Docker-images" target="_blank">https://blog.horonlee.com/posts/Docker-images</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ecs+Cos+Cloudreve]]></title>
+        <id>https://blog.horonlee.com/posts/Ecs-Cos-Cloudreve</id>
+        <link href="https://blog.horonlee.com/posts/Ecs-Cos-Cloudreve"/>
+        <updated>2023-04-03T18:33:39.000Z</updated>
+        <content type="html"><![CDATA[<h1>下载安装Cloudreve</h1>
+<blockquote>
+<p>这里我选用的是阿里云的Ecs轻应用<br>
+并且不是使用Docker来部署（那也太傻瓜操作了吧😂</p>
+</blockquote>
+<ol>
+<li>登录到Shell终端</li>
+<li>部署[Cloudreve](h</li>
+</ol>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Ecs-Cos-Cloudreve" target="_blank">https://blog.horonlee.com/posts/Ecs-Cos-Cloudreve</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[为Systemd服务设置自动重启]]></title>
+        <id>https://blog.horonlee.com/posts/Frpc-systemd-restart</id>
+        <link href="https://blog.horonlee.com/posts/Frpc-systemd-restart"/>
+        <updated>2024-01-21T18:08:10.000Z</updated>
+        <content type="html"><![CDATA[<h2>事情起因</h2>
+<p>最近给自己的双路E5搞一个Frpc，但是因为有Clash这个开机自启程序，并且我设置了系统代理，在Clash完全启动之前系统是处于断网状态的。断网状态下，Frpc会默认启动失败并且变为Inactive状态，这并不是我想看到的。</p>
+<!-- more -->
+<p>于是我上网查询了一下，于是乎找到了以下三个Systemd-[Service]参数</p>
+<pre><code class="language-ini">[Unit]
+Description=frpc service
+After=network.target syslog.target
+Wants=network.target
+
+[Service]
+Type=simple
+ExecStart=/Apps/frp_0.52.3_linux_amd64/frpc -c /Apps/frp_0.52.3_linux_amd64/frpc.toml
+Restart=always // [!code ++]
+RestartSec=5 // [!code ++]
+StartLimitInterval=0 // [!code ++]
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>三个参数的作用分别是：</p>
+<ol>
+<li><strong>Restart=always：</strong> 指定服务在退出时总是重新启动。</li>
+<li><strong>RestartSec=5：</strong> 如果服务启动失败，指定在尝试重新启动之前等待的时间间隔，这里是 5 秒。</li>
+<li><strong>StartLimitInterval=0：</strong> 指定尝试启动服务的最小时间间隔。在这里设置为 0 表示没有最小间隔，可以立即尝试重新启动服务。</li>
+</ol>
+<p>随后只要执行<code>systemctl daemon-reload</code>就可以放心重启机器，让Frpc自由启动了！</p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Frpc-systemd-restart" target="_blank">https://blog.horonlee.com/posts/Frpc-systemd-restart</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Golang判断质数]]></title>
+        <id>https://blog.horonlee.com/posts/Golang-Prime</id>
+        <link href="https://blog.horonlee.com/posts/Golang-Prime"/>
+        <updated>2023-05-23T16:50:36.000Z</updated>
+        <content type="html"><![CDATA[<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+func findprimes(number int) bool {
+    // 质数本身就能被1和本身整除，所以可以直接筛选2~</code></pre>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Golang-Prime" target="_blank">https://blog.horonlee.com/posts/Golang-Prime</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Gorm笔记]]></title>
+        <id>https://blog.horonlee.com/posts/GormNote</id>
+        <link href="https://blog.horonlee.com/posts/GormNote"/>
+        <updated>2024-04-25T16:19:23.000Z</updated>
+        <content type="html"><![CDATA[<h1>Gorm</h1>
+<blockquote>
+<p>暂且当做用于连接并且快速操作数据库的库</p>
+</blockquote>
+<h2>如何开始</h2>
+<p>导入所需的库</p>
+<pre><code class="language-go">import (
+    &quot;gorm.io/gorm&quot;
+	&quot;gorm.io/driver/</code></pre>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/GormNote" target="_blank">https://blog.horonlee.com/posts/GormNote</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[从Hexo切换为Valaxy感受]]></title>
+        <id>https://blog.horonlee.com/posts/Hexo-to-valaxy</id>
+        <link href="https://blog.horonlee.com/posts/Hexo-to-valaxy"/>
+        <updated>2024-01-19T20:02:16.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>最近因为Halo博客被宝塔面板爆破了，所以只能继续使用老博客Hexo（托管在githubpage上），但是GitHubPage实在是太慢了，Hexo的配置也有些乱糟糟的，于是乎就换用了由云游君大佬开发的Valaxy博客框架</p>
+</blockquote>
+<!-- more -->
+<h2>说实话，快速的热加载实在是太舒服了，简直是比Hexo强上百倍，目前是通过本地电脑渲染之后通过Rsync这个文件同步软件推送静态资源到服务器上，用时短，方便快捷（其实用git来管理也是可以的）。</h2>
+<p>3/25 好吧，最终还是使用了 GitHub Action 部署在了 GitHubPages 上...一提交就可以部署，太方便了！</p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Hexo-to-valaxy" target="_blank">https://blog.horonlee.com/posts/Hexo-to-valaxy</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Java学习-String]]></title>
+        <id>https://blog.horonlee.com/posts/Java-note</id>
+        <link href="https://blog.horonlee.com/posts/Java-note"/>
+        <updated>2022-11-10T19:28:15.000Z</updated>
+        <summary type="html"><![CDATA[学习笔记]]></summary>
+        <content type="html"><![CDATA[<h1>String类</h1>
+<h2>比较两个字符串的两种方法</h2>
+<ul>
+<li>直接使用“==”进行运算,这样是比较两个字符串对象在内存中的位置,而不是实际上看到的内容。</li>
+<li>使用String类中的equals()方法进行比</li>
+</ul>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Java-note" target="_blank">https://blog.horonlee.com/posts/Java-note</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[K8S1.27.0集群部署要点]]></title>
+        <id>https://blog.horonlee.com/posts/K8S1.27.0-deploy</id>
+        <link href="https://blog.horonlee.com/posts/K8S1.27.0-deploy"/>
+        <updated>2023-06-10T00:43:16.000Z</updated>
+        <content type="html"><![CDATA[<p>⚠️注意：本文已经严重过时且不具备任何参考价值，最新 k8s 部署请参考<a href="https://blog.horonlee.com/posts/ubuntu22.04-k8s-deploy">Ubuntu22.04部署K8S - 皓然小站 (horonlee.com)</a></p>
+<!-- more -->
+<pre><code>[root@k8s-master ~]# kubeadm config images pull --kubernetes-version=v1.27.0
+W0609 23:21:18.405148    2447 images.go:80] could not find officially supported version of etcd for Kubernetes v1.27.0, falling back to the nearest etcd version (3.5.7-0)
+[config/images] Pulled registry.k8s.io/kube-apiserver:v1.27.0
+[config/images] Pulled registry.k8s.io/kube-controller-manager:v1.27.0
+[config/images] Pulled registry.k8s.io/kube-scheduler:v1.27.0
+[config/images] Pulled registry.k8s.io/kube-proxy:v1.27.0
+[config/images] Pulled registry.k8s.io/pause:3.9
+[config/images] Pulled registry.k8s.io/etcd:3.5.7-0
+[config/images] Pulled registry.k8s.io/coredns/coredns:v1.10.1
+</code></pre>
+<pre><code>[root@k8s-master ~]# kubeadm init --kubernetes-version=v1.27.0 --pod-network-cidr=10.224.0.0/16 --apiserver-advertise-address=192.168.1.200
+[init] Using Kubernetes version: v1.27.0
+[preflight] Running pre-flight checks
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'
+W0609 23:23:47.717937    2546 images.go:80] could not find officially supported version of etcd for Kubernetes v1.27.0, falling back to the nearest etcd version (3.5.7-0)
+W0609 23:23:47.891888    2546 checks.go:835] detected that the sandbox image &quot;registry.k8s.io/pause:3.6&quot; of the container runtime is inconsistent with that used by kubeadm. It is recommended that using &quot;registry.k8s.io/pause:3.9&quot; as the CRI sandbox image.
+[certs] Using certificateDir folder &quot;/etc/kubernetes/pki&quot;
+[certs] Generating &quot;ca&quot; certificate and key
+[certs] Generating &quot;apiserver&quot; certificate and key
+[certs] apiserver serving cert is signed for DNS names [k8s-master kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.1.200]
+[certs] Generating &quot;apiserver-kubelet-client&quot; certificate and key
+[certs] Generating &quot;front-proxy-ca&quot; certificate and key
+[certs] Generating &quot;front-proxy-client&quot; certificate and key
+[certs] Generating &quot;etcd/ca&quot; certificate and key
+[certs] Generating &quot;etcd/server&quot; certificate and key
+[certs] etcd/server serving cert is signed for DNS names [k8s-master localhost] and IPs [192.168.1.200 127.0.0.1 ::1]
+[certs] Generating &quot;etcd/peer&quot; certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [k8s-master localhost] and IPs [192.168.1.200 127.0.0.1 ::1]
+[certs] Generating &quot;etcd/healthcheck-client&quot; certificate and key
+[certs] Generating &quot;apiserver-etcd-client&quot; certificate and key
+[certs] Generating &quot;sa&quot; key and public key
+[kubeconfig] Using kubeconfig folder &quot;/etc/kubernetes&quot;
+[kubeconfig] Writing &quot;admin.conf&quot; kubeconfig file
+[kubeconfig] Writing &quot;kubelet.conf&quot; kubeconfig file
+[kubeconfig] Writing &quot;controller-manager.conf&quot; kubeconfig file
+[kubeconfig] Writing &quot;scheduler.conf&quot; kubeconfig file
+[kubelet-start] Writing kubelet environment file with flags to file &quot;/var/lib/kubelet/kubeadm-flags.env&quot;
+[kubelet-start] Writing kubelet configuration to file &quot;/var/lib/kubelet/config.yaml&quot;
+[kubelet-start] Starting the kubelet
+[control-plane] Using manifest folder &quot;/etc/kubernetes/manifests&quot;
+[control-plane] Creating static Pod manifest for &quot;kube-apiserver&quot;
+[control-plane] Creating static Pod manifest for &quot;kube-controller-manager&quot;
+[control-plane] Creating static Pod manifest for &quot;kube-scheduler&quot;
+[etcd] Creating static Pod manifest for local etcd in &quot;/etc/kubernetes/manifests&quot;
+W0609 23:23:52.692177    2546 images.go:80] could not find officially supported version of etcd for Kubernetes v1.27.0, falling back to the nearest etcd version (3.5.7-0)
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory &quot;/etc/kubernetes/manifests&quot;. This can take up to 4m0s
+[apiclient] All control plane components are healthy after 10.502621 seconds
+[upload-config] Storing the configuration used in ConfigMap &quot;kubeadm-config&quot; in the &quot;kube-system&quot; Namespace
+[kubelet] Creating a ConfigMap &quot;kubelet-config&quot; in namespace kube-system with the configuration for the kubelets in the cluster
+[upload-certs] Skipping phase. Please see --upload-certs
+[mark-control-plane] Marking the node k8s-master as control-plane by adding the labels: [node-role.kubernetes.io/control-plane node.kubernetes.io/exclude-from-external-load-balancers]
+[mark-control-plane] Marking the node k8s-master as control-plane by adding the taints [node-role.kubernetes.io/control-plane:NoSchedule]
+[bootstrap-token] Using token: ux83mg.qlhot371w5rtub2u
+[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles
+[bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to get nodes
+[bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
+[bootstrap-token] Configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+[bootstrap-token] Configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
+[bootstrap-token] Creating the &quot;cluster-info&quot; ConfigMap in the &quot;kube-public&quot; namespace
+[kubelet-finalize] Updating &quot;/etc/kubernetes/kubelet.conf&quot; to point to a rotatable kubelet client certificate and key
+[addons] Applied essential addon: CoreDNS
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run &quot;kubectl apply -f [podnetwork].yaml&quot; with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 192.168.1.200:6443 --token ux83mg.qlhot371w5rtub2u \
+        --discovery-token-ca-cert-hash sha256:7adc6b2a7551f204371d38c6a6da34d7deb321fda863b54bfe2b4d9b1811f680
+</code></pre>
+<pre><code>[root@k8s-worker ~]# kubeadm join 192.168.1.200:6443 --token ux83mg.qlhot371w5rtub2u \
+        --discovery-token-ca-cert-hash sha256:7adc6b2a7551f204371d38c6a6da34d7deb321fda863b54bfe2b4d9b1811f680
+[preflight] Running pre-flight checks
+[preflight] Reading configuration from the cluster...
+[preflight] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'
+[kubelet-start] Writing kubelet configuration to file &quot;/var/lib/kubelet/config.yaml&quot;
+[kubelet-start] Writing kubelet environment file with flags to file &quot;/var/lib/kubelet/kubeadm-flags.env&quot;
+[kubelet-start] Starting the kubelet
+[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...
+
+This node has joined the cluster:
+* Certificate signing request was sent to apiserver and a response was received.
+* The Kubelet was informed of the new secure connection details.
+
+Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
+</code></pre>
+<pre><code>[root@k8s-master ~]# kubectl get node # 这里是因为需要管理权限的环境变量才可以执行管理命令，这一点和OpenStack十分相似
+E0609 23:28:28.548179    3302 memcache.go:265] couldn't get current server API group list: Get &quot;http://localhost:8080/api?timeout=32s&quot;: dial tcp [::1]:8080: connect: connection refused
+E0609 23:28:28.548907    3302 memcache.go:265] couldn't get current server API group list: Get &quot;http://localhost:8080/api?timeout=32s&quot;: dial tcp [::1]:8080: connect: connection refused
+E0609 23:28:28.550827    3302 memcache.go:265] couldn't get current server API group list: Get &quot;http://localhost:8080/api?timeout=32s&quot;: dial tcp [::1]:8080: connect: connection refused
+E0609 23:28:28.552839    3302 memcache.go:265] couldn't get current server API group list: Get &quot;http://localhost:8080/api?timeout=32s&quot;: dial tcp [::1]:8080: connect: connection refused
+E0609 23:28:28.554668    3302 memcache.go:265] couldn't get current server API group list: Get &quot;http://localhost:8080/api?timeout=32s&quot;: dial tcp [::1]:8080: connect: connection refused
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+[root@k8s-master ~]# export KUBECONFIG=/etc/kubernetes/admin.conf
+[root@k8s-master ~]# kubectl get node
+NAME         STATUS     ROLES           AGE     VERSION
+k8s-master   NotReady   control-plane   4m42s   v1.27.0
+k8s-worker   NotReady   &lt;none&gt;          48s     v1.27.0
+</code></pre>
+<pre><code>vim /etc/containerd/config.toml
+
+未更改：sandbox_image = &quot;registry.aliyuncs.com/google_containers/pause:3.6&quot;
+</code></pre>
+<pre><code>[root@k8s-master ~]# kubectl apply -f calico.yaml
+poddisruptionbudget.policy/calico-kube-controllers created
+serviceaccount/calico-kube-controllers created
+serviceaccount/calico-node created
+configmap/calico-config created
+customresourcedefinition.apiextensions.k8s.io/bgpconfigurations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/bgppeers.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/blockaffinities.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/caliconodestatuses.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/clusterinformations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/felixconfigurations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/globalnetworkpolicies.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/globalnetworksets.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/hostendpoints.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ipamblocks.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ipamconfigs.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ipamhandles.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ippools.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ipreservations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/kubecontrollersconfigurations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/networkpolicies.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/networksets.crd.projectcalico.org created
+clusterrole.rbac.authorization.k8s.io/calico-kube-controllers created
+clusterrole.rbac.authorization.k8s.io/calico-node created
+clusterrolebinding.rbac.authorization.k8s.io/calico-kube-controllers created
+clusterrolebinding.rbac.authorization.k8s.io/calico-node created
+daemonset.apps/calico-node created
+deployment.apps/calico-kube-controllers created
+</code></pre>
+<pre><code>[root@k8s-master ~]# kubectl get pod -n kube-system
+NAME                                       READY   STATUS     RESTARTS   AGE
+calico-kube-controllers-6849cf9bcf-gsbzr   0/1     Pending    0          30s
+calico-node-bdshx                          0/1     Init:0/3   0          30s
+calico-node-mmjfl                          0/1     Init:0/3   0          30s
+coredns-5d78c9869d-spj6w                   0/1     Pending    0          16m
+coredns-5d78c9869d-td7nt                   0/1     Pending    0          16m
+etcd-k8s-master                            1/1     Running    0          16m
+kube-apiserver-k8s-master                  1/1     Running    0          16m
+kube-controller-manager-k8s-master         1/1     Running    0          16m
+kube-proxy-sfkrl                           1/1     Running    0          16m
+kube-proxy-wm8mk                           1/1     Running    0          12m
+kube-scheduler-k8s-master                  1/1     Running    0          16m
+</code></pre>
+<pre><code>[root@k8s-master ~]# kubectl apply -f dashboard.yaml
+namespace/kubernetes-dashboard created
+serviceaccount/kubernetes-dashboard created
+service/kubernetes-dashboard created
+secret/kubernetes-dashboard-certs created
+secret/kubernetes-dashboard-csrf created
+secret/kubernetes-dashboard-key-holder created
+configmap/kubernetes-dashboard-settings created
+role.rbac.authorization.k8s.io/kubernetes-dashboard created
+clusterrole.rbac.authorization.k8s.io/kubernetes-dashboard created
+rolebinding.rbac.authorization.k8s.io/kubernetes-dashboard created
+clusterrolebinding.rbac.authorization.k8s.io/kubernetes-dashboard created
+deployment.apps/kubernetes-dashboard created
+service/dashboard-metrics-scraper created
+deployment.apps/dashboard-metrics-scraper created
+</code></pre>
+<pre><code>[root@k8s-master ~]# kubectl get pod -n kubernetes-dashboard -o wide
+NAME                                         READY   STATUS             RESTARTS   AGE   IP               NODE         NOMINATED NODE   READINESS GATES
+dashboard-metrics-scraper-5cb4f4bb9c-tvqlt   0/1     ImagePullBackOff   0          26s   10.224.254.132   k8s-worker   &lt;none&gt;           &lt;none&gt;
+kubernetes-dashboard-6967859bff-nrtsl        0/1     ImagePullBackOff   0          26s   10.224.254.133   k8s-worker   &lt;none&gt;           &lt;none&gt;
+</code></pre>
+<pre><code>[root@k8s-master ~]# kubectl get svc -n kubernetes-dashboard
+NAME                        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+dashboard-metrics-scraper   ClusterIP   10.106.18.213   &lt;none&gt;        8000/TCP   2m5s
+kubernetes-dashboard        ClusterIP   10.103.7.49     &lt;none&gt;        443/TCP    2m6s
+</code></pre>
+<pre><code>[root@k8s-master ~]# kubectl edit svc kubernetes-dashboard -n kubernetes-dashboard
+service/kubernetes-dashboard edited # 将ClusterIP 改为NodePort
+</code></pre>
+<pre><code>[root@k8s-master ~]# kubectl get svc -n kubernetes-dashboard
+NAME                        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)         AGE
+dashboard-metrics-scraper   ClusterIP   10.106.18.213   &lt;none&gt;        8000/TCP        3m40s
+kubernetes-dashboard        NodePort    10.103.7.49     &lt;none&gt;        443:30571/TCP   3m41s
+</code></pre>
+<pre><code>[root@k8s-master ~]# kubectl apply -f dashboard-user.yaml
+serviceaccount/admin-user created
+clusterrolebinding.rbac.authorization.k8s.io/admin-user created
+</code></pre>
+<pre><code>[root@k8s-master ~]# kubectl -n kubernetes-dashboard create token admin-user
+eyJhbGciOiJSUzI1NiIsImtpZCI6InVCZUlsckJGWUZoMTJfRDA2eVFsMm85d3lEYml4WmQxV2RmNGtNWGlzZUEifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxNjg2MzI1NzA3LCJpYXQiOjE2ODYzMjIxMDcsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsInNlcnZpY2VhY2NvdW50Ijp7Im5hbWUiOiJhZG1pbi11c2VyIiwidWlkIjoiYzAzOTI4OWEtMTc1MS00ZDY3LWFiNTgtMzE2ZTYzNWQ3NWEzIn19LCJuYmYiOjE2ODYzMjIxMDcsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlcm5ldGVzLWRhc2hib2FyZDphZG1pbi11c2VyIn0.BOa9nhIPfx_qWoQOn8hbfA70Y2fIeO_xcjK5wJJdrgS2yeSFIqD07LwHyw6eT9a03leNUaSA6gj3kYeAQnbCpw8pacdGJAaBBL-Y6Y31p4uVNSH9bs9TJuVAGyfKzJ4G8eyj3bZ11PlEtLNXeCr7bB_tO_8Z93lCK-F8h9VfQV5TGxCRAmjWXX3c1tpox236lIVsDA8UC8LqrWO4TW5p22om5ES9RsgVypoYQPwZ0O7hy9k_7mMe2Nh2hdiibhuezwGcm2fl_fgBsK9REaer0NZF420p1crxUBiE0LfxfvgTTGHAnbwWlw_M2pFehvx82Lx6jmduNnq-0cPcReb4cw
+</code></pre>
+<p>访问Web页面相关问题，Web页面的端口是随机的，需要手动查看容器状态，可以看到下面dashboard映射出来的端口是30571</p>
+<pre><code>[root@k8s-master ~]# kubectl get svc -A -o wide
+NAMESPACE              NAME                        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                  AGE   SELECTOR
+default                kubernetes                  ClusterIP   10.96.0.1       &lt;none&gt;        443/TCP                  32m   &lt;none&gt;
+kube-system            kube-dns                    ClusterIP   10.96.0.10      &lt;none&gt;        53/UDP,53/TCP,9153/TCP   32m   k8s-app=kube-dns
+kubernetes-dashboard   dashboard-metrics-scraper   ClusterIP   10.106.18.213   &lt;none&gt;        8000/TCP                 12m   k8s-app=dashboard-metrics-scraper
+kubernetes-dashboard   kubernetes-dashboard        NodePort    10.103.7.49     &lt;none&gt;        443:30571/TCP            13m   k8s-app=kubernetes-dashboard
+</code></pre>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/K8S1.27.0-deploy" target="_blank">https://blog.horonlee.com/posts/K8S1.27.0-deploy</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Jenkins的标准用法“Jenkins-Slave”]]></title>
+        <id>https://blog.horonlee.com/posts/K8sJenkinsSlaveCICD</id>
+        <link href="https://blog.horonlee.com/posts/K8sJenkinsSlaveCICD"/>
+        <updated>2024-05-24T11:42:20.000Z</updated>
+        <content type="html"><![CDATA[<h1>kubernetes构建 Jenkins-Master&amp;Slave 架构</h1>
+<h2>引子</h2>
+<p>这篇文章是我在学校帮助专业老师撰写的，旨在于帮助同学更好的学习 Jenkins 的使用，所有内容都是基于最</p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/K8sJenkinsSlaveCICD" target="_blank">https://blog.horonlee.com/posts/K8sJenkinsSlaveCICD</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[KubeVirt使用CDI来导入虚拟机镜像]]></title>
+        <id>https://blog.horonlee.com/posts/KubeVirt-CDI</id>
+        <link href="https://blog.horonlee.com/posts/KubeVirt-CDI"/>
+        <updated>2024-06-28T14:47:06.000Z</updated>
+        <content type="html"><![CDATA[<h1>使用容器化数据导入器 （CDI） 进行试验</h1>
+<blockquote>
+<p>本文参照官方文档编撰[使用 CDI 进行实验 |<a href="http://KubeVirt.io">KubeVirt.io</a> --- Experiment with CDI | KubeVirt.i</p>
+</blockquote>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/KubeVirt-CDI" target="_blank">https://blog.horonlee.com/posts/KubeVirt-CDI</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[KubeVirt入门]]></title>
+        <id>https://blog.horonlee.com/posts/KubeVirt-Getting-Start</id>
+        <link href="https://blog.horonlee.com/posts/KubeVirt-Getting-Start"/>
+        <updated>2024-05-30T16:22:50.000Z</updated>
+        <content type="html"><![CDATA[<h1>什么是 KubeVirt？</h1>
+<p>​	KubeVirt 是一个开源项目，它使得虚拟机可以像容器一样被 Kubernetes 部署，消费和管理。它提供了一个统一的平台，让用户可以根据不同的需求，使用容器</p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/KubeVirt-Getting-Start" target="_blank">https://blog.horonlee.com/posts/KubeVirt-Getting-Start</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[初试Kubernetes笔记]]></title>
+        <id>https://blog.horonlee.com/posts/Kubernetes-note</id>
+        <link href="https://blog.horonlee.com/posts/Kubernetes-note"/>
+        <updated>2023-04-04T13:27:28.000Z</updated>
+        <content type="html"><![CDATA[<h1>关于k8s镜像的下载</h1>
+<blockquote>
+<p>说实话我真的吐了，没有科学上网真的寸步难行，没办法直接拉取k8s.gcr.io的镜像，所以只能先用阿里云的<br>
+但是后续的安装没办法直接使用阿里云的镜像，所以还得改tag</p>
+</blockquote>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Kubernetes-note" target="_blank">https://blog.horonlee.com/posts/Kubernetes-note</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Kubernetes脚本部署]]></title>
+        <id>https://blog.horonlee.com/posts/Kubernetes-sh</id>
+        <link href="https://blog.horonlee.com/posts/Kubernetes-sh"/>
+        <updated>2023-07-11T21:39:43.000Z</updated>
+        <content type="html"><![CDATA[<h1>容器云平台部署</h1>
+<h2>基础环境准备</h2>
+<ol>
+<li>将提供的安装包 chinaskills_cloud_paas_v2.0.2.iso 上传至 master 节点/root 目录,并解到/opt 目录:<br>
+`</li>
+</ol>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Kubernetes-sh" target="_blank">https://blog.horonlee.com/posts/Kubernetes-sh</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[使用 Jenkins&GitLab 构建 CICD]]></title>
+        <id>https://blog.horonlee.com/posts/KubernetesJenkinCICD</id>
+        <link href="https://blog.horonlee.com/posts/KubernetesJenkinCICD"/>
+        <updated>2024-05-20T17:24:26.000Z</updated>
+        <content type="html"><![CDATA[<h1>Kubernetes使用Jenkins构建CICD</h1>
+<h2>引子</h2>
+<p>这篇文章是我在学校帮老师写的，旨在于帮助同学更好的学习 kubernetes、使用 Jenkins 软件和理解 CICD 流程，</p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/KubernetesJenkinCICD" target="_blank">https://blog.horonlee.com/posts/KubernetesJenkinCICD</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Linux在线扩容磁盘]]></title>
+        <id>https://blog.horonlee.com/posts/Linux-volume</id>
+        <link href="https://blog.horonlee.com/posts/Linux-volume"/>
+        <updated>2022-12-19T17:19:14.000Z</updated>
+        <content type="html"><![CDATA[<p>CentOS7：<br>
+进入SSH并运行如下命令</p>
+<pre><code class="language-bash">yum install cloud-utils-growpart gdisk xfsprogs e2fsprogs
+</code></pre>
+<p>使用<code>fdisk -l</code>命令根据大小及其他信息查看要扩容的云盘，本例子中要扩容的分区为/dev/sda1</p>
+<!-- more -->
+<p>执行命令：</p>
+<pre><code class="language-bash">growpart /dev/sda 1
+</code></pre>
+<p>#centos 7 使用</p>
+<pre><code class="language-bash">resize2fs /dev/sda1
+</code></pre>
+<p>#centos 8 使用</p>
+<pre><code class="language-bash">xfsprogs  /dev/sda1
+</code></pre>
+<p>注意：如果您把系统设置成了中文，在运行growpart命令之前必须先运行：<code>LANG=en_US.UTF-8</code>，否则会报错如：unexpected output in sfdisk --version</p>
+<p>CentOS6：<br>
+进入SSH并执行命令：</p>
+<pre><code class="language-bash">yum install -y dracut-modules-growroot
+dracut -f
+growpart /dev/sda 1
+</code></pre>
+<p>执行完上述命令后，使用reboot命令重启服务器。<br>
+重启完毕执行命令：</p>
+<pre><code class="language-bash">resize2fs /dev/sda1
+</code></pre>
+<p>Ubuntu/Debian系列操作系统：</p>
+<pre><code class="language-bash">apt install cloud-guest-utils
+apt install xfsprogs
+</code></pre>
+<p>使用<code>fdisk -l</code>命令根据大小及其他信息查看要扩容的云盘，本例子中要扩容的分区为/dev/sda1</p>
+<p>执行命令：</p>
+<pre><code class="language-bash">growpart /dev/sda 1
+resize2fs /dev/sda1
+</code></pre>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Linux-volume" target="_blank">https://blog.horonlee.com/posts/Linux-volume</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Manjaro简易使用笔记]]></title>
+        <id>https://blog.horonlee.com/posts/Manjaro-note</id>
+        <link href="https://blog.horonlee.com/posts/Manjaro-note"/>
+        <updated>2023-03-06T15:27:43.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>安装过程很简单，很人性化，就不多说了</p>
+</blockquote>
+<h1>换软件源</h1>
+<blockquote>
+<p>因为在大陆，所以换一个快速的软件园非常重要</p>
+</blockquote>
+<ol>
+<li>打开firefox浏览器</li>
+<li>搜索ustc mirror</li>
+<li>进入网站首页，下拉找到</li>
+</ol>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Manjaro-note" target="_blank">https://blog.horonlee.com/posts/Manjaro-note</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[LVM添加硬盘并扩容至已有分区]]></title>
+        <id>https://blog.horonlee.com/posts/Online-Expansion-Ubuntu-LVM</id>
+        <link href="https://blog.horonlee.com/posts/Online-Expansion-Ubuntu-LVM"/>
+        <updated>2024-05-28T16:34:48.000Z</updated>
+        <content type="html"><![CDATA[<h1>LVM简介</h1>
+<p>LVM是 Logical Volume Manager（逻辑卷管理）的简写，它是Linux环境下对磁盘分区进行管理的一种机制。LVM将一个或多个磁盘分区（PV）虚拟为一个卷组（VG</p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Online-Expansion-Ubuntu-LVM" target="_blank">https://blog.horonlee.com/posts/Online-Expansion-Ubuntu-LVM</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[OpenStack运维笔记]]></title>
+        <id>https://blog.horonlee.com/posts/OpenStack-note</id>
+        <link href="https://blog.horonlee.com/posts/OpenStack-note"/>
+        <updated>2023-07-02T13:03:41.000Z</updated>
+        <content type="html"><![CDATA[<h1>环境准备</h1>
+<h2>hostname配置（controller+compute）</h2>
+<ol>
+<li><code>hostnamectl set-hostname $hostname</code> 、<code>bash</code></li>
+<li>`vi /etc</li>
+</ol>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/OpenStack-note" target="_blank">https://blog.horonlee.com/posts/OpenStack-note</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[使用PHP+Nginx搭建网页]]></title>
+        <id>https://blog.horonlee.com/posts/PHP-Nginx-website</id>
+        <link href="https://blog.horonlee.com/posts/PHP-Nginx-website"/>
+        <updated>2023-04-21T13:35:43.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>本教程基于<a href="https://blog.horon.top/2023/04/20/ubuntu%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEnginx%E5%8F%8A%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/">这篇Nginx文章</a>，如果不解之处可前往查阅</p>
+</blockquote>
+<!-- more -->
+<h1>安装PHP</h1>
+<pre><code class="language-bash">sudo apt-get update     # 更新软件源
+sudo apt-get install php    # 安装php
+php -v  # 查看php版本
+</code></pre>
+<h1>安装PHP-fpm</h1>
+<ol>
+<li>先确定php版本<code>php -v</code></li>
+</ol>
+<pre><code class="language-bash">PHP 8.1.2-1ubuntu2.11 (cli) (built: Feb 22 2023 22:56:18) (NTS)
+Copyright (c) The PHP Group
+Zend Engine v4.1.2, Copyright (c) Zend Technologies
+    with Zend OPcache v8.1.2-1ubuntu2.11, Copyright (c), by Zend Technologies
+</code></pre>
+<p>可以看到我这里php版本是8.1（目前默认安装的最新版）<br>
+2. 安装对应版本的PHP-fpm<code>sudo apt-get install php-fpm</code><br>
+3. 查看php-fpm的状态<code>sudo systemctl status php8.1-fpm</code></p>
+<pre><code class="language-bash">root@HoronLeeFirstEcs:~# systemctl status php8.1-fpm
+● php8.1-fpm.service - The PHP 8.1 FastCGI Process Manager
+     Loaded: loaded (/lib/systemd/system/php8.1-fpm.service; enabled; vendor preset: enabled)
+     Active: active (running) since Thu 2023-04-20 20:10:43 CST; 17h ago
+       Docs: man:php-fpm8.1(8)
+    Process: 259478 ExecStartPost=/usr/lib/php/php-fpm-socket-helper install /run/php/php-fpm.sock /etc/php/8.1/fpm/pool.d/www.conf 81 (code=exited, status=0/SUCCESS)
+   Main PID: 259475 (php-fpm8.1)
+     Status: &quot;Processes active: 0, idle: 2, Requests: 4, slow: 0, Traffic: 0req/sec&quot;
+      Tasks: 3 (limit: 1929)
+     Memory: 8.9M
+        CPU: 2.739s
+     CGroup: /system.slice/php8.1-fpm.service
+             ├─259475 &quot;php-fpm: master process (/etc/php/8.1/fpm/php-fpm.conf)
+</code></pre>
+<h1>配置Nginx和PHP-FPM</h1>
+<blockquote>
+<p>使用Nginx发布PHP网页，就需要这两个程序之间有沟通，这个时候就需要对其进行相应配置</p>
+</blockquote>
+<ol>
+<li>配置Nginx<code>sudo vim /etc/nginx/sites-available/default</code></li>
+<li>在其中自带的server字段中找到<code># pass PHP scripts to FastCGI server</code>下的关于php的被注释的子字段（大约第56行），将其改为（或者直接添加）：<br>
+<strong>注意PHP版本号！</strong></li>
+</ol>
+<pre><code class="language-vim">location ~ \.php$ {
+               include snippets/fastcgi-php.conf;
+               fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+        }
+</code></pre>
+<p>如果你找不到位置，我这里提供其他部分的内容：</p>
+<pre><code class="language-vim">server_name _;
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+在这里👉location ~ \.php$ {
+               include snippets/fastcgi-php.conf;
+               fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+        }👈在这里
+        # pass PHP scripts to FastCGI server
+        #
+        #location ~ \.php$ {
+        #       include snippets/fastcgi-php.conf;
+        #
+        #       # With php-fpm (or other unix sockets):
+        #       fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+        #       # With php-cgi (or other tcp sockets):
+        #       fastcgi_pass 127.0.0.1:9000;
+        #}
+</code></pre>
+<ol start="3">
+<li>配置php-fpm<code>vim /etc/php/8.1/fpm/pool.d/www.conf</code></li>
+</ol>
+<pre><code class="language-vim">; The address on which to accept FastCGI requests.
+; Valid syntaxes are:
+;   'ip.add.re.ss:port'    - to listen on a TCP socket to a specific IPv4 address on
+;                            a specific port;
+;   '[ip:6:addr:ess]:port' - to listen on a TCP socket to a specific IPv6 address on
+;                            a specific port;
+;   'port'                 - to listen on a TCP socket to all addresses
+;                            (IPv6 and IPv4-mapped) on a specific port;
+;   '/path/to/unix/socket' - to listen on a unix socket.
+; Note: This value is mandatory.
+listen = /run/php/php8.1-fpm.sock
+</code></pre>
+<p>一般来说自带的配置文件不用改，我没有做任何更改<br>
+4. 重启一下nginx和php-fpm：<code>sudo systemctl restart nginx</code>&amp;<code>sudo systemctl restart php8.1-fpm</code></p>
+<h1>测试PHP站点</h1>
+<ol>
+<li>进入默认站点目录<code>cd /var/www/html</code></li>
+<li>新建php文件<code>sudo vim test.php</code></li>
+<li>写入测试内容<code>&lt;?php phpinfo();?&gt;</code></li>
+<li>保存退出</li>
+<li>访问<code>http://$IP/test.php</code>，可以显示PHP系统信息即表示PHP站点搭建完成！<br>
+<img src="https://bu.dusays.com/2023/04/21/64422e76b49d1.png" alt="PHPInfo"></li>
+</ol>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/PHP-Nginx-website" target="_blank">https://blog.horonlee.com/posts/PHP-Nginx-website</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[通过SRS实现在线直播]]></title>
+        <id>https://blog.horonlee.com/posts/SRS-liveStream</id>
+        <link href="https://blog.horonlee.com/posts/SRS-liveStream"/>
+        <updated>2022-11-27T11:41:22.000Z</updated>
+        <content type="html"><![CDATA[<h1>Dcoker Compose封装SRS-docker</h1>
+<h2>1.Docker指令→制作Docker-compose</h2>
+<h3>什么是[docker-compose？](<a href="https://www.run">https://www.run</a></h3>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/SRS-liveStream" target="_blank">https://blog.horonlee.com/posts/SRS-liveStream</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ubuntu安装配置Docker&Compose]]></title>
+        <id>https://blog.horonlee.com/posts/Ubuntu-Docker-Compose</id>
+        <link href="https://blog.horonlee.com/posts/Ubuntu-Docker-Compose"/>
+        <updated>2022-12-02T15:33:48.000Z</updated>
+        <summary type="html"><![CDATA[Ubuntu关于docker&compose的教程]]></summary>
+        <content type="html"><![CDATA[<h1>更新软件包索引</h1>
+<p>添加一个新的 HTTPS 软件源：</p>
+<pre><code class="language-bash">sudo apt update
+sudo apt install apt-transport-https ca-certific</code></pre>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Ubuntu-Docker-Compose" target="_blank">https://blog.horonlee.com/posts/Ubuntu-Docker-Compose</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ubuntu安装配置Nginx及基础用法]]></title>
+        <id>https://blog.horonlee.com/posts/Ubuntu-Nginx-useage</id>
+        <link href="https://blog.horonlee.com/posts/Ubuntu-Nginx-useage"/>
+        <updated>2023-04-20T22:05:15.000Z</updated>
+        <content type="html"><![CDATA[<h1>安装Nginx</h1>
+<p>直接apt安装即可<code>sudo apt install nginx</code></p>
+<h2>查看Nginx服务状态</h2>
+<pre><code class="language-bash">sudo systemctl enable nginx    #</code></pre>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Ubuntu-Nginx-useage" target="_blank">https://blog.horonlee.com/posts/Ubuntu-Nginx-useage</a> 阅读全文。</p>]]></content>
+        <author>
+            <name>皓然</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2024-08-01T09:13:07.829Z</published>
+    </entry>
+</feed>
