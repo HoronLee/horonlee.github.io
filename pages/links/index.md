@@ -17,7 +17,7 @@ links:
     desc: 下一代静态博客框架
     email: i@valaxy.site
     color: "#6058d9"
-  - url: http://blog.9xia.top
+  - url: http://blog.inekoxia.com
     avatar: http://q1.qlogo.cn/g?b=qq&nk=2025226181&s=640
     name: JiuXia
     blog: JiuXiaBlog
@@ -47,7 +47,7 @@ links:
     color: "#00BFFF"
   - url: https://baiwumm.com/
     avatar: https://baiwumm.com/avatar.jpg
-    name: 寒夏
+    name: 白雾茫茫丶
     blog: 白雾茫茫丶
     desc: 记录学习、生活和有趣的事
     email: baiwumm#foxmail.com
