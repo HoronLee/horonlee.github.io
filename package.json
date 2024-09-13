@@ -13,12 +13,13 @@
   },
   "dependencies": {
     "markdown-it-footnote": "^4.0.0",
-    "valaxy": "^0.19.5",
+    "valaxy": "^0.19.9",
     "valaxy-addon-components": "^0.0.2",
     "valaxy-addon-waline": "^0.2.0",
-    "valaxy-theme-yun": "0.19.5"
+    "valaxy-theme-yun": "0.19.9"
   },
   "devDependencies": {
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "valaxy-addon-algolia": "^0.1.0"
   }
 }
