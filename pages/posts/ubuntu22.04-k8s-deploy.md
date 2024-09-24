@@ -126,9 +126,9 @@ systemctl enable docker --now
 
 访问：[Releases · containernetworking/plugins (github.com)](https://link.zhihu.com/?target=https%3A//github.com/containernetworking/plugins/releases)获取最新版本的插件，然后将其安装到`/opt/cni/bin`中
 
-- 下载插件`curl -O http://172.30.27.143/kubernetes/cni-plugins-linux-amd64-v1.5.0.tgz`
+- 下载插件`curl -O https://github.com/containernetworking/plugins/releases/download/v1.5.1/cni-plugins-linux-amd64-v1.5.1.tgz`
 - 新建软件包目录`mkdir -p /opt/cni/bin`
-- 解压 CNI 软件到指定目录`tar Cxzvf /opt/cni/bin cni-plugins-linux-amd64-v1.5.0.tgz`
+- 解压 CNI 软件到指定目录`tar Cxzvf /opt/cni/bin cni-plugins-linux-amd64-v1.5.1.tgz`
 
 ### 生成默认配置文件
 
@@ -168,14 +168,39 @@ containerd config default > /etc/containerd/config.toml
 
 # 安装 kubeadm、kubelet 和 kubectl
 
-这里使用阿里云的镜像软件源
+这里推荐使用阿里云的镜像软件源：
 
 ```bash
 apt-get update && apt-get install -y apt-transport-https
 curl -fsSL https://mirrors.aliyun.com/kubernetes-new/core/stable/v1.29/deb/Release.key |
     gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
 echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://mirrors.aliyun.com/kubernetes-new/core/stable/v1.29/deb/ /" |
     tee /etc/apt/sources.list.d/kubernetes.list
+
+apt-get update
+apt-get install -y kubelet kubeadm kubectl
+systemctl enable kubelet --now
+```
+
+如果有特殊的网络环境，可以使用最新 kubernetes 官方软件源：
+
+1. 更新 `apt` 包索引，并安装使用 Kubernetes `apt` 仓库所需要的包：
+
+```shell
+sudo apt-get update
+# apt-transport-https 可以是一个虚拟包；如果是这样，你可以跳过这个包
+sudo apt-get install -y apt-transport-https ca-certificates curl gnupg
+```
+
+2. 下载 Kubernetes 软件包仓库的公共签名密钥。 同一个签名密钥适用于所有仓库，因此你可以忽略 URL 中的版本信息：
+
+```shell
+# 如果 `/etc/apt/keyrings` 目录不存在，则应在 curl 命令之前创建它，请阅读下面的注释。
+# sudo mkdir -p -m 755 /etc/apt/keyrings
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+sudo chmod 644 /etc/apt/keyrings/kubernetes-apt-keyring.gpg # allow unprivileged APT programs to read 
+
 apt-get update
 apt-get install -y kubelet kubeadm kubectl
 systemctl enable kubelet --now
