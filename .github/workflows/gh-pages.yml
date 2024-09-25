@@ -1,42 +1,48 @@
-name: GitHub Pages
+name: CI
 
 on:
   push:
     branches:
-      # The branch where the project source code resides
-      # 项目源代码所在的分支
       - main
-      - master
+      - valaxy
+
+  pull_request:
+    branches:
+      - main
       - valaxy
 
 jobs:
-  build:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        node-version: [lts/*]
-        os: [ubuntu-latest]
-      fail-fast: false
-
+  lint:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v2
+      - uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
-          registry-url: https://registry.npmjs.org/
+          node-version: lts/*
           cache: pnpm
 
-      - name: 📦 Install Dependencies
-        run: pnpm i
+      - name: Install
+        run: pnpm install
 
-      - name: 🌌 Build Valaxy Blog
-        run: pnpm run build
+      - name: Lint
+        run: pnpm run lint
+
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install
+
+      - name: Typecheck
+        run: pnpm run typecheck
 
       - name: 🪤 Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
