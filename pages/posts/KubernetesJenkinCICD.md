@@ -13,7 +13,7 @@ categories:
     - 云计算
     - k8s
     - Jenkins
-cover: https://qiniuoss.horonlee.com/img/Standard-DevOps-CICD.png
+cover: https://bu.dusays.com/2024/09/30/66fa0a7e96de2.png
 password: 
 hide: 
 ---
@@ -131,7 +131,7 @@ systemctl restart containerd
 
 执行脚本来安装harbor`./install.sh`
 
-![图片包含 文本  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image002.png)
+![image-20240930095151300](https://bu.dusays.com/2024/09/30/66fa043a71352.png)
 
 出现如图回显说明Harbor安装完成
 
@@ -143,15 +143,13 @@ http://172.30.26.174/
 
 ​    密码：Harbor12345
 
-![电脑软件截图  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image003.png)
+![image-20240930095225791](https://bu.dusays.com/2024/09/30/66fa045caf970.png)
 
 ###  新建项目
 
- 
+新建名为“vitepress“ 的项目，并且设定为公开
 
-新建名为“vitepress“ 的项目，并且设定为公开![电脑的屏幕截图  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image004.png)
-
- 
+![image-20240930095241492](https://bu.dusays.com/2024/09/30/66fa046c81634.png) 
 
 登录Harbor
 
@@ -159,7 +157,7 @@ http://172.30.26.174/
 
 输入账号和密码，即可登录
 
-![文本  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image005.png)
+![image-20240930095403692](https://bu.dusays.com/2024/09/30/66fa04bec0efb.png)
 
 ## 安装Jenkins
 
@@ -220,9 +218,7 @@ status: {}
 ---(这半角横杠一定要写，用于分割资源类型)
 ```
 
-
-
-![img](https://qiniuoss.horonlee.com/img/clip_image006.png)
+![image-20240930095715999](https://bu.dusays.com/2024/09/30/66fa057f190b5.png)
 
 ### 生成 jenkins 服务资源文件
 
@@ -297,13 +293,15 @@ http://172.30.26.174:30880/
 
 就选择安装社区推荐的插件，等待插件安装完成，然后设置管理员用户，账号 jenkins，密码 000000。在进入主页后，再自行下载这些插件：Blue Ocean、GitLab。
 
-![图形用户界面, 应用程序  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image007.png)
+![image-20240930095753447](https://bu.dusays.com/2024/09/30/66fa05a48e462.png)
 
-![图形用户界面, 文本, 应用程序  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image008.png)
+![image-20240930095802958](https://bu.dusays.com/2024/09/30/66fa05add141d.png)
 
 前往 Download progress 页面可以查看下载进度
 
-勾选底端![文本  中度可信度描述已自动生成](http://qiniuoss.horonlee.com/img/clip_image009.png)
+勾选底端
+
+![image-20240930102401496](https://bu.dusays.com/2024/09/30/66fa0bc469df5.png)
 
 然后等待安装完成自动重启
 
@@ -331,17 +329,13 @@ http://172.30.26.174:30880/
 
 ### 创建用户
 
-![图形用户界面, 应用程序  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image010.png)
-
- 
+![image-20240930095812105](https://bu.dusays.com/2024/09/30/66fa05b708101.png)
 
 ### 在安全设置中设置任何人可做任何事
 
-![图形用户界面, 文本, 应用程序  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image011.png)
+![image-20240930100004081](https://bu.dusays.com/2024/09/30/66fa06272843e.png)
 
 点击下方保存配置
-
- 
 
 ## 安装 GitLab
 
@@ -365,7 +359,7 @@ http://172.30.26.174:30880/
       value: "80"
 ```
 
-![文本  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image012.png)
+![image-20240930100106527](https://bu.dusays.com/2024/09/30/66fa066577580.png)
 
 ---(这半角横杠一定要写，用于分割资源类型)
 
@@ -399,11 +393,11 @@ http://172.30.26.174:30888/
 
 登录Gitlab管理员界面（http://master:30888/admin），如图所示： 
 
-![图形用户界面, 应用程序, Teams  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image013.png)
+![image-20240930100115861](https://bu.dusays.com/2024/09/30/66fa066edde94.png)
 
 在左侧导航栏选择“Settings→Network”，设置“Outbound requests”，勾选“Allow requests to the local network from web hooks and services”复选框，如图所示：
 
-![图形用户界面, 文本, 应用程序, 电子邮件  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image014.png)
+![image-20240930100124892](https://bu.dusays.com/2024/09/30/66fa0677caa1c.png)
 
 配置完成 Save changes 
 
@@ -411,21 +405,19 @@ http://172.30.26.174:30888/
 
 单击GitLab用户头像图标，在左侧导航栏选择“Preferences”，如图所示：
 
-![图形用户界面, 文本, 应用程序, 聊天或短信  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image015.png)
-
- 
+![image-20240930100133759](https://bu.dusays.com/2024/09/30/66fa06809dff5.png) 
 
 在左侧导航栏选择“Access Tokens”添加Token，如图所示：
 
 注意，Expiration date 尽量往后选择几天
 
-![图形用户界面, 应用程序  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image016.png)
+![image-20240930100145192](https://bu.dusays.com/2024/09/30/66fa068c21dc6.png)
 
 单击“Create personal access token”按钮生成Token，如图所示：
 
-![图形用户界面, 文本, 应用程序, 聊天或短信  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image017.png)
+![image-20240930100150892](https://bu.dusays.com/2024/09/30/66fa0691b9ce9.png)
 
-![图形用户界面, 应用程序, Teams  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image018.png)
+![image-20240930100156642](https://bu.dusays.com/2024/09/30/66fa06978d351.png)
 
 记录下Token（glpat-earMgQ66g4SdoMNjJr6e），后面配置Jenkins时会用到。
 
@@ -433,15 +425,15 @@ http://172.30.26.174:30888/
 
 登录Jenkins首页，选择“系统管理→系统配置”，配置GitLab信息，取消勾选“Enable authentiviion for ‘/project’ end-point”，输入“Connection name”和“Gitlab host URL”，如图所示：
 
-![图形用户界面, 文本, 电子邮件  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image019.png)
+![image-20240930100203731](https://bu.dusays.com/2024/09/30/66fa069e9543e.png)
 
 添加Credentials，单击“添加”→“Jenkins”按钮添加认证信息，将Gitlab API Token填入，如图所示：
 
-![图形用户界面, 文本, 应用程序, 电子邮件  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image020.png)
+![image-20240930100212507](https://bu.dusays.com/2024/09/30/66fa06a763410.png)
 
 选择新添加的证书，然后单击“Test Connection”按钮，如图所示：
 
-![图形用户界面, 应用程序  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image021.png)
+![image-20240930100217835](https://bu.dusays.com/2024/09/30/66fa06acb3951.png)
 
 返回结果为Success，说明Jenkins可以正常连接GitLab，点击左下角保存。
 
@@ -449,11 +441,13 @@ http://172.30.26.174:30888/
 
 进入 gitlab，点击 Create a project
 
-![图形用户界面, 应用程序  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image022.png)选择添加空项目
+![image-20240930100227418](https://bu.dusays.com/2024/09/30/66fa06b645e91.png)
 
-![图形用户界面, 文本, 应用程序  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image023.png)
+选择添加空项目
 
-![图形用户界面, 文本, 应用程序  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image024.png)
+![image-20240930100232816](https://bu.dusays.com/2024/09/30/66fa06bbaa70a.png)
+
+![image-20240930101122150](https://bu.dusays.com/2024/09/30/66fa08cd422a4.png)
 
 点击Create Project创建项目
 
@@ -482,29 +476,33 @@ git remote add origin http://172.30.26.174:30888/root/vitepress.git
 git push --set-upstream origin master  # 输入账号密码
 ```
 
-![文本  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image025.png)
+![image-20240930101137940](https://bu.dusays.com/2024/09/30/66fa08dcdfbfb.png)
 
 刷新GitLab网页可以看到项目已经上传成功了
 
-![图形用户界面, 应用程序  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image026.png)
+![image-20240930101144723](https://bu.dusays.com/2024/09/30/66fa08e8dc8d7.png)
 
 ## 新建流水线
 
-### ![图形用户界面, 应用程序  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image027.png) ![图形用户界面, 文本, 应用程序, 电子邮件  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image028.png)配置构建触发器
+### ![image-20240930101200139](https://bu.dusays.com/2024/09/30/66fa08f33982e.png) ![image-20240930101219825](https://bu.dusays.com/2024/09/30/66fa0906ecd29.png)配置构建触发器
 
-![图形用户界面, 文本, 应用程序  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image029.png)记录下GitLab webhook URL的地址（http://172.30.26.174:30880/project/vitepress)，后期配置webhook需要使用。
+![image-20240930101302787](https://bu.dusays.com/2024/09/30/66fa0931da2a7.png)记录下GitLab webhook URL的地址（http://172.30.26.174:30880/project/vitepress)，后期配置webhook需要使用。
 
 ### 配置流水线
 
 在定义域中选择“Pipeline script from SCM”，此选项指示Jenkins从源代码管理（SCM）仓库获取流水线。在SCM域中选择“Git”，然后输入“Repository URL”
 
-![图形用户界面, 文本, 应用程序, 电子邮件  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image030.png) 
+![image-20240930101313851](https://bu.dusays.com/2024/09/30/66fa093cc903e.png) 
 
-新建凭据![图形用户界面, 文本, 应用程序, 电子邮件  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image031.png) ![图形用户界面, 文本, 应用程序  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image032.png)
+![image-20240930101324283](/Users/horonlee/Library/Application Support/typora-user-images/image-20240930101324283.png)
+
+新建凭据
+
+![image-20240930101348495](https://bu.dusays.com/2024/09/30/66fa095f5e8d1.png)
 
 最后点击下方保存，自动回到流水线控制台
 
-![形状  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image033.png)
+![image-20240930101354353](https://bu.dusays.com/2024/09/30/66fa09656d5e2.png)
 
 ## 编写流水线
 
@@ -514,7 +512,7 @@ Pipeline有两种创建方法——可以直接在Jenkins的Web UI界面中输�
 
 登录GitLab进入vitepress项目，选择新建文件
 
-![图形用户界面, 应用程序  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image034.png)将流水线脚本输入到Jenkinsfile中，更改kubernetes.yaml文件中所使用的镜像的名字，将其harbor.io改为自己harbor仓库的地址，本文是`172.30.26.174`
+![image-20240930101406512](https://bu.dusays.com/2024/09/30/66fa09717eae1.png)将流水线脚本输入到Jenkinsfile中，更改kubernetes.yaml文件中所使用的镜像的名字，将其harbor.io改为自己harbor仓库的地址，本文是`172.30.26.174`
 
 ```json
 pipeline{
@@ -553,9 +551,7 @@ pipeline{
 
 提交更改即可
 
-![图形用户界面, 文本, 应用程序, 电子邮件  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image035.png)
-
- 
+![image-20240930101420695](https://bu.dusays.com/2024/09/30/66fa097fcd002.png) 
 
 ## 配置WebHook
 
@@ -563,11 +559,11 @@ pipeline{
 
 登录GitLab，进入viteress项目，现在左侧导航栏“Settings→Webhooks”，将前面记录的GitLab webhook URL地址填入URL处，禁用SSL认证
 
-![图形用户界面, 应用程序  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image036.png)
+![image-20240930101425998](https://bu.dusays.com/2024/09/30/66fa098a1bcde.png)
 
-![img](https://qiniuoss.horonlee.com/img/clip_image037.png) ![图形用户界面, 文本, 应用程序, 电子邮件  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image038.png) ![图形用户界面, 应用程序  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image039.png)
+![image-20240930101431483](https://bu.dusays.com/2024/09/30/66fa098a7875b.png) ![image-20240930101442677](https://bu.dusays.com/2024/09/30/66fa09958e7af.png) ![image-20240930101456619](https://bu.dusays.com/2024/09/30/66fa09a38d93a.png)
 
-单击“Test→Push events”按钮进行测试![图形用户界面, 文本, 应用程序, 电子邮件  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image040.png) 
+![image-20240930101503195](https://bu.dusays.com/2024/09/30/66fa09aa3824d.png) 
 
 结果返回HTTP 200则表明Webhook配置成功
 
@@ -575,17 +571,19 @@ pipeline{
 
 登录Jenkins 刷新页面，因为刚才测试了一个提交动作被 webhook 捕捉，所以可以看到vitepress项目已经开始构建
 
-![图形用户界面, 应用程序  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image041.png)
+![image-20240930101512669](https://bu.dusays.com/2024/09/30/66fa09b39c093.png)
 
-在流水线的 ConsoleOutput 中可以查看日志![图形用户界面, 文本, 应用程序  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image042.png)
+在流水线的 ConsoleOutput 中可以查看日志
+
+![image-20240930101529611](https://bu.dusays.com/2024/09/30/66fa09c4a420f.png)
 
 也可以进入Blue Ocean查看构建日志和成果
 
-![图形用户界面, 文本, 应用程序  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image043.png)
+![image-20240930101537100](https://bu.dusays.com/2024/09/30/66fa09cc48939.png)
 
 等待一段时间即可构建完成
 
-![图形用户界面, 网站  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image044.png)
+![image-20240930101542664](https://bu.dusays.com/2024/09/30/66fa09d1d60b7.png)
 
 如果构建失败，需要前往 Harbor 仓库删除上传的镜像以及 worker 节点上 ctr -n k8s.io image ls|grep vitepress 显示的所有镜像，再次运行流水线
 
@@ -593,9 +591,7 @@ pipeline{
 
 进入Harbor，可以看到Jenkins的流水线推送上去的镜像
 
-![电脑萤幕的截图  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image045.png)
-
- 
+![image-20240930101548089](https://bu.dusays.com/2024/09/30/66fa09d72283c.png)
 
 查看是否有测试pod在运行
 
@@ -613,7 +609,7 @@ vitepress  NodePort  10.111.47.80  <none>    5173:30173/TCP  9m19s  app=vitepres
 
 http://172.30.26.174:30173/
 
-![电脑萤幕的截图  描述已自动生成](https://qiniuoss.horonlee.com/img/clip_image046.png)
+![image-20240930101558588](https://bu.dusays.com/2024/09/30/66fa09e1b88a5.png)
 
 可以访问网页说明应用自动测试部署成功，CICD流程到此结束！
 
