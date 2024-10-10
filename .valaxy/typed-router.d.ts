@@ -51,6 +51,7 @@ declare module 'vue-router/auto-routes' {
     '/posts/Online-Expansion-Ubuntu-LVM': RouteRecordInfo<'/posts/Online-Expansion-Ubuntu-LVM', '/posts/Online-Expansion-Ubuntu-LVM', Record<never, never>, Record<never, never>>,
     '/posts/OpenStack-note': RouteRecordInfo<'/posts/OpenStack-note', '/posts/OpenStack-note', Record<never, never>, Record<never, never>>,
     '/posts/PHP-Nginx-website': RouteRecordInfo<'/posts/PHP-Nginx-website', '/posts/PHP-Nginx-website', Record<never, never>, Record<never, never>>,
+    '/posts/PowerShell开发配置指北': RouteRecordInfo<'/posts/PowerShell开发配置指北', '/posts/PowerShell开发配置指北', Record<never, never>, Record<never, never>>,
     '/posts/shell-practice': RouteRecordInfo<'/posts/shell-practice', '/posts/shell-practice', Record<never, never>, Record<never, never>>,
     '/posts/SRS-liveStream': RouteRecordInfo<'/posts/SRS-liveStream', '/posts/SRS-liveStream', Record<never, never>, Record<never, never>>,
     '/posts/Ubuntu-Docker-Compose': RouteRecordInfo<'/posts/Ubuntu-Docker-Compose', '/posts/Ubuntu-Docker-Compose', Record<never, never>, Record<never, never>>,
