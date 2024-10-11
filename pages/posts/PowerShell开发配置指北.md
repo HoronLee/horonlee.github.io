@@ -19,6 +19,39 @@ hide:
 
 这是必须的，windows11之前的“命令行”应用并不好用，色彩支持少、不支持多标签、自定义程度也非常低，所以我们需要使用微软最新推出的终端应用
 
+## 安装PowerShell7
+
+> windows11自带的是PowerShell5，比较老，有些新功能没有，所以最好安装PowerShell7来对未来有更好的功能支持。
+>
+> PS：下文基于PowerShell5编写，与PowerShell7无差别
+
+### 下载PowerShell7安装包
+
+[在 Windows 上安装 PowerShell - PowerShell | Microsoft Learn](https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4#msi)
+
+上方链接指向微软的安装教程，使用其中的GitHub链接即可下载安装包
+
+下载后，双击安装程序文件并按照提示进行操作。
+
+安装程序在 Windows“开始”菜单中创建一个快捷方式。
+
+- 默认情况下，包安装位置为 `$env:ProgramFiles\PowerShell\<version>`
+- 可以通过“开始”菜单或 `$env:ProgramFiles\PowerShell\<version>\pwsh.exe` 启动 PowerShell
+
+![e33ad1e7d5ab7da80b4ba47db8376c95](https://bu.dusays.com/2024/10/11/6708d97cd9e2c.png)
+
+### 配置终端默认使用PowerShell7
+
+如果PowerShell7安装成功，则在终端程序中会自动添加新的图标的PowerShell配置文件
+
+![image-20241011155754946](https://bu.dusays.com/2024/10/11/6708da831aedb.png)
+
+如果没有找到，则可以重启终端程序，再查看是否存在，理论上会自动添加，否则需要手动复制上方`Windows PowerShell`的配置文件更改实际`命令行`参数
+
+接下来就是更改默认启动项了，非常简单~
+
+![image-20241011155953210](https://bu.dusays.com/2024/10/11/6708daf9753d8.png)
+
 ## 安装Scoop
 
 > [Scoop](https://scoop.sh/#/) 是 Windows 下的一款十分强大的包管理器，可以用来下载和管理各种软件包
@@ -28,6 +61,22 @@ hide:
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+```
+
+如果提示
+
+```powershell
+PS C:\Users\HoronLee> Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+Initializing...
+Running the installer as administrator is disabled by default, see https://github.com/ScoopInstaller/Install#for-admin for details.
+Abort.
+```
+
+则可以前往[ScoopInstaller/Install: 📥 Next-generation Scoop (un)installer (github.com)](https://github.com/ScoopInstaller/Install#for-admin)查看原因，此时可以通过执行下方命令来在管理员权限下安装Scoop
+
+```powershell
+irm get.scoop.sh -outfile 'install.ps1'
+.\install.ps1
 ```
 
 ## 安装Oh My Posh
