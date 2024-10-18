@@ -54,7 +54,7 @@ export default defineValaxyConfig<UserThemeConfig>({
     },
   },
   unocss: { safelist },
-  
+
   // or write it in site.config.ts
   siteConfig: {
     // 启用评论
