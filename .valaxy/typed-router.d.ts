@@ -27,7 +27,6 @@ declare module 'vue-router/auto-routes' {
     '/categories/': RouteRecordInfo<'/categories/', '/categories', Record<never, never>, Record<never, never>>,
     '/links/': RouteRecordInfo<'/links/', '/links', Record<never, never>, Record<never, never>>,
     '/page/[page]': RouteRecordInfo<'/page/[page]', '/page/:page', { page: ParamValue<true> }, { page: ParamValue<false> }>,
-    '/posts/': RouteRecordInfo<'/posts/', '/posts', Record<never, never>, Record<never, never>>,
     '/posts/bridge-router-ddns': RouteRecordInfo<'/posts/bridge-router-ddns', '/posts/bridge-router-ddns', Record<never, never>, Record<never, never>>,
     '/posts/CentOS-OpenStack-Queen手记': RouteRecordInfo<'/posts/CentOS-OpenStack-Queen手记', '/posts/CentOS-OpenStack-Queen手记', Record<never, never>, Record<never, never>>,
     '/posts/CentOS7-docker': RouteRecordInfo<'/posts/CentOS7-docker', '/posts/CentOS7-docker', Record<never, never>, Record<never, never>>,
