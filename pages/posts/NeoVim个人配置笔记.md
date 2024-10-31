@@ -124,3 +124,45 @@ elseif vim.fn.has("linux") then
 end
 ```
 
+## Codeium AI插件
+
+比较好用的支持行内补全的AI代码插件，新建`lua/plugins/codeium`文件，写入以下lua代码
+
+其中包含了自定义热键的代码，因为tab默认是缩进会造成冲突，所以我改成了ctrl+g，当然可以改为其他热键，具体可以参考[Exafunction/codeium.nvim: A native neovim extension for Codeium](https://github.com/Exafunction/codeium.nvim)Codeium官方nvim插件仓库的教程
+
+```lua
+return {
+  "Exafunction/codeium.vim",
+  event = "BufEnter",
+  config = function()
+    -- 自定义codeium快捷键，不使用tab接受建议而是用Ctrl+g
+    vim.g.codeium_no_map_tab = 1
+    vim.keymap.set("i", "<C-g>", function()
+      return vim.fn["codeium#Accept"]()
+    end, { expr = true, silent = true })
+  end,
+}
+```
+
+然后重启nvim会自动安装codeium插件，随后使用命令`:Codeium Auth`来登录，会自动弹出浏览器，然后在浏览器复制token后粘贴到nvim的框中，回车进行登陆
+
+## 自定义插件仓库源
+
+在文件`lua/config/lazy.lua`的`require("lazy").setup`方法体中加入以下内容
+
+```lua
+-- 自定义插件仓库加速源
+git = {
+  log = { "-10" }, -- 只显示最新10条commit
+  timeout = 120, -- 当超过2分钟后杀死进程
+  -- 地址模板定义
+  url_format = "git@github.com:%s",
+  -- url_format = "https://www.ghproxy.cn/https://github.com/%s",
+},
+```
+
+`url_format`就是加速地址，可以自己寻找可用源进行替换
+
+---
+
+未完待续，如果有任何疑问可以在评论区提问，我会尽力回答(≧ω≦)
