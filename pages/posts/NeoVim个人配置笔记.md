@@ -163,6 +163,14 @@ git = {
 
 `url_format`就是加速地址，可以自己寻找可用源进行替换
 
+## 常见问题解法
+
+### 报错rust-analyzer not found in PATH, please install it.
+
+直接前往[rust-analyzer用户使用手册](https://rust-analyzer.github.io/manual.html#installation)，根据提示安装rust-analyzer即可，我在wsl中采用本地编译进行安装
+
+
+
 ---
 
 未完待续，如果有任何疑问可以在评论区提问，我会尽力回答(≧ω≦)
