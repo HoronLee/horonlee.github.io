@@ -2,15 +2,15 @@
 layout: post
 title: NeoVim个人配置笔记
 date: 2024-10-18 09:53:35
-tags: 
-    - neovim
-    - lazyvim
-categories: 
-    - 开发
-    - 环境配置
+tags:
+  - neovim
+  - lazyvim
+categories:
+  - 开发
+  - 环境配置
 cover: https://mattermost.com/wp-content/uploads/2022/02/02_Neovim@2x-2048x1072.png
-password: 
-hide: 
+password:
+hide:
 ---
 
 ## LazyVim 配置目录
@@ -19,21 +19,23 @@ hide:
 .
 ├── LICENSE
 ├── README.md
-├── init.lua	#配置入口文件
+├── init.lua #配置入口文件
 ├── lazy-lock.json
 ├── lazyvim.json
 ├── lua
-│   ├── config	#默认生成的配置目录
+│   ├── config #默认生成的配置目录
 │   │   ├── autocmds.lua
 │   │   ├── keymaps.lua
 │   │   ├── lazy.lua
-│   │   └── options.lua	#自定义配置可以写在这里
+│   │   └── options.lua #自定义配置可以写在这里
 │   └── plugins
-│       ├── colorscheme.lua	#自己添加的主题插件配置
+│       ├── colorscheme.lua #自己添加的主题插件配置
 │       └── example.lua
 └── stylua.toml
 
 ```
+
+<!-- more -->
 
 ## 主题配置
 
@@ -105,7 +107,7 @@ return {
 
 ```
 
-其中`color_overrides`的配色可以自由配置代码编辑页，侧栏和分割线的背景色和颜色，其他配置请参考`catppuccin`主题的配置https://github.com/catppuccin/nvim
+其中`color_overrides`的配色可以自由配置代码编辑页，侧栏和分割线的背景色和颜色，其他配置请参考`catppuccin`主题的配置<https://github.com/catppuccin/nvim>
 
 ## 终端自动配置
 
@@ -165,11 +167,9 @@ git = {
 
 ## 常见问题解法
 
-### 报错rust-analyzer not found in PATH, please install it.
+### 报错rust-analyzer not found in PATH, please install it
 
 直接前往[rust-analyzer用户使用手册](https://rust-analyzer.github.io/manual.html#installation)，根据提示安装rust-analyzer即可，我在wsl中采用本地编译进行安装
-
-
 
 ---
 

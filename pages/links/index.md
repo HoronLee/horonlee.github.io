@@ -22,28 +22,28 @@ links:
     name: JiuXia
     blog: JiuXiaBlog
     desc: 九夏小站
-    email: 
+    email:
     color: "#0000FF"
   - url: https://blog.phbeats.cn/
     avatar: https://bu.dusays.com/2023/01/12/63c020b7e26af.jpg
     name: Phbeat
     blog: Phbeats-Blog
     desc: 记录学习历程和生活感悟
-    email: 
+    email:
     color: "#8470FF"
   - url: https://saop.cc
     avatar: https://picbed.saop.cc/Asuna/Asuna1x1.png
     name: 阿定
     blog: Ading阿定のBlog
     desc: 我们终会相遇相知，在那悠远的苍穹
-    email: 
+    email:
     color: "#8EE5EE"
   - url: https://blog.rainiar.top
     avatar: https://gravatar.loli.net/avatar/1beae7b1b3ca799888552bfcf9930a4e
     name: 寒夏
     blog: 寒夏摸鱼站
     desc: 稀奇古怪技术集散地
-    email: 
+    email:
     color: "#00BFFF"
   - url: https://baiwumm.com/
     avatar: https://baiwumm.com/avatar.jpg
@@ -65,6 +65,13 @@ links:
     blog: 煮雪话河山`Blog
     desc: 如月之恒，如日之升。
     color: "#7FFFAA"
+  - url: https://www.qcqx.cn
+    avatar: https://www.qcqx.cn/head.webp
+    name: 轻笑Chuckle
+    blog: 轻笑Chuckle
+    desc: 漫天倾尘,风中轻笑
+    color: "#3cf6d0"
+
 # 也可以是一个 JSON 链接
 # links: https://friends.yunyoujun.cn/links.json
 random: true
@@ -84,7 +91,8 @@ random: true
 
 # 如何申请？
 
-直接在评论区回复或者发送邮件到horonlee@firefox.com即可，按照以下标准：
+直接在评论区回复或者发送邮件到<horonlee@firefox.com>即可，按照以下标准：
+
 ```yaml
 - url: https://你的网站地址
   avatar: https://你的网站头像
