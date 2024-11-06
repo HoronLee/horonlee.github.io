@@ -71,6 +71,12 @@ links:
     blog: 轻笑Chuckle
     desc: 漫天倾尘,风中轻笑
     color: "#3cf6d0"
+  - url: https://misakishiki.site/
+    avatar: https://misakishiki.site/aquced.png
+    name: 栗木小站
+    blog: 栗木小站
+    desc: 空气力学先驱
+    color: "#3cf6d1"
 
 # 也可以是一个 JSON 链接
 # links: https://friends.yunyoujun.cn/links.json
