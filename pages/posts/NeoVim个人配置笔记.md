@@ -126,7 +126,7 @@ elseif vim.fn.has("linux") then
 end
 ```
 
-## Codeium AI插件
+## Codeium AI插件(已换用LazyExtra的插件)
 
 比较好用的支持行内补全的AI代码插件，新建`lua/plugins/codeium`文件，写入以下lua代码
 
@@ -158,12 +158,83 @@ git = {
   log = { "-10" }, -- 只显示最新10条commit
   timeout = 120, -- 当超过2分钟后杀死进程
   -- 地址模板定义
-  url_format = "git@github.com:%s",
-  -- url_format = "https://www.ghproxy.cn/https://github.com/%s",
+  -- url_format = "git@github.com:%s",
+  url_format = "https://www.ghproxy.cn/https://github.com/%s",
 },
 ```
 
 `url_format`就是加速地址，可以自己寻找可用源进行替换
+
+## 行内提示优化
+
+lazyvim默认的行内提示（Linter）会显示每一行的错误和警告，并且你会发现无论如何调整窗口，这个提示总是不能自动换行，并且烦人的是，你想忽略掉他却不知道该如何关闭提示。
+
+根据群友的意见，我采用了 `tiny-inline-diagnostic`这个Linter插件[rachartier/tiny-inline-diagnostic.nvim：一个 Neovim 插件，可显示更漂亮的诊断信息。在光标所在的位置显示诊断消息，并带有图标和颜色。](https://github.com/rachartier/tiny-inline-diagnostic.nvim)它可以做到提示自动换行，光标聚焦行内才会显示提示。这刚好满足需求。并且提示字也会更好看。
+
+新建文件`lua/plugins/tiDiagonstic.lua`，写入以下lua代码
+
+```lua
+-- 行内提示优化插件，只有当聚焦到当前行才会显示全部提示且支持换行显示
+return {
+  {
+    "rachartier/tiny-inline-diagnostic.nvim",
+    event = "VeryLazy", -- Or `LspAttach`
+    priority = 1000, -- needs to be loaded in first
+    config = function()
+      require("tiny-inline-diagnostic").setup()
+    end,
+  },
+}
+
+```
+
+你需要设置 ，以便不显示缓冲区中的所有诊断信息，在`lua/config/autocmds.lua`中添加以下代码
+
+```lua
+-- 确保在LSP 配置完成之前关闭virtual_text
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function()
+    vim.diagnostic.config({
+      virtual_text = false, -- Disable virtual text
+    })
+  end,
+})
+```
+
+重启NeoVim
+
+## ArchLinux WSL剪切板互通
+
+如果你使用WSL并且很不巧（笑）是ArchLinux，那么单单安装xclip或许没办法实现和windows的剪切板互通，那么现在就需要使用wsl的秘籍：互通命令 来做到共享剪切板，这里使用的软件是`win32yank`，在windows中通过`scoop install win32yank`即可安装此软件（关于scoop用法可以参照[PowerShell开发配置指北 - 皓然小站](https://blog.horonlee.com/posts/PowerShell开发配置指北#安装scoop)）
+
+然后在`lua/config/autocmds.lua`中添加以下代码
+
+```lua
+-- 解决ArchLinux WSL环境下无法和windows互通剪切板的问题
+if vim.fn.executable("win32yank.exe") == 1 then
+  vim.opt.clipboard:append({ "unnamedplus" })
+  vim.g.clipboard = {
+    name = "win32yank",
+    copy = {
+      ["+"] = "win32yank.exe -i --crlf",
+      ["*"] = "win32yank.exe -i --crlf",
+    },
+    paste = {
+      ["+"] = "win32yank.exe -o --lf",
+      ["*"] = "win32yank.exe -o --lf",
+    },
+    cache_enabled = 0,
+  }
+end
+```
+
+重启NeoVim，你就会发现用`yy`等指令可以复制vim的内容到windows剪切板了！（反之也可以）
+
+---
+
+未完待续，如果有任何疑问可以在评论区提问，我会尽力回答(≧ω≦)
+
+
 
 ## 常见问题解法
 
@@ -173,4 +244,3 @@ git = {
 
 ---
 
-未完待续，如果有任何疑问可以在评论区提问，我会尽力回答(≧ω≦)
