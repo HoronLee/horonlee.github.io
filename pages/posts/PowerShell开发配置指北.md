@@ -89,20 +89,37 @@ irm get.scoop.sh -outfile 'install.ps1'
 
 ⚠️：在安装之前，确保关闭了火绒、360等杀毒软件，否则OhMyPosh会被报毒，我的windows defender没有报毒，似乎没事（笑
 
-先使用一下命令来安装
+打开 PowerShell 提示符并运行以下命令：(其实也可以按照官网给的方式来)
 
 ```powershell
-scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
+winget install JanDeDobbeleer.OhMyPosh -s winget
 ```
-
-当终端末行出现绿色的“oh-my-posh (x.xx.x) was installed successfully!”的时候，这意味着OhMyPosh已经安装完成
 
 这将安装以下几项内容：
 
 - `oh-my-posh.exe`- Windows 可执行文件
 - `themes`- 最新的 Oh My Posh [主题](https://ohmyposh.dev/docs/themes)
 
+当终端末行出现
+
+```powershell
+Found Oh My Posh [JanDeDobbeleer.OhMyPosh] Version 24.15.1
+This application is licensed to you by its owner.
+Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+Downloading https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/v24.15.1/install-x64.msi
+  ██████████████████████████████  5.65 MB / 5.65 MB
+Successfully verified installer hash
+Starting package install...
+Successfully installed
+```
+
 需要重新加载环境变量，建议重新启动你的终端（可以新开一个powershell标签页）
+
+或者添加环境变量
+
+```powershell
+$env:Path += ";C:\Users\user\AppData\Local\Programs\oh-my-posh\bin"
+```
 
 Oh My Posh还需要进行一些细化的配置才能到达最佳使用状态
 
