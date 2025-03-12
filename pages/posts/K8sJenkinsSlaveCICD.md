@@ -121,7 +121,7 @@ skip_verify = true
 
 执行脚本来安装harbor`./install.sh`
 
-![image-20240930101917466](https://bu.dusays.com/2024/09/30/66fa043a71352.png)
+![image-20240930101917466](https://minio-api.horonlee.com/blogpic/img/20250312115525906.png)
 
 出现如图回显说明Harbor安装完成
 
@@ -211,7 +211,7 @@ services:
 
 然后点击 `立即安装`，稍等片刻即可进入登录页面，输入账号密码，进入主页
 
-![image-20240930101931037](https://bu.dusays.com/2024/09/30/66fa0abb388b1.png)
+![image-20240930101931037](https://minio-api.horonlee.com/blogpic/img/20250312115530466.png)
 
 ### 使用 Helm 安装Gitea
 
@@ -566,15 +566,15 @@ http://<master-ip>:32000
 
 创建用户，然后选择保存并完成
 
-![image-20240930101945192](https://bu.dusays.com/2024/09/30/66fa0ac9629eb.png)
+![image-20240930101945192](https://minio-api.horonlee.com/blogpic/img/20250312115536753.png)
 
-![image-20240930101950980](https://bu.dusays.com/2024/09/30/66fa0aca12c66.png)
+![image-20240930101950980](https://minio-api.horonlee.com/blogpic/img/20250312115540904.png)
 
-![image-20240930101956943](https://bu.dusays.com/2024/09/30/66fa0ad015be2.png)
+![image-20240930101956943](https://minio-api.horonlee.com/blogpic/img/20250312115543630.png)
 
 设置全局安全设置为任何用户可以做任何事
 
-![image-20240930102002606](https://bu.dusays.com/2024/09/30/66fa0ad58c6e4.png)
+![image-20240930102002606](https://minio-api.horonlee.com/blogpic/img/20250312115547069.png)
 
 ### 安装插件
 
@@ -616,9 +616,9 @@ LS0tLS1CRUdJTiBDRVJUSUZJ...(省略)
 
 - Jenkins 通道`172.30.26.172:32500`不能加任何协议，因为是 tcp 传输协议，值就是 jenkins service 的另一个暴露的端口
 
-![image-20240930102035817](https://bu.dusays.com/2024/09/30/66fa0af6c0442.png)
+![image-20240930102035817](https://minio-api.horonlee.com/blogpic/img/20250312115553336.png)
 
-![image-20240930102040791](https://bu.dusays.com/2024/09/30/66fa0afbae7e1.png)
+![image-20240930102040791](https://minio-api.horonlee.com/blogpic/img/20250312115555153.png)
 
 最后点击下方 Save 保存
 
@@ -667,7 +667,7 @@ Pod Template 就是 slave 节点将会启动的Pod，我们可以设置多个Pod
 
 - 标签列表 `jenkins-slave-k8s`
 
-![image-20240930102114012](https://bu.dusays.com/2024/09/30/66fa0b1d23bf1.png)
+![image-20240930102114012](https://minio-api.horonlee.com/blogpic/img/20250312115620256.png)
 
 卷设置，点击`添加卷`，选择 `Host Path Volume`，接下来需要填入多个从主机映射到 Pod 中的文件
 
@@ -680,7 +680,7 @@ Pod Template 就是 slave 节点将会启动的Pod，我们可以设置多个Pod
 | ctr 命令          | /usr/bin/ctr                    | /usr/bin/ctr                    |
 | containerd 套接字 | /run/containerd/containerd.sock | /run/containerd/containerd.sock |
 
-![image-20240930102147934](https://bu.dusays.com/2024/09/30/66fa0b3ee7f28.png)
+![image-20240930102147934](https://minio-api.horonlee.com/blogpic/img/20250312115622496.png)
 
 然后翻动页面到下方，找到`Run As User ID`和`Run As Group ID`，填入`0`，目的是让 Pod 中的容器可以正常执行 docker 和 ctr 命令。（0 是宿主机 root 用户的组 ID）
 
@@ -776,7 +776,7 @@ pipeline {
 }
 ```
 
-![](https://bu.dusays.com/2024/09/30/66fa0b4c590cd.png)
+![](https://minio-api.horonlee.com/blogpic/img/20250312115626001.png)
 
 点击左侧的立即构建，流水线就开始运行了
 
@@ -786,11 +786,11 @@ pipeline {
 
 在构建过程中，我们可以在宿主机上通过`kubectl -n devops get po`指令查看临时生成的 jenkins-slave pod，它正在运行 jenkins-master 下发的流水线
 
-![image-20240930102217151](https://bu.dusays.com/2024/09/30/66fa0b61592e3.png)
+![image-20240930102217151](https://minio-api.horonlee.com/blogpic/img/20250312115628964.png)
 
 构建完成后，访问 http://172.30.26.172:30080就可以看到博客正常被测试发布了，临时的 jenkins-slave pod 也被自动删除了
 
-![image-20240930102239242](https://bu.dusays.com/2024/09/30/66fa0b7247fdc.png)
+![image-20240930102239242](https://minio-api.horonlee.com/blogpic/img/20250312115630942.png)
 
 🎉看到此页面就代表我们已经通过 agent 节点的功能完成了 CICD！
 
@@ -832,7 +832,7 @@ Docker 镜像`docker.io/jenkins/inbound-agent:latest`
 
 点击最下方 Create 完成 pod template 的创建
 
-![image-20240930102129737](https://bu.dusays.com/2024/09/30/66fa0b2cc2a61.png)
+![image-20240930102129737](https://minio-api.horonlee.com/blogpic/img/20250312115633612.png)
 
 ### 测试jenkins-slave
 

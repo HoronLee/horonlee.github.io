@@ -49,7 +49,7 @@ export default defineValaxyConfig<UserThemeConfig>({
     },
     bg_image: {
       enable: true,
-      url: "https://bu.dusays.com/2024/03/24/65ffc6f07d124.webp",
+      url: "https://minio-api.horonlee.com/blogpic/img/20250312120726614.png",
       dark: "https://bu.dusays.com/2023/01/30/63d7d94e432cf.png",
     },
   },

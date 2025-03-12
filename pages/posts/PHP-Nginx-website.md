@@ -127,4 +127,4 @@ listen = /run/php/php8.1-fpm.sock
 3. 写入测试内容`<?php phpinfo();?>`
 4. 保存退出
 5. 访问`http://$IP/test.php`，可以显示PHP系统信息即表示PHP站点搭建完成！
-![PHPInfo](https://bu.dusays.com/2023/04/21/64422e76b49d1.png)
+![PHPInfo](https://minio-api.horonlee.com/blogpic/img/20250312120233597.png)

@@ -15,7 +15,7 @@ hide:
 
 ## 确保安装了“终端”应用
 
-![image-20241010151031530](https://bu.dusays.com/2024/10/10/67077de8bc9fa.png)
+![image-20241010151031530](https://minio-api.horonlee.com/blogpic/img/20250312120242562.png)
 
 这是必须的，windows11之前的“命令行”应用并不好用，色彩支持少、不支持多标签、自定义程度也非常低，所以我们需要使用微软最新推出的终端应用
 
@@ -38,19 +38,19 @@ hide:
 - 默认情况下，包安装位置为 `$env:ProgramFiles\PowerShell\<version>`
 - 可以通过“开始”菜单或 `$env:ProgramFiles\PowerShell\<version>\pwsh.exe` 启动 PowerShell
 
-![e33ad1e7d5ab7da80b4ba47db8376c95](https://bu.dusays.com/2024/10/11/6708d97cd9e2c.png)
+![e33ad1e7d5ab7da80b4ba47db8376c95](https://minio-api.horonlee.com/blogpic/img/20250312120245502.png)
 
 ### 配置终端默认使用PowerShell7
 
 如果PowerShell7安装成功，则在终端程序中会自动添加新的图标的PowerShell配置文件
 
-![image-20241011155754946](https://bu.dusays.com/2024/10/11/6708da831aedb.png)
+![image-20241011155754946](https://minio-api.horonlee.com/blogpic/img/20250312120247707.png)
 
 如果没有找到，则可以重启终端程序，再查看是否存在，理论上会自动添加，否则需要手动复制上方`Windows PowerShell`的配置文件更改实际`命令行`参数
 
 接下来就是更改默认启动项了，非常简单~
 
-![image-20241011155953210](https://bu.dusays.com/2024/10/11/6708daf9753d8.png)
+![image-20241011155953210](https://minio-api.horonlee.com/blogpic/img/20250312120249619.png)
 
 ## 安装Scoop
 
@@ -83,7 +83,7 @@ irm get.scoop.sh -outfile 'install.ps1'
 
 > [官网 | Oh My Posh](https://ohmyposh.dev/)是一个shell提示主题引擎，可以让你的终端使用体验和外观都得到很好的改善
 
-![image-20241010151715719](https://bu.dusays.com/2024/10/10/67077f7ca41cb.png)
+![image-20241010151715719](https://minio-api.horonlee.com/blogpic/img/20250312120253769.png)
 
 官方文档中有很多安装方式，我们这里选择scoop安装，并且后续的所有软件几乎都是通过scoop来安装的，这样做到了软件包管理的统一性。
 
@@ -136,11 +136,11 @@ scoop bucket add nerd-fonts
 
 #### 设置终端默认字体
 
-![image-20241010153505860](https://bu.dusays.com/2024/10/10/670783aaf322b.png)
+![image-20241010153505860](https://minio-api.horonlee.com/blogpic/img/20250312120300507.png)
 
 从下拉框中进入默认值设置的外观选项
 
-![image-20241010153549937](https://bu.dusays.com/2024/10/10/670783d6d7c3a.png)
+![image-20241010153549937](https://minio-api.horonlee.com/blogpic/img/20250312120303294.png)
 
 将字体设定成自己下载安装的Nerd类型字体，在下方配置中，还有其他关于透明度等等的设置，可以自己按照喜好调试，记得点击右下角保存生效。
 
@@ -229,7 +229,7 @@ Import-Module posh-git
 Get-PoshThemes
 ```
 
-![image-20241010154834079](https://bu.dusays.com/2024/10/10/670786d36e5b6.png)
+![image-20241010154834079](https://minio-api.horonlee.com/blogpic/img/20250312120308455.png)
 
 其中终端样式上方就有主题文件目录，可以复制下来，注意不要复制到前后多余的字符，我们只需要`C:\Users\HoronLee\AppData\Local\Programs\oh-my-posh\themes\1_shell.omp.json`，`json`不要复制成`jsone`！
 
@@ -254,11 +254,11 @@ oh-my-posh init pwsh --config C:\Users\HoronLee\AppData\Local\Programs\oh-my-pos
 
 首先打开**设置**，搜索 `Font Family`，找到`Terminal › Integrated: Font Family`这个配置项目，现在下方的配置框中是空白的，需要填上Nerd字体的全民，并且加上单引号
 
-![image-20241010155558887](https://bu.dusays.com/2024/10/10/6707888fcb25f.png)
+![image-20241010155558887](https://minio-api.horonlee.com/blogpic/img/20250312120310684.png)
 
 最后重新打开终端，或是执行 `powershell`，即可查看美化界面。
 
-![image-20241010155624591](https://bu.dusays.com/2024/10/10/670788a9a3718.png)
+![image-20241010155624591](https://minio-api.horonlee.com/blogpic/img/20250312120312761.png)
 
 ## 安装NeoVim
 
@@ -311,7 +311,7 @@ scoop install neovim
 
 这是安装完成的状态，你可以通过`Shift+U`等组合切换选项卡
 
-![image-20241010160340343](https://bu.dusays.com/2024/10/10/67078a5d7bc4b.png)
+![image-20241010160340343](https://minio-api.horonlee.com/blogpic/img/20250312120316024.png)
 
 如果出现了红色报错，内容含有make、gcc等词汇，说明缺少了一下依赖，你需要手动安装，这很简单，还需使用伟大的scoop即可完成（我碰到的就是gcc不存在，所以我就自己安装完成了）
 
