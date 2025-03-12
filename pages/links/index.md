@@ -77,6 +77,12 @@ links:
     blog: 栗木小站
     desc: 空气力学先驱
     color: "#3cf6d1"
+  - url: https://cuiyouxin.cn
+    avatar: https://cuiyouxin.cn/upload/logocuiyouxin.png
+    name: 逐月星屿
+    blog: 逐月星屿
+    desc: 鑫的分享小站
+    color: "#3cf5d1"
 
 # 也可以是一个 JSON 链接
 # links: https://friends.yunyoujun.cn/links.json
