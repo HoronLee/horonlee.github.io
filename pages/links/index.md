@@ -83,6 +83,12 @@ links:
     blog: 逐月星屿
     desc: 鑫的分享小站
     color: "#3cf5d1"
+  - url: https://masle.top/
+    avatar: https://testingcf.jsdelivr.net/gh/masle1/masle.github.io@main/pages/img/Masle.1.jpg
+    name: Masle老哲
+    blog: 老哲的小客栈
+    desc: 一起向未来奔跑和冒险吧！
+    color: "#3c45d1"
 
 # 也可以是一个 JSON 链接
 # links: https://friends.yunyoujun.cn/links.json
