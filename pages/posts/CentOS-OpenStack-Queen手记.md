@@ -8,7 +8,7 @@ tags:
     - Linux
     - OpenStack
 categories: 
-    - 服务器运维
+    
     - 云计算
     - OpenStack
 keywords:

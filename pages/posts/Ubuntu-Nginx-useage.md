@@ -8,7 +8,7 @@ tags:
     - Linux
     - Nginx
 categories:
-    - 服务器运维
+    
     - Nginx
 keywords:
 description:

@@ -6,7 +6,7 @@ updated:
 tags: 
     - Linux
 categories: 
-    - 服务器运维
+    - Linux
 keywords:
 description:
 top_img:

@@ -5,9 +5,10 @@ date: 2023-10-09 11:35:31
 updated:
 tags:
     - Linux
-    - 运维
+    - Shell编程
 categories:
-    - 服务器运维
+    - Linux
+    - Shell
 excerpt: 我觉得我写这个也太无聊了
 ---
 

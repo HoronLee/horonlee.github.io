@@ -9,7 +9,7 @@ tags:
     - Cloudreve
     - COS
 categories:
-    - 服务器运维
+    
     - 对象存储
 keywords:
 description:

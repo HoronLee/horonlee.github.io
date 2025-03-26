@@ -9,7 +9,7 @@ tags:
     - CICD
     - Jenkins
 categories:
-    - 服务器运维
+    
     - 云计算
     - k8s
     - Jenkins

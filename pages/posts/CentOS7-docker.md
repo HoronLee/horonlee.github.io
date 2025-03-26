@@ -7,7 +7,7 @@ tags:
     - CentOS
     - Linux
 categories: 
-    - 服务器运维
+    
     - Docker
 keywords:
 description: CentOS7安装配置docker以及更改配置文件

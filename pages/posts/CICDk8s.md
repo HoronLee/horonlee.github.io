@@ -7,7 +7,7 @@ tags:
     - Linux
     - Kubernetes
 categories: 
-    - 服务器运维
+    
     - 云计算
     - Kubernetes
     - CICD

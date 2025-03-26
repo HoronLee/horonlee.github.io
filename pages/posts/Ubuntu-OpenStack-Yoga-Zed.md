@@ -8,7 +8,7 @@ tags:
     - Linux
     - OpenStack
 categories:
-    - 服务器运维
+    
     - 集群
     - OpenStack-Yoga(Zed)
 keywords:

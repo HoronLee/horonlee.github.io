@@ -8,7 +8,7 @@ tags:
     - 云计算
     - KubeVirt
 categories:
-    - 服务器运维
+    
     - 云计算
     - 虚拟化
 cover: https://tse3-mm.cn.bing.net/th/id/OIP-C.B4Rc1aupXxDrxKPfYpOsMQHaDP?rs=1&pid=ImgDetMain

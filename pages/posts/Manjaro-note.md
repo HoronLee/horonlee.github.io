@@ -8,7 +8,6 @@ tags:
     - Linux
 categories: 
     - Linux
-    - Manjaro
 keywords:
 description:
 top_img:

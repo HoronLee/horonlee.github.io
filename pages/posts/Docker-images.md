@@ -6,7 +6,7 @@ updated:
 tags: 
     - Linux
 categories: 
-    - 服务器运维
+    
     - Docker
 keywords:
 description: 使用Dockerfile来制作docker镜像
