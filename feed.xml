@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>皓然小站</title>
+        <link>https://blog.horonlee.com/</link>
+        <description>分享生活和技术的点滴</description>
+        <lastBuildDate>Thu, 03 Apr 2025 14:45:22 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <image>
+            <title>皓然小站</title>
+            <url>https://bu.dusays.com/2023/02/02/63db3598928c2.jpg</url>
+            <link>https://blog.horonlee.com/</link>
+        </image>
+        <copyright>CC BY-NC-SA 4.0 2025 © 皓然</copyright>
+        <atom:link href="https://blog.horonlee.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[脚本练习1]]></title>
+            <link>https://blog.horonlee.com/posts/shell-practice</link>
+            <guid>https://blog.horonlee.com/posts/shell-practice</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<blockquote>
+<p>为了练习shell脚本编写能力，我以比赛文档中部署java商城的流程来编写一键脚本，目前写了一半</p>
+</blockquote>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/shell-practice" target="_blank">https://blog.horonlee.com/posts/shell-practice</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[ubuntu22.04-k8s-deploy]]></title>
+            <link>https://blog.horonlee.com/posts/ubuntu22.04-k8s-deploy</link>
+            <guid>https://blog.horonlee.com/posts/ubuntu22.04-k8s-deploy</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>Ubuntu22.04部署K8S</h1>
+<ul>
+<li>Kubernetes 版本：1.29.5</li>
+<li>Linux 版本：Linux master 5.15.0-107-generic #117-Ubuntu SM</li>
+</ul>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/ubuntu22.04-k8s-deploy" target="_blank">https://blog.horonlee.com/posts/ubuntu22.04-k8s-deploy</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[OpenStack运维笔记]]></title>
+            <link>https://blog.horonlee.com/posts/OpenStack-note</link>
+            <guid>https://blog.horonlee.com/posts/OpenStack-note</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>环境准备</h1>
+<h2>hostname配置（controller+compute）</h2>
+<ol>
+<li><code>hostnamectl set-hostname $hostname</code> 、<code>bash</code></li>
+<li>`vi /etc</li>
+</ol>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/OpenStack-note" target="_blank">https://blog.horonlee.com/posts/OpenStack-note</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[使用PHP+Nginx搭建网页]]></title>
+            <link>https://blog.horonlee.com/posts/PHP-Nginx-website</link>
+            <guid>https://blog.horonlee.com/posts/PHP-Nginx-website</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<blockquote>
+<p>本教程基于<a href="https://blog.horon.top/2023/04/20/ubuntu%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEnginx%E5%8F%8A%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/">这篇Nginx文章</a>，如果不解之处可前往查阅</p>
+</blockquote>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/PHP-Nginx-website" target="_blank">https://blog.horonlee.com/posts/PHP-Nginx-website</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[PowerShell开发配置指北]]></title>
+            <link>https://blog.horonlee.com/posts/PowerShell开发配置指北</link>
+            <guid>https://blog.horonlee.com/posts/PowerShell开发配置指北</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<h2>确保安装了“终端”应用</h2>
+<p>![image-20241010151031530](<a href="https://minio-api.horonlee.com/blogpic/img/2025031212024">https://minio-api.horonlee.com/blogpic/img/2025031212024</a></p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/PowerShell开发配置指北" target="_blank">https://blog.horonlee.com/posts/PowerShell开发配置指北</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[通过SRS实现在线直播]]></title>
+            <link>https://blog.horonlee.com/posts/SRS-liveStream</link>
+            <guid>https://blog.horonlee.com/posts/SRS-liveStream</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>Dcoker Compose封装SRS-docker</h1>
+<h2>1.Docker指令→制作Docker-compose</h2>
+<h3>什么是[docker-compose？](<a href="https://www.run">https://www.run</a></h3>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/SRS-liveStream" target="_blank">https://blog.horonlee.com/posts/SRS-liveStream</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[Ubuntu安装配置Docker&Compose]]></title>
+            <link>https://blog.horonlee.com/posts/Ubuntu-Docker-Compose</link>
+            <guid>https://blog.horonlee.com/posts/Ubuntu-Docker-Compose</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <description><![CDATA[Ubuntu关于docker&compose的教程]]></description>
+            <content:encoded><![CDATA[<h1>更新软件包索引</h1>
+<p>添加一个新的 HTTPS 软件源：</p>
+<pre><code class="language-bash">sudo apt update
+sudo apt install apt-transport-https ca-certific</code></pre>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Ubuntu-Docker-Compose" target="_blank">https://blog.horonlee.com/posts/Ubuntu-Docker-Compose</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[Ubuntu安装配置Nginx及基础用法]]></title>
+            <link>https://blog.horonlee.com/posts/Ubuntu-Nginx-useage</link>
+            <guid>https://blog.horonlee.com/posts/Ubuntu-Nginx-useage</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>安装Nginx</h1>
+<p>直接apt安装即可<code>sudo apt install nginx</code></p>
+<h2>查看Nginx服务状态</h2>
+<pre><code class="language-bash">sudo systemctl enable nginx    #</code></pre>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Ubuntu-Nginx-useage" target="_blank">https://blog.horonlee.com/posts/Ubuntu-Nginx-useage</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[Ubuntu搭建OpenStack-Yoga(Zed)]]></title>
+            <link>https://blog.horonlee.com/posts/Ubuntu-OpenStack-Yoga-Zed</link>
+            <guid>https://blog.horonlee.com/posts/Ubuntu-OpenStack-Yoga-Zed</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>Ubuntu搭建OpenStack-Zed</h1>
+<p>注意：本篇只作为个人笔记，记录搭建过程的一些坑和问题，仅供参考！<br>
+所有服务的密码都是123456。</p>
+<h1>网络配置</h1>
+<ol>
+<li>Nat网卡用于下载文件：192.</li>
+</ol>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Ubuntu-OpenStack-Yoga-Zed" target="_blank">https://blog.horonlee.com/posts/Ubuntu-OpenStack-Yoga-Zed</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[XiaoMi Book 12.4二合一上手体验]]></title>
+            <link>https://blog.horonlee.com/posts/XiaoMi-Book-12-4</link>
+            <guid>https://blog.horonlee.com/posts/XiaoMi-Book-12-4</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>XiaoMiBook1.24二合一</h1>
+<blockquote>
+<p>最近入手了小米新出的Arm二合一笔记本平板（-2999￥），用了一段时间感觉应该写一下使用感受</p>
+</blockquote>
+<h2>外观&amp;手感</h2>
+<p>外观方面个人觉得无可挑剔，正面的黑边宽</p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/XiaoMi-Book-12-4" target="_blank">https://blog.horonlee.com/posts/XiaoMi-Book-12-4</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[家庭宽带桥接并为路由器配置DDNS]]></title>
+            <link>https://blog.horonlee.com/posts/bridge-router-ddns</link>
+            <guid>https://blog.horonlee.com/posts/bridge-router-ddns</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<blockquote>
+<p>事情起因：寒假一人家在空虚寂寞无聊，于是乎想实现一下之前一直想做的NAS，故开始上网查询、Q群询问大佬，最终完成了一部分目标（汗）。</p>
+</blockquote>
+<p>首先确认自己是否拥有公网IP，电信是比较容易要到的，联通和</p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/bridge-router-ddns" target="_blank">https://blog.horonlee.com/posts/bridge-router-ddns</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[初试Kubernetes笔记]]></title>
+            <link>https://blog.horonlee.com/posts/Kubernetes-note</link>
+            <guid>https://blog.horonlee.com/posts/Kubernetes-note</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>关于k8s镜像的下载</h1>
+<blockquote>
+<p>说实话我真的吐了，没有科学上网真的寸步难行，没办法直接拉取k8s.gcr.io的镜像，所以只能先用阿里云的<br>
+但是后续的安装没办法直接使用阿里云的镜像，所以还得改tag</p>
+</blockquote>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Kubernetes-note" target="_blank">https://blog.horonlee.com/posts/Kubernetes-note</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[Kubernetes脚本部署]]></title>
+            <link>https://blog.horonlee.com/posts/Kubernetes-sh</link>
+            <guid>https://blog.horonlee.com/posts/Kubernetes-sh</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>容器云平台部署</h1>
+<h2>基础环境准备</h2>
+<ol>
+<li>将提供的安装包 chinaskills_cloud_paas_v2.0.2.iso 上传至 master 节点/root 目录,并解到/opt 目录:<br>
+`</li>
+</ol>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Kubernetes-sh" target="_blank">https://blog.horonlee.com/posts/Kubernetes-sh</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[使用 Jenkins&GitLab 构建 CICD]]></title>
+            <link>https://blog.horonlee.com/posts/KubernetesJenkinCICD</link>
+            <guid>https://blog.horonlee.com/posts/KubernetesJenkinCICD</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>Kubernetes使用Jenkins构建CICD</h1>
+<h2>引子</h2>
+<p>这篇文章是我在学校帮老师写的，旨在于帮助同学更好的学习 kubernetes、使用 Jenkins 软件和理解 CICD 流程，</p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/KubernetesJenkinCICD" target="_blank">https://blog.horonlee.com/posts/KubernetesJenkinCICD</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[Linux在线扩容磁盘]]></title>
+            <link>https://blog.horonlee.com/posts/Linux-volume</link>
+            <guid>https://blog.horonlee.com/posts/Linux-volume</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<p>CentOS7：<br>
+进入SSH并运行如下命令</p>
+<pre><code class="language-bash">yum install cloud-utils-growpart gdisk xfsprogs e2fsprogs
+</code></pre>
+<p>使用<code>fdisk -l</code>命令根据大小及其他信息查看要扩容的云盘，本例子中要扩容的分区为/dev/sda1</p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Linux-volume" target="_blank">https://blog.horonlee.com/posts/Linux-volume</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[Manjaro简易使用笔记]]></title>
+            <link>https://blog.horonlee.com/posts/Manjaro-note</link>
+            <guid>https://blog.horonlee.com/posts/Manjaro-note</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<blockquote>
+<p>安装过程很简单，很人性化，就不多说了</p>
+</blockquote>
+<h1>换软件源</h1>
+<blockquote>
+<p>因为在大陆，所以换一个快速的软件园非常重要</p>
+</blockquote>
+<ol>
+<li>打开firefox浏览器</li>
+<li>搜索ustc mirror</li>
+<li>进入网站首页，下拉找到</li>
+</ol>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Manjaro-note" target="_blank">https://blog.horonlee.com/posts/Manjaro-note</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[NeoVim个人配置笔记]]></title>
+            <link>https://blog.horonlee.com/posts/NeoVim个人配置笔记</link>
+            <guid>https://blog.horonlee.com/posts/NeoVim个人配置笔记</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<h2>LazyVim 配置目录</h2>
+<pre><code class="language-shell">.
+├── LICENSE
+├── README.md
+├── init.lua #配置入口文件
+├── lazy-lock.json
+├── lazyvim.json
+├── lua
+│   ├── config #默认生成的配置目录
+│   │   ├── autocmds.lua
+│   │   ├── keymaps.lua
+│   │   ├── lazy.lua
+│   │   └── options.lua #自定义配置可以写在这里
+│   └── plugins
+│       ├── colorscheme.lua #自己添加的主题插件配置
+│       └── example.lua
+└── stylua.toml
+
+</code></pre>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/NeoVim个人配置笔记" target="_blank">https://blog.horonlee.com/posts/NeoVim个人配置笔记</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[LVM添加硬盘并扩容至已有分区]]></title>
+            <link>https://blog.horonlee.com/posts/Online-Expansion-Ubuntu-LVM</link>
+            <guid>https://blog.horonlee.com/posts/Online-Expansion-Ubuntu-LVM</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>LVM简介</h1>
+<p>LVM是 Logical Volume Manager（逻辑卷管理）的简写，它是Linux环境下对磁盘分区进行管理的一种机制。LVM将一个或多个磁盘分区（PV）虚拟为一个卷组（VG</p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Online-Expansion-Ubuntu-LVM" target="_blank">https://blog.horonlee.com/posts/Online-Expansion-Ubuntu-LVM</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[Docker镜像的封装和制作]]></title>
+            <link>https://blog.horonlee.com/posts/Docker-images</link>
+            <guid>https://blog.horonlee.com/posts/Docker-images</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <description><![CDATA[使用Dockerfile来制作docker镜像]]></description>
+            <content:encoded><![CDATA[<h1>Ubuntu环境下制作自己的Docker镜像——MC服务器</h1>
+<blockquote>
+<p>制作Docker镜像一般有2种方法：<br>
+1. 使用DockerHub仓库中已有的环境，安装自己使用的软件环境后完成image创</p>
+</blockquote>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Docker-images" target="_blank">https://blog.horonlee.com/posts/Docker-images</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[Ecs+Cos+Cloudreve]]></title>
+            <link>https://blog.horonlee.com/posts/Ecs-Cos-Cloudreve</link>
+            <guid>https://blog.horonlee.com/posts/Ecs-Cos-Cloudreve</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>下载安装Cloudreve</h1>
+<blockquote>
+<p>这里我选用的是阿里云的Ecs轻应用<br>
+并且不是使用Docker来部署（那也太傻瓜操作了吧😂</p>
+</blockquote>
+<ol>
+<li>登录到Shell终端</li>
+<li>部署[Cloudreve](h</li>
+</ol>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Ecs-Cos-Cloudreve" target="_blank">https://blog.horonlee.com/posts/Ecs-Cos-Cloudreve</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[为Systemd服务设置自动重启]]></title>
+            <link>https://blog.horonlee.com/posts/Frpc-systemd-restart</link>
+            <guid>https://blog.horonlee.com/posts/Frpc-systemd-restart</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<h2>事情起因</h2>
+<p>最近给自己的双路E5搞一个Frpc，但是因为有Clash这个开机自启程序，并且我设置了系统代理，在Clash完全启动之前系统是处于断网状态的。断网状态下，Frpc会默认启动失败并且变为Inactive状态，这并不是我想看到的。</p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Frpc-systemd-restart" target="_blank">https://blog.horonlee.com/posts/Frpc-systemd-restart</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[Golang判断质数]]></title>
+            <link>https://blog.horonlee.com/posts/Golang-Prime</link>
+            <guid>https://blog.horonlee.com/posts/Golang-Prime</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+func findprimes(number int) bool {
+    // 质数本身就能被1和本身整除，所以可以直接筛选2~</code></pre>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Golang-Prime" target="_blank">https://blog.horonlee.com/posts/Golang-Prime</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[Gorm笔记]]></title>
+            <link>https://blog.horonlee.com/posts/GormNote</link>
+            <guid>https://blog.horonlee.com/posts/GormNote</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>xxxxxxxxxx package main​import &quot;fmt&quot;​func findprimes(number int) bool {    // 质数本身就能被1和本身整除，所以可以直</h1>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/GormNote" target="_blank">https://blog.horonlee.com/posts/GormNote</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[从Hexo切换为Valaxy感受]]></title>
+            <link>https://blog.horonlee.com/posts/Hexo-to-valaxy</link>
+            <guid>https://blog.horonlee.com/posts/Hexo-to-valaxy</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<blockquote>
+<p>最近因为Halo博客被宝塔面板爆破了，所以只能继续使用老博客Hexo（托管在githubpage上），但是GitHubPage实在是太慢了，Hexo的配置也有些乱糟糟的，于是乎就换用了由云游君大佬开发的Valaxy博客框架</p>
+</blockquote>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Hexo-to-valaxy" target="_blank">https://blog.horonlee.com/posts/Hexo-to-valaxy</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[Java学习-String]]></title>
+            <link>https://blog.horonlee.com/posts/Java-note</link>
+            <guid>https://blog.horonlee.com/posts/Java-note</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <description><![CDATA[学习笔记]]></description>
+            <content:encoded><![CDATA[<h1>String类</h1>
+<h2>比较两个字符串的两种方法</h2>
+<ul>
+<li>直接使用“==”进行运算,这样是比较两个字符串对象在内存中的位置,而不是实际上看到的内容。</li>
+<li>使用String类中的equals()方法进行比</li>
+</ul>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Java-note" target="_blank">https://blog.horonlee.com/posts/Java-note</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[K8S1.27.0集群部署要点]]></title>
+            <link>https://blog.horonlee.com/posts/K8S1.27.0-deploy</link>
+            <guid>https://blog.horonlee.com/posts/K8S1.27.0-deploy</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<p>⚠️注意：本文已经严重过时且不具备任何参考价值，最新 k8s 部署请参考<a href="https://blog.horonlee.com/posts/ubuntu22.04-k8s-deploy">Ubuntu22.04部署K8S - 皓然小站 (horonlee.com)</a></p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/K8S1.27.0-deploy" target="_blank">https://blog.horonlee.com/posts/K8S1.27.0-deploy</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[Jenkins的标准用法“Jenkins-Slave”]]></title>
+            <link>https://blog.horonlee.com/posts/K8sJenkinsSlaveCICD</link>
+            <guid>https://blog.horonlee.com/posts/K8sJenkinsSlaveCICD</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>kubernetes构建 Jenkins-Master&amp;Slave 架构</h1>
+<h2>引子</h2>
+<p>这篇文章是我在学校帮助专业老师撰写的，旨在于帮助同学更好的学习 Jenkins 的使用，所有内容都是基于最</p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/K8sJenkinsSlaveCICD" target="_blank">https://blog.horonlee.com/posts/K8sJenkinsSlaveCICD</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[KubeVirt使用CDI来导入虚拟机镜像]]></title>
+            <link>https://blog.horonlee.com/posts/KubeVirt-CDI</link>
+            <guid>https://blog.horonlee.com/posts/KubeVirt-CDI</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>使用容器化数据导入器 （CDI） 进行试验</h1>
+<blockquote>
+<p>本文参照官方文档编撰[使用 CDI 进行实验 |<a href="http://KubeVirt.io">KubeVirt.io</a> --- Experiment with CDI | KubeVirt.i</p>
+</blockquote>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/KubeVirt-CDI" target="_blank">https://blog.horonlee.com/posts/KubeVirt-CDI</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[KubeVirt入门]]></title>
+            <link>https://blog.horonlee.com/posts/KubeVirt-Getting-Start</link>
+            <guid>https://blog.horonlee.com/posts/KubeVirt-Getting-Start</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>什么是 KubeVirt？</h1>
+<p>​	KubeVirt 是一个开源项目，它使得虚拟机可以像容器一样被 Kubernetes 部署，消费和管理。它提供了一个统一的平台，让用户可以根据不同的需求，使用容器</p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/KubeVirt-Getting-Start" target="_blank">https://blog.horonlee.com/posts/KubeVirt-Getting-Start</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[在k8s中构建CICD]]></title>
+            <link>https://blog.horonlee.com/posts/CICDk8s</link>
+            <guid>https://blog.horonlee.com/posts/CICDk8s</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<blockquote>
+<p>此文章已经停止更新，最新的CICD 构建位于：<a href="https://blog.horonlee.com/posts/KubernetesJenkinCICD">kubernetes 使用 Jenkins&amp;GitLab 构建 CICD - 皓然小站 (horonlee.com)</a></p>
+</blockquote>
+<h1>安装CICD所需资源</h1>
+<p><code>curl -O http://mirrors.douxuedu.com/competition/BlueOcean.tar.gz &amp;&amp; tar -zxf BlueOcean.tar.gz &amp;&amp; cp BlueOcean/tools/docker-compose-Linux-x86_64 /usr/bin/docker-compose &amp;&amp; docker-compose version &amp;&amp; tar -zxf BlueOcean/harbor-offline-installer.tar.gz -C /opt/ &amp;&amp; sh /opt/harbor/install.sh &amp;&amp; docker login -uadmin -pHarbor12345 172.16.2.90 &amp;&amp; docker load -i BlueOcean/images/maven_latest.tar &amp;&amp; docker tag maven 172.16.2.90/library/maven &amp;&amp; docker push 172.16.2.90/library/maven &amp;&amp; docker load -i BlueOcean/images/java_8-jre.tar &amp;&amp; docker load -i BlueOcean/images/jenkins_jenkins_latest.tar &amp;&amp; docker load -i BlueOcean/images/gitlab_gitlab-ce_latest.tar &amp;&amp; kubectl create ns devops</code></p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/CICDk8s" target="_blank">https://blog.horonlee.com/posts/CICDk8s</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[CentOS搭建OpenStack-Queen手记]]></title>
+            <link>https://blog.horonlee.com/posts/CentOS-OpenStack-Queen手记</link>
+            <guid>https://blog.horonlee.com/posts/CentOS-OpenStack-Queen手记</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>OpenStack-Queen版本搭建</h1>
+<ul>
+<li>系统：CentOS7.5-1804</li>
+<li>硬件环境：
+<ul>
+<li>i7-12700H &amp; 16G-RAM</li>
+</ul>
+</li>
+<li>软件环境：
+<ul>
+<li>VT-d开启 &amp; VT-x未</li>
+</ul>
+</li>
+</ul>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/CentOS-OpenStack-Queen手记" target="_blank">https://blog.horonlee.com/posts/CentOS-OpenStack-Queen手记</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[CentOS7安装配置docker]]></title>
+            <link>https://blog.horonlee.com/posts/CentOS7-docker</link>
+            <guid>https://blog.horonlee.com/posts/CentOS7-docker</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <description><![CDATA[CentOS7安装配置docker以及更改配置文件]]></description>
+            <content:encoded><![CDATA[<h2>CentOS下安装和配置Dcoker有一些麻烦，故本人请教学长后打算写下一些经验</h2>
+<h3>step 1：安装必要的一些系统工具</h3>
+<p><strong>先获得管理员Bash权限：</strong><code>su root</code></p>
+<pre><code class="language-bas"></code></pre>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/CentOS7-docker" target="_blank">https://blog.horonlee.com/posts/CentOS7-docker</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+        <item>
+            <title><![CDATA[使用Docker部署NextCloud]]></title>
+            <link>https://blog.horonlee.com/posts/Docker-NextCloud</link>
+            <guid>https://blog.horonlee.com/posts/Docker-NextCloud</guid>
+            <pubDate>Thu, 03 Apr 2025 14:44:26 GMT</pubDate>
+            <content:encoded><![CDATA[<h1>使用docker-compose创建、配置nextcloud</h1>
+<p>参考博文（docker-compose来源）：<a href="https://blog.csdn.net/shangyexin/article/det">https://blog.csdn.net/shangyexin/article/det</a></p>
+<br/><p>访问 <a href="https://blog.horonlee.com/posts/Docker-NextCloud" target="_blank">https://blog.horonlee.com/posts/Docker-NextCloud</a> 阅读全文。</p>]]></content:encoded>
+            <author>i@valaxy.site (皓然)</author>
+        </item>
+    </channel>
+</rss>
