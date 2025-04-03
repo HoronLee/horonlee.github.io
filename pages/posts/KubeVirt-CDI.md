@@ -185,7 +185,7 @@ metadata:
   name: nfs-client
 provisioner: k8s-sigs.io/nfs-subdir-external-provisioner # or choose another name, must match deployment's env PROVISIONER_NAME'
 parameters:
-  pathPattern: "${.PVC.namespace}/${.PVC.annotations.nfs.io/storage-path}" # 此处也可以使用 "${.PVC.namespace}/${.PVC.name}" 来使用pvc的名称作为nfs中真实目录名称
+  pathPattern: "${.PVC.namespace}/${.PVC.name}" 
   onDelete: delete
 ```
 
