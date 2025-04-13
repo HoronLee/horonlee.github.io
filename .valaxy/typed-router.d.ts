@@ -50,6 +50,7 @@ declare module 'vue-router/auto-routes' {
     '/posts/Linux-volume': RouteRecordInfo<'/posts/Linux-volume', '/posts/Linux-volume', Record<never, never>, Record<never, never>>,
     '/posts/Manjaro-note': RouteRecordInfo<'/posts/Manjaro-note', '/posts/Manjaro-note', Record<never, never>, Record<never, never>>,
     '/posts/NeoVim个人配置笔记': RouteRecordInfo<'/posts/NeoVim个人配置笔记', '/posts/NeoVim个人配置笔记', Record<never, never>, Record<never, never>>,
+    '/posts/NoVNC-Kvm': RouteRecordInfo<'/posts/NoVNC-Kvm', '/posts/NoVNC-Kvm', Record<never, never>, Record<never, never>>,
     '/posts/Online-Expansion-Ubuntu-LVM': RouteRecordInfo<'/posts/Online-Expansion-Ubuntu-LVM', '/posts/Online-Expansion-Ubuntu-LVM', Record<never, never>, Record<never, never>>,
     '/posts/OpenStack-note': RouteRecordInfo<'/posts/OpenStack-note', '/posts/OpenStack-note', Record<never, never>, Record<never, never>>,
     '/posts/PHP-Nginx-website': RouteRecordInfo<'/posts/PHP-Nginx-website', '/posts/PHP-Nginx-website', Record<never, never>, Record<never, never>>,
