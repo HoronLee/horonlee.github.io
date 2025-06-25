@@ -89,6 +89,12 @@ links:
     blog: 老哲的小客栈
     desc: 一起向未来奔跑和冒险吧！
     color: "#3c45d1"
+  - url: https://blog.ciraos.top/
+    avatar: https://mx.ciraos.top/api/v2/objects/avatar/ufh295h43mly31gmw0.avif
+    name: 葱苓
+    blog: 葱苓小筑
+    desc: a small blog station.
+    color: "#3c45a2"
 
 # 也可以是一个 JSON 链接
 # links: https://friends.yunyoujun.cn/links.json
