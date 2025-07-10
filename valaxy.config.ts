@@ -66,7 +66,7 @@ export default defineValaxyConfig<UserThemeConfig>({
   addons: [
     addonWaline({
       // Waline 配置项，参考 https://waline.js.org/reference/client/props.html
-      serverURL: 'https://waline.horon.top',
+      serverURL: 'https://waline.horonlee.com',
     }),
     addonComponents(),
   ],
