@@ -36,6 +36,7 @@ declare module 'vue-router/auto-routes' {
     '/posts/Docker-NextCloud': RouteRecordInfo<'/posts/Docker-NextCloud', '/posts/Docker-NextCloud', Record<never, never>, Record<never, never>>,
     '/posts/Ecs-Cos-Cloudreve': RouteRecordInfo<'/posts/Ecs-Cos-Cloudreve', '/posts/Ecs-Cos-Cloudreve', Record<never, never>, Record<never, never>>,
     '/posts/Frpc-systemd-restart': RouteRecordInfo<'/posts/Frpc-systemd-restart', '/posts/Frpc-systemd-restart', Record<never, never>, Record<never, never>>,
+    '/posts/Go-Reborn-Note': RouteRecordInfo<'/posts/Go-Reborn-Note', '/posts/Go-Reborn-Note', Record<never, never>, Record<never, never>>,
     '/posts/Golang-Prime': RouteRecordInfo<'/posts/Golang-Prime', '/posts/Golang-Prime', Record<never, never>, Record<never, never>>,
     '/posts/GormNote': RouteRecordInfo<'/posts/GormNote', '/posts/GormNote', Record<never, never>, Record<never, never>>,
     '/posts/Hexo-to-valaxy': RouteRecordInfo<'/posts/Hexo-to-valaxy', '/posts/Hexo-to-valaxy', Record<never, never>, Record<never, never>>,
