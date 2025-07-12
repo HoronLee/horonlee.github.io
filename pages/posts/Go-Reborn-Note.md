@@ -3,8 +3,11 @@ layout: post
 title: 从零开始的Go语言异世界笔记
 date: 2025-07-10 21:55:52
 tags:
+    - Go
 categories:
-cover:
+    - 开发
+    - 编程笔记
+cover: https://pic2.zhimg.com/v2-55a9aba97d1e214f849ab2e55f3dabff_1440w.jpg?source=172ae18b
 password:
 hide:
 ---

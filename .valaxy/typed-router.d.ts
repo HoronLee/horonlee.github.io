@@ -39,6 +39,7 @@ declare module 'vue-router/auto-routes' {
     '/posts/Go-Reborn-Note': RouteRecordInfo<'/posts/Go-Reborn-Note', '/posts/Go-Reborn-Note', Record<never, never>, Record<never, never>>,
     '/posts/Golang-Prime': RouteRecordInfo<'/posts/Golang-Prime', '/posts/Golang-Prime', Record<never, never>, Record<never, never>>,
     '/posts/GormNote': RouteRecordInfo<'/posts/GormNote', '/posts/GormNote', Record<never, never>, Record<never, never>>,
+    '/posts/Harbor-HTTPS': RouteRecordInfo<'/posts/Harbor-HTTPS', '/posts/Harbor-HTTPS', Record<never, never>, Record<never, never>>,
     '/posts/Hexo-to-valaxy': RouteRecordInfo<'/posts/Hexo-to-valaxy', '/posts/Hexo-to-valaxy', Record<never, never>, Record<never, never>>,
     '/posts/Java-note': RouteRecordInfo<'/posts/Java-note', '/posts/Java-note', Record<never, never>, Record<never, never>>,
     '/posts/K8S1.27.0-deploy': RouteRecordInfo<'/posts/K8S1.27.0-deploy', '/posts/K8S1/27/0-deploy', Record<never, never>, Record<never, never>>,

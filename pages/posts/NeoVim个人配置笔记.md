@@ -35,8 +35,6 @@ hide:
 
 ```
 
-<!-- more -->
-
 ## 主题配置
 
 新建 `lua/plugins/colorscheme.lua`

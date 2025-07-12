@@ -9,9 +9,8 @@ tags:
     - CICD
     - Jenkins
 categories:
-    
     - 云计算
-    - k8s
+    - Devops
     - Jenkins
 cover: https://bu.dusays.com/2024/09/30/66fa0a7e96de2.png
 password: 

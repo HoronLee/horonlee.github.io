@@ -9,8 +9,8 @@ tags:
     - CICD
     - Jenkins
 categories:
-    
     - 云计算
+    - Devops
     - Jenkins
 cover: https://i2.wp.com/digitalvarys.com/wp-content/uploads/2019/05/jenkins-master-slave-config.png?fit=1963%2C1079&ssl=1
 password: 

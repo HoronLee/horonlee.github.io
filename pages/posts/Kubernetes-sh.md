@@ -10,7 +10,7 @@ tags:
 categories:
     
     - 云计算
-    - k8s
+    - Kubernetes
 keywords:
 description:
 top_img:

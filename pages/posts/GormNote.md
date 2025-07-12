@@ -5,6 +5,7 @@ date: 2024-04-25 16:19:23
 tags:
     - Go
 categories: 
+    - 开发
     - 编程笔记
 cover: https://files.codingninjas.in/article_images/gin-getting-started-with-gorm-golang-s-orm-library-1-1672754782.webp
 password: 
