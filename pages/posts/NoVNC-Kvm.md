@@ -9,7 +9,7 @@ tags:
 categories: 
     - Linux
     - KVM
-cover: https://minio-api.horonlee.com/blogpic/img/20250413202153584.png
+cover: https://minio-api.horonlee.com/blogpic/img/20250721125731241.png
 password: 
 hide: 
 ---
@@ -58,6 +58,6 @@ rocky9-clone: 127.0.0.1:5901
 所以最终是
 `http://192.168.6.166:6081/?host=192.168.6.166&port=6080&path=websockify/?token=rocky9`
 ## 最终效果
-![](https://minio-api.horonlee.com/blogpic/img/20250413195843979.png)
-![](https://minio-api.horonlee.com/blogpic/img/20250413195848663.png)
+![Pasted image 20250413195710.png](https://minio-api.horonlee.com/blogpic/img/20250721125034724.png)
+![Pasted image 20250413195605.png](https://minio-api.horonlee.com/blogpic/img/20250721125040496.png)
 很好，我们已经实现了通过不同的路由参数，通过NoVNC访问不同的虚拟机！
