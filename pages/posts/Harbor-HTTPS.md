@@ -8,7 +8,7 @@ tags:
 categories: 
     - 云计算
     - Kubernetes
-cover: https://pic2.zhimg.com/v2-dfe8f68e2594f9f28387d7880bd66507_1440w.jpg?source=172ae18b
+cover: https://minio-api.horonlee.com/blogpic/img/20250724220528555.png
 password: 
 hide: 
 ---
