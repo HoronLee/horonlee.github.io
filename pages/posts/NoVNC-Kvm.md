@@ -58,6 +58,6 @@ rocky9-clone: 127.0.0.1:5901
 所以最终是
 `http://192.168.6.166:6081/?host=192.168.6.166&port=6080&path=websockify/?token=rocky9`
 ## 最终效果
-![Pasted image 20250413195710.png](https://minio-api.horonlee.com/blogpic/img/20250721125034724.png)
-![Pasted image 20250413195605.png](https://minio-api.horonlee.com/blogpic/img/20250721125040496.png)
+![Pasted image 20250413195710.png](https://minio-api.horonlee.com/obsidian/assets/博文/配置NoVNC连接Kvm虚拟机/IMG-20250916163419195.png)
+![Pasted image 20250413195605.png](https://minio-api.horonlee.com/obsidian/assets/博文/配置NoVNC连接Kvm虚拟机/IMG-20250916163423756.png)
 很好，我们已经实现了通过不同的路由参数，通过NoVNC访问不同的虚拟机！

@@ -46,7 +46,7 @@ swiper_index:
 
 >但是为了以后方便开机自启和软件后台运行，我们需要为它配置[守护进程](https://blog.csdn.net/lianghe_work/article/details/47659889)
 
-登录进去的主页大概是张这样的（我改了一些配色啥的）：![Cloudreve](https://minio-api.horonlee.com/blogpic/img/20250312115454563.png)
+登录进去的主页大概是张这样的（我改了一些配色啥的）：![Cloudreve](https://minio-api.horonlee.com/obsidian/assets/%E5%8D%9A%E6%96%87/Ecs-Cos-Cloudreve/IMG-20250916161710955.png)
 
 # 配置守护进程
 > 这里我们采用systemd方式（Systemctl）
@@ -86,7 +86,7 @@ WantedBy=multi-user.target
 
 直接看[这篇文章](https://cloud.tencent.com/developer/article/2041954)罢，一路没什么好说的。
 配置完cos储存策略后，记得设置你所在的用户组的储存策略为cos的，然后上传一个文件试试，如果没问问题就会呈现以下效果：
-![Cloudreve+cos](https://minio-api.horonlee.com/blogpic/img/20250312115457671.png)
+![Cloudreve+cos](https://minio-api.horonlee.com/obsidian/assets/博文/Ecs-Cos-Cloudreve/IMG-20250916161747590.png)
 
 # 使用宝塔面板Nginx的重定向或者反向代理代理IP+端口的访问方式
 
@@ -94,4 +94,4 @@ WantedBy=multi-user.target
 
 注意：记得取消勾选**保留URI参数**，要不然后面会多一个“/”导致直接打开的网页404。
 
-![宝塔设置](https://minio-api.horonlee.com/blogpic/img/20250312115459942.png)
+![宝塔设置](https://minio-api.horonlee.com/obsidian/assets/博文/Ecs-Cos-Cloudreve/IMG-20250916161801403.png)

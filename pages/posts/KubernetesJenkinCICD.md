@@ -130,7 +130,7 @@ systemctl restart containerd
 
 执行脚本来安装harbor`./install.sh`
 
-![image-20240930095151300](https://minio-api.horonlee.com/blogpic/img/20250312115707585.png)
+![image-20240930095151300](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916161913221.png)
 
 出现如图回显说明Harbor安装完成
 
@@ -142,13 +142,13 @@ http://172.30.26.174/
 
 ​    密码：Harbor12345
 
-![image-20240930095225791](https://minio-api.horonlee.com/blogpic/img/20250312115710663.png)
+![image-20240930095225791](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916161918034.png)
 
 ###  新建项目
 
 新建名为“vitepress“ 的项目，并且设定为公开
 
-![image-20240930095241492](https://minio-api.horonlee.com/blogpic/img/20250312115711373.png) 
+![image-20240930095241492](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916161923506.png)
 
 登录Harbor
 
@@ -156,7 +156,7 @@ http://172.30.26.174/
 
 输入账号和密码，即可登录
 
-![image-20240930095403692](https://minio-api.horonlee.com/blogpic/img/20250312115714445.png)
+![image-20240930095403692](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916161931096.png)
 
 ## 安装Jenkins
 
@@ -217,7 +217,7 @@ status: {}
 ---(这半角横杠一定要写，用于分割资源类型)
 ```
 
-![image-20240930095715999](https://minio-api.horonlee.com/blogpic/img/20250312115737022.png)
+![image-20240930095715999](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916161937650.png)
 
 ### 生成 jenkins 服务资源文件
 
@@ -292,15 +292,15 @@ http://172.30.26.174:30880/
 
 就选择安装社区推荐的插件，等待插件安装完成，然后设置管理员用户，账号 jenkins，密码 000000。在进入主页后，再自行下载这些插件：Blue Ocean、GitLab。
 
-![image-20240930095753447](https://minio-api.horonlee.com/blogpic/img/20250312115746968.png)
+![image-20240930095753447](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916161952732.png)
 
-![image-20240930095802958](https://minio-api.horonlee.com/blogpic/img/20250312115748727.png)
+![image-20240930095802958](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916161957551.png)
 
 前往 Download progress 页面可以查看下载进度
 
 勾选底端
 
-![image-20240930102401496](https://minio-api.horonlee.com/blogpic/img/20250312115752540.png)
+![image-20240930102401496](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162002996.png)
 
 然后等待安装完成自动重启
 
@@ -328,11 +328,11 @@ http://172.30.26.174:30880/
 
 ### 创建用户
 
-![image-20240930095812105](https://minio-api.horonlee.com/blogpic/img/20250312115755045.png)
+![image-20240930095812105](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162104776.png)
 
 ### 在安全设置中设置任何人可做任何事
 
-![image-20240930100004081](https://minio-api.horonlee.com/blogpic/img/20250312115757736.png)
+![image-20240930100004081](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162109820.png)
 
 点击下方保存配置
 
@@ -358,7 +358,7 @@ http://172.30.26.174:30880/
       value: "80"
 ```
 
-![image-20240930100106527](https://minio-api.horonlee.com/blogpic/img/20250312115802055.png)
+![image-20240930100106527](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162121938.png)
 
 ---(这半角横杠一定要写，用于分割资源类型)
 
@@ -392,11 +392,11 @@ http://172.30.26.174:30888/
 
 登录Gitlab管理员界面（http://master:30888/admin），如图所示： 
 
-![image-20240930100115861](https://minio-api.horonlee.com/blogpic/img/20250312115803314.png)
+![image-20240930100115861](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162128657.png)
 
 在左侧导航栏选择“Settings→Network”，设置“Outbound requests”，勾选“Allow requests to the local network from web hooks and services”复选框，如图所示：
 
-![image-20240930100124892](https://minio-api.horonlee.com/blogpic/img/20250312115807462.png)
+![image-20240930100124892](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162133456.png)
 
 配置完成 Save changes 
 
@@ -404,19 +404,19 @@ http://172.30.26.174:30888/
 
 单击GitLab用户头像图标，在左侧导航栏选择“Preferences”，如图所示：
 
-![image-20240930100133759](https://minio-api.horonlee.com/blogpic/img/20250312115811364.png) 
+![image-20240930100133759](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162139665.png)
 
 在左侧导航栏选择“Access Tokens”添加Token，如图所示：
 
 注意，Expiration date 尽量往后选择几天
 
-![image-20240930100145192](https://minio-api.horonlee.com/blogpic/img/20250312115813629.png)
+![image-20240930100145192](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162147823.png)
 
 单击“Create personal access token”按钮生成Token，如图所示：
 
-![image-20240930100150892](https://minio-api.horonlee.com/blogpic/img/20250312115815488.png)
+![image-20240930100150892](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162204603.png)
 
-![image-20240930100156642](https://minio-api.horonlee.com/blogpic/img/20250312115819007.png)
+![image-20240930100156642](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162209305.png)
 
 记录下Token（glpat-earMgQ66g4SdoMNjJr6e），后面配置Jenkins时会用到。
 
@@ -424,15 +424,15 @@ http://172.30.26.174:30888/
 
 登录Jenkins首页，选择“系统管理→系统配置”，配置GitLab信息，取消勾选“Enable authentiviion for ‘/project’ end-point”，输入“Connection name”和“Gitlab host URL”，如图所示：
 
-![image-20240930100203731](https://minio-api.horonlee.com/blogpic/img/20250312115820887.png)
+![image-20240930100203731](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162215083.png)
 
 添加Credentials，单击“添加”→“Jenkins”按钮添加认证信息，将Gitlab API Token填入，如图所示：
 
-![image-20240930100212507](https://minio-api.horonlee.com/blogpic/img/20250312115823820.png)
+![image-20240930100212507](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162220486.png)
 
 选择新添加的证书，然后单击“Test Connection”按钮，如图所示：
 
-![image-20240930100217835](https://minio-api.horonlee.com/blogpic/img/20250312115828252.png)
+![image-20240930100217835](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162235863.png)
 
 返回结果为Success，说明Jenkins可以正常连接GitLab，点击左下角保存。
 
@@ -440,13 +440,13 @@ http://172.30.26.174:30888/
 
 进入 gitlab，点击 Create a project
 
-![image-20240930100227418](https://minio-api.horonlee.com/blogpic/img/20250312115830928.png)
+![image-20240930100227418](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162247033.png)
 
 选择添加空项目
 
-![image-20240930100232816](https://minio-api.horonlee.com/blogpic/img/20250312115832474.png)
+![image-20240930100232816](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162253031.png)
 
-![image-20240930101122150](https://minio-api.horonlee.com/blogpic/img/20250312115836088.png)
+![image-20240930101122150](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162257501.png)
 
 点击Create Project创建项目
 
@@ -475,33 +475,33 @@ git remote add origin http://172.30.26.174:30888/root/vitepress.git
 git push --set-upstream origin master  # 输入账号密码
 ```
 
-![image-20240930101137940](https://minio-api.horonlee.com/blogpic/img/20250312115844080.png)
+![image-20240930101137940](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162305273.png)
 
 刷新GitLab网页可以看到项目已经上传成功了
 
-![image-20240930101144723](https://minio-api.horonlee.com/blogpic/img/20250312115847745.png)
+![image-20240930101144723](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162313277.png)
 
 ## 新建流水线
 
-### ![image-20240930101200139](https://minio-api.horonlee.com/blogpic/img/20250312115853318.png) ![image-20240930101219825](https://bu.dusays.com/2024/09/30/66fa0906ecd29.png)配置构建触发器
+### ![image-20240930101200139](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162317858.png) ![image-20240930101219825](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162322186.png)配置构建触发器
 
-![image-20240930101302787](https://minio-api.horonlee.com/blogpic/img/20250312115855919.png)记录下GitLab webhook URL的地址（http://172.30.26.174:30880/project/vitepress)，后期配置webhook需要使用。
+![image-20240930101302787](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916165338127.png)记录下GitLab webhook URL的地址（http://172.30.26.174:30880/project/vitepress)，后期配置webhook需要使用。
 
 ### 配置流水线
 
 在定义域中选择“Pipeline script from SCM”，此选项指示Jenkins从源代码管理（SCM）仓库获取流水线。在SCM域中选择“Git”，然后输入“Repository URL”
 
-![image-20240930101313851](https://minio-api.horonlee.com/blogpic/img/20250312115857298.png) 
+![image-20240930101313851](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162329829.png)
 
 ![image-20240930101324283](/Users/horonlee/Library/Application Support/typora-user-images/image-20240930101324283.png)
 
 新建凭据
 
-![image-20240930101348495](https://minio-api.horonlee.com/blogpic/img/20250312115903215.png)
+![image-20240930101348495](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162532043.png)
 
 最后点击下方保存，自动回到流水线控制台
 
-![image-20240930101354353](https://minio-api.horonlee.com/blogpic/img/20250312115901187.png)
+![image-20240930101354353](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162536493.png)
 
 ## 编写流水线
 
@@ -511,7 +511,7 @@ Pipeline有两种创建方法——可以直接在Jenkins的Web UI界面中输�
 
 登录GitLab进入vitepress项目，选择新建文件
 
-![image-20240930101406512](https://minio-api.horonlee.com/blogpic/img/20250312115906806.png)将流水线脚本输入到Jenkinsfile中，更改kubernetes.yaml文件中所使用的镜像的名字，将其harbor.io改为自己harbor仓库的地址，本文是`172.30.26.174`
+![image-20240930101406512](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162541869.png)将流水线脚本输入到Jenkinsfile中，更改kubernetes.yaml文件中所使用的镜像的名字，将其harbor.io改为自己harbor仓库的地址，本文是`172.30.26.174`
 
 ```json
 pipeline{
@@ -550,19 +550,19 @@ pipeline{
 
 提交更改即可
 
-![image-20240930101420695](https://minio-api.horonlee.com/blogpic/img/20250312115910116.png) 
+![image-20240930101420695](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162548160.png)
 
 ## 配置WebHook
 
-在GitLab的项目中，通常会使用Webhook的各种事件来触发对应的构建，通常配置好后会向设定好的URL发送post请求。 
+在GitLab的项目中，通常会使用Webhook的各种事件来触发对应的构建，通常配置好后会向设定好的URL发送post请求。
 
 登录GitLab，进入viteress项目，现在左侧导航栏“Settings→Webhooks”，将前面记录的GitLab webhook URL地址填入URL处，禁用SSL认证
 
-![image-20240930101425998](https://minio-api.horonlee.com/blogpic/img/20250312115927655.png)
+![image-20240930101425998](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162552748.png)
 
-![image-20240930101431483](https://minio-api.horonlee.com/blogpic/img/20250312115957293.png) ![image-20240930101442677](https://bu.dusays.com/2024/09/30/66fa09958e7af.png) ![image-20240930101456619](https://minio-api.horonlee.com/blogpic/img/20250312115959349.png)
+![image-20240930101431483](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162556982.png) ![image-20240930101442677](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162604832.png) ![image-20240930101456619](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162611251.png)
 
-![image-20240930101503195](https://minio-api.horonlee.com/blogpic/img/20250312120001643.png) 
+![image-20240930101503195](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162617113.png) 
 
 结果返回HTTP 200则表明Webhook配置成功
 
@@ -570,19 +570,19 @@ pipeline{
 
 登录Jenkins 刷新页面，因为刚才测试了一个提交动作被 webhook 捕捉，所以可以看到vitepress项目已经开始构建
 
-![image-20240930101512669](https://minio-api.horonlee.com/blogpic/img/20250312120003618.png)
+![image-20240930101512669](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162621255.png)
 
 在流水线的 ConsoleOutput 中可以查看日志
 
-![image-20240930101529611](https://minio-api.horonlee.com/blogpic/img/20250312120005725.png)
+![image-20240930101529611](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162628606.png)
 
 也可以进入Blue Ocean查看构建日志和成果
 
-![image-20240930101537100](https://minio-api.horonlee.com/blogpic/img/20250312120008099.png)
+![image-20240930101537100](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162633237.png)
 
 等待一段时间即可构建完成
 
-![image-20240930101542664](https://minio-api.horonlee.com/blogpic/img/20250312120013018.png)
+![image-20240930101542664](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162638322.png)
 
 如果构建失败，需要前往 Harbor 仓库删除上传的镜像以及 worker 节点上 ctr -n k8s.io image ls|grep vitepress 显示的所有镜像，再次运行流水线
 
@@ -590,7 +590,7 @@ pipeline{
 
 进入Harbor，可以看到Jenkins的流水线推送上去的镜像
 
-![image-20240930101548089](https://minio-api.horonlee.com/blogpic/img/20250312120015523.png)
+![image-20240930101548089](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162643441.png)
 
 查看是否有测试pod在运行
 
@@ -608,7 +608,7 @@ vitepress  NodePort  10.111.47.80  <none>    5173:30173/TCP  9m19s  app=vitepres
 
 http://172.30.26.174:30173/
 
-![image-20240930101558588](https://minio-api.horonlee.com/blogpic/img/20250312120018518.png)
+![image-20240930101558588](https://minio-api.horonlee.com/obsidian/assets/博文/KubernetesJenkinCICD/IMG-20250916162648528.png)
 
 可以访问网页说明应用自动测试部署成功，CICD流程到此结束！
 
