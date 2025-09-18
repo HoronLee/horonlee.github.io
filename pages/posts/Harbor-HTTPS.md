@@ -8,7 +8,7 @@ tags:
 categories: 
     - 云计算
     - Kubernetes
-cover: https://minio-api.horonlee.com/blogpic/img/20250724220528555.png
+cover: https://minio-api.horonlee.com/obsidian/assets/博文/Harbor配置HTTPS/IMG-20250918223751989.png
 password: 
 hide: 
 ---

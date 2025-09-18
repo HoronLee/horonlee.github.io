@@ -9,7 +9,7 @@ tags:
 categories: 
     - Linux
     - KVM
-cover: https://minio-api.horonlee.com/blogpic/img/20250721125731241.png
+cover: https://minio-api.horonlee.com/obsidian/assets/博文/配置NoVNC连接Kvm虚拟机/IMG-20250918223958116.png
 password: 
 hide: 
 ---
