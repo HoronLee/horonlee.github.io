@@ -9,6 +9,7 @@ useScriptTag('//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js')
   <YunFooter style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
     <!-- 自定义页脚内容 -->
     <a href="https://icp.gov.moe/?keyword=20241146" target="_blank">萌ICP备20241146号</a>
+    <a href="https://icp.redcha.cn/beian/ICP-2025080111.html" title="茶ICP备2025080111号" target="_blank">茶ICP备2025080111号</a>
     <div style="width: 120px;height: auto;">
     <a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener" title="开往-友链接力">
     <img src="https://www.travellings.cn/assets/logo.gif" alt="开往-友链接力" ></a>
