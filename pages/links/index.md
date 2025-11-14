@@ -126,7 +126,7 @@ random: true
 
 # 如何申请？
 
-直接在评论区回复或者发送邮件到<horonlee@firefox.com>即可，按照以下标准：
+直接在评论区回复或者发送邮件到<horonlee@foxmail.com>即可，按照以下标准：
 
 ```yaml
 - url: https://你的网站地址
