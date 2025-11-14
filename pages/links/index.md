@@ -100,6 +100,12 @@ links:
     blog: 张洪Heo
     desc: 分享设计与科技生活
     color: "#82ce10"
+  - url: https://blog.mugzx.top
+    avatar: https://www.mugzx.top/api/avatar.png
+    name: Mugzx
+    blog: Mugzx's Blog
+    desc: 分享设计与科技生活
+    color: "#3D3DF5"
 
 # 也可以是一个 JSON 链接
 # links: https://friends.yunyoujun.cn/links.json
