@@ -13,8 +13,8 @@ categories:
     - 云计算
     - Jenkins
 cover: https://i2.wp.com/digitalvarys.com/wp-content/uploads/2019/05/jenkins-master-slave-config.png?fit=1963%2C1079&ssl=1
-password: 
-hide: 
+password:
+hide:
 ---
 # kubernetes构建 Jenkins-Master&Slave 架构
 
@@ -138,7 +138,7 @@ http://172.30.26.172/
 ```
 [root@master ~]# docker login 172.30.26.172
 Username: admin
-Password: 
+Password:
 WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
 Configure a credential helper to remove this warning. See
 https://docs.docker.com/engine/reference/commandline/login/#credentials-store
@@ -256,7 +256,7 @@ git push -u origin main
 
 [root@master valaxy-blog]# git push -u origin main
 Username for 'http://172.30.26.173:3000': root	//输入之前的账号密码即可
-Password for 'http://root@172.30.26.173:3000': 
+Password for 'http://root@172.30.26.173:3000':
 Counting objects: 56, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (41/41), done.
@@ -684,13 +684,11 @@ Pod Template 就是 slave 节点将会启动的Pod，我们可以设置多个Pod
 
 然后翻动页面到下方，找到`Run As User ID`和`Run As Group ID`，填入`0`，目的是让 Pod 中的容器可以正常执行 docker 和 ctr 命令。（0 是宿主机 root 用户的组 ID）
 
-![](/attachment/K8sJenkinsSlaveCICD/b048c97f5bca670967f73c753c3a0b57.png)
-
 #### 设置容器
 
 > 最新 Jenkins 默认如果 pod 名称不设置为 jnlp 的话，会自动启动一个 inbound-agent 镜像来
 
-在刚才的 Pod template settings 中找到`容器列表`选项，点击`添加容器`选择 `Container Template` 
+在刚才的 Pod template settings 中找到`容器列表`选项，点击`添加容器`选择 `Container Template`
 
 - 名称 `nodejs`
 - Docker 镜像 `172.30.26.172/library/inbound-agent-node:latest`
@@ -749,7 +747,7 @@ pipeline {
                 sh "docker push ${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG}"
                 sh 'docker rmi ${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG} || true'
             }
-        }    
+        }
         stage('Deploy to Kubernetes') {
             steps {
                 script {

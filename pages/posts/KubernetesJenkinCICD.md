@@ -14,8 +14,8 @@ categories:
     - k8s
     - Jenkins
 cover: https://bu.dusays.com/2024/09/30/66fa0a7e96de2.png
-password: 
-hide: 
+password:
+hide:
 ---
 # Kubernetes使用Jenkins构建CICD
 
@@ -90,7 +90,7 @@ Containerd从v1.5之后就不推荐了以config.toml作为镜像仓库的配置�
 
 ```
 systemctl daemon-reload
-systemctl restart containerd 
+systemctl restart containerd
 ```
 
 ### 配置镜像仓库非HTTPS登录 (双节点）
@@ -184,7 +184,7 @@ status: {}
    serviceAccountName: jenkins
 ….
     imagePullPolicy: IfNotPresent
-    securityContext: 
+    securityContext:
      runAsUser: 0
      privileged: true
 …
@@ -230,7 +230,7 @@ status: {}
 
 `kubectl create clusterrole jenkins --verb=* --resource=* --namespace=devops --dry-run=client -o yaml >> jenkins.yaml`
 
----(这半角横杠一定要写，用于分割资源类型) 
+---(这半角横杠一定要写，用于分割资源类型)
 
 ### 创建服务账户
 
@@ -257,7 +257,7 @@ NAME            READY  STATUS  RESTARTS  AGE  IP       NODE   NOMINATED NODE  RE
 jenkins-6c6bf5fc6f-4gsj8  1/1   Running  0     34m  10.244.174.7  worker  <none>      <none>
 ```
 
- 
+
 
 ### 访问 Jenkins
 
@@ -271,7 +271,7 @@ http://172.30.26.174:30880/
 
 说明在Worker节点运行
 
- 
+
 
 ### 查看管理员密钥
 
@@ -305,7 +305,7 @@ http://172.30.26.174:30880/
 
 然后等待安装完成自动重启
 
- 
+
 
 #### 如果 pod 不能访问外网
 
@@ -385,13 +385,13 @@ http://172.30.26.174:30888/
 
 密码：CloudCICD@123
 
- 
+
 
 ### 配置Jenkins连接GitLab
 
 （1）设置Outbound requests
 
-登录Gitlab管理员界面（http://master:30888/admin），如图所示： 
+登录Gitlab管理员界面（http://master:30888/admin），如图所示：
 
 ![](/attachment/KubernetesJenkinCICD/9b02c8e0ae652abe9e6cc82684b7fa44.png)
 
@@ -399,9 +399,9 @@ http://172.30.26.174:30888/
 
 ![](/attachment/KubernetesJenkinCICD/c2034abf0cfc9f28e9f7c32e19569803.png)
 
-配置完成 Save changes 
+配置完成 Save changes
 
-### 创建GitLab API Token 
+### 创建GitLab API Token
 
 单击GitLab用户头像图标，在左侧导航栏选择“Preferences”，如图所示：
 
@@ -491,9 +491,7 @@ git push --set-upstream origin master  # 输入账号密码
 
 在定义域中选择“Pipeline script from SCM”，此选项指示Jenkins从源代码管理（SCM）仓库获取流水线。在SCM域中选择“Git”，然后输入“Repository URL”
 
-![](/attachment/KubernetesJenkinCICD/49d2589081aacf8718370dfb3bf66618.png) 
-
-![](/attachment/KubernetesJenkinCICD/9a1b3f434711eb3bf51467278e4f97e3.png)
+![](/attachment/KubernetesJenkinCICD/49d2589081aacf8718370dfb3bf66618.png)
 
 新建凭据
 
@@ -516,7 +514,7 @@ Pipeline有两种创建方法——可以直接在Jenkins的Web UI界面中输�
 ```json
 pipeline{
   agent none
-  environment { 
+  environment {
     DOCKER_REGISTRY_IP = '172.30.26.174'  //这个IP请改为Harbor仓库的IP
     IMAGE_NAME = 'vitepress/vitepress'
     IMAGE_TAG = 'dev'
@@ -550,11 +548,11 @@ pipeline{
 
 提交更改即可
 
-![](/attachment/KubernetesJenkinCICD/38392af4afceaf22d08a211ded8de437.png) 
+![](/attachment/KubernetesJenkinCICD/38392af4afceaf22d08a211ded8de437.png)
 
 ## 配置WebHook
 
-在GitLab的项目中，通常会使用Webhook的各种事件来触发对应的构建，通常配置好后会向设定好的URL发送post请求。 
+在GitLab的项目中，通常会使用Webhook的各种事件来触发对应的构建，通常配置好后会向设定好的URL发送post请求。
 
 登录GitLab，进入viteress项目，现在左侧导航栏“Settings→Webhooks”，将前面记录的GitLab webhook URL地址填入URL处，禁用SSL认证
 
@@ -562,7 +560,7 @@ pipeline{
 
 ![](/attachment/KubernetesJenkinCICD/71476767dad860f21a589ab4e5ad8747.png) ![](/attachment/KubernetesJenkinCICD/d7e29402923d589117c51c8637695d3d.png) ![](/attachment/KubernetesJenkinCICD/32bd6c91ea0d2b6085243d8020340c16.png)
 
-![](/attachment/KubernetesJenkinCICD/bd7de5d1acb29b677b6f1187fe847741.png) 
+![](/attachment/KubernetesJenkinCICD/bd7de5d1acb29b677b6f1187fe847741.png)
 
 结果返回HTTP 200则表明Webhook配置成功
 
