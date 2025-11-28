@@ -2,33 +2,14 @@
 title: Ubuntu安装配置Nginx及基础用法
 businesscard: true
 date: 2023-04-20 22:05:15
-updated:
 tags:
-    - Ubuntu
-    - Linux
-    - Nginx
+  - Ubuntu
+  - Linux
+  - Nginx
 categories:
-    
-    - Nginx
-keywords:
-description:
-top_img:
-comments:
+  - 服务器运维
+  - Nginx
 cover: https://tse4-mm.cn.bing.net/th/id/OIP-C.E5LOy1agA--ii7IJgV7WMAHaD4?pid=ImgDet&rs=1
-toc:
-toc_number:
-toc_style_simple:
-copyright:
-copyright_author:
-copyright_author_href:
-copyright_url:
-copyright_info:
-mathjax:
-katex:
-aplayer:
-highlight_shrink:
-aside:
-swiper_index: 
 ---
 # 安装Nginx
 直接apt安装即可`sudo apt install nginx`

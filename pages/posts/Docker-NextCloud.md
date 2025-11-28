@@ -2,33 +2,14 @@
 title: 使用Docker部署NextCloud
 businesscard: true
 date: 2022-12-20 15:30:00
-updated:
-tags: 
-    - CentOS
-    - Linux
-    - NextCloud
-categories: 
-    
-    - Docker
-keywords:
-description:
-top_img:
-comments:
+tags:
+  - CentOS
+  - Linux
+  - NextCloud
+categories:
+  - 服务器运维
+  - Docker
 cover: https://pic4.zhimg.com/v2-3e8ac6726d140c2590887773da7dcdea_720w.jpg?source=172ae18b
-toc:
-toc_number:
-toc_style_simple:
-copyright:
-copyright_author:
-copyright_author_href:
-copyright_url:
-copyright_info:
-mathjax:
-katex:
-aplayer:
-highlight_shrink:
-aside:
-swiper_index:
 ---
 # 使用docker-compose创建、配置nextcloud
 参考博文（docker-compose来源）：https://blog.csdn.net/shangyexin/article/details/106306680

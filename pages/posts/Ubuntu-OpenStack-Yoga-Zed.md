@@ -2,34 +2,15 @@
 title: Ubuntu搭建OpenStack-Yoga(Zed)
 businesscard: true
 date: 2023-02-23 22:30:44
-updated:
 tags:
-    - CentOS
-    - Linux
-    - OpenStack
+  - CentOS
+  - Linux
+  - OpenStack
 categories:
-    
-    - 集群
-    - OpenStack-Yoga(Zed)
-keywords:
-description:
-top_img:
-comments:
+  - 服务器运维
+  - 集群
+  - OpenStack-Yoga(Zed)
 cover: https://tse1-mm.cn.bing.net/th/id/OIP-C.CZwj5SbW0RXNrztZceTZtwHaEK?pid=ImgDet&rs=1
-toc:
-toc_number:
-toc_style_simple:
-copyright:
-copyright_author:
-copyright_author_href:
-copyright_url:
-copyright_info:
-mathjax:
-katex:
-aplayer:
-highlight_shrink:
-aside:
-swiper_index:
 ---
 # Ubuntu搭建OpenStack-Zed
 注意：本篇只作为个人笔记，记录搭建过程的一些坑和问题，仅供参考！
@@ -75,7 +56,7 @@ network:
 3. ens35：192.168.200.128
 
 ## NTP服务
-> 重点：local stratum 10  #开启，即使server指令中时间服务器不可用，也允许将本地时间作为标准时间授予其他客户端
+> 重点：local stratum 10  # 开启，即使server指令中时间服务器不可用，也允许将本地时间作为标准时间授予其他客户端
 
 在chronyd.conf文件中务必加上`local stratum 10`，参数，否则会造成有NTP服务的连接但是同步数据，即为0ns延迟！(其实写个1也可以的)
 

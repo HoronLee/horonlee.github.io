@@ -8,7 +8,7 @@ tags:
     - 云计算
     - KubeVirt
 categories:
-    
+    - 服务器运维
     - 云计算
     - 虚拟化
 cover: https://tse3-mm.cn.bing.net/th/id/OIP-C.B4Rc1aupXxDrxKPfYpOsMQHaDP?rs=1&pid=ImgDetMain
@@ -52,13 +52,12 @@ kubectl get pods -n cdi
 
 #### 安装 nfs-server
 
-- 在每个机器 `yum install -y nfs-utils`
-- 在master 执行以下命令  `echo "/data/k8s *(insecure,rw,sync,no_root_squash)" > /etc/exports`
-  执行以下命令，启动 nfs 服务
-- 创建共享目录 `mkdir -p /data/k8s`
-- 在master执行 `systemctl enable rpcbind` `systemctl enable nfs-server` `systemctl start rpcbind` `systemctl start nfs-server`
-- 使配置生效 `exportfs -r`
-- 检查配置是否生效 `exportfs`
+在每个机器 `yum install -y nfs-utils`
+在master 执行以下命令  `echo "/data/k8s *(insecure,rw,sync,no_root_squash)" > /etc/exports`
+执行以下命令，启动 nfs 服务;创建共享目录 `mkdir -p /data/k8s`
+在master执行 `systemctl enable rpcbind systemctl enable nfs-server systemctl start rpcbind systemctl start nfs-server`
+使配置生效 `exportfs -r`
+检查配置是否生效 `exportfs`
 
 ### 配置默认存储
 
@@ -67,7 +66,63 @@ kubectl get pods -n cdi
 vim nfs-storage.yaml并且创建此资源
 
 ```yaml
-# 为NFS设置rbac
+## 创建了一个存储类
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nfs-storage
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+provisioner: k8s-sigs.io/nfs-subdir-external-provisioner
+parameters:
+  archiveOnDelete: "true"  ## 删除pv的时候，pv的内容是否要备份
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nfs-client-provisioner
+  labels:
+    app: nfs-client-provisioner
+  # replace with namespace where provisioner is deployed
+  namespace: default
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: nfs-client-provisioner
+  template:
+    metadata:
+      labels:
+        app: nfs-client-provisioner
+    spec:
+      serviceAccountName: nfs-client-provisioner
+      containers:
+        - name: nfs-client-provisioner
+          image: registry.cn-hangzhou.aliyuncs.com/lfy_k8s_images/nfs-subdir-external-provisioner:v4.0.2
+          # resources:
+          #    limits:
+          #      cpu: 10m
+          #    requests:
+          #      cpu: 10m
+          volumeMounts:
+            - name: nfs-client-root
+              mountPath: /persistentvolumes
+          env:
+            - name: PROVISIONER_NAME
+              value: k8s-sigs.io/nfs-subdir-external-provisioner
+            - name: NFS_SERVER
+              value: 172.30.26.211 ## 指定自己nfs服务器地址
+            - name: NFS_PATH  
+              value: /data/k8s  ## nfs服务器共享的目录
+      volumes:
+        - name: nfs-client-root
+          nfs:
+            server: 172.30.26.211
+            path: /data/k8s
+---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -136,57 +191,6 @@ roleRef:
   kind: Role
   name: leader-locking-nfs-client-provisioner
   apiGroup: rbac.authorization.k8s.io
----
-# 创建nfs subdir external provisioner
-kind: Deployment
-apiVersion: apps/v1
-metadata:
-  name: nfs-client-provisioner
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: nfs-client-provisioner
-  strategy:
-    type: Recreate
-  template:
-    metadata:
-      labels:
-        app: nfs-client-provisioner
-    spec:
-      serviceAccountName: nfs-client-provisioner
-      containers:
-        - name: nfs-client-provisioner
-          # image: registry.k8s.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2
-          image: k8s.dockerproxy.com/sig-storage/nfs-subdir-external-provisioner:v4.0.2
-          volumeMounts:
-            - name: nfs-client-root
-              mountPath: /persistentvolumes
-          env:
-            - name: PROVISIONER_NAME
-              value: k8s-sigs.io/nfs-subdir-external-provisioner
-            - name: NFS_SERVER
-              # value: NFS server的ip
-              value: 192.168.3.10
-            - name: NFS_PATH
-              # value: NFS server的共享目录
-              value: /data/k8s
-      volumes:
-        - name: nfs-client-root
-          nfs:
-            # value: NFS server的ip
-            server: 192.168.3.10
-            path: /data/k8s
----
-# 创建StorageClass
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: nfs-client
-provisioner: k8s-sigs.io/nfs-subdir-external-provisioner # or choose another name, must match deployment's env PROVISIONER_NAME'
-parameters:
-  pathPattern: "${.PVC.namespace}/${.PVC.name}" 
-  onDelete: delete
 ```
 
 #### 确认配置是否生效
@@ -197,17 +201,17 @@ kubectl get pod -A
 ```
 
 ```bash
-➜  kubevirt kubectl get sc
-kubectl get pod -A
-NAME                   PROVISIONER                                   RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
-local-path (default)   rancher.io/local-path                         Delete          WaitForFirstConsumer   false                  28d
-nfs-client             k8s-sigs.io/nfs-subdir-external-provisioner   Delete          Immediate              false                  9m27s
-default       nfs-client-provisioner-658dc7fc94-r5vx2   1/1     Running     0              10m
+root@master:~# kubectl get sc
+NAME                    PROVISIONER                                   RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+nfs-storage (default)   k8s-sigs.io/nfs-subdir-external-provisioner   Delete          Immediate           false                  54m
+root@master:~# kubectl get po
+NAME                                    READY   STATUS    RESTARTS      AGE
+nfs-client-provisioner-75559f9f-84zl7   1/1     Running   1 (17m ago)   54m
 ```
 
 ## 创建 DataVolume
 
-自定义 CDI 控制器将使用此 DataVolume 创建具有相同名称和正确规范/注释的 PVC，以便特定于导入的控制器检测到它并启动导入器 pod。此 Pod 将收集源字段中指定的镜像。
+自定义 CDI 控制器将使用此 DataVolume 创建具有相同名称和正确规范/注释的 PVC，以便特定于导入的控制器检测到它并启动导入器 pod。此 Pod 将收集源字段中指定的图像。
 
 `vim dv_fedora.yaml`
 
@@ -221,7 +225,7 @@ spec:
     resources:
       requests:
         storage: 5Gi
-    storageClassName: nfs-client	#需要指定镜像存储类
+    storageClassName: nfs-storage	#需要指定镜像存储类
   source:
     http:      
       url: "http://172.30.27.143/kubernetes/images/Fedora-Cloud-Base-AmazonEC2.x86_64-40-1.14.raw.xz"
@@ -241,9 +245,14 @@ importer-fedora40                       1/1     Running   0             70s
 
 
 ```bash
-➜  kubevirt kubectl get pv
+root@master:~/kubevirt# kubectl get pv
 NAME                                       CAPACITY     ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM            STORAGECLASS   VOLUMEATTRIBUTESCLASS   REASON   AGE
-pvc-261b9f51-28ca-496f-acac-46dbc10dc3de   5681173672   RWX            Delete           Bound    default/fedora   nfs-client     <unset>                          8m57s
+pvc-ba00ccb3-365b-4587-9be0-e734186e1603   5681173672   RWX            Delete           Bound    default/fedora   nfs-storage    <unset>                          16m
+root@master:~/kubevirt# kubectl get pvc
+NAME     STATUS   VOLUME                                     CAPACITY     ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+fedora   Bound    pvc-ba00ccb3-365b-4587-9be0-e734186e1603   5681173672   RWX            nfs-storage    <unset>                 16m
+root@master:~/kubevirt# ls /data/k8s/
+default-fedora-pvc-ba00ccb3-365b-4587-9be0-e734186e1603
 ```
 
 ##  创建虚拟机

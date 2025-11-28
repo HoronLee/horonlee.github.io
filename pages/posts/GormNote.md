@@ -5,14 +5,13 @@ date: 2024-04-25 16:19:23
 tags:
     - Go
 categories: 
-    - 开发
     - 编程笔记
 cover: https://files.codingninjas.in/article_images/gin-getting-started-with-gorm-golang-s-orm-library-1-1672754782.webp
 password: 
 hide:  
 ---
 
-# xxxxxxxxxx package main​import "fmt"​func findprimes(number int) bool {    // 质数本身就能被1和本身整除，所以可以直接筛选2~n-1的数字    for i := 2; i < number; i++ {        if number%i == 0 {            return false        }    }    // 筛选出来的也就只要判断是不是大于1就可以，如果是1就False如果不是就True    if number > 1 {        return true    } else {        return false    }}​func main() {    fmt.Println("Prime numbers less than 20:")​    for number := 1; number <= 20; number++ {        if findprimes(number) {            fmt.Printf("%v ", number)        }    }}go
+xxxxxxxxxx package main​import "fmt"​func findprimes(number int) bool {    // 质数本身就能被1和本身整除，所以可以直接筛选2~n-1的数字    for i := 2; i < number; i++ {        if number%i == 0 {            return false        }    }    // 筛选出来的也就只要判断是不是大于1就可以，如果是1就False如果不是就True    if number > 1 {        return true    } else {        return false    }}​func main() {    fmt.Println("Prime numbers less than 20:")​    for number := 1; number <= 20; number++ {        if findprimes(number) {            fmt.Printf("%v ", number)        }    }}go
 
 > 暂且当做用于连接并且快速操作数据库的库
 

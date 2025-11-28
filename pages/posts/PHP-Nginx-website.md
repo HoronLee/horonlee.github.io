@@ -2,34 +2,15 @@
 title: 使用PHP+Nginx搭建网页
 businesscard: true
 date: 2023-04-21 13:35:43
-updated:
 tags:
-    - Ubuntu
-    - Linux
-    - PHP
-    - Nginx
+  - Ubuntu
+  - Linux
+  - PHP
+  - Nginx
 categories:
-    
-    - PHP
-keywords:
-description:
-top_img:
-comments:
+  - 服务器运维
+  - PHP
 cover: https://tse1-mm.cn.bing.net/th/id/OIP-C.XjFkev6xFnnCtjNLejCCaAHaHa?pid=ImgDet&rs=1
-toc:
-toc_number:
-toc_style_simple:
-copyright:
-copyright_author:
-copyright_author_href:
-copyright_url:
-copyright_info:
-mathjax:
-katex:
-aplayer:
-highlight_shrink:
-aside:
-swiper_index: 3
 ---
 > 本教程基于[这篇Nginx文章](https://blog.horon.top/2023/04/20/ubuntu安装配置nginx及基础用法/)，如果不解之处可前往查阅
 <!-- more -->
@@ -127,4 +108,4 @@ listen = /run/php/php8.1-fpm.sock
 3. 写入测试内容`<?php phpinfo();?>`
 4. 保存退出
 5. 访问`http://$IP/test.php`，可以显示PHP系统信息即表示PHP站点搭建完成！
-![PHPInfo](https://minio-api.horonlee.com/obsidian/assets/博文/PHP-Nginx-website/IMG-20250916162933917.png)
+![](/attachment/PHP-Nginx-website/c99e31af0dd56e31c93b575a51872dc3.png)

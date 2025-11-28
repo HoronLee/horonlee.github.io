@@ -149,20 +149,6 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/posts/Go-Reborn-Note': RouteRecordInfo<
-      '/posts/Go-Reborn-Note',
-      '/posts/Go-Reborn-Note',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    '/posts/Golang-Prime': RouteRecordInfo<
-      '/posts/Golang-Prime',
-      '/posts/Golang-Prime',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
     '/posts/GormNote': RouteRecordInfo<
       '/posts/GormNote',
       '/posts/GormNote',
@@ -170,9 +156,9 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/posts/Harbor-HTTPS': RouteRecordInfo<
-      '/posts/Harbor-HTTPS',
-      '/posts/Harbor-HTTPS',
+    '/posts/Harbor配置HTTPS': RouteRecordInfo<
+      '/posts/Harbor配置HTTPS',
+      '/posts/Harbor配置HTTPS',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -261,13 +247,6 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/posts/NoVNC-Kvm': RouteRecordInfo<
-      '/posts/NoVNC-Kvm',
-      '/posts/NoVNC-Kvm',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
     '/posts/Online-Expansion-Ubuntu-LVM': RouteRecordInfo<
       '/posts/Online-Expansion-Ubuntu-LVM',
       '/posts/Online-Expansion-Ubuntu-LVM',
@@ -341,6 +320,20 @@ declare module 'vue-router/auto-routes' {
     '/posts/XiaoMi-Book-12-4': RouteRecordInfo<
       '/posts/XiaoMi-Book-12-4',
       '/posts/XiaoMi-Book-12-4',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/从零开始的Go语言异世界笔记': RouteRecordInfo<
+      '/posts/从零开始的Go语言异世界笔记',
+      '/posts/从零开始的Go语言异世界笔记',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/配置NoVNC连接Kvm虚拟机': RouteRecordInfo<
+      '/posts/配置NoVNC连接Kvm虚拟机',
+      '/posts/配置NoVNC连接Kvm虚拟机',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -473,27 +466,15 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'pages/posts/Go-Reborn-Note.md': {
-      routes:
-        | '/posts/Go-Reborn-Note'
-      views:
-        | never
-    }
-    'pages/posts/Golang-Prime.md': {
-      routes:
-        | '/posts/Golang-Prime'
-      views:
-        | never
-    }
     'pages/posts/GormNote.md': {
       routes:
         | '/posts/GormNote'
       views:
         | never
     }
-    'pages/posts/Harbor-HTTPS.md': {
+    'pages/posts/Harbor配置HTTPS.md': {
       routes:
-        | '/posts/Harbor-HTTPS'
+        | '/posts/Harbor配置HTTPS'
       views:
         | never
     }
@@ -569,12 +550,6 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'pages/posts/NoVNC-Kvm.md': {
-      routes:
-        | '/posts/NoVNC-Kvm'
-      views:
-        | never
-    }
     'pages/posts/Online-Expansion-Ubuntu-LVM.md': {
       routes:
         | '/posts/Online-Expansion-Ubuntu-LVM'
@@ -638,6 +613,18 @@ declare module 'vue-router/auto-routes' {
     'pages/posts/XiaoMi-Book-12-4.md': {
       routes:
         | '/posts/XiaoMi-Book-12-4'
+      views:
+        | never
+    }
+    'pages/posts/从零开始的Go语言异世界笔记.md': {
+      routes:
+        | '/posts/从零开始的Go语言异世界笔记'
+      views:
+        | never
+    }
+    'pages/posts/配置NoVNC连接Kvm虚拟机.md': {
+      routes:
+        | '/posts/配置NoVNC连接Kvm虚拟机'
       views:
         | never
     }

@@ -2,34 +2,15 @@
 title: OpenStack运维笔记
 businesscard: true
 date: 2023-07-02 13:03:41
-updated:
-tags: 
-    - CentOS
-    - Linux
-    - OpenStack
+tags:
+  - CentOS
+  - Linux
+  - OpenStack
 categories:
-    
-    - 云计算
-    - OpenStack
-keywords:
-description:
-top_img:
-comments:
+  - 服务器运维
+  - 云计算
+  - OpenStack
 cover: https://tse1-mm.cn.bing.net/th/id/OIP-C.CZwj5SbW0RXNrztZceTZtwHaEK?pid=ImgDet&rs=1
-toc:
-toc_number:
-toc_style_simple:
-copyright:
-copyright_author:
-copyright_author_href:
-copyright_url:
-copyright_info:
-mathjax:
-katex:
-aplayer:
-highlight_shrink:
-aside:
-swiper_index: 1
 ---
 # 环境准备
 ## hostname配置（controller+compute）

@@ -8,9 +8,9 @@ tags:
     - Kubernetes
     - 云计算
 categories:
-    
+    - 服务器运维
     - 云计算
-    - Kubernetes
+    - k8s
 keywords:
 description:
 top_img:

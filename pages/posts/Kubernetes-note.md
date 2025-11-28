@@ -6,9 +6,9 @@ tags:
     - Kubernetes
     - 云计算
 categories:
-    
+    - 服务器运维
     - 云计算
-    - Kubernetes
+    - k8s
 cover: https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg
 ---
 # 关于k8s镜像的下载

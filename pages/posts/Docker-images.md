@@ -2,31 +2,13 @@
 title: Docker镜像的封装和制作
 businesscard: true
 date: 2022-11-29 08:29:08
-updated:
-tags: 
-    - Linux
-categories: 
-    
-    - Docker
-keywords:
+tags:
+  - Linux
+categories:
+  - 服务器运维
+  - Docker
 description: 使用Dockerfile来制作docker镜像
-top_img:
-comments:
 cover: https://tse4-mm.cn.bing.net/th/id/OIP-C.lWhTZRrL2WT6AUIJ0wTAwgHaE8?pid=ImgDet&rs=1
-toc:
-toc_number:
-toc_style_simple:
-copyright:
-copyright_author:
-copyright_author_href:
-copyright_url:
-copyright_info:
-mathjax:
-katex:
-aplayer:
-highlight_shrink:
-aside:
-swiper_index: 3
 ---
 # Ubuntu环境下制作自己的Docker镜像——MC服务器
 > 制作Docker镜像一般有2种方法：

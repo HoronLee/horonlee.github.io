@@ -2,32 +2,13 @@
 title: 通过SRS实现在线直播
 businesscard: true
 date: 2022-11-27 11:41:22
-updated:
-tags: 
-    - Ubuntu
-    - Linux
-categories: 
-    - 练习
-    - 推流
-keywords:
-description:
-top_img:
-comments:
+tags:
+  - Ubuntu
+  - Linux
+categories:
+  - 练习
+  - 推流
 cover: https://ossrs.net/lts/zh-cn/assets/images/SRS-SingleNode-4.0-sd-658929b39b78f504e82487d55e1bd282.png
-toc:
-toc_number:
-toc_style_simple:
-copyright:
-copyright_author:
-copyright_author_href:
-copyright_url:
-copyright_info:
-mathjax:
-katex:
-aplayer:
-highlight_shrink:
-aside:
-swiper_index: 
 ---
 # Dcoker Compose封装SRS-docker
 ## 1.Docker指令→制作Docker-compose

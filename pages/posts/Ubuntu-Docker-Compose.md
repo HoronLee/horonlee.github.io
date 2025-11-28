@@ -2,33 +2,15 @@
 title: Ubuntu安装配置Docker&Compose
 businesscard: true
 date: 2022-12-02 15:33:48
-updated:
-tags: 
-    - Ubuntu
-    - Linux
-categories: 
-    
-    - Docker
-    - Dcoker-compose
-keywords:
+tags:
+  - Ubuntu
+  - Linux
+categories:
+  - 服务器运维
+  - Docker
+  - Dcoker-compose
 description: Ubuntu关于docker&compose的教程
-top_img:
-comments:
 cover: https://cdn.1min30.com/wp-content/uploads/2018/04/Logo-Docker.jpg
-toc:
-toc_number:
-toc_style_simple:
-copyright:
-copyright_author:
-copyright_author_href:
-copyright_url:
-copyright_info:
-mathjax:
-katex:
-aplayer:
-highlight_shrink:
-aside:
-swiper_index: 
 ---
 # 更新软件包索引
 添加一个新的 HTTPS 软件源：

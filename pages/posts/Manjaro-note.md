@@ -2,31 +2,13 @@
 title: Manjaro简易使用笔记
 businesscard: true
 date: 2023-03-06 15:27:43
-updated:
-tags: 
-    - Manjaro
-    - Linux
-categories: 
-    - Linux
-keywords:
-description:
-top_img:
-comments:
+tags:
+  - Manjaro
+  - Linux
+categories:
+  - Linux
+  - Manjaro
 cover: https://tse2-mm.cn.bing.net/th/id/OIP-C.jRjmiRGm54Nmhiggtb2pxQHaEK?pid=ImgDet&rs=1
-toc:
-toc_number:
-toc_style_simple:
-copyright:
-copyright_author:
-copyright_author_href:
-copyright_url:
-copyright_info:
-mathjax:
-katex:
-aplayer:
-highlight_shrink:
-aside:
-swiper_index:
 ---
 > 安装过程很简单，很人性化，就不多说了
 

@@ -3,22 +3,23 @@ layout: post
 title: ubuntu22.04-k8s-deploy
 date: 2024-05-25 10:24:56
 tags:
-    - Linux
-    - Kubernetes
-    - 云计算
-    - Ubuntu
+  - Linux
+  - Kubernetes
+  - 云计算
+  - Ubuntu
 categories:
-    
-    - 云计算
-    - Kubernetes
+  - 服务器运维
+  - 云计算
+  - k8s
 cover: https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg
-password: 
-hide: 
+password:
+hide:
+dg-publish: true
 ---
-# Ubuntu22.04部署K8S
+# Ubuntu22.  04部署K8S
 
 - Kubernetes 版本：1.29.5
-- Linux 版本：Linux master 5.15.0-107-generic #117-Ubuntu SMP Fri Apr 26 12:26:49 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+- Linux 版本：Linux master 5.15.0-107-generic # 117-Ubuntu SMP Fri Apr 26 12:26:49 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
 - 实测可用，几乎是最新的配置方法
 
 > 本文中出现的172.30.27.143地址为本人学校内网环境地址，不公开在外网，请读者忽略，软件包的下载请前往各官网

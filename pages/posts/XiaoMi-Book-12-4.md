@@ -2,31 +2,11 @@
 title: XiaoMi Book 12.4二合一上手体验
 businesscard: true
 date: 2023-02-18 12:14:24
-updated:
 tags:
-    - 电子
+  - 生活
 categories:
-    - 个人
-    - 电子
-keywords:
-description:
-top_img:
-comments:
+  - 个人
 cover: https://2d.zol-img.com.cn/product/227/5/ceFbcUR21YNww.jpg
-toc:
-toc_number:
-toc_style_simple:
-copyright:
-copyright_author:
-copyright_author_href:
-copyright_url:
-copyright_info:
-mathjax:
-katex:
-aplayer:
-highlight_shrink:
-aside:
-swiper_index:
 ---
 # XiaoMiBook1.24二合一
 
@@ -34,15 +14,15 @@ swiper_index:
 
 ## 外观&手感
 外观方面个人觉得无可挑剔，正面的黑边宽度适中，背面是金属磨砂，有一些高级感。接上键盘之后，看上去就是有一种高级感了。如果不加装自带的外套的话，捧在手里会感觉比一般的平板重，但是磨砂的质感真的很好。
-![12.4-1.jpg](https://minio-api.horonlee.com/obsidian/assets/博文/XiaoMi-Book-12-4/IMG-20250916162849050.png)
+![](/attachment/XiaoMi-Book-12-4/5ef2bc92ea9355ac06ff1f3b96cf1703.png)
 
 ## 性能&能耗比
 性能完全够用，**骁龙8cx Gen2**处理器相当于晓龙888的水平，但是能耗比更优秀，只有**7w**功耗，可以说是续航怪兽，8个核心，频率**2.84Ghz**，可以应付大多数办公软件，VS Code·Pycharm等idea也可以完美运行，速度不输轻薄本！
-![12.4-CPU.png](https://minio-api.horonlee.com/obsidian/assets/博文/XiaoMi-Book-12-4/IMG-20250916162855414.png)
+![](/attachment/XiaoMi-Book-12-4/2db1b568b078c4b56f2c6604b40026d6.png)
 内存是**8G**，开机基本就是3.5G被win11吃了，我一开始觉得内存会不够用，但是自己开了一大堆软件之后，发现内存仍然没有满8G，一直维持在7.5G左右，看来win11对于内存的调教还是很好吧的？
 
 ## 便携性
-![12.4-2.jpg](https://minio-api.horonlee.com/obsidian/assets/博文/XiaoMi-Book-12-4/IMG-20250916162901244.png)
+![](/attachment/XiaoMi-Book-12-4/e5237cf2ac92d4136081cbe6a99a7963.png)
 看奥，我之前练钢琴就是用这个来当作看谱子的东西，2K屏幕+12.3大屏幕很适合阅读，开启护眼模式也不会觉得视觉疲劳，拆掉键盘完全可以当作一个平板用，感觉快可以追上iPad Pro了。
 
 ### 高通骁龙8cx Gen2

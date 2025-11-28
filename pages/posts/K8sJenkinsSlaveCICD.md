@@ -9,8 +9,8 @@ tags:
     - CICD
     - Jenkins
 categories:
+    - 服务器运维
     - 云计算
-    - Devops
     - Jenkins
 cover: https://i2.wp.com/digitalvarys.com/wp-content/uploads/2019/05/jenkins-master-slave-config.png?fit=1963%2C1079&ssl=1
 password: 
@@ -121,7 +121,7 @@ skip_verify = true
 
 执行脚本来安装harbor`./install.sh`
 
-![image-20240930101917466](https://minio-api.horonlee.com/obsidian/assets/博文/K8sJenkinsSlaveCICD/IMG-20250916164017314.png)
+![](/attachment/K8sJenkinsSlaveCICD/0b489e311b5b45e574814990a45fb21b.png)
 
 出现如图回显说明Harbor安装完成
 
@@ -211,7 +211,7 @@ services:
 
 然后点击 `立即安装`，稍等片刻即可进入登录页面，输入账号密码，进入主页
 
-![image-20240930101931037](https://minio-api.horonlee.com/obsidian/assets/博文/K8sJenkinsSlaveCICD/IMG-20250916164025311.png)
+![](/attachment/K8sJenkinsSlaveCICD/5b86f1537c409e568d2dcf94e64a02cd.png)
 
 ### 使用 Helm 安装Gitea
 
@@ -566,15 +566,15 @@ http://<master-ip>:32000
 
 创建用户，然后选择保存并完成
 
-![image-20240930101945192](https://minio-api.horonlee.com/obsidian/assets/博文/K8sJenkinsSlaveCICD/IMG-20250916164037518.png)
+![](/attachment/K8sJenkinsSlaveCICD/9b336640664bd348ece99f30fbcefda0.png)
 
-![image-20240930101950980](https://minio-api.horonlee.com/obsidian/assets/博文/K8sJenkinsSlaveCICD/IMG-20250916164041800.png)
+![](/attachment/K8sJenkinsSlaveCICD/946290a3c2091ddaa7b912e9ee5bd04e.png)
 
-![image-20240930101956943](https://minio-api.horonlee.com/obsidian/assets/博文/K8sJenkinsSlaveCICD/IMG-20250916164047338.png)
+![](/attachment/K8sJenkinsSlaveCICD/98901ba24512e988e1ec0e4671b64197.png)
 
 设置全局安全设置为任何用户可以做任何事
 
-![image-20240930102002606](https://minio-api.horonlee.com/obsidian/assets/博文/K8sJenkinsSlaveCICD/IMG-20250916164051630.png)
+![](/attachment/K8sJenkinsSlaveCICD/372e2b973fc459b466f4aff23d8803e4.png)
 
 ### 安装插件
 
@@ -616,9 +616,9 @@ LS0tLS1CRUdJTiBDRVJUSUZJ...(省略)
 
 - Jenkins 通道`172.30.26.172:32500`不能加任何协议，因为是 tcp 传输协议，值就是 jenkins service 的另一个暴露的端口
 
-![image-20240930102035817](https://minio-api.horonlee.com/obsidian/assets/博文/K8sJenkinsSlaveCICD/IMG-20250916164059202.png)
+![](/attachment/K8sJenkinsSlaveCICD/d953a2e1c3f6ec4e582f16d80169cbd6.png)
 
-![image-20240930102040791](https://minio-api.horonlee.com/obsidian/assets/博文/K8sJenkinsSlaveCICD/IMG-20250916164104283.png)
+![](/attachment/K8sJenkinsSlaveCICD/b7dc69fe9e8373ad6772bf7459c0c467.png)
 
 最后点击下方 Save 保存
 
@@ -667,7 +667,7 @@ Pod Template 就是 slave 节点将会启动的Pod，我们可以设置多个Pod
 
 - 标签列表 `jenkins-slave-k8s`
 
-![image-20240930102114012](https://minio-api.horonlee.com/obsidian/assets/博文/K8sJenkinsSlaveCICD/IMG-20250916164109927.png)
+![](/attachment/K8sJenkinsSlaveCICD/10f7a756c0cb6faba2fe1e8503306205.png)
 
 卷设置，点击`添加卷`，选择 `Host Path Volume`，接下来需要填入多个从主机映射到 Pod 中的文件
 
@@ -680,11 +680,11 @@ Pod Template 就是 slave 节点将会启动的Pod，我们可以设置多个Pod
 | ctr 命令          | /usr/bin/ctr                    | /usr/bin/ctr                    |
 | containerd 套接字 | /run/containerd/containerd.sock | /run/containerd/containerd.sock |
 
-![image-20240930102147934](https://minio-api.horonlee.com/obsidian/assets/博文/K8sJenkinsSlaveCICD/IMG-20250916164114940.png)
+![](/attachment/K8sJenkinsSlaveCICD/5043353c0c6a28475e97d3dfe3fd5ca3.png)
 
 然后翻动页面到下方，找到`Run As User ID`和`Run As Group ID`，填入`0`，目的是让 Pod 中的容器可以正常执行 docker 和 ctr 命令。（0 是宿主机 root 用户的组 ID）
 
-![image-20240930102156219](/Users/horonlee/Library/Application Support/typora-user-images/image-20240930102156219.png)
+![](/attachment/K8sJenkinsSlaveCICD/b048c97f5bca670967f73c753c3a0b57.png)
 
 #### 设置容器
 
@@ -776,7 +776,7 @@ pipeline {
 }
 ```
 
-![](https://minio-api.horonlee.com/obsidian/assets/博文/K8sJenkinsSlaveCICD/IMG-20250916164125780.png)
+![](/attachment/K8sJenkinsSlaveCICD/807955afc089205f93637c40c8aa0e90.png)
 
 点击左侧的立即构建，流水线就开始运行了
 
@@ -786,11 +786,11 @@ pipeline {
 
 在构建过程中，我们可以在宿主机上通过`kubectl -n devops get po`指令查看临时生成的 jenkins-slave pod，它正在运行 jenkins-master 下发的流水线
 
-![image-20240930102217151](https://minio-api.horonlee.com/obsidian/assets/博文/K8sJenkinsSlaveCICD/IMG-20250916164129933.png)
+![](/attachment/K8sJenkinsSlaveCICD/0a317e0774105ec4e51f7d1e72c43f56.png)
 
 构建完成后，访问 http://172.30.26.172:30080就可以看到博客正常被测试发布了，临时的 jenkins-slave pod 也被自动删除了
 
-![image-20240930102239242](https://minio-api.horonlee.com/obsidian/assets/博文/K8sJenkinsSlaveCICD/IMG-20250916165046164.png)
+![](/attachment/K8sJenkinsSlaveCICD/8102a2a36ddd415b5e66b5bfbee37bca.png)
 
 🎉看到此页面就代表我们已经通过 agent 节点的功能完成了 CICD！
 
@@ -831,8 +831,7 @@ Docker 镜像`docker.io/jenkins/inbound-agent:latest`
 ☑️`分配伪终端`
 
 点击最下方 Create 完成 pod template 的创建
-
-![image-20240930102129737](https://minio-api.horonlee.com/obsidian/assets/博文/K8sJenkinsSlaveCICD/IMG-20250916165009205.png)
+![](/attachment/K8sJenkinsSlaveCICD/3d2d07f1e7c31a845649d52cbc340692.png)
 
 ### 测试jenkins-slave
 

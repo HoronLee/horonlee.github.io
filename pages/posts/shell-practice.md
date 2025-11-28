@@ -5,10 +5,9 @@ date: 2023-10-09 11:35:31
 updated:
 tags:
     - Linux
-    - Shell编程
+    - 运维
 categories:
-    - Linux
-    - Shell
+    - 服务器运维
 excerpt: 我觉得我写这个也太无聊了
 ---
 
@@ -25,11 +24,11 @@ echo "======开始执行脚本======"
 # yum clean all > /dev/null
 # repolist=$(yum repolist)
 # # 检查结果中是否包含"repolist"关键字，表示yum源可用
-# if [[ $repolist == *"repolist: 0"* ]]; then
+# if [ $repolist == *"repolist: 0"* ](%20%24repolist%20%3D%3D%20*%22repolist%3A%200%22*%20); then
 #     echo "Yum源不可用"
 # else
 #     # 检查是否有status的值为4070的仓库
-#     if [[ $repolist == *"4,070"* ]]; then
+#     if [ $repolist == *"4,070"* ](%20%24repolist%20%3D%3D%20*%224%2C070%22*%20); then
 #         echo "Yum源可用且软件包正常!"
 #     else
 #         echo "Yum源可用但软件包数量异常!"
@@ -71,41 +70,41 @@ echo "接下来请输入更改主机名相关的脚本变量"
 echo "直接回车则采用[用户名: root]"
 read -p "->请输入免密登录的用户名: " USERNAME
 # 如果用户名为空，则将其设置为默认值root
-if [[ -z $USERNAME ]]; then
+if [ -z $USERNAME ](%20-z%20%24USERNAME%20); then
   USERNAME="root"
 fi
 echo "直接回车则采用[密码: 000000]"
 read -s -p "->请输入免密登录的密码: " PASSWORD
 echo
 # 如果密码为空，则将其设置为默认值000000
-if [[ -z $PASSWORD ]]; then
+if [ -z $PASSWORD ](%20-z%20%24PASSWORD%20); then
   PASSWORD="000000"
 fi
 # 网络IP配置
 read -p "->请输入集群的内网网卡名(直接回车默认eth0): " IntranetNIC
-if [[ -z $IntranetNIC ]]; then
+if [ -z $IntranetNIC ](%20-z%20%24IntranetNIC%20); then
   IntranetNIC="eth0"
 fi
 # 执行脚本的节点IP和主机名
 read -p "->请输入执行脚本的节点IP(直接回车默认eth0的IP): " EXECUTOR_IP
-if [[ -z $EXECUTOR_IP ]]; then
+if [ -z $EXECUTOR_IP ](%20-z%20%24EXECUTOR_IP%20); then
   EXECUTOR_IP=$(ip addr show $IntranetNIC | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
 
 fi
 read -p "->请输入执行脚本的节点主机名(直接回车默认mycat): " EXECUTOR_HOSTNAME
-if [[ -z $EXECUTOR_HOSTNAME ]]; then
+if [ -z $EXECUTOR_HOSTNAME ](%20-z%20%24EXECUTOR_HOSTNAME%20); then
   EXECUTOR_HOSTNAME="mycat"
 fi
 # 子节点1的IP和主机名
 read -p "->请输入子节点1的IP: " NODE1_IP
 read -p "->请输入子节点1的主机名(直接回车默认db1): " NODE1_HOSTNAME
-if [[ -z $NODE1_HOSTNAME ]]; then
+if [ -z $NODE1_HOSTNAME ](%20-z%20%24NODE1_HOSTNAME%20); then
   NODE1_HOSTNAME="db1"
 fi
 # 子节点2的IP和主机名
 read -p "->请输入子节点2的IP: " NODE2_IP
 read -p "->请输入子节点2的主机名(直接回车默认db2): " NODE2_HOSTNAME
-if [[ -z $NODE2_HOSTNAME ]]; then
+if [ -z $NODE2_HOSTNAME ](%20-z%20%24NODE2_HOSTNAME%20); then
   NODE2_HOSTNAME="db2"
 fi
 

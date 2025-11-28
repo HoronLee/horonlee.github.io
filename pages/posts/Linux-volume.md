@@ -2,30 +2,11 @@
 title: Linux在线扩容磁盘
 businesscard: true
 date: 2022-12-19 17:19:14
-updated:
-tags: 
-    - Linux
-categories: 
-    - Linux
-keywords:
-description:
-top_img:
-comments:
+tags:
+  - Linux
+categories:
+  - 服务器运维
 cover: https://tse3-mm.cn.bing.net/th/id/OIP-C.wnNG3ph-NCpb_xjB1-FsBQHaE8?pid=ImgDet&rs=1
-toc:
-toc_number:
-toc_style_simple:
-copyright:
-copyright_author:
-copyright_author_href:
-copyright_url:
-copyright_info:
-mathjax:
-katex:
-aplayer:
-highlight_shrink:
-aside:
-swiper_index:
 ---
 CentOS7：
 进入SSH并运行如下命令

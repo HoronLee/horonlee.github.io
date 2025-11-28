@@ -2,34 +2,15 @@
 title: CentOS搭建OpenStack-Queen手记
 businesscard: true
 date: 2022-12-06 20:41:18
-updated:
-tags: 
-    - CentOS
-    - Linux
-    - OpenStack
-categories: 
-    
-    - 云计算
-    - OpenStack
-keywords:
-description:
-top_img:
-comments:
+tags:
+  - CentOS
+  - Linux
+  - OpenStack
+categories:
+  - 服务器运维
+  - 云计算
+  - OpenStack
 cover: https://tse1-mm.cn.bing.net/th/id/OIP-C.CZwj5SbW0RXNrztZceTZtwHaEK?pid=ImgDet&rs=1
-toc:
-toc_number:
-toc_style_simple:
-copyright:
-copyright_author:
-copyright_author_href:
-copyright_url:
-copyright_info:
-mathjax:
-katex:
-aplayer:
-highlight_shrink:
-aside:
-swiper_index: 4
 ---
 # OpenStack-Queen版本搭建
 - 系统：CentOS7.5-1804

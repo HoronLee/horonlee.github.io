@@ -4,9 +4,8 @@ title: LVM添加硬盘并扩容至已有分区
 date: 2024-05-28 16:34:48
 tags: 
     - Linux
-    - LVM
 categories: 
-    - Linux
+    - 服务器运维
 cover: https://tse4-mm.cn.bing.net/th/id/OIP-C.fc9kPEurw9LwPut0YMRC-QHaFF?rs=1&pid=ImgDetMain
 password: 
 hide: 

@@ -7,9 +7,10 @@ tags:
     - Linux
     - Kubernetes
 categories: 
+    - 服务器运维
     - 云计算
-    - Devops
-    - Jenkins
+    - Kubernetes
+    - CICD
 cover: https://www.kubernetes.org.cn/img/2020/10/jenkins-logo.jpg
 password: 
 hide: 

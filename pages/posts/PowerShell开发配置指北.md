@@ -15,7 +15,7 @@ hide:
 
 ## 确保安装了“终端”应用
 
-![image-20241010151031530](https://minio-api.horonlee.com/obsidian/assets/博文/PowerShell开发配置指北/IMG-20250916163510632.png)
+![](/attachment/PowerShell开发配置指北/03bbb8bcdc83a4cc76f5ff35c3ea77bc.png)
 
 这是必须的，windows11之前的“命令行”应用并不好用，色彩支持少、不支持多标签、自定义程度也非常低，所以我们需要使用微软最新推出的终端应用
 
@@ -38,19 +38,19 @@ hide:
 - 默认情况下，包安装位置为 `$env:ProgramFiles\PowerShell\<version>`
 - 可以通过“开始”菜单或 `$env:ProgramFiles\PowerShell\<version>\pwsh.exe` 启动 PowerShell
 
-![e33ad1e7d5ab7da80b4ba47db8376c95](https://minio-api.horonlee.com/obsidian/assets/博文/PowerShell开发配置指北/IMG-20250916163518795.png)
+![](/attachment/PowerShell开发配置指北/75aa208a35c5fa348caf6f1fc5cbbfd2.png)
 
 ### 配置终端默认使用PowerShell7
 
 如果PowerShell7安装成功，则在终端程序中会自动添加新的图标的PowerShell配置文件
 
-![image-20241011155754946](https://minio-api.horonlee.com/obsidian/assets/博文/PowerShell开发配置指北/IMG-20250916163525898.png)
+![](/attachment/PowerShell开发配置指北/2d4d6a686ee7c9947ec991ad43a69783.png)
 
 如果没有找到，则可以重启终端程序，再查看是否存在，理论上会自动添加，否则需要手动复制上方`Windows PowerShell`的配置文件更改实际`命令行`参数
 
 接下来就是更改默认启动项了，非常简单~
 
-![image-20241011155953210](https://minio-api.horonlee.com/obsidian/assets/博文/PowerShell开发配置指北/IMG-20250916163530822.png)
+![](/attachment/PowerShell开发配置指北/2b937d06fbb1a76147466f1978d91ab5.png)
 
 ## 安装Scoop
 
@@ -83,7 +83,7 @@ irm get.scoop.sh -outfile 'install.ps1'
 
 > [官网 | Oh My Posh](https://ohmyposh.dev/)是一个shell提示主题引擎，可以让你的终端使用体验和外观都得到很好的改善
 
-![image-20241010151715719](https://minio-api.horonlee.com/obsidian/assets/博文/PowerShell开发配置指北/IMG-20250916163536080.png)
+![](/attachment/PowerShell开发配置指北/116b0eaf841d557ccaf93127d227af9a.png)
 
 官方文档中有很多安装方式，我们这里选择scoop安装，并且后续的所有软件几乎都是通过scoop来安装的，这样做到了软件包管理的统一性。
 
@@ -136,11 +136,11 @@ scoop bucket add nerd-fonts
 
 #### 设置终端默认字体
 
-![image-20241010153505860](https://minio-api.horonlee.com/obsidian/assets/博文/PowerShell开发配置指北/IMG-20250916163544275.png)
+![](/attachment/PowerShell开发配置指北/653a883021cbff387dce5622620f5714.png)
 
 从下拉框中进入默认值设置的外观选项
 
-![image-20241010153549937](https://minio-api.horonlee.com/obsidian/assets/博文/PowerShell开发配置指北/IMG-20250916163548224.png)
+![](/attachment/PowerShell开发配置指北/fd10db1c314bed568d2c21d07bfef98c.png)
 
 将字体设定成自己下载安装的Nerd类型字体，在下方配置中，还有其他关于透明度等等的设置，可以自己按照喜好调试，记得点击右下角保存生效。
 
@@ -156,17 +156,17 @@ scoop bucket add nerd-fonts
 scoop bucket add extras
 ```
 
-![img](https://minio-api.horonlee.com/obsidian/assets/博文/PowerShell开发配置指北/IMG-20250916163601508.png)
+![](/attachment/PowerShell开发配置指北/add52b638900cdeaacf64c4bf03e05ac.png)
 
 ```
 scoop install posh-git
 ```
 
-![img](https://minio-api.horonlee.com/obsidian/assets/博文/PowerShell开发配置指北/IMG-20250916163616521.png)
+![](/attachment/PowerShell开发配置指北/c00dbeed2dcef03fc88901c1c443a8a2.png)
 
 #### Terminal-Icons
 
-![img](https://minio-api.horonlee.com/obsidian/assets/博文/PowerShell开发配置指北/IMG-20250916163635241.png)
+![](/attachment/PowerShell开发配置指北/9f9fcb5a2f72f3d927e3d93bbf4fd283.png)
 
 [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) 可以在 `PowerShell` 中显示项目图标并以颜色区分。让你的 `Powershell` 变得更加的花哨。
 
@@ -182,7 +182,7 @@ scoop bucket add extras
 scoop install terminal-icons
 ```
 
-![img](https://minio-api.horonlee.com/obsidian/assets/博文/PowerShell开发配置指北/IMG-20250916163654074.png)
+![](/attachment/PowerShell开发配置指北/06488836739650f59d13f07f699dd923.png)
 
 安装完成后，还贴心的提示了如何使用，执行`Import-Module Terminal-Icons`即可设置好小图标
 
@@ -229,7 +229,7 @@ Import-Module posh-git
 Get-PoshThemes
 ```
 
-![image-20241010154834079](https://minio-api.horonlee.com/obsidian/assets/博文/PowerShell开发配置指北/IMG-20250916163744059.png)
+![](/attachment/PowerShell开发配置指北/d67abcfc1ba928d9a8c60f87e49b895f.png)
 
 其中终端样式上方就有主题文件目录，可以复制下来，注意不要复制到前后多余的字符，我们只需要`C:\Users\HoronLee\AppData\Local\Programs\oh-my-posh\themes\1_shell.omp.json`，`json`不要复制成`jsone`！
 
@@ -254,11 +254,11 @@ oh-my-posh init pwsh --config C:\Users\HoronLee\AppData\Local\Programs\oh-my-pos
 
 首先打开**设置**，搜索 `Font Family`，找到`Terminal › Integrated: Font Family`这个配置项目，现在下方的配置框中是空白的，需要填上Nerd字体的全民，并且加上单引号
 
-![image-20241010155558887](https://minio-api.horonlee.com/obsidian/assets/博文/PowerShell开发配置指北/IMG-20250916163750336.png)
+![](/attachment/PowerShell开发配置指北/e29730575580c20eb03d71e79c02e43a.png)
 
 最后重新打开终端，或是执行 `powershell`，即可查看美化界面。
 
-![image-20241010155624591](https://minio-api.horonlee.com/obsidian/assets/博文/PowerShell开发配置指北/IMG-20250916163755639.png)
+![](/attachment/PowerShell开发配置指北/04c039e9dae3017d9a5afeb29ea6eb3d.png)
 
 ## 安装NeoVim
 
@@ -311,7 +311,7 @@ scoop install neovim
 
 这是安装完成的状态，你可以通过`Shift+U`等组合切换选项卡
 
-![image-20241010160340343](https://minio-api.horonlee.com/obsidian/assets/博文/PowerShell开发配置指北/IMG-20250916163841442.png)
+![](/attachment/PowerShell开发配置指北/3fadecb8e45dddf4e5840e373513dbae.png)
 
 如果出现了红色报错，内容含有make、gcc等词汇，说明缺少了一下依赖，你需要手动安装，这很简单，还需使用伟大的scoop即可完成（我碰到的就是gcc不存在，所以我就自己安装完成了）
 

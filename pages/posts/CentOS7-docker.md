@@ -2,32 +2,14 @@
 title: CentOS7安装配置docker
 businesscard: true
 date: 2022-11-27 14:46:08
-updated:
-tags: 
-    - CentOS
-    - Linux
-categories: 
-    
-    - Docker
-keywords:
+tags:
+  - CentOS
+  - Linux
+categories:
+  - 服务器运维
+  - Docker
 description: CentOS7安装配置docker以及更改配置文件
-top_img:
-comments:
 cover: https://cdn.1min30.com/wp-content/uploads/2018/04/Logo-Docker.jpg
-toc:
-toc_number:
-toc_style_simple:
-copyright:
-copyright_author:
-copyright_author_href:
-copyright_url:
-copyright_info:
-mathjax:
-katex:
-aplayer:
-highlight_shrink:
-aside:
-swiper_index: 
 ---
 ## CentOS下安装和配置Dcoker有一些麻烦，故本人请教学长后打算写下一些经验
 ### step 1：安装必要的一些系统工具
