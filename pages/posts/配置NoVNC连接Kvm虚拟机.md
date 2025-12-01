@@ -6,10 +6,9 @@ tags:
 categories:
   - Linux
   - KVM
-cover:
+cover: /attachment/配置NoVNC连接Kvm虚拟机/2230097ef916372114bf21e33063a3e2.png
 dg-publish: true
 ---
-![](/attachment/配置NoVNC连接Kvm虚拟机/2230097ef916372114bf21e33063a3e2.png)
 ## 虚拟机显示器输出设置
 通过virsh或者virt-manager查看虚拟机的显示定义，其中类型需要是vnc；端口最好是autoport，这样会自动生成可用的端口，一般从5900自增；监听IP最好为0.0.0.0也就是监听所有接口，下面会说明如何设置默认监听IP
 ```
@@ -20,7 +19,7 @@ dg-publish: true
 ## 需要用的软件
 
 > [novnc/noVNC: VNC client web application](https://github.com/novnc/noVNC)
-> 
+>
 > [novnc/websockify: Websockify is a WebSocket to TCP proxy/bridge. This allows a browser to connect to any application/server/service.](https://github.com/novnc/websockify)
 ## 更改vnc监听默认设置
 
