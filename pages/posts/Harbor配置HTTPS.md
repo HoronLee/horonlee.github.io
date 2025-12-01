@@ -5,10 +5,9 @@ tags:
   - Harbor
 categories:
   - 运维
-cover:
+cover: /attachment/Harbor配置HTTPS/820a57ef8505062f1dc5ecbad020da7f.png
 dg-publish: true
 ---
-![](/attachment/Harbor配置HTTPS/820a57ef8505062f1dc5ecbad020da7f.png)
 ##  需求
 docker部署了一个harbor，需要配置docker和k3s集群https访问harbor，主机物理地址192.168.6.166
 
@@ -80,7 +79,7 @@ openssl x509 -req -sha512 -days 3650 \
 ## 添加域名解析
 ### 本机解析
 ```bash
-➜  ~ cat /etc/hosts 
+➜  ~ cat /etc/hosts
 # Static table lookup for hostnames.
 # See hosts(5) for details.
 127.0.0.1        localhost
@@ -118,7 +117,7 @@ ca.crt  harbor.local.com.cert  harbor.local.com.key
 ## k3s使用证书
 和docker同理，指定三样证书文件即可，但是需要额外编写配置字段，如下
 ```bash
-➜  ~ cat /etc/rancher/k3s/registries.yaml 
+➜  ~ cat /etc/rancher/k3s/registries.yaml
 mirrors:
   harbor.local.com:
     endpoint:
@@ -151,8 +150,8 @@ root@R430:/opt/harbor# systemctl restart containerd
 用nerdctl登录测试，其中参数`--insecure-registry`可以不加
 ```bash
 root@R430:/opt/harbor# nerdctl login -u admin --insecure-registry harbor.local.com:8082
-Enter Password: 
-WARN[0003] skipping verifying HTTPS certs for "harbor.local.com:8082" 
+Enter Password:
+WARN[0003] skipping verifying HTTPS certs for "harbor.local.com:8082"
 Login Succeeded
 ```
 成功！
@@ -165,7 +164,7 @@ kubectl create secret docker-registry registry-secret --namespace=default --dock
 ```bash
 ➜  ssl git:(master) ✗ kubectl run -i --tty dns-test --image=harbor.local.com:8082/library/busybox --restart=Never --rm -- sh
 If you don't see a command prompt, try pressing enter.
-/ # 
+/ #
 
 ➜  /opt kubectl describe po dns-test
 ...省略
