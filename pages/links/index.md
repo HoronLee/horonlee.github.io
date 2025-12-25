@@ -106,6 +106,11 @@ links:
     blog: Mugzx's Blog
     desc: 分享设计与科技生活
     color: "#3D3DF5"
+  - url: https://blog.linux-qitong.top/
+    avatar: https://blog.linux-qitong.top/img/avatar.webp
+    name: 栖童
+    blog: 栖童の小站
+    desc: 越努力,越幸运
 
 # 也可以是一个 JSON 链接
 # links: https://friends.yunyoujun.cn/links.json
