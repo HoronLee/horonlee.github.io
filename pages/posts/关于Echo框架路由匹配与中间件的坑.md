@@ -13,7 +13,7 @@ dg-publish: false
 
 在基于 Echo 框架的 Web 应用中，当访问一个不存在的路由时，返回的是 `{"code": 401, "msg": "Token not found"}` 而不是预期的 `404 Not Found`。
 
-  ## 问题背景
+## 问题背景
 
 项目采用了公开路由（Public）和私有路由（Private）分组的架构：
 
@@ -54,28 +54,29 @@ Echo 框架的路由匹配机制导致了这个问题：
 fmt.Printf("DEBUG - Path: %q, RequestURI: %s\n", ctx.Path(), ctx.Request().RequestURI)
 ```
 
-访问 `/api/v1/helloworld1`（不存在的路由）时，输出：
+测试不同路径的 `ctx.Path()` 返回值：
 
-```
-DEBUG - Path: "/api/v1/*", RequestURI: /api/v1/helloworld1
-```
-
-这证实了 Echo 将不存在的路由匹配到了通配符路由 `/api/v1/*`。
+| 请求路径 | `ctx.Path()` | 说明 |
+|---------|-------------|------|
+| `/api/no-route` | `""` (空) | 不在 v1 组下，无匹配 |
+| `/api/v1/notexist` | `/api/v1/*` | 匹配到兜底通配符 |
+| `/api/v1/user` | `/api/v1/user` | 匹配到具体路由 |
 
 ## 解决方案
 
-### 最终方案：在 JWT 中间件中检测通配符路由
+### 最终方案：精确匹配兜底通配符
 
-在 JWT 中间件中检查 `ctx.Path()` 是否以 `/*` 结尾，如果是则跳过认证：
+在 JWT 中间件中检查 `ctx.Path()` 是否为兜底通配符路径，如果是则跳过认证：
 
 ```go
 func JwtAuth() echo.MiddlewareFunc {
     return func(next echo.HandlerFunc) echo.HandlerFunc {
         return func(ctx echo.Context) error {
-            // 如果匹配到通配符路由（如 /api/v1/*），说明没有具体路由匹配
+            // 如果匹配到 /api/v1/* 兜底通配符，说明没有具体路由匹配
             // 跳过认证，让框架返回 404
+            // 注意：这里精确匹配，不影响真正的通配符路由（如 /api/v1/files/*）
             path := ctx.Path()
-            if path == "" || strings.HasSuffix(path, "/*") {
+            if path == "" || path == "/api/v1/*" {
                 return next(ctx)
             }
 
@@ -85,19 +86,58 @@ func JwtAuth() echo.MiddlewareFunc {
 }
 ```
 
-### 其他尝试过的方案
+### 为什么用精确匹配而非后缀匹配？
 
-#### 方案一：使用不同的路由前缀（不推荐）
+最初尝试使用 `strings.HasSuffix(path, "/*")` 来检测所有通配符路由，但这会影响真正的业务通配符路由（如 `/api/v1/files/*`）。
 
-将私有路由放到独立前缀下：
+精确匹配 `/api/v1/*` 的优势：
+- 只跳过 Echo 自动生成的兜底通配符
+- 不影响业务中真正注册的通配符路由
+
+### 关于通配符路由的影响
+
+| 路由类型 | 示例 | 是否受影响 |
+|---------|------|-----------|
+| 兜底通配符 | `/api/v1/*` | ✓ 跳过认证，返回 404 |
+| 业务通配符 | `/api/v1/files/*` | ✗ 正常认证 |
+| 业务通配符 | `/api/v1/static/*` | ✗ 正常认证 |
+
+**结论**：`/api/v1/*` 这种直接挂在版本根路径的通配符在实际业务中几乎不会使用，因为它会匹配所有请求，太宽泛了。业务中的通配符路由一般用于特定资源路径。
+
+## 单元测试
+
+添加了单元测试验证方案的正确性：
+
+```go
+// TestJwtAuth_NotFoundRoute 测试访问不存在的路由时返回404而非401
+func TestJwtAuth_NotFoundRoute(t *testing.T) {
+    // 测试用例：
+    // 1. 不存在的路由应返回 404
+    // 2. 存在的路由无 token 应返回 401
+    // 3. 不在 v1 下的路由应返回 404
+}
+
+// TestJwtAuth_WildcardRoute 测试真正的通配符路由仍需认证
+func TestJwtAuth_WildcardRoute(t *testing.T) {
+    // 测试用例：
+    // 1. 通配符路由无 token 应返回 401
+    // 2. 通配符路由根路径无 token 应返回 401
+}
+```
+
+测试文件：`internal/middleware/auth_test.go`
+
+## 其他尝试过的方案
+
+### 方案一：使用不同的路由前缀
 
 ```go
 private := v1Group.Group("/protected")
 ```
 
-缺点：改变了 API URL 结构，如 `DELETE /api/v1/user` 变成 `DELETE /api/v1/protected/user`。
+缺点：改变了 API URL 结构。
 
-#### 方案二：在路由级别单独应用中间件（不推荐）
+### 方案二：在路由级别单独应用中间件
 
 ```go
 routerGroup.PrivateRouter.DELETE("/user", h.UserHandler.DeleteUser(), middleware.JwtAuth())
@@ -105,36 +145,25 @@ routerGroup.PrivateRouter.DELETE("/user", h.UserHandler.DeleteUser(), middleware
 
 缺点：需要在每个私有路由上手动添加中间件，容易遗漏。
 
-#### 方案三：检查 `ctx.Path() == ""`（无效）
+### 方案三：检查 `ctx.Path() == ""`
 
-根据网上文章建议，检查 `ctx.Path()` 是否为空来判断路由是否存在。
+根据网上文章建议，检查 `ctx.Path()` 是否为空。
 
 结果：无效。Echo 在这种情况下返回的是通配符路径 `/api/v1/*`，而不是空字符串。
 
-## 关键知识点
+## 注意事项
 
-### Echo 中间件类型
+1. **多版本 API**：如果添加了 `/api/v2` 版本，需要在中间件里也加上 `/api/v2/*` 的判断
 
-1. **Pre 中间件**：在路由匹配前执行，使用 `e.Pre()` 注册
-2. **普通中间件**：在路由匹配后执行，使用 `e.Use()` 或 `group.Use()` 注册
+2. **中间件错误响应**：建议返回 `echo.NewHTTPError()` 而非直接 `ctx.JSON()`，以便统一错误处理
 
-### `ctx.Path()` 的行为
-
-- 返回匹配到的路由模板路径，而非实际请求路径
-- 对于不存在的路由，可能返回通配符路径（如 `/api/v1/*`）而非空字符串
-- 具体行为取决于路由注册方式和 Echo 版本
-
-### 最佳实践
-
-1. 中间件应返回 `echo.NewHTTPError()` 而非直接 `ctx.JSON()`，以便统一错误处理
-2. 认证中间件应考虑路由不存在的情况，避免泄露不必要的信息
-3. 使用 `CustomHTTPErrorHandler` 统一处理所有 HTTP 错误
+3. **适用范围**：只有应用在路由组级别的中间件需要这个处理，应用在具体路由上的中间件不需要
 
 ## 修改文件清单
 
-1. `internal/middleware/auth.go` - 添加通配符路由检测逻辑
-2. `internal/router/router.go` - 路由组配置（保持原有结构）
-3. `internal/router/user.go` - 用户路由配置
+1. `internal/middleware/auth.go` - 添加兜底通配符检测逻辑
+2. `internal/middleware/auth_test.go` - 添加单元测试
+3. `internal/router/router.go` - 路由组配置（保持原有结构）
 
 ## 参考资料
 
