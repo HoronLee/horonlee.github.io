@@ -331,6 +331,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/posts/关于Echo框架路由匹配与中间件的坑': RouteRecordInfo<
+      '/posts/关于Echo框架路由匹配与中间件的坑',
+      '/posts/关于Echo框架路由匹配与中间件的坑',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/posts/解决 Docker 容器互联与 Firewalld 区域冲突的排查与实践': RouteRecordInfo<
       '/posts/解决 Docker 容器互联与 Firewalld 区域冲突的排查与实践',
       '/posts/解决 Docker 容器互联与 Firewalld 区域冲突的排查与实践',
@@ -626,6 +633,12 @@ declare module 'vue-router/auto-routes' {
     'pages/posts/从零开始的Go语言异世界笔记.md': {
       routes:
         | '/posts/从零开始的Go语言异世界笔记'
+      views:
+        | never
+    }
+    'pages/posts/关于Echo框架路由匹配与中间件的坑.md': {
+      routes:
+        | '/posts/关于Echo框架路由匹配与中间件的坑'
       views:
         | never
     }
