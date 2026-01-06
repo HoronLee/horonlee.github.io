@@ -254,6 +254,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/posts/OpenCode对接CodeSome API': RouteRecordInfo<
+      '/posts/OpenCode对接CodeSome API',
+      '/posts/OpenCode对接CodeSome API',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/posts/OpenStack-note': RouteRecordInfo<
       '/posts/OpenStack-note',
       '/posts/OpenStack-note',
@@ -567,6 +574,12 @@ declare module 'vue-router/auto-routes' {
     'pages/posts/Online-Expansion-Ubuntu-LVM.md': {
       routes:
         | '/posts/Online-Expansion-Ubuntu-LVM'
+      views:
+        | never
+    }
+    'pages/posts/OpenCode对接CodeSome API.md': {
+      routes:
+        | '/posts/OpenCode对接CodeSome API'
       views:
         | never
     }
