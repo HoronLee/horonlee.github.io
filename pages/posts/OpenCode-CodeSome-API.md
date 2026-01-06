@@ -14,7 +14,7 @@ dg-publish: false
 ## 前置要求：
 1. 通过[https://v2.codesome.cn/](https://v2.codesome.cn/) 注册你的codesome账号，联系主理人[https://x.com/oops073111](https://x.com/oops073111) 有机会获得10美元体验券！
 2. 在CodeSome平台中获取API KEY，如下图所示
-![](/attachment/OpenCode对接CodeSomeAPI/cf5721d295258b5ea4226d487d991ff6.png)![](/attachment/OpenCode对接CodeSomeAPI/e04832390d6cb2e419bd2e2d67c9b638.png)
+![](/attachment/OpenCode-CodeSome-API/cf5721d295258b5ea4226d487d991ff6.png)![](/attachment/OpenCode-CodeSome-API/e04832390d6cb2e419bd2e2d67c9b638.png)
 ## 一、新建OpenCode配置文件
 配置文件位置：
 - Linux/Mac: `~/.config/opencode/opencode.jsonc`
@@ -54,9 +54,9 @@ dg-publish: false
 随后进入最后的步骤
 1. 在输入框输入/models，进入模型选择界面
 2. 在Search框输入codesome快速筛查模型
-![](/attachment/OpenCode对接CodeSomeAPI/cba4c8e68c1b8082d6c625e917222a1e.png)
+![](/attachment/OpenCode-CodeSome-API/cba4c8e68c1b8082d6c625e917222a1e.png)
 3. 如图即可选择之前的三个模型其中的一个
 
 然后就可以愉快使用 Claude 的模型进行Vibe Coding咯！！！
-![](/attachment/OpenCode对接CodeSomeAPI/deccf6259e9a9e8cfcb98e2f4f798921.png)
+![](/attachment/OpenCode-CodeSome-API/deccf6259e9a9e8cfcb98e2f4f798921.png)
 可能大家注意到了“Sisyphus”、“OhMyOpenCode”等词汇，这是因为我为OpenCode安装了Oh-My-OpenCode插件导致的，以后我会继续以CodeSome为例来介绍如何在OpenCode中使用Oh-My-OpenCode插件搭配第三方API来高效编码～

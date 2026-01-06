@@ -275,9 +275,9 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/posts/OpenCode对接CodeSomeAPI': RouteRecordInfo<
-      '/posts/OpenCode对接CodeSomeAPI',
-      '/posts/OpenCode%E5%AF%B9%E6%8E%A5CodeSomeAPI',
+    '/posts/OpenCode-CodeSome-API': RouteRecordInfo<
+      '/posts/OpenCode-CodeSome-API',
+      '/posts/OpenCode-CodeSome-API',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -595,9 +595,9 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'pages/posts/OpenCode对接CodeSomeAPI.md': {
+    'pages/posts/OpenCode-CodeSome-API.md': {
       routes:
-        | '/posts/OpenCode对接CodeSomeAPI'
+        | '/posts/OpenCode-CodeSome-API'
       views:
         | never
     }
