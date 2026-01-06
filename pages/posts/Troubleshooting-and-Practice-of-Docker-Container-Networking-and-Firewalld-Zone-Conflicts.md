@@ -6,7 +6,7 @@ tags:
   - Firewall
 categories:
   - Docker
-cover: /attachment/解决Docker容器互联与Firewalld区域冲突的排查与实践/de06efc23652c53ff5352ed2c523d57f.png
+cover: /attachment/Troubleshooting-and-Practice-of-Docker-Container-Networking-and-Firewalld-Zone-Conflicts/de06efc23652c53ff5352ed2c523d57f.png
 dg-publish: true
 ---
 

@@ -107,13 +107,6 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/posts/解决Docker容器互联与Firewalld区域冲突的排查与实践': RouteRecordInfo<
-      '/posts/解决Docker容器互联与Firewalld区域冲突的排查与实践',
-      '/posts/%E8%A7%A3%E5%86%B3Docker%E5%AE%B9%E5%99%A8%E4%BA%92%E8%81%94%E4%B8%8EFirewalld%E5%8C%BA%E5%9F%9F%E5%86%B2%E7%AA%81%E7%9A%84%E6%8E%92%E6%9F%A5%E4%B8%8E%E5%AE%9E%E8%B7%B5',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
     '/posts/配置NoVNC连接Kvm虚拟机': RouteRecordInfo<
       '/posts/配置NoVNC连接Kvm虚拟机',
       '/posts/%E9%85%8D%E7%BD%AENoVNC%E8%BF%9E%E6%8E%A5Kvm%E8%99%9A%E6%8B%9F%E6%9C%BA',
@@ -324,6 +317,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/posts/Troubleshooting-and-Practice-of-Docker-Container-Networking-and-Firewalld-Zone-Conflicts': RouteRecordInfo<
+      '/posts/Troubleshooting-and-Practice-of-Docker-Container-Networking-and-Firewalld-Zone-Conflicts',
+      '/posts/Troubleshooting-and-Practice-of-Docker-Container-Networking-and-Firewalld-Zone-Conflicts',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/posts/Ubuntu-Docker-Compose': RouteRecordInfo<
       '/posts/Ubuntu-Docker-Compose',
       '/posts/Ubuntu-Docker-Compose',
@@ -448,12 +448,6 @@ declare module 'vue-router/auto-routes' {
     'pages/posts/关于Echo框架路由匹配与中间件的坑.md': {
       routes:
         | '/posts/关于Echo框架路由匹配与中间件的坑'
-      views:
-        | never
-    }
-    'pages/posts/解决Docker容器互联与Firewalld区域冲突的排查与实践.md': {
-      routes:
-        | '/posts/解决Docker容器互联与Firewalld区域冲突的排查与实践'
       views:
         | never
     }
@@ -634,6 +628,12 @@ declare module 'vue-router/auto-routes' {
     'pages/posts/SRS-liveStream.md': {
       routes:
         | '/posts/SRS-liveStream'
+      views:
+        | never
+    }
+    'pages/posts/Troubleshooting-and-Practice-of-Docker-Container-Networking-and-Firewalld-Zone-Conflicts.md': {
+      routes:
+        | '/posts/Troubleshooting-and-Practice-of-Docker-Container-Networking-and-Firewalld-Zone-Conflicts'
       views:
         | never
     }
