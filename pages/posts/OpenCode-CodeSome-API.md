@@ -7,6 +7,7 @@ tags:
 categories:
   - AI
 cover:
+hide: true
 dg-publish: false
 ---
 > 如何在OpenCode中使用CodeSome的Claude订阅？一文快速搞定你的OpenCode配置！
@@ -19,6 +20,7 @@ dg-publish: false
 配置文件位置：
 - Linux/Mac: `~/.config/opencode/opencode.jsonc`
 - Windows: `%APPDATA%\opencode\opencode.jsonc`
+
 ⚠️：jsonc文件是可带有注释的json格式，这样方便后续配置文件的维护与AI的操作，所以这里默认用opencode.jsonc 作为配置文件
 ## 二、 修改配置文件
 这里我们以官方的自定义Provider为例来配置CodeSome为供应商，你可以直接将以下配置拷贝到你的配置文件中，其中"apiKey": 一行内的{env:CODESOME_CLAUDE_API_KEY}你可以通过环境变量设置到当前终端，或者直接写死在配置文件中～
