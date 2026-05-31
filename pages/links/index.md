@@ -111,6 +111,12 @@ links:
     name: 栖童
     blog: 栖童の小站
     desc: 越努力,越幸运
+  - url: https://shystab.github.io
+    avatar: https://shystab.github.io/img/avatar.webp
+    name: shysta
+    blog: shysta
+    desc: 关注塔菲喵
+
 
 # 也可以是一个 JSON 链接
 # links: https://friends.yunyoujun.cn/links.json
