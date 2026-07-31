@@ -100,27 +100,6 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/posts/从零开始的Go语言异世界笔记': RouteRecordInfo<
-      '/posts/从零开始的Go语言异世界笔记',
-      '/posts/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84Go%E8%AF%AD%E8%A8%80%E5%BC%82%E4%B8%96%E7%95%8C%E7%AC%94%E8%AE%B0',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    '/posts/关于Echo框架路由匹配与中间件的坑': RouteRecordInfo<
-      '/posts/关于Echo框架路由匹配与中间件的坑',
-      '/posts/%E5%85%B3%E4%BA%8EEcho%E6%A1%86%E6%9E%B6%E8%B7%AF%E7%94%B1%E5%8C%B9%E9%85%8D%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E5%9D%91',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    '/posts/配置NoVNC连接Kvm虚拟机': RouteRecordInfo<
-      '/posts/配置NoVNC连接Kvm虚拟机',
-      '/posts/%E9%85%8D%E7%BD%AENoVNC%E8%BF%9E%E6%8E%A5Kvm%E8%99%9A%E6%8B%9F%E6%9C%BA',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
     '/posts/bridge-router-ddns': RouteRecordInfo<
       '/posts/bridge-router-ddns',
       '/posts/bridge-router-ddns',
@@ -128,9 +107,9 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/posts/CentOS-OpenStack-Queen手记': RouteRecordInfo<
-      '/posts/CentOS-OpenStack-Queen手记',
-      '/posts/CentOS-OpenStack-Queen%E6%89%8B%E8%AE%B0',
+    '/posts/CentOS-OpenStack-Queen-note': RouteRecordInfo<
+      '/posts/CentOS-OpenStack-Queen-note',
+      '/posts/CentOS-OpenStack-Queen-note',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -149,6 +128,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/posts/Configuring-NoVNC-connection-to-KVM-vm': RouteRecordInfo<
+      '/posts/Configuring-NoVNC-connection-to-KVM-vm',
+      '/posts/Configuring-NoVNC-connection-to-KVM-vm',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/posts/Docker-images': RouteRecordInfo<
       '/posts/Docker-images',
       '/posts/Docker-images',
@@ -159,6 +145,13 @@ declare module 'vue-router/auto-routes' {
     '/posts/Docker-NextCloud': RouteRecordInfo<
       '/posts/Docker-NextCloud',
       '/posts/Docker-NextCloud',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/posts/Echo-framework-route-matching&middleware': RouteRecordInfo<
+      '/posts/Echo-framework-route-matching&middleware',
+      '/posts/Echo-framework-route-matching&middleware',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -177,6 +170,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/posts/golang-Isekai-notebook-from-scratch': RouteRecordInfo<
+      '/posts/golang-Isekai-notebook-from-scratch',
+      '/posts/golang-Isekai-notebook-from-scratch',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/posts/GormNote': RouteRecordInfo<
       '/posts/GormNote',
       '/posts/GormNote',
@@ -184,9 +184,9 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/posts/Harbor配置HTTPS': RouteRecordInfo<
-      '/posts/Harbor配置HTTPS',
-      '/posts/Harbor%E9%85%8D%E7%BD%AEHTTPS',
+    '/posts/Harbor-HTTPS': RouteRecordInfo<
+      '/posts/Harbor-HTTPS',
+      '/posts/Harbor-HTTPS',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -268,9 +268,9 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/posts/NeoVim个人配置笔记': RouteRecordInfo<
-      '/posts/NeoVim个人配置笔记',
-      '/posts/NeoVim%E4%B8%AA%E4%BA%BA%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0',
+    '/posts/NeoVim-personal-note': RouteRecordInfo<
+      '/posts/NeoVim-personal-note',
+      '/posts/NeoVim-personal-note',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -303,9 +303,9 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/posts/PowerShell开发配置指北': RouteRecordInfo<
-      '/posts/PowerShell开发配置指北',
-      '/posts/PowerShell%E5%BC%80%E5%8F%91%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97',
+    '/posts/PowerShell-dev-config-note': RouteRecordInfo<
+      '/posts/PowerShell-dev-config-note',
+      '/posts/PowerShell-dev-config-note',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -386,13 +386,13 @@ declare module 'vue-router/auto-routes' {
    * @internal
    */
   export interface _RouteFileInfoMap {
-    'node_modules/.pnpm/valaxy-theme-yun@0.28.9_magicast@0.5.3_vue@3.5.34_typescript@6.0.3_/node_modules/valaxy-theme-yun/pages/index.vue': {
+    'node_modules/.pnpm/valaxy-theme-yun@1.0.0-beta.2_magicast@0.5.3_vue@3.5.34_typescript@7.0.2_/node_modules/valaxy-theme-yun/pages/index.vue': {
       routes:
         | '/'
       views:
         | never
     }
-    'node_modules/.pnpm/valaxy@0.28.9_@babel+parser@7.29.7_@nuxt+kit@3.21.6_magicast@0.5.3__@types+markdown-it@_1eb3295237b3c5e0f17b65b1b35c1136/node_modules/valaxy/client/pages/[...path].vue': {
+    'node_modules/.pnpm/valaxy@1.0.0-beta.2_@babel+parser@7.29.7_@nuxt+kit@3.21.10_magicast@0.5.3__@types+markd_eeef79e43f98981bd64317fb6ef1a1ab/node_modules/valaxy/client/pages/[...path].vue': {
       routes:
         | '/[...path]'
       views:
@@ -434,33 +434,15 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'node_modules/.pnpm/valaxy-theme-yun@0.28.9_magicast@0.5.3_vue@3.5.34_typescript@6.0.3_/node_modules/valaxy-theme-yun/pages/page/[page].vue': {
+    'node_modules/.pnpm/valaxy-theme-yun@1.0.0-beta.2_magicast@0.5.3_vue@3.5.34_typescript@7.0.2_/node_modules/valaxy-theme-yun/pages/page/[page].vue': {
       routes:
         | '/page/[page]'
       views:
         | never
     }
-    'node_modules/.pnpm/valaxy-theme-yun@0.28.9_magicast@0.5.3_vue@3.5.34_typescript@6.0.3_/node_modules/valaxy-theme-yun/pages/posts/index.vue': {
+    'node_modules/.pnpm/valaxy-theme-yun@1.0.0-beta.2_magicast@0.5.3_vue@3.5.34_typescript@7.0.2_/node_modules/valaxy-theme-yun/pages/posts/index.vue': {
       routes:
         | '/posts/'
-      views:
-        | never
-    }
-    'pages/posts/从零开始的Go语言异世界笔记.md': {
-      routes:
-        | '/posts/从零开始的Go语言异世界笔记'
-      views:
-        | never
-    }
-    'pages/posts/关于Echo框架路由匹配与中间件的坑.md': {
-      routes:
-        | '/posts/关于Echo框架路由匹配与中间件的坑'
-      views:
-        | never
-    }
-    'pages/posts/配置NoVNC连接Kvm虚拟机.md': {
-      routes:
-        | '/posts/配置NoVNC连接Kvm虚拟机'
       views:
         | never
     }
@@ -470,9 +452,9 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'pages/posts/CentOS-OpenStack-Queen手记.md': {
+    'pages/posts/CentOS-OpenStack-Queen-note.md': {
       routes:
-        | '/posts/CentOS-OpenStack-Queen手记'
+        | '/posts/CentOS-OpenStack-Queen-note'
       views:
         | never
     }
@@ -488,6 +470,12 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
+    'pages/posts/Configuring-NoVNC-connection-to-KVM-vm.md': {
+      routes:
+        | '/posts/Configuring-NoVNC-connection-to-KVM-vm'
+      views:
+        | never
+    }
     'pages/posts/Docker-images.md': {
       routes:
         | '/posts/Docker-images'
@@ -497,6 +485,12 @@ declare module 'vue-router/auto-routes' {
     'pages/posts/Docker-NextCloud.md': {
       routes:
         | '/posts/Docker-NextCloud'
+      views:
+        | never
+    }
+    'pages/posts/Echo-framework-route-matching&middleware.md': {
+      routes:
+        | '/posts/Echo-framework-route-matching&middleware'
       views:
         | never
     }
@@ -512,15 +506,21 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
+    'pages/posts/golang-Isekai-notebook-from-scratch.md': {
+      routes:
+        | '/posts/golang-Isekai-notebook-from-scratch'
+      views:
+        | never
+    }
     'pages/posts/GormNote.md': {
       routes:
         | '/posts/GormNote'
       views:
         | never
     }
-    'pages/posts/Harbor配置HTTPS.md': {
+    'pages/posts/Harbor-HTTPS.md': {
       routes:
-        | '/posts/Harbor配置HTTPS'
+        | '/posts/Harbor-HTTPS'
       views:
         | never
     }
@@ -590,9 +590,9 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'pages/posts/NeoVim个人配置笔记.md': {
+    'pages/posts/NeoVim-personal-note.md': {
       routes:
-        | '/posts/NeoVim个人配置笔记'
+        | '/posts/NeoVim-personal-note'
       views:
         | never
     }
@@ -620,9 +620,9 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'pages/posts/PowerShell开发配置指北.md': {
+    'pages/posts/PowerShell-dev-config-note.md': {
       routes:
-        | '/posts/PowerShell开发配置指北'
+        | '/posts/PowerShell-dev-config-note'
       views:
         | never
     }
