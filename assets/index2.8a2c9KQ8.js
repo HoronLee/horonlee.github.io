@@ -1,0 +1,1 @@
+import{q as e}from"./theme.B7a9fncF.js";var t=e({defaults:{"@type":`AggregateRating`}});export{t as aggregateRatingResolver};

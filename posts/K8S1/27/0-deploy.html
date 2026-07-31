@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.C6uVPhRO.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.QTnfLwEv.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.Bt6Pg2Om.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.DVqrc9hU.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.C-veEj9W.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.BCoX8S0I.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.Ii4ljEmi.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/@vueuse/motion.CKe-3Lmh.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.B7a9fncF.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.DHGjGeo5.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.Cac_Ay3W.css">
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_AMS-Regular.DMm9YOAa.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Bold.BEiXGLvX.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Caligraphic-Regular.CTRA-rTL.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.CL6g_b3V.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Bold.BsDP51OF.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.CTYiF6lA.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Fraktur-Regular.Dxdc4cR9.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Cx986IdX.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Bold.Jm3AIy58.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-BoldItalic.SpSLRI95.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Italic.BMLOBm91.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.B22Nviop.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Main-Regular.Dr94JaBh.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-BoldItalic.iY-2wyZ7.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.t53AETM-.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Math-Italic.DA0__PXp.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.D1sUS0GD.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Bold.DbIhKOiC.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.C3H0VqGB.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Italic.DN2j7dab.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_SansSerif-Regular.CS6fqUqJ.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D3wIWfF6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Script-Regular.D5yQViql.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size1-Regular.C195tn64.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size2-Regular.oD1tc_U0.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size3-Regular.CTq5MqoE.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.Dl5lxZxV.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Size4-Regular.BF-4gkZK.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.CO6r4hn1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/KaTeX_Typewriter-Regular.C0xS9mPB.woff" as="font" type="font/woff" crossorigin>
+<link rel="modulepreload" crossorigin href="/assets/theme.B7a9fncF.js">
+<link rel="preload" href="/assets/none.DLM1AMsD.jpg" as="image">
+<link rel="preload" href="/assets/bg-img.kXdNMxcF.jpg" as="image">
+<link rel="preload" href="/assets/sidebar-bg-img.mp54gEws.webp" as="image">
+<link rel="modulepreload" crossorigin href="/assets/K8S1.27.0-deploy.D2Hp1gpl.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>K8S1.27.0集群部署要点 - 皓然小站</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap">
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="分享生活和技术的点滴">
+<meta property="og:description" content="分享生活和技术的点滴">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="皓然小站">
+<meta property="og:title" content="K8S1.27.0集群部署要点">
+<meta property="og:image" content="https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.horonlee.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 1.0.0-beta.2">
+<meta name="theme-color" content="#fff">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!--[--><!--v-if--><!--v-if--><div class="yun-page-header-gradient"></div><div class="yun-nav-menu z-$yun-z-nav-menu fixed bg-transparent" data-v-b184f839><!--  --><div class="inline-flex justify-start items-center flex-1" data-v-b184f839><button type="button" class="vt-hamburger menu-btn sidebar-toggle leading-4 size-12 lg:hidden" aria-label="mobile navigation" aria-expanded="false" inline-flex cursor="pointer" hover="bg-white/80 dark:bg-black/80" z="$yun-z-menu-btn" data-v-b184f839><span class="vt-hamburger-container"><span class="vt-hamburger-top"></span><span class="vt-hamburger-middle"></span><span class="vt-hamburger-bottom"></span></span></button><a href="/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 data-v-b184f839><!--[--><div class="size-6 i-ri-home-4-line"></div><!--]--></a><div class="hidden lg:contents" data-v-b184f839><!--[--><a href="/posts/" class="va-link size-12 inline-flex-center cursor-pointer z-$yun-z-nav-menu text-$va-c-text" hover="bg-white/80 dark:bg-black/80 op-100" op-80 title="menu.posts" data-v-b184f839><!--[--><div class="size-6 i-ri-article-line"></div><!--]--></a><!--]--></div></div><div class="flex flex-1 flex-center" data-v-b184f839><div flex="~ center col h-full" class="nav-menu-title-container cursor-pointer" data-v-b184f839><!----><span class="font-light truncate">皓然小站</span></div></div><div class="inline-flex-center justify-end items-center flex-1" data-v-b184f839><!-- <template v-if="!app.isMobile && themeConfig.nav">
+          <template v-for="item in themeConfig.nav" :key="item.text">
+            <AppLink
+              v-if="'link' in item"
+              :to="item.link"
+              class="menu-btn inline-flex-center p-2 transition text-$va-c-text"
+              inline-flex cursor="pointer"
+              hover="bg-white/80 dark:bg-black/80"
+              z="$yun-z-menu-btn"
+            >
+              {{ item.text }}
+            </AppLink>
+            <template v-else-if="'items' in item" />
+          </template>
+        </template> --><button class="yun-icon-btn rounded-none! hidden sm:inline-flex" title="切换语言" style="color:var(--va-c-text);" data-v-b184f839><div i-ri-translate class="transition transform"></div></button><button class="yun-icon-btn yun-toggle-dark rounded-none!" title="切换深色模式" data-v-b184f839><div i="ri-sun-line dark:ri-moon-line"></div></button><!----></div></div><!----><!--v-if--><!----><!--[--><div class="yun-bg"></div><!--]--><!----><a href="#" class="back-to-top yun-icon-btn bg-$va-c-bg-soft shadow-md"><div class="size-8" i-ri-arrow-up-s-line></div><svg class="progress-circle-container" viewBox="0 0 100 100"><circle stroke-dasharray="301.59289474462014 301.59289474462014" stroke-dashoffset="301.59289474462014" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="progress-circle" cx="50" cy="50" r="48" fill="none"></circle></svg></a><!--]--><!--[--><!--]--><!----><!--]--><div class="min-h-screen flex flex-col"><div class="mt-12 md:mt-24 yun-layout-wrapper__content"><!--[--><div class="yun-layout-left gap-4 sticky top-$yun-margin-top w-80"><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden p-4 min-h-sm" flex="~ col gap-1" min-h="100px" bg="$va-c-bg-light"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><div class="site-info gap-1 items-center text-center" flex="~ col" p="t-8"><a href="/about" class="site-author-avatar inline-flex-center"><div class="relative yun-author-avatar"><div class="absolute size-full avatar-bg bg-image-$yun-home-hero-image-background-image filter-blur-2xl op-30"></div><img class="rounded-full size-full bg-white dark:bg-white/20 p-1 m-0 absolute" src="https://bu.dusays.com/2023/02/02/63db3598928c2.jpg" alt="avatar"><span class="site-author-status absolute" title="The moonlight is beautiful.">🌌</span></div></a><a href="/about" class="site-author-name font-black font-serif text-$va-c-text op-80 hover:op-100 flex-center">皓然</a><a href="/about/site" class="site-name text-lg leading-loose">皓然小站</a><h4 class="site-subtitle block op-70" text="xs">就算生活枯燥，也要勇往直前</h4><div class="site-description">分享生活和技术的点滴</div></div><div class="yun-gradient-line my-2 op-20"></div><nav class="site-nav" text-xl mt-2><a href="/archives/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="归档" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><!-- Use CSS to toggle icons based on router-link-active class to avoid SSR hydration mismatch --><div class="text-2xl icon-default i-ri-archive-line"></div><div class="text-2xl icon-active i-ri-archive-fill"></div><span class="text-xs">归档</span></div><span class="count text-base text-black/80 dark:text-white/80">37</span></a><a href="/categories/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="分类" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><!-- Use CSS to toggle icons based on router-link-active class to avoid SSR hydration mismatch --><div class="text-2xl icon-default i-ri-folder-2-line"></div><div class="text-2xl icon-active i-ri-folder-2-fill"></div><span class="text-xs">分类</span></div><span class="count text-base text-black/80 dark:text-white/80">10</span></a><a href="/tags/" class="post-classify-nav-item gap-1 w-20 p-2 rounded transition op-80" flex="~ col center" title="标签" hover="bg-$va-c-bg-soft op-100"><div flex="~ col" class="text-$va-c-text inline-flex-center gap-1"><!-- Use CSS to toggle icons based on router-link-active class to avoid SSR hydration mismatch --><div class="text-2xl icon-default i-ri-price-tag-3-line"></div><div class="text-2xl icon-active i-ri-price-tag-3-fill"></div><span class="text-xs">标签</span></div><span class="count text-base text-black/80 dark:text-white/80">31</span></a></nav><div class="yun-gradient-line my-2 op-20"></div><div class="links-of-author"><!--[--><a class="links-of-author-item yun-icon-btn" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange;"><div class="i-ri-rss-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://" title="QQ 群 1269024821" target="_blank" style="color:#12B7F5;"><div class="i-ri-qq-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://github.com/horonlee" title="GitHub" target="_blank" style="color:#6e5494;"><div class="i-ri-github-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://music.163.com/#/user/home?id=545332010" title="网易云音乐" target="_blank" style="color:#C20C0C;"><div class="i-ri-netease-cloud-music-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://www.zhihu.com/people/tie-tie-huohuo" title="知乎" target="_blank" style="color:#0084FF;"><div class="i-ri-zhihu-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://space.bilibili.com/172335226" title="哔哩哔哩" target="_blank" style="color:#FF8EB3;"><div class="i-ri-bilibili-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://twitter.com/HuoTie" title="Twitter" target="_blank" style="color:#1da1f2;"><div class="i-ri-twitter-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="mailto:1269024821@qq.com" title="E-Mail" target="_blank" style="color:#8E71C1;"><div class="i-ri-mail-line icon"></div></a><a class="links-of-author-item yun-icon-btn" rel="noopener" href="https://www.travellings.cn/go.html" title="Travelling" target="_blank" style="color:var(--va-c-text);"><div class="i-ri-train-line icon"></div></a><!--]--></div><div class="yun-gradient-line my-2 op-20"></div><div class="links flex-center"><!--[--><a href="/links/" class="va-link link-item yun-icon-btn" inline-flex title="我的小伙伴们" style="color:dodgerblue;"><!--[--><div class="i-ri-genderless-line icon size-6"></div><!--]--></a><a href="/girls/" class="va-link link-item yun-icon-btn" inline-flex title="喜欢的女孩子" style="color:hotpink;"><!--[--><div class="i-ri-women-line icon size-6"></div><!--]--></a><!--]--></div><!--]--></div><!----></div><!--[--><!--
+    Empty placeholder, meant to be overridden by the user (see demo/yun/components/YunAdBoard.vue).
+    `v-if="false"` renders a comment node instead of a real element: this avoids the SSR hydration
+    crash a raw `<template>` causes (#711), while still adding no gap to the parent flex layout,
+    which an empty `<div>` would (ab57216f).
+  --><!----><!--]--><!--]--></div><main class="yun-main lt-md:w-full" flex="~ center"><!--[--><div class="content w-full md:w-3xl lg:w-2xl xl:w-2xl 2xl:w-4xl" flex="~ col grow" p="lt-md:0"><div class="yun-card flex-center rounded-2 overflow-hidden" flex="col" min-h="100px" bg="$va-c-bg-light" m="0"><img width="640" height="360" class="yun-cover object-cover select-none" h="64 md:sm" w="full" src="https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg" loading="lazy" alt><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><div class="mt-8 mb-4"><!--[--><header class="post-header" cover="https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg"><h1 p="2" text="2xl center" font="serif black" style="color:" class="post-title flex-center"><!----><span inline-flex class="leading-none">K8S1.27.0集群部署要点</span></h1></header><!--]--></div><!--[--><!--[--><!--[--><!--[--><!----><div flex="~ center" text="sm" class="post-meta-col post-meta gap-4"><div class="post-time flex items-center gap-4"><span class="posted-time inline-flex-center gap-1" title="发表于2023-06-10 00:43:16"><div class="inline-block" i-ri-calendar-line></div><time class="op-80">2023-06-10</time></span><!----></div><!--[--><span id="busuanzi_container_page_pv"> 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次 </span><!--]--><div class="inline-flex-center gap-4"><div class="inline-flex-center post-counter gap-4"><span class="word-count inline-flex-center gap-1" title="本文字数"><div class="inline-block" i-ri-file-word-line></div><span class="op-80">2.2k</span></span><span class="reading-time inline-flex-center gap-1" title="阅读时长"><div i-ri-timer-line></div><time class="op-80">11m</time></span></div><div class="inline-flex gap-4" text="sm" h="5"><!----><!----></div><!----></div></div><!--]--><!----><div class="inline-flex mt-2" text="sm" py="1"><a href="/categories?category=%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/%E4%BA%91%E8%AE%A1%E7%AE%97/k8s" class="transition post-category inline-flex-center text-xs border-$va-c-divider" px-2 h="7" border rounded-full hover="bg-blue-500 text-white"><div m="x-1" inline-flex i-ri-folder-2-line></div><span>服务器运维 / 云计算 / k8s</span></a><span mx="2"></span><div class="post-tags inline-flex" items="center" gap="1" flex="wrap 1" justify="end"><!--[--><a href="/tags/?tag=Linux" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>Linux</span></a><a href="/tags/?tag=Kubernetes" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>Kubernetes</span></a><a href="/tags/?tag=%E4%BA%91%E8%AE%A1%E7%AE%97" class="transition post-tag inline-flex-center text-xs border-$va-c-divider" px-2 h="7" rounded-full border hover="bg-blue-500 text-white"><span>云计算</span></a><!--]--></div></div><!--]--><!--]--><!--]--><div p="x-4 b-8" class="sm:px-6 lg:px-12 xl:px-16" w="full"><!--[--><!--]--><!--[--><!-- <Transition appear> --><article class="markdown-body"><!--[--><!----><!----><!--[--><!--]--><!--[--><p>⚠️注意：本文已经严重过时且不具备任何参考价值，最新 k8s 部署请参考<a href="https://blog.horonlee.com/posts/ubuntu22.04-k8s-deploy" target="_blank" rel="noreferrer">Ubuntu22.04部署K8S - 皓然小站 (horonlee.com)</a><a href="./ubuntu22.04-k8s-deploy">ubuntu22.04-k8s-deploy</a></p><!-- more --><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubeadm config images pull --kubernetes-version=v1.27.0</span></span>
+<span class="line"><span>W0609 23:21:18.405148    2447 images.go:80] could not find officially supported version of etcd for Kubernetes v1.27.0, falling back to the nearest etcd version (3.5.7-0)</span></span>
+<span class="line"><span>[config/images] Pulled registry.k8s.io/kube-apiserver:v1.27.0</span></span>
+<span class="line"><span>[config/images] Pulled registry.k8s.io/kube-controller-manager:v1.27.0</span></span>
+<span class="line"><span>[config/images] Pulled registry.k8s.io/kube-scheduler:v1.27.0</span></span>
+<span class="line"><span>[config/images] Pulled registry.k8s.io/kube-proxy:v1.27.0</span></span>
+<span class="line"><span>[config/images] Pulled registry.k8s.io/pause:3.9</span></span>
+<span class="line"><span>[config/images] Pulled registry.k8s.io/etcd:3.5.7-0</span></span>
+<span class="line"><span>[config/images] Pulled registry.k8s.io/coredns/coredns:v1.10.1</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubeadm init --kubernetes-version=v1.27.0 --pod-network-cidr=10.224.0.0/16 --apiserver-advertise-address=192.168.1.200</span></span>
+<span class="line"><span>[init] Using Kubernetes version: v1.27.0</span></span>
+<span class="line"><span>[preflight] Running pre-flight checks</span></span>
+<span class="line"><span>[preflight] Pulling images required for setting up a Kubernetes cluster</span></span>
+<span class="line"><span>[preflight] This might take a minute or two, depending on the speed of your internet connection</span></span>
+<span class="line"><span>[preflight] You can also perform this action in beforehand using &#39;kubeadm config images pull&#39;</span></span>
+<span class="line"><span>W0609 23:23:47.717937    2546 images.go:80] could not find officially supported version of etcd for Kubernetes v1.27.0, falling back to the nearest etcd version (3.5.7-0)</span></span>
+<span class="line"><span>W0609 23:23:47.891888    2546 checks.go:835] detected that the sandbox image &quot;registry.k8s.io/pause:3.6&quot; of the container runtime is inconsistent with that used by kubeadm. It is recommended that using &quot;registry.k8s.io/pause:3.9&quot; as the CRI sandbox image.</span></span>
+<span class="line"><span>[certs] Using certificateDir folder &quot;/etc/kubernetes/pki&quot;</span></span>
+<span class="line"><span>[certs] Generating &quot;ca&quot; certificate and key</span></span>
+<span class="line"><span>[certs] Generating &quot;apiserver&quot; certificate and key</span></span>
+<span class="line"><span>[certs] apiserver serving cert is signed for DNS names [k8s-master kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.1.200]</span></span>
+<span class="line"><span>[certs] Generating &quot;apiserver-kubelet-client&quot; certificate and key</span></span>
+<span class="line"><span>[certs] Generating &quot;front-proxy-ca&quot; certificate and key</span></span>
+<span class="line"><span>[certs] Generating &quot;front-proxy-client&quot; certificate and key</span></span>
+<span class="line"><span>[certs] Generating &quot;etcd/ca&quot; certificate and key</span></span>
+<span class="line"><span>[certs] Generating &quot;etcd/server&quot; certificate and key</span></span>
+<span class="line"><span>[certs] etcd/server serving cert is signed for DNS names [k8s-master localhost] and IPs [192.168.1.200 127.0.0.1 ::1]</span></span>
+<span class="line"><span>[certs] Generating &quot;etcd/peer&quot; certificate and key</span></span>
+<span class="line"><span>[certs] etcd/peer serving cert is signed for DNS names [k8s-master localhost] and IPs [192.168.1.200 127.0.0.1 ::1]</span></span>
+<span class="line"><span>[certs] Generating &quot;etcd/healthcheck-client&quot; certificate and key</span></span>
+<span class="line"><span>[certs] Generating &quot;apiserver-etcd-client&quot; certificate and key</span></span>
+<span class="line"><span>[certs] Generating &quot;sa&quot; key and public key</span></span>
+<span class="line"><span>[kubeconfig] Using kubeconfig folder &quot;/etc/kubernetes&quot;</span></span>
+<span class="line"><span>[kubeconfig] Writing &quot;admin.conf&quot; kubeconfig file</span></span>
+<span class="line"><span>[kubeconfig] Writing &quot;kubelet.conf&quot; kubeconfig file</span></span>
+<span class="line"><span>[kubeconfig] Writing &quot;controller-manager.conf&quot; kubeconfig file</span></span>
+<span class="line"><span>[kubeconfig] Writing &quot;scheduler.conf&quot; kubeconfig file</span></span>
+<span class="line"><span>[kubelet-start] Writing kubelet environment file with flags to file &quot;/var/lib/kubelet/kubeadm-flags.env&quot;</span></span>
+<span class="line"><span>[kubelet-start] Writing kubelet configuration to file &quot;/var/lib/kubelet/config.yaml&quot;</span></span>
+<span class="line"><span>[kubelet-start] Starting the kubelet</span></span>
+<span class="line"><span>[control-plane] Using manifest folder &quot;/etc/kubernetes/manifests&quot;</span></span>
+<span class="line"><span>[control-plane] Creating static Pod manifest for &quot;kube-apiserver&quot;</span></span>
+<span class="line"><span>[control-plane] Creating static Pod manifest for &quot;kube-controller-manager&quot;</span></span>
+<span class="line"><span>[control-plane] Creating static Pod manifest for &quot;kube-scheduler&quot;</span></span>
+<span class="line"><span>[etcd] Creating static Pod manifest for local etcd in &quot;/etc/kubernetes/manifests&quot;</span></span>
+<span class="line"><span>W0609 23:23:52.692177    2546 images.go:80] could not find officially supported version of etcd for Kubernetes v1.27.0, falling back to the nearest etcd version (3.5.7-0)</span></span>
+<span class="line"><span>[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory &quot;/etc/kubernetes/manifests&quot;. This can take up to 4m0s</span></span>
+<span class="line"><span>[apiclient] All control plane components are healthy after 10.502621 seconds</span></span>
+<span class="line"><span>[upload-config] Storing the configuration used in ConfigMap &quot;kubeadm-config&quot; in the &quot;kube-system&quot; Namespace</span></span>
+<span class="line"><span>[kubelet] Creating a ConfigMap &quot;kubelet-config&quot; in namespace kube-system with the configuration for the kubelets in the cluster</span></span>
+<span class="line"><span>[upload-certs] Skipping phase. Please see --upload-certs</span></span>
+<span class="line"><span>[mark-control-plane] Marking the node k8s-master as control-plane by adding the labels: [node-role.kubernetes.io/control-plane node.kubernetes.io/exclude-from-external-load-balancers]</span></span>
+<span class="line"><span>[mark-control-plane] Marking the node k8s-master as control-plane by adding the taints [node-role.kubernetes.io/control-plane:NoSchedule]</span></span>
+<span class="line"><span>[bootstrap-token] Using token: ux83mg.qlhot371w5rtub2u</span></span>
+<span class="line"><span>[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles</span></span>
+<span class="line"><span>[bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to get nodes</span></span>
+<span class="line"><span>[bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials</span></span>
+<span class="line"><span>[bootstrap-token] Configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token</span></span>
+<span class="line"><span>[bootstrap-token] Configured RBAC rules to allow certificate rotation for all node client certificates in the cluster</span></span>
+<span class="line"><span>[bootstrap-token] Creating the &quot;cluster-info&quot; ConfigMap in the &quot;kube-public&quot; namespace</span></span>
+<span class="line"><span>[kubelet-finalize] Updating &quot;/etc/kubernetes/kubelet.conf&quot; to point to a rotatable kubelet client certificate and key</span></span>
+<span class="line"><span>[addons] Applied essential addon: CoreDNS</span></span>
+<span class="line"><span>[addons] Applied essential addon: kube-proxy</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Your Kubernetes control-plane has initialized successfully!</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>To start using your cluster, you need to run the following as a regular user:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  mkdir -p $HOME/.kube</span></span>
+<span class="line"><span>  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config</span></span>
+<span class="line"><span>  sudo chown $(id -u):$(id -g) $HOME/.kube/config</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Alternatively, if you are the root user, you can run:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  export KUBECONFIG=/etc/kubernetes/admin.conf</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>You should now deploy a pod network to the cluster.</span></span>
+<span class="line"><span>Run &quot;kubectl apply -f [podnetwork].yaml&quot; with one of the options listed at:</span></span>
+<span class="line"><span>  https://kubernetes.io/docs/concepts/cluster-administration/addons/</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Then you can join any number of worker nodes by running the following on each as root:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>kubeadm join 192.168.1.200:6443 --token ux83mg.qlhot371w5rtub2u \</span></span>
+<span class="line"><span>        --discovery-token-ca-cert-hash sha256:7adc6b2a7551f204371d38c6a6da34d7deb321fda863b54bfe2b4d9b1811f680</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>[root@k8s-worker ~]# kubeadm join 192.168.1.200:6443 --token ux83mg.qlhot371w5rtub2u \</span></span>
+<span class="line"><span>        --discovery-token-ca-cert-hash sha256:7adc6b2a7551f204371d38c6a6da34d7deb321fda863b54bfe2b4d9b1811f680</span></span>
+<span class="line"><span>[preflight] Running pre-flight checks</span></span>
+<span class="line"><span>[preflight] Reading configuration from the cluster...</span></span>
+<span class="line"><span>[preflight] FYI: You can look at this config file with &#39;kubectl -n kube-system get cm kubeadm-config -o yaml&#39;</span></span>
+<span class="line"><span>[kubelet-start] Writing kubelet configuration to file &quot;/var/lib/kubelet/config.yaml&quot;</span></span>
+<span class="line"><span>[kubelet-start] Writing kubelet environment file with flags to file &quot;/var/lib/kubelet/kubeadm-flags.env&quot;</span></span>
+<span class="line"><span>[kubelet-start] Starting the kubelet</span></span>
+<span class="line"><span>[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>This node has joined the cluster:</span></span>
+<span class="line"><span>* Certificate signing request was sent to apiserver and a response was received.</span></span>
+<span class="line"><span>* The Kubelet was informed of the new secure connection details.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Run &#39;kubectl get nodes&#39; on the control-plane to see this node join the cluster.</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl get node # 这里是因为需要管理权限的环境变量才可以执行管理命令，这一点和OpenStack十分相似</span></span>
+<span class="line"><span>E0609 23:28:28.548179    3302 memcache.go:265] couldn&#39;t get current server API group list: Get &quot;http://localhost:8080/api?timeout=32s&quot;: dial tcp [::1]:8080: connect: connection refused</span></span>
+<span class="line"><span>E0609 23:28:28.548907    3302 memcache.go:265] couldn&#39;t get current server API group list: Get &quot;http://localhost:8080/api?timeout=32s&quot;: dial tcp [::1]:8080: connect: connection refused</span></span>
+<span class="line"><span>E0609 23:28:28.550827    3302 memcache.go:265] couldn&#39;t get current server API group list: Get &quot;http://localhost:8080/api?timeout=32s&quot;: dial tcp [::1]:8080: connect: connection refused</span></span>
+<span class="line"><span>E0609 23:28:28.552839    3302 memcache.go:265] couldn&#39;t get current server API group list: Get &quot;http://localhost:8080/api?timeout=32s&quot;: dial tcp [::1]:8080: connect: connection refused</span></span>
+<span class="line"><span>E0609 23:28:28.554668    3302 memcache.go:265] couldn&#39;t get current server API group list: Get &quot;http://localhost:8080/api?timeout=32s&quot;: dial tcp [::1]:8080: connect: connection refused</span></span>
+<span class="line"><span>The connection to the server localhost:8080 was refused - did you specify the right host or port?</span></span>
+<span class="line"><span>[root@k8s-master ~]# export KUBECONFIG=/etc/kubernetes/admin.conf</span></span>
+<span class="line"><span>[root@k8s-master ~]# kubectl get node</span></span>
+<span class="line"><span>NAME         STATUS     ROLES           AGE     VERSION</span></span>
+<span class="line"><span>k8s-master   NotReady   control-plane   4m42s   v1.27.0</span></span>
+<span class="line"><span>k8s-worker   NotReady   &lt;none&gt;          48s     v1.27.0</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>vim /etc/containerd/config.toml</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>未更改：sandbox_image = &quot;registry.aliyuncs.com/google_containers/pause:3.6&quot;</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl apply -f calico.yaml</span></span>
+<span class="line"><span>poddisruptionbudget.policy/calico-kube-controllers created</span></span>
+<span class="line"><span>serviceaccount/calico-kube-controllers created</span></span>
+<span class="line"><span>serviceaccount/calico-node created</span></span>
+<span class="line"><span>configmap/calico-config created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/bgpconfigurations.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/bgppeers.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/blockaffinities.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/caliconodestatuses.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/clusterinformations.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/felixconfigurations.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/globalnetworkpolicies.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/globalnetworksets.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/hostendpoints.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/ipamblocks.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/ipamconfigs.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/ipamhandles.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/ippools.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/ipreservations.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/kubecontrollersconfigurations.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/networkpolicies.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/networksets.crd.projectcalico.org created</span></span>
+<span class="line"><span>clusterrole.rbac.authorization.k8s.io/calico-kube-controllers created</span></span>
+<span class="line"><span>clusterrole.rbac.authorization.k8s.io/calico-node created</span></span>
+<span class="line"><span>clusterrolebinding.rbac.authorization.k8s.io/calico-kube-controllers created</span></span>
+<span class="line"><span>clusterrolebinding.rbac.authorization.k8s.io/calico-node created</span></span>
+<span class="line"><span>daemonset.apps/calico-node created</span></span>
+<span class="line"><span>deployment.apps/calico-kube-controllers created</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl get pod -n kube-system</span></span>
+<span class="line"><span>NAME                                       READY   STATUS     RESTARTS   AGE</span></span>
+<span class="line"><span>calico-kube-controllers-6849cf9bcf-gsbzr   0/1     Pending    0          30s</span></span>
+<span class="line"><span>calico-node-bdshx                          0/1     Init:0/3   0          30s</span></span>
+<span class="line"><span>calico-node-mmjfl                          0/1     Init:0/3   0          30s</span></span>
+<span class="line"><span>coredns-5d78c9869d-spj6w                   0/1     Pending    0          16m</span></span>
+<span class="line"><span>coredns-5d78c9869d-td7nt                   0/1     Pending    0          16m</span></span>
+<span class="line"><span>etcd-k8s-master                            1/1     Running    0          16m</span></span>
+<span class="line"><span>kube-apiserver-k8s-master                  1/1     Running    0          16m</span></span>
+<span class="line"><span>kube-controller-manager-k8s-master         1/1     Running    0          16m</span></span>
+<span class="line"><span>kube-proxy-sfkrl                           1/1     Running    0          16m</span></span>
+<span class="line"><span>kube-proxy-wm8mk                           1/1     Running    0          12m</span></span>
+<span class="line"><span>kube-scheduler-k8s-master                  1/1     Running    0          16m</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl apply -f dashboard.yaml</span></span>
+<span class="line"><span>namespace/kubernetes-dashboard created</span></span>
+<span class="line"><span>serviceaccount/kubernetes-dashboard created</span></span>
+<span class="line"><span>service/kubernetes-dashboard created</span></span>
+<span class="line"><span>secret/kubernetes-dashboard-certs created</span></span>
+<span class="line"><span>secret/kubernetes-dashboard-csrf created</span></span>
+<span class="line"><span>secret/kubernetes-dashboard-key-holder created</span></span>
+<span class="line"><span>configmap/kubernetes-dashboard-settings created</span></span>
+<span class="line"><span>role.rbac.authorization.k8s.io/kubernetes-dashboard created</span></span>
+<span class="line"><span>clusterrole.rbac.authorization.k8s.io/kubernetes-dashboard created</span></span>
+<span class="line"><span>rolebinding.rbac.authorization.k8s.io/kubernetes-dashboard created</span></span>
+<span class="line"><span>clusterrolebinding.rbac.authorization.k8s.io/kubernetes-dashboard created</span></span>
+<span class="line"><span>deployment.apps/kubernetes-dashboard created</span></span>
+<span class="line"><span>service/dashboard-metrics-scraper created</span></span>
+<span class="line"><span>deployment.apps/dashboard-metrics-scraper created</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl get pod -n kubernetes-dashboard -o wide</span></span>
+<span class="line"><span>NAME                                         READY   STATUS             RESTARTS   AGE   IP               NODE         NOMINATED NODE   READINESS GATES</span></span>
+<span class="line"><span>dashboard-metrics-scraper-5cb4f4bb9c-tvqlt   0/1     ImagePullBackOff   0          26s   10.224.254.132   k8s-worker   &lt;none&gt;           &lt;none&gt;</span></span>
+<span class="line"><span>kubernetes-dashboard-6967859bff-nrtsl        0/1     ImagePullBackOff   0          26s   10.224.254.133   k8s-worker   &lt;none&gt;           &lt;none&gt;</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl get svc -n kubernetes-dashboard</span></span>
+<span class="line"><span>NAME                        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE</span></span>
+<span class="line"><span>dashboard-metrics-scraper   ClusterIP   10.106.18.213   &lt;none&gt;        8000/TCP   2m5s</span></span>
+<span class="line"><span>kubernetes-dashboard        ClusterIP   10.103.7.49     &lt;none&gt;        443/TCP    2m6s</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl edit svc kubernetes-dashboard -n kubernetes-dashboard</span></span>
+<span class="line"><span>service/kubernetes-dashboard edited # 将ClusterIP 改为NodePort</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl get svc -n kubernetes-dashboard</span></span>
+<span class="line"><span>NAME                        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)         AGE</span></span>
+<span class="line"><span>dashboard-metrics-scraper   ClusterIP   10.106.18.213   &lt;none&gt;        8000/TCP        3m40s</span></span>
+<span class="line"><span>kubernetes-dashboard        NodePort    10.103.7.49     &lt;none&gt;        443:30571/TCP   3m41s</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl apply -f dashboard-user.yaml</span></span>
+<span class="line"><span>serviceaccount/admin-user created</span></span>
+<span class="line"><span>clusterrolebinding.rbac.authorization.k8s.io/admin-user created</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl -n kubernetes-dashboard create token admin-user</span></span>
+<span class="line"><span>eyJhbGciOiJSUzI1NiIsImtpZCI6InVCZUlsckJGWUZoMTJfRDA2eVFsMm85d3lEYml4WmQxV2RmNGtNWGlzZUEifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxNjg2MzI1NzA3LCJpYXQiOjE2ODYzMjIxMDcsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsInNlcnZpY2VhY2NvdW50Ijp7Im5hbWUiOiJhZG1pbi11c2VyIiwidWlkIjoiYzAzOTI4OWEtMTc1MS00ZDY3LWFiNTgtMzE2ZTYzNWQ3NWEzIn19LCJuYmYiOjE2ODYzMjIxMDcsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlcm5ldGVzLWRhc2hib2FyZDphZG1pbi11c2VyIn0.BOa9nhIPfx_qWoQOn8hbfA70Y2fIeO_xcjK5wJJdrgS2yeSFIqD07LwHyw6eT9a03leNUaSA6gj3kYeAQnbCpw8pacdGJAaBBL-Y6Y31p4uVNSH9bs9TJuVAGyfKzJ4G8eyj3bZ11PlEtLNXeCr7bB_tO_8Z93lCK-F8h9VfQV5TGxCRAmjWXX3c1tpox236lIVsDA8UC8LqrWO4TW5p22om5ES9RsgVypoYQPwZ0O7hy9k_7mMe2Nh2hdiibhuezwGcm2fl_fgBsK9REaer0NZF420p1crxUBiE0LfxfvgTTGHAnbwWlw_M2pFehvx82Lx6jmduNnq-0cPcReb4cw</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>访问Web页面相关问题，Web页面的端口是随机的，需要手动查看容器状态，可以看到下面dashboard映射出来的端口是30571</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl get svc -A -o wide</span></span>
+<span class="line"><span>NAMESPACE              NAME                        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                  AGE   SELECTOR</span></span>
+<span class="line"><span>default                kubernetes                  ClusterIP   10.96.0.1       &lt;none&gt;        443/TCP                  32m   &lt;none&gt;</span></span>
+<span class="line"><span>kube-system            kube-dns                    ClusterIP   10.96.0.10      &lt;none&gt;        53/UDP,53/TCP,9153/TCP   32m   k8s-app=kube-dns</span></span>
+<span class="line"><span>kubernetes-dashboard   dashboard-metrics-scraper   ClusterIP   10.106.18.213   &lt;none&gt;        8000/TCP                 12m   k8s-app=dashboard-metrics-scraper</span></span>
+<span class="line"><span>kubernetes-dashboard   kubernetes-dashboard        NodePort    10.103.7.49     &lt;none&gt;        443:30571/TCP            13m   k8s-app=kubernetes-dashboard</span></span></code></pre><button class="code-block-unfold-btn"></button></div><!--]--><!--]--><!----><!----></article><!-- </Transition> --><!--]--><!--[--><!--[--><!--[--><div class="yun-sponsor-container flex-center flex-col" m="t-6"><button class="sponsor-button yun-icon-btn shadow hover:shadow-md" title="饿饿，饭饭！" text="red-400"><div class="mt-2px" i-ri-heart-fill></div></button><div m="y-4" class="qrcode-container qrcode flex-center flex-col"><div class="sponsor-description" mb="4" text="sm">这是关于赞助的一些描述</div><div class="flex justify-around"><!--[--><a class="flex-center flex-col animate-iteration-1 animate-fade-in" href="https://bu.dusays.com/2023/11/02/65432694e4eb5.jpg" target="_blank" style="color:#00A3EE"><img class="sponsor-method-img" border="~ rounded" p="1" loading="lazy" src="https://bu.dusays.com/2023/11/02/65432694e4eb5.jpg" title="支付宝"><div text="xl" m="2" class="i-ri-alipay-line"></div></a><a class="flex-center flex-col animate-iteration-1 animate-fade-in" href="https://bu.dusays.com/2023/11/02/6543269436758.jpg" target="_blank" style="color:#2DC100"><img class="sponsor-method-img" border="~ rounded" p="1" loading="lazy" src="https://bu.dusays.com/2023/11/02/6543269436758.jpg" title="微信支付"><div text="xl" m="2" class="i-ri-wechat-pay-line"></div></a><!--]--></div></div></div><ul class="post-copyright" m="y-4"><li class="post-copyright-author"><strong>本文作者：</strong><span>皓然</span></li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://blog.horonlee.com/posts/K8S1/27/0-deploy" target="_blank" title="本文链接">https://blog.horonlee.com/posts/K8S1/27/0-deploy</a></li><li class="post-copyright-license"><strong>版权声明：</strong><span>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA</a> 许可协议。</span></li></ul><!--]--><!--]--><!--]--></div><!--]--></div><!----></div><!--[--><!--]--><!--[--><div class="post-nav"><div class="post-nav-item"><a href="/posts/OpenStack-note" class="post-nav-prev" title="OpenStack运维笔记"><div class="icon" i-ri-arrow-left-s-line></div><span class="title truncate" text="sm">OpenStack运维笔记</span></a></div><div class="post-nav-item"><a href="/posts/PHP-Nginx-website" class="post-nav-next" title="使用PHP+Nginx搭建网页"><span class="title truncate" text="sm">使用PHP+Nginx搭建网页</span><div class="icon" i-ri-arrow-right-s-line></div></a></div></div><!--]--><!--[--><!--]--><!--[--><div class="yun-card flex-center rounded-2 overflow-hidden comment yun-comment sm:p-6 lg:px-12 xl:px-16" flex="col" min-h="100px" bg="$va-c-bg-light" w="full" p="4"><!----><!----><div class="yun-card-body relative" w="full" flex="~ col" items="center"><!--[--><!----><!--]--></div><!----></div><!--]--><!--[--><!--
+    Empty placeholder, meant to be overridden by the user (see demo/yun/components/YunAdBoard.vue).
+    `v-if="false"` renders a comment node instead of a real element: this avoids the SSR hydration
+    crash a raw `<template>` causes (#711), while still adding no gap to the parent flex layout,
+    which an empty `<div>` would (ab57216f).
+  --><!----><!--]--><!--[--><!--]--><!--[--><!--]--></div><!--]--></main><!--[--><button class="xl:hidden toc-btn shadow-md fixed yun-icon-btn z-20 bg-$va-c-bg-soft" opacity="75" right="4" bottom="19"><div i-ri-file-list-line></div></button><!----><aside flex="~ col" class="va-card yun-aside min-h-sm rounded-2" text="center" overflow="auto"><div class="w-full" flex="~ col" pb-2><!--[--><h2 m="t-6 b-2" font="serif black">文章目录</h2><div style="display:none;" data-v-397dcb99><div class="content" data-v-397dcb99><div class="outline-title" data-v-397dcb99>本页</div><div class="outline-marker" data-v-397dcb99></div><nav aria-labelledby="doc-outline-aria-label" data-v-397dcb99><span id="doc-outline-aria-label" class="visually-hidden" data-v-397dcb99> Table of Contents for current page </span><ul class="root va-toc relative z-1 css-i18n-toc" data-v-397dcb99 data-v-7f9eba76><!--[--><!--]--></ul></nav></div></div><!--]--><div class="flex-grow"></div><!----></div></aside><!--]--><!--]--></div><footer flex="~ col" class="relative yun-footer va-footer px-4 py-4 pt-0 text-$va-c-text-light w-full mt-14" bg="white dark:$va-c-bg-soft" text="center sm" style="display:flex;flex-direction:column;justify-content:center;align-items:center;"><div class="yun-cloud absolute top--10 left-0 right-0"><svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" fill="var(--yun-c-cloud)"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><div class="beian" m="y-2"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">浙ICP备2023037163号</a><!----></div><div class="copyright flex justify-center items-center gap-2" p="1"><span> © <!--[-->2023 - <!--]--> 2026</span><a class="animate-pulse inline-flex" href="https://www.yunyoujun.cn/sponsors/" target="_blank" title="Sponsor YunYouJun"><div class="i-ri-cloud-line"></div></a><span>皓然</span></div><div class="powered" m="2"><span>由 <a href="https://github.com/YunYouJun/valaxy.git" target="_blank" rel="noopener">Valaxy</a> <span class="op-60">v1.0.0-beta.2</span> 驱动</span><span mx-1>|</span><span><span>主题</span><span mx-1>-</span><a href="https://github.com/YunYouJun/valaxy.git" title="valaxy-theme-yun" target="_blank">Yun</a><span class="ml-1 op-60">v1.0.0-beta.2</span></span></div><!--[--><!-- 自定义页脚内容 --><a href="https://icp.gov.moe/?keyword=20241146" target="_blank">萌ICP备20241146号</a><div style="width:120px;height:auto;"><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener" title="开往-友链接力"><img src="https://www.travellings.cn/assets/logo.gif" alt="开往-友链接力"></a></div><div style="display:flex;"><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px;" title="本站采用多线部署，主线路托管于Vercel"><img src="https://sourcebucket.s3.bitiful.net/badge/Hosted-Vercel-brightgreen.svg" data-lazy-src="https://sourcebucket.s3.bitiful.net/badge/Hosted-Vercel-brightgreen.svg" alt="" data-ll-status="loaded" class="entered loaded"></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px;" title="本网站源码由Github提供存储仓库"><img src="https://sourcebucket.s3.bitiful.net/badge/Source-Github-d021d6.svg" data-lazy-src="https://sourcebucket.s3.bitiful.net/badge/Source-Github-d021d6.svg" alt="" data-ll-status="loaded" class="entered loaded"></a></div><div>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</div><div>本站访客数 <span id="busuanzi_value_site_uv"></span> 人次</div><div class="vc-site-live-time" mt="2"><!--[--><span>本站已运行</span><!--]--><span mx-1>0 天</span><span mx-1>0 小时</span><span mx-1>0 分</span><span mx-1>0 秒</span><!--[--><!--]--></div><!--]--><div class="yun-footer-gradient"></div></footer></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"yun-app":{"bannerAnimationDone":false},"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://blog.horonlee.com/#identity","@type":"Person","name":"皓然","url":"https://blog.horonlee.com/","image":{"@id":"https://blog.horonlee.com/#/schema/image/1"},"sameAs":["/atom.xml","https://","https://github.com/horonlee","https://music.163.com/#/user/home?id=545332010","https://www.zhihu.com/people/tie-tie-huohuo","https://space.bilibili.com/172335226","https://twitter.com/HuoTie","mailto:1269024821@qq.com","https://www.travellings.cn/go.html"]},{"@id":"https://blog.horonlee.com/#website","@type":"WebSite","dateModified":"2023-06-10T00:43:16.000Z","datePublished":"2023-06-10T00:43:16.000Z","inLanguage":"zh-CN","name":"K8S1.27.0集群部署要点","url":"https://blog.horonlee.com/","publisher":{"@id":"https://blog.horonlee.com/#identity"}},{"@id":"https://blog.horonlee.com/#webpage","@type":"WebPage","dateModified":"2023-06-10T00:43:16.000Z","datePublished":"2023-06-10T00:43:16.000Z","description":"分享生活和技术的点滴","name":"K8S1.27.0集群部署要点","url":"https://blog.horonlee.com/","about":{"@id":"https://blog.horonlee.com/#identity"},"isPartOf":{"@id":"https://blog.horonlee.com/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://blog.horonlee.com/"]}]},{"@id":"https://blog.horonlee.com/#article","dateModified":"2023-06-10T00:43:16.000Z","datePublished":"2023-06-10T00:43:16.000Z","description":"分享生活和技术的点滴","headline":"K8S1.27.0集群部署要点","inLanguage":"zh-CN","thumbnailUrl":"https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg","@type":["Article","BlogPosting"],"author":{"@id":"https://blog.horonlee.com/#/schema/person/1"},"image":{"@id":"https://blog.horonlee.com/#/schema/image/2"},"isPartOf":{"@id":"https://blog.horonlee.com/#webpage"},"mainEntityOfPage":{"@id":"https://blog.horonlee.com/#webpage"},"publisher":{"@id":"https://blog.horonlee.com/#identity"}},{"@id":"https://blog.horonlee.com/#/schema/person/1","@type":"Person","name":"皓然","url":"https://valaxy.site"},{"@id":"https://blog.horonlee.com/#/schema/image/1","@type":"ImageObject","contentUrl":"https://bu.dusays.com/2023/02/02/63db3598928c2.jpg","inLanguage":"zh-CN","url":"https://bu.dusays.com/2023/02/02/63db3598928c2.jpg"},{"@id":"https://blog.horonlee.com/#/schema/image/2","@type":"ImageObject","contentUrl":"https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg","inLanguage":"zh-CN","url":"https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg"}]}</script>
+  
+</body>
+</html>
