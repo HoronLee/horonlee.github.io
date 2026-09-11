@@ -3,7 +3,7 @@ import type { TerminalThemeConfig } from './types'
 export default {
   accent: 'mauve',
   terminal: { user: 'guest', host: 'blog' },
-  font: { family: 'Maple Mono NF CN', ligatures: true },
+  font: { family: 'Maple Mono NF', ligatures: true },
   icons: 'nerd',
   keyboard: true,
   navigation: [

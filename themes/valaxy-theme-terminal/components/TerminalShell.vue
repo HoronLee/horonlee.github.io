@@ -17,7 +17,7 @@ const isPost = computed(() => route.path.startsWith('/posts/') && !!frontmatter.
 const directory = computed(() => route.path === '/' ? '~' : `~${decodeURI(route.path).replace(/\/$/, '')}`)
 const themeStyle = computed(() => ({
   '--terminal-accent': `var(--terminal-${config.value.accent})`,
-  '--terminal-font': `"${config.value.font.family.replace(/["\\]/g, '')}", "Maple Mono NF CN", monospace`,
+  '--terminal-font': `"${config.value.font.family.replace(/["\\]/g, '')}", "Maple Mono NF", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", monospace`,
   fontVariantLigatures: config.value.font.ligatures ? 'normal' : 'none',
 }))
 function active(link: string) {
@@ -43,7 +43,7 @@ onMounted(() => {
   mounted.value = true
   document.addEventListener('keydown', handleKey)
   // 图标字体失败时仍保留可辨认的 ASCII 和文字。
-  document.fonts.load('16px "Maple Mono NF CN"', '\uf09b\uf015\uf07b\uf0c1\uf007\uf02b\uf0e0\uf09e\uf1d6\uf099\uf144\uf001\uf238\uf109\uf10b\uf11b\uf108')
+  document.fonts.load('16px "Maple Mono NF"', '\uf09b\uf015\uf07b\uf0c1\uf007\uf02b\uf0e0\uf09e\uf1d6\uf099\uf144\uf001\uf238\uf109\uf10b\uf11b\uf108')
     .then(fonts => { if (fonts.length) document.documentElement.classList.add('terminal-font-ready') })
     .catch(() => {})
 })

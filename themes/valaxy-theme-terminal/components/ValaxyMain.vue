@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import type { PageData, Post } from 'valaxy'
-import { onClickHref, onContentUpdated, usePrevNext, useRuntimeConfig, useSiteConfig } from 'valaxy'
+import { usePrevNext, useRuntimeConfig, useSiteConfig } from 'valaxy'
 import { computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { formatDate, useDisplayText } from '../composables/posts'
 import { categoryTrail } from '../composables/taxonomy'
 
 const props = defineProps<{ frontmatter: Post, data?: PageData }>()
 const route = useRoute()
-const router = useRouter()
 const site = useSiteConfig()
 const runtime = useRuntimeConfig()
 const display = useDisplayText()
@@ -16,7 +15,6 @@ const layout = computed(() => props.frontmatter.layout || route.meta.layout || '
 const isPost = computed(() => layout.value === 'post' || (route.path.startsWith('/posts/') && !!props.frontmatter.date))
 const [prev, next] = usePrevNext()
 const waline = computed(() => runtime.value.addons['valaxy-addon-waline'])
-onContentUpdated(() => onClickHref(router))
 </script>
 
 <template>
@@ -36,6 +34,7 @@ onContentUpdated(() => onClickHref(router))
       </div>
       <div v-if="isPost && frontmatter.tags?.length" class="terminal-post-tags"><RouterLink v-for="tag in frontmatter.tags" :key="String(tag)" :to="{ path: '/tags/', query: { tag: String(tag) } }">#{{ tag }}</RouterLink></div>
       <nav v-if="isPost && frontmatter.categories" class="terminal-post-tags" aria-label="文章分类"><RouterLink v-for="category in categoryTrail(frontmatter.categories)" :key="category.path" :to="{ path: '/categories/', query: { category: category.path } }">{{ category.label }}/</RouterLink></nav>
+      <TerminalCover v-if="isPost && frontmatter.cover?.trim()" :src="frontmatter.cover" :alt="`${display(frontmatter.title)}的封面`" />
     </header>
     <slot name="main-content-before" />
     <slot name="main-content"><ValaxyMd :frontmatter="frontmatter"><slot /><slot name="main-content-md" /></ValaxyMd></slot>

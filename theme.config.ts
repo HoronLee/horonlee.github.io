@@ -6,7 +6,7 @@ export default defineThemeConfig({
   terminal: { user: 'horonlee', host: 'blog' },
   icons: 'nerd',
   keyboard: true,
-  font: { family: 'Maple Mono NF CN', ligatures: true },
+  font: { family: 'Maple Mono NF', ligatures: true },
   home: { intro: '在这里，记录折腾的过程，\n也给日常留一个可以回来的地方。' },
   profile: {
     name: '皓然 / HoronLee',

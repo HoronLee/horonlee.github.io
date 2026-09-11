@@ -1,4 +1,5 @@
 import 'valaxy/client/styles/common/index.scss'
+import 'valaxy/client/styles/components/code.scss'
 import './fonts.css'
 import './terminal.css'
 import './markdown.css'

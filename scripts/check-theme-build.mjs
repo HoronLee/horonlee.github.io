@@ -163,16 +163,61 @@ function validateFonts(cssFiles) {
         check(readFileSync(target).subarray(0, 4).toString() === 'wOF2', `${href}: 不是有效的 WOFF2 文件头`)
     }
     for (const match of css.matchAll(/@font-face\s*\{([^}]+)\}/gi)) {
-      if (!/font-family\s*:\s*["']?Maple Mono NF CN["']?\s*;/i.test(match[1]))
+      if (!/font-family\s*:\s*["']?Maple Mono NF["']?\s*;/i.test(match[1]))
         continue
       mapleFaces++
       check(/unicode-range\s*:\s*U\+/i.test(match[1]), `${path.relative(dist, filename)}: Maple 字体缺少 unicode-range`)
       check(/font-display\s*:\s*swap\b/i.test(match[1]), `${path.relative(dist, filename)}: Maple 字体缺少 font-display: swap`)
       check(/url\([^)]*\.woff2/i.test(match[1]), `${path.relative(dist, filename)}: Maple 字体没有自托管 WOFF2 URL`)
+      const ranges = match[1].match(/unicode-range\s*:\s*([^;}]+)/i)?.[1] || ''
+      const systemCjk = [[0x2E80, 0xA4CF], [0xF900, 0xFAFF], [0xFE10, 0xFE1F], [0xFE30, 0xFE6F], [0xFF00, 0xFFEF], [0x16FE0, 0x18DFF], [0x1B000, 0x1B2FF], [0x20000, 0x3FFFF]]
+      for (const range of ranges.matchAll(/U\+([\dA-F]+)(?:-([\dA-F]+))?/gi)) {
+        const start = Number.parseInt(range[1], 16)
+        const end = Number.parseInt(range[2] || range[1], 16)
+        check(!systemCjk.some(([low, high]) => start <= high && end >= low), `Maple 的 ${range[0]} 覆盖了应由系统字体渲染的中文或全角字符`)
+      }
     }
   }
-  check(mapleFaces > 1, 'CSS 未生成 Maple Mono NF CN 的 unicode-range 分片')
+  check(mapleFaces > 1, 'CSS 未生成 Maple Mono NF 的 unicode-range 分片')
   check(checkedFonts.size > 1, '未找到可验证的本地 WOFF2 字体分片')
+  check(!cssFiles.some(filename => /Maple Mono NF CN|maple-mono-nf-cn/i.test(readFileSync(filename, 'utf8'))), '产物仍引用旧 NF CN 中文 Web 字体')
+}
+
+function validateCodeHighlighting(cssFiles) {
+  const css = cssFiles.map(filename => readFileSync(filename, 'utf8')).join('\n')
+  // Shiki emits only variables with Valaxy's defaultColor:false. The themes in
+  // HTML alone cannot prove that their colors reach the browser's color property.
+  for (const mode of ['light', 'dark']) {
+    const colorRule = new RegExp(`[^{}]*\\.(?:vp-code|shiki)[^{}]*\\{[^{}]*\\bcolor\\s*:\\s*var\\(\\s*--shiki-${mode}(?:\\s*[,)]|\\s+\\))`)
+    check(colorRule.test(css), `CSS 缺少 --shiki-${mode} 到代码 token color 的映射，代码高亮会丢失`)
+  }
+  const article = routeOutput('/posts/GormNote')
+  check(article, '缺少用于检查代码高亮的真实文章 /posts/GormNote')
+  if (article) {
+    const html = readFileSync(article, 'utf8')
+    check(/<pre\b[^>]*\bshiki\b[^>]*\bcatppuccin-latte\b[^>]*\bcatppuccin-mocha\b/.test(html), 'GormNote 未输出 Catppuccin 双主题代码块')
+    check(/<span\b[^>]*--shiki-light\s*:[^>]*--shiki-dark\s*:/.test(html), 'GormNote 未输出 Shiki 双主题 token')
+  }
+}
+
+function validateCovers() {
+  // Use an existing local cover so this check is independent of remote image hosts.
+  const route = '/posts/Harbor-HTTPS'
+  const source = readFileSync(path.join(root, 'pages/posts/Harbor-HTTPS.md'), 'utf8')
+  const cover = source.match(/^cover:\s*(.+)$/m)?.[1].trim()
+  check(cover, '封面检查文章 Harbor-HTTPS 缺少 cover 配置')
+  if (!cover)
+    return
+  const hasCover = html => [...html.matchAll(/<img\b[^>]*>/g)].some(match => attributes(match[0]).src === cover)
+  const article = routeOutput(route)
+  check(article, '缺少用于检查封面的文章 /posts/Harbor-HTTPS')
+  if (article) {
+    const header = readFileSync(article, 'utf8').match(/<header\b[^>]*class="terminal-document-header"[^>]*>([^]*?)<\/header>/)?.[1] || ''
+    check(hasCover(header), 'Harbor-HTTPS 文章头部没有渲染已配置的 cover')
+  }
+  const rows = [...pages.values()].flatMap(page => [...page.main.matchAll(/<article\b[^>]*class="post-row\b[^>]*>([^]*?)<\/article>/g)].map(match => match[1]))
+  const listing = rows.find(row => links(row).some(href => localRoute(href)?.replace(/\/$/, '') === route))
+  check(listing && hasCover(listing), '文章列表没有渲染 Harbor-HTTPS 的 cover')
 }
 
 try {
@@ -193,6 +238,8 @@ try {
       inspectPage(filename, true)
   }
   validateFonts(files.filter(filename => filename.endsWith('.css')))
+  validateCodeHighlighting(files.filter(filename => filename.endsWith('.css')))
+  validateCovers()
   if (failures.length) {
     console.error(`主题产物验证失败（${failures.length} 项）：\n${failures.map(message => `- ${message}`).join('\n')}`)
     process.exitCode = 1

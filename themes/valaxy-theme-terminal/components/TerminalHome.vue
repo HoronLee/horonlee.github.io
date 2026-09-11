@@ -10,7 +10,6 @@ const site = useSiteConfig()
     <p class="terminal-command"><span>❯</span> cat README.md</p>
     <h1>{{ site.title }}<span class="terminal-cursor" aria-hidden="true">_</span></h1>
     <p class="terminal-home-description">{{ config.home.intro }}</p>
-    <RouterLink to="/about/" class="terminal-about-link">[ whoami ] <span>关于我与我的设备</span></RouterLink>
     <div class="terminal-mobile-socials"><TerminalSocialLinks compact /></div>
   </section>
   <TerminalPostList :page="page" />

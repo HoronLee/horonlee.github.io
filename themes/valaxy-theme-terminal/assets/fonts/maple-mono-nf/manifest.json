@@ -1,0 +1,779 @@
+{
+  "release": "v7.9",
+  "upstream": "https://github.com/subframe7536/maple-font/releases/download/v7.9/MapleMono-NF.zip",
+  "license": "https://raw.githubusercontent.com/subframe7536/maple-font/v7.9/OFL.txt",
+  "archiveSha256": "59098b87c895d871635d37680e88000ae2b2b25b55428195b228ec589e35fb89",
+  "systemFallbackRanges": [
+    "U+2E80-A4CF",
+    "U+F900-FAFF",
+    "U+FE10-FE1F",
+    "U+FE30-FE6F",
+    "U+FF00-FFEF",
+    "U+16FE0-18DFF",
+    "U+1B000-1B2FF",
+    "U+20000-3FFFF"
+  ],
+  "fonttools": "4.61.1",
+  "brotli": "1.2.0",
+  "sources": [
+    {
+      "weight": 400,
+      "file": "MapleMono-NF-Regular.ttf",
+      "sha256": "dbf160ce96358056a47777e95a50af208b438312787cf20917ce2321066de8e5",
+      "family": "Maple Mono NF",
+      "version": "Version 7.900",
+      "characters": 11795,
+      "includedCharacters": 11794,
+      "excludedUnicodeRange": "U+FE62"
+    },
+    {
+      "weight": 700,
+      "file": "MapleMono-NF-Bold.ttf",
+      "sha256": "cf6fb13160424257ea764a5deb1d55116c9ab5c347cb69c6be2576b44dc3d544",
+      "family": "Maple Mono NF",
+      "version": "Version 7.900",
+      "characters": 11795,
+      "includedCharacters": 11794,
+      "excludedUnicodeRange": "U+FE62"
+    }
+  ],
+  "totalBytes": 2336592,
+  "shards": [
+    {
+      "file": "maple-mono-nf-400-latin.woff2",
+      "weight": 400,
+      "characters": 450,
+      "unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00AC, U+00AE-017F, U+018F-0190, U+0192, U+019B, U+01A0-01A1, U+01AF-01B0, U+01CD-01D4, U+01D6, U+01D8, U+01DA, U+01DC, U+01E6-01E7, U+01EA-01EB, U+01F4-01F5, U+01FC-01FF, U+0218-021B, U+021E-021F, U+0232-0233, U+0237, U+0251-0252, U+0254, U+0258-0259, U+025B-025C, U+0261, U+026A, U+0279, U+0283, U+028A, U+028C, U+0292, U+02B0, U+02B9-02BA, U+02BC, U+02C6-02C9, U+02CC, U+02D0-02D1, U+02D8-02DD, U+02F3, U+02F7, U+0300-0304, U+0306-030C, U+030F, U+0312, U+031B, U+0323, U+0325-0328, U+0336-0338, U+2001, U+200B, U+2010, U+2013-2014, U+2016, U+2018-2024, U+2026-2027, U+2030, U+2032-2034, U+2039-203A, U+203C-203F, U+2044-2046, U+204F",
+      "bytes": 59796,
+      "sha256": "b54182a3d47f778e15ed9ed68c91d91196fe2de7695a8c35cb9261ea77e7cca3"
+    },
+    {
+      "file": "maple-mono-nf-400-000.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+0374-0375, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CF, U+03D5-03D7, U+0401-040C, U+040E-044F, U+0451-045C, U+045E-045F, U+0490-0493, U+0496-0497, U+049A-049B, U+04A2-04A3, U+04AE-04B3, U+04B6-04B7, U+04BA-04BB, U+04D4-04D5, U+04D8-04D9, U+04DC-04DF, U+04E4-04E9, U+04F4-04F5, U+04FD, U+04FF, U+0AEA, U+1E80-1E85, U+1E9E, U+1EA0-1EC6",
+      "bytes": 19920,
+      "sha256": "ff876e5b95ddfb8dab8f103c819494b131fc30ca8e2864e68f0a49e06ba1879d"
+    },
+    {
+      "file": "maple-mono-nf-400-001.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+1EC7-1EF9, U+2070-2071, U+2074-2089, U+20A3, U+20A6, U+20A9, U+20AB-20AC, U+20B9-20BA, U+20BD, U+20BF, U+2103, U+2109, U+2113, U+2116, U+2122, U+212E, U+2140, U+218A-218B, U+2190-2199, U+219D-219E, U+21A0, U+21A2-21A7, U+21A9-21AA, U+21AD, U+21B0-21B3, U+21BE, U+21C4, U+21C6, U+21C9, U+21D0-21D4, U+21DA-21DB, U+21DE-21DF, U+21E4-21EA, U+2200, U+2202-2205, U+2208-220D, U+220F-2212, U+2215, U+2219-221A, U+221E, U+2223, U+2227-222B, U+2234-2236, U+2248, U+2260, U+2264-2265, U+2282-2285, U+2295-2299, U+22C0-22C3, U+2302, U+23BE-23BF, U+23CB-23CC, U+23FB-23FE, U+24BE, U+24E7, U+2500-253C",
+      "bytes": 18572,
+      "sha256": "6f182930cfe0e1e270d8fbae1b64d36cddbcad0ab85cc5cf4e51518adb145292"
+    },
+    {
+      "file": "maple-mono-nf-400-002.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+253D-25A1, U+25AA-25AB, U+25B2-25CC, U+25CE-25CF, U+25D4-25D5, U+25E6-25EB, U+25EF, U+25F6, U+2610-2612, U+2630, U+2665, U+266D, U+266F, U+26A0-26A1, U+2713-2715, U+2717-2718, U+2736, U+276E-2771, U+2794, U+279C-279E, U+27C5-27C6, U+27DC, U+27E6-27EB, U+27F5-27F7, U+2800-284E",
+      "bytes": 9624,
+      "sha256": "ce4e28ab71e8a4a0b89382afb50895f18ed4f314a57fafad985ef53c77358e65"
+    },
+    {
+      "file": "maple-mono-nf-400-003.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+284F-28FF, U+2916, U+294A, U+2987-2988, U+2A00, U+2A05-2A06, U+2B58, U+E000-E00A, U+E0A0-E0A3, U+E0B0-E0C8, U+E0CA, U+E0CC-E0D2, U+E0D4, U+E0D6-E0D7, U+E200-E213",
+      "bytes": 16516,
+      "sha256": "2155416c2beddc4c9e705fe769eeaa09c246d841edc4db9831ef5550f94ed9a7"
+    },
+    {
+      "file": "maple-mono-nf-400-004.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+E214-E2A9, U+E300-E369",
+      "bytes": 43660,
+      "sha256": "e455b091f390361c528d1131bd53b25ce58a8e4a83b7d9e3a70792a2f69765fa"
+    },
+    {
+      "file": "maple-mono-nf-400-005.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+E36A-E3E3, U+E5FA-E67F",
+      "bytes": 33904,
+      "sha256": "6a295f5faa820e421e42d9398d8ef802a0c8f14718633e08beae2ee648fa52eb"
+    },
+    {
+      "file": "maple-mono-nf-400-006.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+E680-E6B8, U+E700-E7C6",
+      "bytes": 69484,
+      "sha256": "c900bee07378567c7e79fb3cf386ae7087950b1a0f4cc714fae32dedc6006cd9"
+    },
+    {
+      "file": "maple-mono-nf-400-007.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+E7C7-E8C6",
+      "bytes": 75704,
+      "sha256": "08923fdb4150f302c17343c4013103ff4b05fe8502b14637f4130feb7447da87"
+    },
+    {
+      "file": "maple-mono-nf-400-008.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+E8C7-E8EF, U+EA60-EA88, U+EA8A-EA8C, U+EA8F-EAC7, U+EAC9, U+EACC-EAFA, U+EAFC-EB09, U+EB0B-EB3E",
+      "bytes": 27876,
+      "sha256": "3b8199cc9078cf759c2318194f1877c12c09c44e6733c42dfa5ce5387f6ad292"
+    },
+    {
+      "file": "maple-mono-nf-400-009.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+EB3F-EB4E, U+EB50-EC1E, U+ED00-ED20",
+      "bytes": 26516,
+      "sha256": "62066ab9ea0aef0168aeb762d1b0699b85b39cf0565f301a7f5d504560ed335e"
+    },
+    {
+      "file": "maple-mono-nf-400-010.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+ED21-EE20",
+      "bytes": 37848,
+      "sha256": "69cdd8514e4efcfa7e024c6eadf11939df37849a3c31a83934cb2becb36caab2"
+    },
+    {
+      "file": "maple-mono-nf-400-011.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+EE21-EF20",
+      "bytes": 38680,
+      "sha256": "70b14f4651d74cc0f572b208a769276c690eea8b7a6dc9c9335591fdb0fa4be6"
+    },
+    {
+      "file": "maple-mono-nf-400-012.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+EF21-EFCE, U+F000-F051",
+      "bytes": 32232,
+      "sha256": "97ae3586a5080e37f0c4ba0fe78338d80f0f427b3a1b9a5b979caf619c6416ab"
+    },
+    {
+      "file": "maple-mono-nf-400-013.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F052-F151",
+      "bytes": 25008,
+      "sha256": "9bec98b68300516519193ac83e0a7a79634b93f1d15ae02d844a595537a72074"
+    },
+    {
+      "file": "maple-mono-nf-400-014.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F152-F251",
+      "bytes": 34324,
+      "sha256": "6705a02606b16c2551bb23ec8a1284b930bdf21c4cb8f4166abbf562d81d2d41"
+    },
+    {
+      "file": "maple-mono-nf-400-015.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F252-F351",
+      "bytes": 48048,
+      "sha256": "7e848c5da2a2306adbddf671916dad3e4db2338fdc329f38302eef5e88df7f93"
+    },
+    {
+      "file": "maple-mono-nf-400-016.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F352-F381, U+F400-F4CF",
+      "bytes": 28512,
+      "sha256": "bc372a02d997afae4496e58336c2af41e9012d0b93bed7c92fd0bb15a701149d"
+    },
+    {
+      "file": "maple-mono-nf-400-017.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F4D0-F533, U+FEFF, U+FFFD, U+1F850-1F859, U+F0001-F0090",
+      "bytes": 20104,
+      "sha256": "12e4602248a61caadd4cf9ced73ad4d87ce5e363a02e445c669e1c47d5ca7173"
+    },
+    {
+      "file": "maple-mono-nf-400-018.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F0091-F0190",
+      "bytes": 15736,
+      "sha256": "0877e24d7705ee6bc784589a2a8d8ef284b6493c756a2c3dbb287261375390c3"
+    },
+    {
+      "file": "maple-mono-nf-400-019.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F0191-F0290",
+      "bytes": 16344,
+      "sha256": "f5d34d0f816da742d7ce7a6b02560bfab150e6563a1eb95a36628ae80fc4f1c2"
+    },
+    {
+      "file": "maple-mono-nf-400-020.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F0291-F0387, U+F0389-F0391",
+      "bytes": 17736,
+      "sha256": "eb7cf4674a175925c05198c6b25d8d2c28dfcd3029f7c87638019f13ed9ad872"
+    },
+    {
+      "file": "maple-mono-nf-400-021.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F0392-F043C, U+F043E-F0492",
+      "bytes": 17444,
+      "sha256": "d58cb21aceb86ebffc09886d255d2c32f9e0d1d49629499b55901efcd6f77faa"
+    },
+    {
+      "file": "maple-mono-nf-400-022.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F0493-F0508, U+F050A-F0593",
+      "bytes": 18584,
+      "sha256": "30f9ea78f8d6b7085a6cbcd8cca52d0961a5753ebfb7687574168a3b0f4e0c68"
+    },
+    {
+      "file": "maple-mono-nf-400-023.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F0594-F05FB, U+F05FD-F0694",
+      "bytes": 19788,
+      "sha256": "65de822bfa5a0c607f87bb612c84fa0ad577980f8ed97e32aa04912fbf85d107"
+    },
+    {
+      "file": "maple-mono-nf-400-024.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F0695-F0764, U+F0767-F0796",
+      "bytes": 16424,
+      "sha256": "6299d03acea412aff4a594dbee2ecee9eadd8e3e8a0639d66ad2742543a67102"
+    },
+    {
+      "file": "maple-mono-nf-400-025.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F0797-F0896",
+      "bytes": 20144,
+      "sha256": "7735ffee60767298e560bd263f6408581fcd3f8acf8bf81e7451d7533f45eec3"
+    },
+    {
+      "file": "maple-mono-nf-400-026.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F0897-F08CF, U+F08D1-F0997",
+      "bytes": 18768,
+      "sha256": "7703336c9d07a8fa33c71a959ff7791616ba0ab2d334f23ff442cf12f504a773"
+    },
+    {
+      "file": "maple-mono-nf-400-027.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F0998-F0A97",
+      "bytes": 19204,
+      "sha256": "89e2aa00ad67417890bdeaec05498f7fbc9ed9072157e73f0a1b25af360c72c8"
+    },
+    {
+      "file": "maple-mono-nf-400-028.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F0A98-F0B38, U+F0B3A-F0B98",
+      "bytes": 16208,
+      "sha256": "bbe726a6433df14ee5f23e559cd9a94a2836a8e8d666a03b387d6ecf2f2920fb"
+    },
+    {
+      "file": "maple-mono-nf-400-029.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F0B99-F0C98",
+      "bytes": 16128,
+      "sha256": "8667bfda7589318ff951b5fbdabddb2a1c82e173552bfd2ec357b1e52f29ab28"
+    },
+    {
+      "file": "maple-mono-nf-400-030.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F0C99-F0C9D, U+F0CA0-F0D9A",
+      "bytes": 20504,
+      "sha256": "62956748d2c89e2e22ccacf3eaeeb2fcf87a3f4fd1150487a39754b30bdc7186"
+    },
+    {
+      "file": "maple-mono-nf-400-031.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F0D9B-F0E9A",
+      "bytes": 19060,
+      "sha256": "3e2196cc1ecdd260511d59d7d70e8913b1336f292c87342df28b65a3ccc6bdc2"
+    },
+    {
+      "file": "maple-mono-nf-400-032.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F0E9B-F0F9A",
+      "bytes": 20320,
+      "sha256": "335dbec10925347ca87b571a4fa10fcc7c34185ac8788a62de566f40b61504bf"
+    },
+    {
+      "file": "maple-mono-nf-400-033.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F0F9B-F1087, U+F1089-F108B, U+F108D-F1090, U+F1092-F109D",
+      "bytes": 20828,
+      "sha256": "0dfd3bf8ea3ef4039de544c5eb6584796927500e108f817a948d21188a968502"
+    },
+    {
+      "file": "maple-mono-nf-400-034.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F109E-F119D",
+      "bytes": 19752,
+      "sha256": "a57550bb0403eb4afd26fac8c5e9265d4a7655ce5cedeb017f4b0c7b26e664e7"
+    },
+    {
+      "file": "maple-mono-nf-400-035.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F119E-F129D",
+      "bytes": 18244,
+      "sha256": "7e4dc40f35eb42d576aaada4589f6b1db04b1cab47505954588a1ea55de440c7"
+    },
+    {
+      "file": "maple-mono-nf-400-036.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F129E-F139D",
+      "bytes": 20004,
+      "sha256": "67aa9c169693022ec1f8b9f1be20cd6b4f7a96f7838643ffb38096f7fc731e90"
+    },
+    {
+      "file": "maple-mono-nf-400-037.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F139E-F13A5, U+F13A7-F149E",
+      "bytes": 19252,
+      "sha256": "8e835c707800ba199ff41e07c13a4d0c36388df38d7f464aa5f6092042882a64"
+    },
+    {
+      "file": "maple-mono-nf-400-038.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F149F-F159E",
+      "bytes": 18728,
+      "sha256": "f4c7076d48e4ad7b524015c2a60a6d3de594a7bb44cc57741bca27fb688773ba"
+    },
+    {
+      "file": "maple-mono-nf-400-039.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F159F-F169E",
+      "bytes": 20808,
+      "sha256": "7cc995209b4d111c75d4318773da601803d267a33f86741e27d6c92a61f50962"
+    },
+    {
+      "file": "maple-mono-nf-400-040.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F169F-F179E",
+      "bytes": 20260,
+      "sha256": "77ef5874e01e5bedf11961e1678c523199699fe16a976921a8ba1949e4108e50"
+    },
+    {
+      "file": "maple-mono-nf-400-041.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F179F-F189E",
+      "bytes": 19780,
+      "sha256": "1782ad8c30c3c8b305a5afbbb6383369803ad14c980cb66104830ce3b501ba1c"
+    },
+    {
+      "file": "maple-mono-nf-400-042.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F189F, U+F18A1-F18EF, U+F18F1-F19A0",
+      "bytes": 21852,
+      "sha256": "54d8da9db4e4c5338e91971661993df44b0db820dd5996e736a9a5a0ce2d2561"
+    },
+    {
+      "file": "maple-mono-nf-400-043.woff2",
+      "weight": 400,
+      "characters": 256,
+      "unicodeRange": "U+F19A1-F1AA0",
+      "bytes": 20632,
+      "sha256": "4bb5e924e3084c0d148904d05425d6ab73f3a2c2b5d788051e5da8e8b610015a"
+    },
+    {
+      "file": "maple-mono-nf-400-044.woff2",
+      "weight": 400,
+      "characters": 80,
+      "unicodeRange": "U+F1AA1-F1AF0",
+      "bytes": 7372,
+      "sha256": "0681f4358252500b4de38aee078363203752bb28302cb51dae1d50d989523a01"
+    },
+    {
+      "file": "maple-mono-nf-700-latin.woff2",
+      "weight": 700,
+      "characters": 450,
+      "unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00AC, U+00AE-017F, U+018F-0190, U+0192, U+019B, U+01A0-01A1, U+01AF-01B0, U+01CD-01D4, U+01D6, U+01D8, U+01DA, U+01DC, U+01E6-01E7, U+01EA-01EB, U+01F4-01F5, U+01FC-01FF, U+0218-021B, U+021E-021F, U+0232-0233, U+0237, U+0251-0252, U+0254, U+0258-0259, U+025B-025C, U+0261, U+026A, U+0279, U+0283, U+028A, U+028C, U+0292, U+02B0, U+02B9-02BA, U+02BC, U+02C6-02C9, U+02CC, U+02D0-02D1, U+02D8-02DD, U+02F3, U+02F7, U+0300-0304, U+0306-030C, U+030F, U+0312, U+031B, U+0323, U+0325-0328, U+0336-0338, U+2001, U+200B, U+2010, U+2013-2014, U+2016, U+2018-2024, U+2026-2027, U+2030, U+2032-2034, U+2039-203A, U+203C-203F, U+2044-2046, U+204F",
+      "bytes": 62624,
+      "sha256": "f826b8cd0920c9e26b3360b4f3715df96d97101ef1a8d6127be18f3dd75d78f6"
+    },
+    {
+      "file": "maple-mono-nf-700-000.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+0374-0375, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CF, U+03D5-03D7, U+0401-040C, U+040E-044F, U+0451-045C, U+045E-045F, U+0490-0493, U+0496-0497, U+049A-049B, U+04A2-04A3, U+04AE-04B3, U+04B6-04B7, U+04BA-04BB, U+04D4-04D5, U+04D8-04D9, U+04DC-04DF, U+04E4-04E9, U+04F4-04F5, U+04FD, U+04FF, U+0AEA, U+1E80-1E85, U+1E9E, U+1EA0-1EC6",
+      "bytes": 20704,
+      "sha256": "7dd3bd5d48b56944bc5d953966658eb8a81cafed6cd6af8e5459c9dfdb122d4a"
+    },
+    {
+      "file": "maple-mono-nf-700-001.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+1EC7-1EF9, U+2070-2071, U+2074-2089, U+20A3, U+20A6, U+20A9, U+20AB-20AC, U+20B9-20BA, U+20BD, U+20BF, U+2103, U+2109, U+2113, U+2116, U+2122, U+212E, U+2140, U+218A-218B, U+2190-2199, U+219D-219E, U+21A0, U+21A2-21A7, U+21A9-21AA, U+21AD, U+21B0-21B3, U+21BE, U+21C4, U+21C6, U+21C9, U+21D0-21D4, U+21DA-21DB, U+21DE-21DF, U+21E4-21EA, U+2200, U+2202-2205, U+2208-220D, U+220F-2212, U+2215, U+2219-221A, U+221E, U+2223, U+2227-222B, U+2234-2236, U+2248, U+2260, U+2264-2265, U+2282-2285, U+2295-2299, U+22C0-22C3, U+2302, U+23BE-23BF, U+23CB-23CC, U+23FB-23FE, U+24BE, U+24E7, U+2500-253C",
+      "bytes": 18940,
+      "sha256": "d2db5a164e4444a0140fedee8317142748ff2d9bbd5c21a9017f49ae9c7e0d21"
+    },
+    {
+      "file": "maple-mono-nf-700-002.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+253D-25A1, U+25AA-25AB, U+25B2-25CC, U+25CE-25CF, U+25D4-25D5, U+25E6-25EB, U+25EF, U+25F6, U+2610-2612, U+2630, U+2665, U+266D, U+266F, U+26A0-26A1, U+2713-2715, U+2717-2718, U+2736, U+276E-2771, U+2794, U+279C-279E, U+27C5-27C6, U+27DC, U+27E6-27EB, U+27F5-27F7, U+2800-284E",
+      "bytes": 9752,
+      "sha256": "37ec119b1058509f8eba13b9f658bc5418e4ada791650cbe68696f860ef86c5d"
+    },
+    {
+      "file": "maple-mono-nf-700-003.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+284F-28FF, U+2916, U+294A, U+2987-2988, U+2A00, U+2A05-2A06, U+2B58, U+E000-E00A, U+E0A0-E0A3, U+E0B0-E0C8, U+E0CA, U+E0CC-E0D2, U+E0D4, U+E0D6-E0D7, U+E200-E213",
+      "bytes": 16584,
+      "sha256": "3788d5420ecf089b0089215e29ee12caa52224344160130d9a12db450fcdea75"
+    },
+    {
+      "file": "maple-mono-nf-700-004.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+E214-E2A9, U+E300-E369",
+      "bytes": 43756,
+      "sha256": "f6fca0c898b78d0abaa378f1e5b4f9d9ba8d316855e4888ef4b1f827c355d1ea"
+    },
+    {
+      "file": "maple-mono-nf-700-005.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+E36A-E3E3, U+E5FA-E67F",
+      "bytes": 33904,
+      "sha256": "a5ce1a758d4e6f540cb44c7c1e1a7f1fc839a639d8b840a58e7153699ac2ea3a"
+    },
+    {
+      "file": "maple-mono-nf-700-006.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+E680-E6B8, U+E700-E7C6",
+      "bytes": 69416,
+      "sha256": "0f1f2aad2b1eb1915c03285807d811837a7657086190a9906eb5470558725bdb"
+    },
+    {
+      "file": "maple-mono-nf-700-007.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+E7C7-E8C6",
+      "bytes": 75668,
+      "sha256": "032a66e91328ac6a3b4ddd9e2ae002330c5be65d8b604a60d113af6cf85e82c3"
+    },
+    {
+      "file": "maple-mono-nf-700-008.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+E8C7-E8EF, U+EA60-EA88, U+EA8A-EA8C, U+EA8F-EAC7, U+EAC9, U+EACC-EAFA, U+EAFC-EB09, U+EB0B-EB3E",
+      "bytes": 27916,
+      "sha256": "36d0e9242115a515cb24074a081143e3266b420dbe3df884f51a5d5c58ecf899"
+    },
+    {
+      "file": "maple-mono-nf-700-009.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+EB3F-EB4E, U+EB50-EC1E, U+ED00-ED20",
+      "bytes": 26600,
+      "sha256": "6c7ae0aa2861497f710b9b754bcb1233c80ed6f2a9dda4b8d51777a69a68226f"
+    },
+    {
+      "file": "maple-mono-nf-700-010.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+ED21-EE20",
+      "bytes": 37908,
+      "sha256": "ea76bb611da0b392245d4fbfa489348dcaff50f71145497e7dfd58024f8f0fc9"
+    },
+    {
+      "file": "maple-mono-nf-700-011.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+EE21-EF20",
+      "bytes": 38680,
+      "sha256": "31e78b01efd8132025da352005f51d11b1068b6dd7384f78d1d5b614649d6d0a"
+    },
+    {
+      "file": "maple-mono-nf-700-012.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+EF21-EFCE, U+F000-F051",
+      "bytes": 32220,
+      "sha256": "3aa77abf6eaeff10063b79304108b5d9086e20ac5e77c987a7b3836698e79b94"
+    },
+    {
+      "file": "maple-mono-nf-700-013.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F052-F151",
+      "bytes": 25028,
+      "sha256": "bae69150b4ddd3593db271fc951123f4cd405afc9b91677a652df101a0f65e6f"
+    },
+    {
+      "file": "maple-mono-nf-700-014.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F152-F251",
+      "bytes": 34264,
+      "sha256": "c76072b4873bfca2c9c0552c72197842c8107e1b65fa70ad7601097dcb8a9492"
+    },
+    {
+      "file": "maple-mono-nf-700-015.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F252-F351",
+      "bytes": 48036,
+      "sha256": "0b80b9e6c2c88580ce1ad05da47be926dbbf344f75e0920e2d9819a5d0994eca"
+    },
+    {
+      "file": "maple-mono-nf-700-016.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F352-F381, U+F400-F4CF",
+      "bytes": 28476,
+      "sha256": "edd91e70d14b2ade02a74262c4b8d98f247ed29afb3690d8845dd436f8450bd8"
+    },
+    {
+      "file": "maple-mono-nf-700-017.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F4D0-F533, U+FEFF, U+FFFD, U+1F850-1F859, U+F0001-F0090",
+      "bytes": 20128,
+      "sha256": "3e3a49f080c40d0153ea5b3c1d05b62144e80daa8ac564fab75793200ff49fd8"
+    },
+    {
+      "file": "maple-mono-nf-700-018.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F0091-F0190",
+      "bytes": 15736,
+      "sha256": "2d6c60fa381a63b41d418313a8306fd54246bdee60ce7b5f61b359ef9ec6552f"
+    },
+    {
+      "file": "maple-mono-nf-700-019.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F0191-F0290",
+      "bytes": 16328,
+      "sha256": "ec1962853cd77a93c416d1ea2ec32a0bdbace0fdc97d961f4a9cd5e4668620ff"
+    },
+    {
+      "file": "maple-mono-nf-700-020.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F0291-F0387, U+F0389-F0391",
+      "bytes": 17692,
+      "sha256": "89d76937d8e6845a0ed5964b8b45765681e9c89d31714b739217f0afadb6a668"
+    },
+    {
+      "file": "maple-mono-nf-700-021.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F0392-F043C, U+F043E-F0492",
+      "bytes": 17396,
+      "sha256": "b60864946b2f8caa7ca024dad14503de07732fa92ef0f3d900334672d4f6ae67"
+    },
+    {
+      "file": "maple-mono-nf-700-022.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F0493-F0508, U+F050A-F0593",
+      "bytes": 18564,
+      "sha256": "4df0598d320527a9945e8bb96503a32e2e4bfe49f808ca7ebb473b436d702800"
+    },
+    {
+      "file": "maple-mono-nf-700-023.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F0594-F05FB, U+F05FD-F0694",
+      "bytes": 19744,
+      "sha256": "27f5d99156bda607cebddc96f1e4841d900e419d1755e4740c4ad4de909031e2"
+    },
+    {
+      "file": "maple-mono-nf-700-024.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F0695-F0764, U+F0767-F0796",
+      "bytes": 16392,
+      "sha256": "eff81af768c2c2e3625841129bc42fa32758ab142f1aaa99276de9ae1b3dec37"
+    },
+    {
+      "file": "maple-mono-nf-700-025.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F0797-F0896",
+      "bytes": 20152,
+      "sha256": "e599e5ff48480680b306a2074e458e32a34bed390950d69617c11633d101a316"
+    },
+    {
+      "file": "maple-mono-nf-700-026.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F0897-F08CF, U+F08D1-F0997",
+      "bytes": 18820,
+      "sha256": "8cf422e7e78234c455bc5fd2254796428a72aa0247bf03cfb36c961475df19a4"
+    },
+    {
+      "file": "maple-mono-nf-700-027.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F0998-F0A97",
+      "bytes": 19192,
+      "sha256": "2bc625c3a5f27f5f4d0986c261dd95f4982f14fa30534270c89b78b057bc7077"
+    },
+    {
+      "file": "maple-mono-nf-700-028.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F0A98-F0B38, U+F0B3A-F0B98",
+      "bytes": 16180,
+      "sha256": "b30b28641f2cb170f88f9582a3a97558cc1414f1df0cc5a6d4207a5d01a9550f"
+    },
+    {
+      "file": "maple-mono-nf-700-029.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F0B99-F0C98",
+      "bytes": 16124,
+      "sha256": "afaaf618aafc4fac81fe78647b71688c3193877461f585e9c5d5904b469283b0"
+    },
+    {
+      "file": "maple-mono-nf-700-030.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F0C99-F0C9D, U+F0CA0-F0D9A",
+      "bytes": 20532,
+      "sha256": "8b5748db53a1549a7511c0db0be93b68310cc0680857cbd118043656dac95093"
+    },
+    {
+      "file": "maple-mono-nf-700-031.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F0D9B-F0E9A",
+      "bytes": 19084,
+      "sha256": "26dcabd1f490f2591f3a5fc533ac4ddc70e37e8b529d88460fa0871edc2f54fc"
+    },
+    {
+      "file": "maple-mono-nf-700-032.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F0E9B-F0F9A",
+      "bytes": 20332,
+      "sha256": "e5ba7a720abefc18ef0e07326cd43627c80f473593fa9ba4959afe0a8027151e"
+    },
+    {
+      "file": "maple-mono-nf-700-033.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F0F9B-F1087, U+F1089-F108B, U+F108D-F1090, U+F1092-F109D",
+      "bytes": 20804,
+      "sha256": "5b1b62d3553187ded4da855637ec0015e8c3860d110beb45ff305c86f0958cbd"
+    },
+    {
+      "file": "maple-mono-nf-700-034.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F109E-F119D",
+      "bytes": 19764,
+      "sha256": "3b46a8f2e347a7d39296558970fa705115e511185890f2bb79dfd90c3ca17740"
+    },
+    {
+      "file": "maple-mono-nf-700-035.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F119E-F129D",
+      "bytes": 18172,
+      "sha256": "795ed1a704795fb17c261f09e41daa92dc1118b0216cec4c72cba6be34cc17c0"
+    },
+    {
+      "file": "maple-mono-nf-700-036.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F129E-F139D",
+      "bytes": 20032,
+      "sha256": "f31afb84e75d4b11b4b277bc02830e2607493150c20400dab0335e65eb1bb2e9"
+    },
+    {
+      "file": "maple-mono-nf-700-037.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F139E-F13A5, U+F13A7-F149E",
+      "bytes": 19248,
+      "sha256": "a845ebe223d88233baa823bd406efbfdeafdf31d337f81f5ed4a4497088438ed"
+    },
+    {
+      "file": "maple-mono-nf-700-038.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F149F-F159E",
+      "bytes": 18760,
+      "sha256": "a768c6bd345243bd061c6fd6cd21711d549d9dedd53d78bd8b6841f8fcd30334"
+    },
+    {
+      "file": "maple-mono-nf-700-039.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F159F-F169E",
+      "bytes": 20852,
+      "sha256": "8b8c39830c99accb961499b345e78873520475a259e5676632e41b04f853d5cd"
+    },
+    {
+      "file": "maple-mono-nf-700-040.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F169F-F179E",
+      "bytes": 20248,
+      "sha256": "c21d6f6d28e691f235ceea590a6b6517c26a0737dde5fea065707194939ffeea"
+    },
+    {
+      "file": "maple-mono-nf-700-041.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F179F-F189E",
+      "bytes": 19732,
+      "sha256": "698931063424ab0bd1054464e7d4c02817989994508c0d455720cc79bf91a76d"
+    },
+    {
+      "file": "maple-mono-nf-700-042.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F189F, U+F18A1-F18EF, U+F18F1-F19A0",
+      "bytes": 21864,
+      "sha256": "fdc0f87e336c27ef1de4497924f1a336a0a2904f48d13239ad7f745b26864493"
+    },
+    {
+      "file": "maple-mono-nf-700-043.woff2",
+      "weight": 700,
+      "characters": 256,
+      "unicodeRange": "U+F19A1-F1AA0",
+      "bytes": 20660,
+      "sha256": "688a871f0d64bae19fbd3efd701ad2aa373a3c9b076ebc026f13172fa7d05419"
+    },
+    {
+      "file": "maple-mono-nf-700-044.woff2",
+      "weight": 700,
+      "characters": 80,
+      "unicodeRange": "U+F1AA1-F1AF0",
+      "bytes": 7352,
+      "sha256": "1aa024b036a3e1819a6454347d9f405cd6ef5d84140e21ddebe4db9158317555"
+    }
+  ]
+}

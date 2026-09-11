@@ -13,6 +13,7 @@ export interface TerminalDevice {
 export interface TerminalThemeConfig {
   accent: 'mauve' | 'blue' | 'teal'
   terminal: { user: string, host: string }
+  /** Latin/code family; built-in Maple Mono NF covers Latin and Nerd icons, Chinese uses system fonts. */
   font: { family: string, ligatures: boolean }
   navigation: TerminalNavigation[]
   home: { intro: string }

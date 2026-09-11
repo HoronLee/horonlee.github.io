@@ -22,7 +22,7 @@ const pageLink = (page: number) => page === 1 ? '/' : `/page/${page}/`
   <section class="terminal-post-list" aria-label="文章列表">
     <div class="list-command"><span aria-hidden="true">❯</span><code>ls -lt ~/posts</code><span class="list-total">{{ visiblePosts.length }} 篇文章</span></div>
     <div v-if="pagePosts.length" class="post-rows">
-      <article v-for="post in pagePosts" :key="post.path" class="post-row">
+      <article v-for="post in pagePosts" :key="post.path" class="post-row" :class="{ 'post-row-with-cover': post.cover?.trim() }">
         <span class="post-arrow" aria-hidden="true">&gt;</span>
         <div class="post-info">
           <h2><RouterLink :to="post.path">{{ display(post.title) }}</RouterLink></h2>
@@ -37,6 +37,9 @@ const pageLink = (page: number) => page === 1 ? '/' : `/page/${page}/`
           </div>
         </div>
         <time v-if="formatDate(post.date)" :datetime="formatDate(post.date)">{{ formatDate(post.date) }}</time>
+        <RouterLink v-if="post.cover?.trim()" :to="post.path" class="post-cover-link" :aria-label="`阅读：${display(post.title)}`">
+          <TerminalCover :src="post.cover" :alt="`${display(post.title)}的封面`" compact />
+        </RouterLink>
       </article>
     </div>
     <p v-else class="list-empty">{{ visiblePosts.length ? '这一页没有文章。' : '还没有公开文章。' }}</p>
@@ -68,6 +71,12 @@ const pageLink = (page: number) => page === 1 ? '/' : `/page/${page}/`
 .post-categories { color: var(--terminal-muted); }
 .post-categories a { color: var(--terminal-blue); }
 .post-row time { padding-top: 5px; color: var(--terminal-muted); font-size: 11px; white-space: nowrap; }
+.post-row-with-cover { grid-template-columns: 18px minmax(0, 1fr) 160px; }
+.post-row-with-cover .post-info { grid-column: 2; grid-row: 1 / 3; }
+.post-row-with-cover time { grid-column: 3; grid-row: 1; justify-self: end; }
+.post-cover-link { grid-column: 3; grid-row: 2; align-self: start; display: block; min-width: 0; }
+.post-cover-link:hover { text-decoration: none; }
+.post-cover-link:hover :deep(.terminal-cover) { border-color: var(--terminal-accent); }
 .post-pagination { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 26px; font-size: 12px; }
 .post-pagination a { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; min-height: 36px; color: var(--terminal-muted); }
 .post-pagination a[aria-current='page'] { background: var(--terminal-surface); color: var(--terminal-accent); }
@@ -78,6 +87,9 @@ a:focus-visible { outline: 2px solid var(--terminal-accent); outline-offset: 4px
 @media (max-width: 680px) {
   .post-row { grid-template-columns: 18px minmax(0, 1fr); gap: 5px 10px; }
   .post-row time { grid-column: 2; padding-top: 0; }
+  .post-row-with-cover .post-info { grid-row: 1; }
+  .post-row-with-cover time { grid-column: 2; grid-row: 2; justify-self: start; }
+  .post-cover-link { grid-column: 2; grid-row: 3; width: min(100%, 280px); margin-top: 8px; }
   .post-info h2 { font-size: 15px; }
   .post-pagination a { min-height: 44px; }
 }

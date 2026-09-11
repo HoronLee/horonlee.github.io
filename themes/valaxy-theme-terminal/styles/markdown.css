@@ -14,7 +14,18 @@
 .terminal-site .markdown-body :not(pre) > code { font-family: var(--terminal-font); font-size: .9em; background: var(--terminal-mantle); color: var(--terminal-peach); padding: 2px 5px; border-radius: 3px; }
 .terminal-site .markdown-body div[class*="language-"] { border: 1px solid var(--terminal-line); border-radius: 4px; background: var(--terminal-mantle); margin: 25px 0; }
 .terminal-site .markdown-body pre { padding: 22px; overflow: auto; font-family: var(--terminal-font); font-size: 13px; line-height: 1.85; background: var(--terminal-mantle); white-space: pre; overflow-wrap: normal; tab-size: 2; }
-.terminal-site .markdown-body pre code { font-family: inherit; padding: 0; }
+.terminal-site .markdown-body pre code { font-family: inherit; font-size: inherit; line-height: inherit; color: var(--terminal-text); padding: 0; }
+/* Shiki emits style variables alongside its dual-theme token colors. */
+html:not(.dark) .terminal-site .markdown-body .shiki span {
+  font-style: var(--shiki-light-font-style, inherit);
+  font-weight: var(--shiki-light-font-weight, inherit);
+  text-decoration: var(--shiki-light-text-decoration, inherit);
+}
+html.dark .terminal-site .markdown-body .shiki span {
+  font-style: var(--shiki-dark-font-style, inherit);
+  font-weight: var(--shiki-dark-font-weight, inherit);
+  text-decoration: var(--shiki-dark-text-decoration, inherit);
+}
 .terminal-site .markdown-body :is(img,video) { max-width: 100%; height: auto; border-radius: 4px; }
 .terminal-site .markdown-body iframe { max-width: 100%; }
 .terminal-site .markdown-body table { display: block; overflow-x: auto; border-collapse: collapse; width: max-content; max-width: 100%; font-size: 13px; margin: 24px 0; }

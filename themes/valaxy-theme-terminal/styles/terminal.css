@@ -13,7 +13,7 @@
   --terminal-teal: #179299;
   --terminal-red: #d20f39;
   --terminal-accent: var(--terminal-mauve);
-  --terminal-font: "Maple Mono NF CN", monospace;
+  --terminal-font: "Maple Mono NF", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", monospace;
   --va-font-sans: var(--terminal-font);
   --va-font-serif: var(--terminal-font);
   --va-font-mono: var(--terminal-font);
@@ -77,7 +77,7 @@ body { margin: 0; background: var(--terminal-bg); color: var(--terminal-text); }
 .terminal-sidebar .terminal-socials { display: grid; grid-template-columns: 1fr 1fr; gap: 0 8px; }
 .terminal-social-detail { color: var(--terminal-teal); overflow-wrap: anywhere; font-size: 12px; }
 .terminal-icon { display: inline-block; width: 18px; flex: 0 0 18px; text-align: center; color: var(--terminal-muted); font-size: 13px; }
-.terminal-nerd { display: none; font-family: "Maple Mono NF CN", monospace; }
+.terminal-nerd { display: none; font-family: "Maple Mono NF", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", monospace; }
 .terminal-font-ready .terminal-nerd { display: inline; }
 .terminal-font-ready .terminal-icon-fallback { display: none; }
 .terminal-sidebar-note { color: var(--terminal-muted); font-size: 11px; line-height: 1.8; margin-top: 26px; }
@@ -87,9 +87,7 @@ body { margin: 0; background: var(--terminal-bg); color: var(--terminal-text); }
 .terminal-home-intro { padding: 3px 0 38px; }
 .terminal-home-intro h1 { font-size: clamp(27px, 3vw, 38px); font-weight: 700; letter-spacing: -.05em; line-height: 1.4; margin: 23px 0 17px; }
 .terminal-cursor { margin-left: 8px; color: var(--terminal-accent); }
-.terminal-home-description { white-space: pre-line; line-height: 2; color: var(--terminal-muted); font-size: 14px; margin: 0 0 20px; }
-.terminal-about-link { display: inline-flex; gap: 14px; align-items: center; min-height: 44px; color: var(--terminal-accent) !important; font-size: 12px; }
-.terminal-about-link > span { color: var(--terminal-muted); }
+.terminal-home-description { white-space: pre-line; line-height: 2; color: var(--terminal-muted); font-size: 14px; margin: 0; }
 .terminal-mobile-socials { display: none; }
 .terminal-document-header { margin-bottom: 32px; }
 .terminal-document-command { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 15px; }

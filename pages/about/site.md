@@ -6,4 +6,4 @@ title: 关于站点
 
 - 框架：[Valaxy](https://valaxy.site/)
 - 配色：Catppuccin Latte / Mocha
-- 字体：Maple Mono NF CN
+- 字体：英文、代码与图标使用 Maple Mono NF，中文使用系统字体

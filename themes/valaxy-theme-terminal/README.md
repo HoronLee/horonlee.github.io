@@ -21,7 +21,7 @@ export default defineThemeConfig({
   accent: 'mauve', // mauve | blue | teal
   icons: 'nerd', // nerd | ascii；字体失败时自动显示 ASCII
   keyboard: true,
-  font: { family: 'Maple Mono NF CN', ligatures: true },
+  font: { family: 'Maple Mono NF', ligatures: true },
   profile: {
     name: '皓然 / HoronLee',
     // age: 21, // 可选；手动填写当前愿意公开的年龄
@@ -41,7 +41,7 @@ export default defineThemeConfig({
 })
 ```
 
-实际根配置已填入 MacBook Pro、iPhone 和 ROG Ally。年龄未启用、爱好留空；关于页的文字介绍仍在 `pages/about/index.md` 中。设备信息是手动维护的公开资料，页面不会读取访客或作者的设备状态。
+实际根配置已填入 MacBook Pro、iPhone 和 ROG Ally。年龄和爱好通过 `profile` 配置；关于页的文字介绍仍在 `pages/about/index.md` 中。设备信息是手动维护的公开资料，页面不会读取访客或作者的设备状态。
 
 导航在 `navigation` 数组中定义：`{ text, link, icon }`。内置图标名称有 `home`、`folder`、`tag`、`link`、`user`。社交账号直接复用 `site.config.ts` 的 `social`；有效链接正常跳转，不完整链接显示名称/号码。友链继续维护在 `pages/links/index.md` 的 frontmatter `links` 中，展示组件为 `TerminalFriendLinks`，顺序与配置一致。
 
@@ -50,8 +50,9 @@ export default defineThemeConfig({
 ## 页面与交互
 
 - 首页：`cat README.md`、文章列表 `ls -lt ~/posts`，分页复用 `siteConfig.pageSize`。
-- 文章：`less`、Markdown 正文、目录、前后篇、赞赏、Waline 评论。支持 `aside: false`、`toc: false`、`outline: false`、`nav: false`、`comment: false`。
-- 归档：`history`；标签/分类通过 URL 查询参数筛选。
+- 文章：`less`、Markdown 正文、目录、前后篇、赞赏、Waline 评论。支持 `aside: false`、`toc: false`、`outline: false`、`nav: false`、`comment: false`。代码高亮随 light / dark 使用 Catppuccin Latte / Mocha。
+- 封面：复用文章 frontmatter 的 `cover: /attachment/example.png`（也支持 HTTPS 图片）。列表显示 `cover` 预览，正文头部显示 `chafa cover` 图片窗口，可查看原图。图片按比例完整展示；未配置时不占位，加载失败时显示提示。无需再设置 banner 字段。
+- 归档：`history`，按 `?year=2025` 筛选年份；标签/分类同样通过 URL 查询参数筛选，支持重置和浏览器前进后退。
 - 关于：Markdown frontmatter `layout: profile`，`whoami` / `fastfetch`、设备和全部社交链接。
 - `/` 打开搜索，`Esc` 关闭，搜索输入中 `Enter` 打开第一条；文章页 `q` 返回首页。输入框、编辑器和输入法组合输入不触发全局快捷键。
 - 切换按钮显示 `light` / `dark`；状态栏保留 Catppuccin Latte / Mocha。首次跟随系统，随后记住浏览器中的选择。
@@ -60,9 +61,9 @@ export default defineThemeConfig({
 
 ## 字体与样式
 
-Maple Mono NF CN v7.9 的 400/700 字重以 WOFF2 Unicode 分片自托管，覆盖原字体全部简繁中文和 Nerd Fonts 字符。浏览器只请求页面所需分片，不会一次下载全部 14.75 MiB。CSS 使用 `font-display: swap`。
+Maple Mono NF v7.9 的 400/700 字重以 WOFF2 Unicode 分片自托管，用于英文、代码和 Nerd Fonts 图标。汉字及 CJK 全角标点明确排除，始终使用系统中文字体，不会在字体加载后切换为 1.2em 中文字宽。92 个分片共 2.23 MiB，浏览器只请求当前页面所需分片；CSS 使用 `font-display: swap`。
 
-详见 `assets/fonts/maple-mono-nf-cn/README.md` 的版本、许可、体积与重建方法。更换 `font.family` 后，需自行用 `@font-face` 或 Valaxy 自定义样式提供对应字体；内置字体仍作为回退。
+详见 `assets/fonts/maple-mono-nf/README.md` 的版本、许可、体积与重建方法。`font.family` 指定英文/代码字体族；更换后需自行用 `@font-face` 或 Valaxy 自定义样式提供字体，并用 `unicode-range` 排除中文以保留此策略。内置 Maple Mono NF 仍作为回退，Nerd 图标固定使用它。系统回退依次包含系统等宽字体与 PingFang SC、Microsoft YaHei、Noto Sans CJK SC。
 
 全局色板和布局在 `styles/terminal.css`；文章排版在 `styles/markdown.css`。用户也能在根 `styles/` 写覆盖样式，无需修改主题组件。
 
@@ -78,6 +79,13 @@ pnpm build
 pnpm serve --host 127.0.0.1 --port 4173
 ```
 
-`pnpm build` 同时检查静态页面、分页链接和字体资源，遇到空白 SSR、缺失页面或字体会失败。根 `valaxy.config.ts` 开启 `build.ssgForPagination`，使分页在静态托管上也能直接访问。主题的 SSG 钩子移除框架自动添加的整套字体预加载，保留 Unicode 按需请求。
+`pnpm build` 同时检查静态页面、分页链接、封面、高亮和字体资源，遇到空白 SSR、缺失封面、缺少高亮颜色映射或字体会失败。根 `valaxy.config.ts` 开启 `build.ssgForPagination`，使分页在静态托管上也能直接访问。主题的 SSG 钩子移除框架自动添加的整套字体预加载，保留 Unicode 按需请求。
+
+浏览器回归脚本需要本机已安装 `rtk`、`agent-browser` 和 Chromium，并先启动开发或预览服务器：
+
+```sh
+rtk node scripts/check-code-highlighting.mjs http://127.0.0.1:4173
+rtk node scripts/check-theme-navigation.mjs http://127.0.0.1:4173
+```
 
 参考：[Valaxy 主题开发](https://valaxy.site/zh/themes/write)、[Valaxy 配置](https://valaxy.site/guide/config/)、[自定义字体](https://valaxy.site/guide/custom/styles#custom-font)。
