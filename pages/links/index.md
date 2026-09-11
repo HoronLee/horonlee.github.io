@@ -123,7 +123,7 @@ links:
 random: true
 ---
 
-<YunLinks :links="frontmatter.links" :random="frontmatter.random" />
+<TerminalFriendLinks :links="frontmatter.links" />
 # 本站信息
 ```json
 - url: https://blog.horonlee.com

@@ -68,8 +68,10 @@ export default defineSiteConfig({
   ],
 
   search: {
-    enable: false,
+    enable: true,
   },
+
+  comment: { enable: true },
 
   sponsor: {
     enable: true,
