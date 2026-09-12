@@ -19,7 +19,7 @@ export default defineSiteConfig({
     },
     {
       name: 'QQ 1269024821',
-      link: 'https://',
+      link: 'copy:1269024821',
       icon: 'i-ri-qq-line',
       color: '#12B7F5',
     },

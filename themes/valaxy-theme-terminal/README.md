@@ -43,7 +43,7 @@ export default defineThemeConfig({
 
 实际根配置已填入 MacBook Pro、iPhone 和 ROG Ally。年龄和爱好通过 `profile` 配置；关于页的文字介绍仍在 `pages/about/index.md` 中。设备信息是手动维护的公开资料，页面不会读取访客或作者的设备状态。
 
-导航在 `navigation` 数组中定义：`{ text, link, icon }`。内置图标名称有 `home`、`folder`、`tag`、`link`、`user`。社交账号直接复用 `site.config.ts` 的 `social`；有效链接正常跳转，不完整链接显示名称/号码。友链继续维护在 `pages/links/index.md` 的 frontmatter `links` 中，展示组件为 `TerminalFriendLinks`，顺序与配置一致。
+导航在 `navigation` 数组中定义：`{ text, link, icon }`。内置图标名称有 `home`、`folder`、`tag`、`link`、`user`。社交账号直接复用 `site.config.ts` 的 `social`；有效链接正常跳转，`copy:内容` 会渲染为点击复制按钮，其他无效链接只显示名称。友链继续维护在 `pages/links/index.md` 的 frontmatter `links` 中，展示组件为 `TerminalFriendLinks`，顺序与配置一致。
 
 `footer` 支持 `since`、`icp`、`moe`、`visitors` 与 `links`。`visitors: true` 使用原站点的不蒜子服务；Waline 服务地址仍由 `valaxy.config.ts` 的 `addonWaline` 设置。
 
