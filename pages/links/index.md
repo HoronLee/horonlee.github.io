@@ -90,10 +90,10 @@ links:
     desc: 一起向未来奔跑和冒险吧！
     color: "#4c45c1"
   - url: https://blog.ciraos.top/
-    avatar: https://mx.ciraos.top/api/v2/objects/avatar/ufh295h43mly31gmw0.avif
+    avatar: https://files.seeusercontent.com/2026/02/28/Vxb1/avatar2.avif
     name: 葱苓
     blog: 葱苓小筑
-    desc: a small blog station.
+    desc: 风带来了故事的种子，时间使其发芽。
   - url: https://blog.zhheo.com/
     avatar: https://img.zhheo.com/i/67d8fa75943e4.webp
     name: 张洪Heo
