@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.fYU-KOxN.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.QTnfLwEv.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.Bt6Pg2Om.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.DDEjerd9.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.D9pkc1Q0.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.BCoX8S0I.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.DJ80LLXH.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.BE3wn5-o.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.DHGjGeo5.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.DotW1Et0.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="modulepreload" crossorigin href="/assets/theme.BE3wn5-o.js">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="modulepreload" crossorigin href="/assets/K8sJenkinsSlaveCICD.B6-LPt4-.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jenkins的标准用法“Jenkins-Slave” - 皓然小站</title>
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="分享生活和技术的点滴">
+<meta property="og:description" content="分享生活和技术的点滴">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="皓然小站">
+<meta property="og:title" content="Jenkins的标准用法“Jenkins-Slave”">
+<meta property="og:image" content="https://i2.wp.com/digitalvarys.com/wp-content/uploads/2019/05/jenkins-master-slave-config.png?fit=1963%2C1079&ssl=1">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.horonlee.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 1.0.0-beta.2">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!----><!--[--><!--]--><!----><!--]--><div class="terminal-site" style="--terminal-accent:var(--terminal-mauve);--terminal-font:&quot;Maple Mono NF&quot;, &quot;Maple Mono NF&quot;, ui-monospace, &quot;SFMono-Regular&quot;, Menlo, Monaco, Consolas, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Noto Sans CJK SC&quot;, monospace;font-variant-ligatures:normal;"><a class="skip-link" href="#terminal-main">跳到正文</a><header class="terminal-topbar"><a href="/" class="terminal-brand" aria-label="博客首页"><span class="terminal-prompt">❯</span> horonlee<span class="terminal-muted">@blog:~</span></a><div class="terminal-tools"><button type="button" class="terminal-search-trigger">搜索 <kbd>/</kbd></button><div class="terminal-appearance" role="group" aria-label="配色模式"><button type="button" aria-pressed="true">light</button><span aria-hidden="true">/</span><button type="button" aria-pressed="false">dark</button></div></div></header><div class="terminal-workspace"><aside class="terminal-sidebar"><div class="terminal-sidebar-inner"><p class="terminal-command terminal-tree-command"><span>❯</span> tree ~/blog</p><nav class="terminal-tree" aria-label="博客导航"><!--[--><a href="/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">~</span></span><span>首页</span></a><a href="/archives/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">+</span></span><span>归档/</span></a><a href="/tags/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">#</span></span><span>标签/</span></a><a href="/categories/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">+</span></span><span>分类/</span></a><a href="/links/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">@</span></span><span>友链/</span></a><a href="/about/" class=""><span class="tree-branch" aria-hidden="true">└──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">i</span></span><span>关于我.md</span></a><!--]--></nav><div class="terminal-sidebar-socials"><p class="terminal-command"><span>❯</span> cat ~/.socials</p><div class="terminal-socials terminal-socials-compact" role="group" aria-label="社交与订阅"><!--[--><!--[--><a href="/atom.xml" rel="noopener noreferrer" aria-label="RSS"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">rss</span></span><span>RSS</span></a><!----><!--]--><!--[--><button type="button" aria-label="复制 QQ 1269024821" title="点击复制 QQ 1269024821"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">qq</span></span><span>QQ</span></button><!----><!--]--><!--[--><a href="https://github.com/horonlee" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">gh</span></span><span>GitHub</span></a><!----><!--]--><!--[--><a href="https://music.163.com/#/user/home?id=545332010" target="_blank" rel="noopener noreferrer" aria-label="网易云音乐"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">♪</span></span><span>网易云</span></a><!----><!--]--><!--[--><a href="https://www.zhihu.com/people/tie-tie-huohuo" target="_blank" rel="noopener noreferrer" aria-label="知乎"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">知</span></span><span>知乎</span></a><!----><!--]--><!--[--><a href="https://space.bilibili.com/172335226" target="_blank" rel="noopener noreferrer" aria-label="哔哩哔哩"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">B</span></span><span>B站</span></a><!----><!--]--><!--[--><a href="https://twitter.com/HuoTie" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">tw</span></span><span>推特</span></a><!----><!--]--><!--[--><a href="mailto:1269024821@qq.com" rel="noopener noreferrer" aria-label="E-Mail"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">@</span></span><span>邮箱</span></a><!----><!--]--><!--[--><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener noreferrer" aria-label="Travelling"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">tr</span></span><span>开往</span></a><!----><!--]--><!--]--><span class="terminal-social-feedback" role="status" aria-live="polite" aria-atomic="true"></span></div></div><!----><p class="terminal-sidebar-note">分享生活和技术的点滴</p></div></aside><main id="terminal-main" class="terminal-main" tabindex="-1"><div class="terminal-breadcrumb"><span class="terminal-prompt">❯</span> pwd <span>~/posts/K8sJenkinsSlaveCICD</span></div><!--[--><!--[--><section class="terminal-document"><header class="terminal-document-header"><div class="terminal-document-command"><p class="terminal-command"><span>❯</span> less <span class="terminal-muted">Jenkins的标准用法“Jenkins-Slave”.md</span></p><a href="/" class="terminal-back">[q] 返回列表</a></div><h1>Jenkins的标准用法“Jenkins-Slave”</h1><div class="terminal-post-meta"><time datetime="2024-05-24">2024-05-24</time><span>更新 2024-05-24</span><!--[--><span>5.2k 字</span><span>约 22 分钟</span><!--]--></div><div class="terminal-post-tags"><!--[--><a href="/tags/?tag=Linux" class="">#Linux</a><a href="/tags/?tag=Kubernetes" class="">#Kubernetes</a><a href="/tags/?tag=%E4%BA%91%E8%AE%A1%E7%AE%97" class="">#云计算</a><a href="/tags/?tag=CICD" class="">#CICD</a><a href="/tags/?tag=Jenkins" class="">#Jenkins</a><!--]--></div><nav class="terminal-post-tags" aria-label="文章分类"><!--[--><a href="/categories/?category=%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4" class="">服务器运维/</a><a href="/categories/?category=%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/%E4%BA%91%E8%AE%A1%E7%AE%97" class="">云计算/</a><a href="/categories/?category=%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/%E4%BA%91%E8%AE%A1%E7%AE%97/Jenkins" class="">Jenkins/</a><!--]--></nav><figure class="terminal-cover" data-v-753794b7><figcaption class="cover-command" data-v-753794b7><span data-v-753794b7><span class="cover-prompt" aria-hidden="true" data-v-753794b7>❯</span> chafa cover</span><a href="https://i2.wp.com/digitalvarys.com/wp-content/uploads/2019/05/jenkins-master-slave-config.png?fit=1963%2C1079&amp;ssl=1" target="_blank" rel="noopener noreferrer" aria-label="查看封面原图" data-v-753794b7>[查看原图]</a></figcaption><div class="cover-viewport" data-v-753794b7><img src="https://i2.wp.com/digitalvarys.com/wp-content/uploads/2019/05/jenkins-master-slave-config.png?fit=1963%2C1079&amp;ssl=1" alt="Jenkins的标准用法“Jenkins-Slave”的封面" loading="eager" fetchpriority="high" decoding="async" data-v-753794b7></div></figure></header><!--[--><!--]--><!--[--><article class="markdown-body"><!--[--><!--[--><!--]--><!--[--><h1 id="kubernetes构建-jenkins-master-slave-架构" tabindex="-1">kubernetes构建 Jenkins-Master&amp;Slave 架构 <a class="header-anchor" href="#kubernetes构建-jenkins-master-slave-架构" aria-label="Permalink to &quot;kubernetes构建 Jenkins-Master&amp;Slave 架构&quot;">​</a></h1><h2 id="引子" tabindex="-1">引子 <a class="header-anchor" href="#引子" aria-label="Permalink to &quot;引子&quot;">​</a></h2><p>这篇文章是我在学校帮助专业老师撰写的，旨在于帮助同学更好的学习 Jenkins 的使用，所有内容都是基于最新的官方文档编写，且经过检验，可以放心食用！</p><p>下面就是正文了，enjoy:D</p><h2 id="准备工作" tabindex="-1">准备工作 <a class="header-anchor" href="#准备工作" aria-label="Permalink to &quot;准备工作&quot;">​</a></h2><p>虚拟机节点信息：</p><ul><li><p>master 节点：172.30.26.172</p><ul><li><p>4 个 vCPU</p></li><li><p>4G 内存</p></li></ul></li><li><p>worker1节点：172.30.26.173（标记为 worker tag，pod 主动在此节点运行）</p><ul><li>8 个 vCPU</li><li>16G 内存（12G 内存足够）</li></ul></li></ul><p>相关镜像：</p><ol><li>[<a href="https://hub.docker.com/r/jenkins/jenkins" target="_blank" rel="noreferrer">jenkins/jenkins - Docker Image | Docker Hub</a>](<a href="https://hub.docker.com/_/jenkins" target="_blank" rel="noreferrer">https://hub.docker.com/_/jenkins</a>)</li><li><a href="https://hub.docker.com/r/jenkins/inbound-agent/" target="_blank" rel="noreferrer">jenkins/inbound-agent - Docker 镜像 |Docker 中心</a></li><li><a href="https://hub.docker.com/r/gitlab/gitlab-ce" target="_blank" rel="noreferrer">gitlab/gitlab-ce - Docker Image | Docker Hub</a></li></ol><p>所用项目：<a href="https://github.com/YunYouJun/valaxy" target="_blank" rel="noreferrer">YunYouJun/valaxy: 🌌 Next Generation Static Blog Framework (Beta) 下一代静态博客框架（支持页面/配置热重载） (github.com)</a>，本文更改了 Dockerfile，删除了第一阶段的构建！</p><hr><p>将 master 节点的<code>.kube</code>配置文件拷贝到 worker1 节点，方便后续的工作</p><p><code>scp -r /root/.kube worker1:/root</code></p><h3 id="设置jenkinsmaster容忍度" tabindex="-1">设置JenkinsMaster容忍度 <a class="header-anchor" href="#设置jenkinsmaster容忍度" aria-label="Permalink to &quot;设置JenkinsMaster容忍度&quot;">​</a></h3><blockquote><p>kubernetes 在安装完成后会在 master 节点添加一个名为 control-plane 的污点，这个污点不会容忍任何非指定的 pod 运行在 master 节点，但是我们需要讲 jenkins-master 安排在 master 节点，该怎么做呢？以下是处理思路。</p></blockquote><p>最简单的方法就是移除所有节点的 control-plane 污点 <code>kubectl taint nodes --all node-role.kubernetes.io/control-plane-</code>，然后再指定<code>nodeSelector</code>。(nodeSelector的用法看第二种方法)</p><blockquote><p>还有一种方法我更推荐，在生产环境也可以这样操作：</p></blockquote><p>为 master 节点打上标签<code>jenkins=master</code>：<code>kubectl label no master jenkins=master</code></p><p>在创建 jenkins-master 的时候使用标签选择器，就可以强制让 pod 运行在有 NoSchedule 的Taints 的主节点上</p><p>但是此时还是不能让 pod 成功调度到 master 节点，因为 master 节点在初始化时就被标记了<a href="https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/taint-and-toleration/" target="_blank" rel="noreferrer">污点</a>“node-role.kubernetes.io/control-plane”，所以我们需要为 master 节点配置容忍度，允许拥有特定键值对标签的 pod 运行在这个节点上。</p><p>所以需要在<code>spec.template.spec</code>配置以下内容：</p><div class="language-yaml"><button title="Copy code" class="copy"></button><span class="lang">yaml</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">nodeSelector</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">  jenkins</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &quot;master&quot;</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">tolerations</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">  -</span><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;"> key</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &quot;node-role.kubernetes.io/control-plane&quot;</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">    operator</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &quot;Exists&quot;</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">    effect</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &quot;NoSchedule&quot;</span></span></code></pre><button class="code-block-unfold-btn"></button></div><blockquote><p>设置HTTP访问镜像仓库（所有节点都要做）：/etc/containerd/config</p></blockquote><p>Containerd从v1.5之后就不推荐了以config.toml作为镜像仓库的配置文件，这里我们采用新的配置方法</p><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">mkdir</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -p</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> /etc/containerd/certs.d/172.30.26.172</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">vim</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> /etc/containerd/certs.d/172.30.26.172/hosts.toml</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>在文件中写入以下内容</p><div class="language-toml"><button title="Copy code" class="copy"></button><span class="lang">toml</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">server </span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &quot;http://172.30.26.172&quot;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">host.&quot;http://172.30.26.172&quot;</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">capabilities </span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;"> [</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">&quot;pull&quot;</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">,</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &quot;resolve&quot;</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">,</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &quot;push&quot;</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">skip_verify </span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">=</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;"> true</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>然后重启 <code>systemctl restart containerd </code></p><h2 id="安装-harbor-镜像仓库" tabindex="-1">安装 Harbor 镜像仓库 <a class="header-anchor" href="#安装-harbor-镜像仓库" aria-label="Permalink to &quot;安装 Harbor 镜像仓库&quot;">​</a></h2><blockquote><p>官方下载地址：<a href="https://github.com/goharbor/harbor/releases" target="_blank" rel="noreferrer">Releases · goharbor/harbor (github.com)</a></p></blockquote><p>将harbor-offline-installer-v2.9.4.tgz下载到opt目录下</p><p><code>curl -O http://172.30.27.143/CICD/harbor-offline-installer-v2.9.4.tgz</code></p><p>解压文件<code>tar xvf harbor-offline-installer-v2.9.4.tgz</code></p><p>进入harbor安装目录<code>cd harbor</code></p><p>编写安装配<code>cp harbor.yml.tmpl harbor.yml</code></p><p><code>vim harbor.yml</code></p><p>将第五行hostname:后面的IP改为Master节点IP</p><p><code>hostname: http://172.30.26.172/</code></p><p>删除里面13-18行以取消https配置</p><p>执行脚本来安装harbor<code>./install.sh</code></p><figure><img src="/attachment/K8sJenkinsSlaveCICD/0b489e311b5b45e574814990a45fb21b.png" alt="" loading="lazy" decoding="async"></figure><p>出现如图回显说明Harbor安装完成</p><p>访问Harbor</p><p><a href="http://172.30.26.172/" target="_blank" rel="noreferrer">http://172.30.26.172/</a></p><p>​ 账号：admin</p><p>​ 密码：Harbor12345</p><p>登录 Harbor 仓库</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>[root@master ~]# docker login 172.30.26.172</span></span>
+<span class="line"><span>Username: admin</span></span>
+<span class="line"><span>Password:</span></span>
+<span class="line"><span>WARNING! Your password will be stored unencrypted in /root/.docker/config.json.</span></span>
+<span class="line"><span>Configure a credential helper to remove this warning. See</span></span>
+<span class="line"><span>https://docs.docker.com/engine/reference/commandline/login/#credentials-store</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h2 id="部署-gitea" tabindex="-1">部署 Gitea <a class="header-anchor" href="#部署-gitea" aria-label="Permalink to &quot;部署 Gitea&quot;">​</a></h2><blockquote><p>什么是 Gitea？Gitea 是一个轻量级的 DevOps 平台软件。从开发计划到产品成型的整个软件生命周期，他都能够高效而轻松的帮助团队和开发者。包括 Git 托管、代码审查、团队协作、软件包注册和 CI/CD。它与 GitHub、Bitbucket 和 GitLab 等比较类似。 Gitea 最初是从 <a href="http://gogs.io/" target="_blank" rel="noreferrer">Gogs</a> 分支而来，几乎所有代码都已更改。对于我们Fork的原因可以看 <a href="https://blog.gitea.com/welcome-to-gitea/" target="_blank" rel="noreferrer">这里</a>。</p></blockquote><h3 id="使用-docker-安装-gitea" tabindex="-1">使用 docker 安装 Gitea <a class="header-anchor" href="#使用-docker-安装-gitea" aria-label="Permalink to &quot;使用 docker 安装 Gitea&quot;">​</a></h3><p>⚠️Gitea 部署在 worker1 节点</p><p>在 root 目录下创建文件夹 gitea，并进入，创建 docker-compose.yaml 文件并编辑</p><p><code>mkdir gitea &amp;&amp; cd gitea &amp;&amp; vim docker-compose.yaml</code></p><div class="language-yaml"><button title="Copy code" class="copy"></button><span class="lang">yaml</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">version</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &quot;3&quot;</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">networks</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">  gitea</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">    external</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;"> false</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">services</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">  server</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">    image</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> gitea/gitea:1.21.11</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">    container_name</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> gitea</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">    environment</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> USER_UID=1000</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> USER_GID=1000</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> GITEA__database__DB_TYPE=mysql</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> GITEA__database__HOST=db:3306</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> GITEA__database__NAME=gitea</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> GITEA__database__USER=gitea</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> GITEA__database__PASSWD=gitea</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">    restart</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> always</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">    networks</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> gitea</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">    volumes</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> ./gitea:/data</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> /etc/timezone:/etc/timezone:ro</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> /etc/localtime:/etc/localtime:ro</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">    ports</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &quot;3000:3000&quot;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &quot;222:22&quot;</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">    depends_on</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> db</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">  db</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">    image</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> mysql:5.7.39</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">    restart</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> always</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">    environment</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> MYSQL_ROOT_PASSWORD=gitea</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> MYSQL_USER=gitea</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> MYSQL_PASSWORD=gitea</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> MYSQL_DATABASE=gitea</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">    networks</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> gitea</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">    volumes</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> ./mysql:/var/lib/mysql</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>启动 docker compose：<code>docker compose up -d</code></p><p>看到 docker compose 都启动之后，进入网页进行安装<a href="http://172.30.26.173:3000/" target="_blank" rel="noreferrer">http://172.30.26.173:3000/</a></p><p>编辑数据库的连接配置（默认可以不改），设置管理员信息</p><ul><li>管理员用户名root</li><li>电子邮件admin@example.com</li><li>密码 000000</li></ul><p>然后点击 <code>立即安装</code>，稍等片刻即可进入登录页面，输入账号密码，进入主页</p><figure><img src="/attachment/K8sJenkinsSlaveCICD/5b86f1537c409e568d2dcf94e64a02cd.png" alt="" loading="lazy" decoding="async"></figure><h3 id="使用-helm-安装gitea" tabindex="-1">使用 Helm 安装Gitea <a class="header-anchor" href="#使用-helm-安装gitea" aria-label="Permalink to &quot;使用 Helm 安装Gitea&quot;">​</a></h3><blockquote><p>安装 Helm</p></blockquote><p>什么是 <a href="https://helm.sh/zh/docs/intro/quickstart/" target="_blank" rel="noreferrer">Helm |快速入门指南 (helm.sh)</a>？</p><ol><li><code>wget http://172.30.27.143/CICD/helm-v3.15.0-linux-amd64.tar.gz</code></li><li><code>tar zxf helm-v3.15.0-linux-amd64.tar.gz</code></li><li><code>mv linux-amd64/helm /usr/local/bin/helm</code></li><li><code>rm -rf linux-amd64/</code></li></ol><blockquote><p>安装 Gitea</p></blockquote><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">helm</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> repo</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> add</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> gitea</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> https://dl.gitea.com/charts</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">helm</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> repo</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> update</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">helm</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> install</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> gitea</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> gitea/gitea</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h2 id="新建-git-项目" tabindex="-1">新建 Git 项目 <a class="header-anchor" href="#新建-git-项目" aria-label="Permalink to &quot;新建 Git 项目&quot;">​</a></h2><p>点击仓库列表边上的➕号，开始添加仓库的步骤，名称填写 <code>valaxy</code>，然后直接点击最下面的按钮新建仓库</p><h3 id="创建本地项目" tabindex="-1">创建本地项目 <a class="header-anchor" href="#创建本地项目" aria-label="Permalink to &quot;创建本地项目&quot;">​</a></h3><p>下载项目 wget <a href="http://172.30.27.143/CICD/jenkins-slave/ValaxyBlogProject.tar.gz" target="_blank" rel="noreferrer">http://172.30.27.143/CICD/jenkins-slave/ValaxyBlogProject.tar.gz</a></p><p>解压项目 <code>tar zxf valaxy-blog.tar.gz</code></p><p>进入项目文件 <code>cd valaxy-blog</code></p><h3 id="上传项目" tabindex="-1">上传项目 <a class="header-anchor" href="#上传项目" aria-label="Permalink to &quot;上传项目&quot;">​</a></h3><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">git</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> init</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">git</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> checkout</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -b</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> main</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">git</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> add</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> .</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">git</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> commit</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -m</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &quot;first commit&quot;</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">git</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> remote</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> add</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> origin</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> http://172.30.26.173:3000/root/valaxy.git</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">git</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> push</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -u</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> origin</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> main</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">root@master valaxy-blog</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"># git push -u origin main</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">Username</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> for</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &#39;http://172.30.26.173:3000&#39;:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> root</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">	//输入之前的账号密码即可</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">Password</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> for</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &#39;http://root@172.30.26.173:3000&#39;:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">Counting</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> objects:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> 56,</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> done.</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">Delta</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> compression</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> using</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> up</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> to</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;"> 4</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> threads.</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">Compressing</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> objects:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> 100%</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> (41/41), done.</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">Writing</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> objects:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> 100%</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> (56/56), 101.45 KiB </span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">|</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;"> 0</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> bytes/s,</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> done.</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">Total</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;"> 56</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> (delta </span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">0</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">), reused 0 (</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">delta</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;"> 0</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">)</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">remote:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> .</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> Processing</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;"> 1</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> references</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">remote:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> Processed</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;"> 1</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> references</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> in</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> total</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">To</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> http://172.30.26.173:3000/root/valaxy.git</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;"> *</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> [new </span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">branch]</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">      main</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> -</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">&gt;</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> main</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">分支</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> main</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> 设置为跟踪来自</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> origin</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> 的远程分支</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> main。</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>刷新 gitea 网页，即可看到项目上传完成</p><h2 id="安装jenkins-master" tabindex="-1">安装Jenkins-Master <a class="header-anchor" href="#安装jenkins-master" aria-label="Permalink to &quot;安装Jenkins-Master&quot;">​</a></h2><h3 id="配置-nfs" tabindex="-1">配置 NFS <a class="header-anchor" href="#配置-nfs" aria-label="Permalink to &quot;配置 NFS&quot;">​</a></h3><p>安装NFS服务（这个需要在所有K8S的节点上安装）</p><p><code>yum install -y nfs-utils</code></p><p>创建共享目录（这个只需要在master节点）</p><p><code>mkdir -p /opt/nfs/jenkins</code></p><p>编写NFS的共享配置</p><p><code>vim /etc/exports</code></p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>/opt/nfs/jenkins *(rw,no_root_squash)</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p><code>*</code>代表对所有IP都开放此目录，<code>rw</code>是读写，<code>no_root_squash</code>不压制root权限</p><p>启动服务</p><p><code>systemctl enable nfs --now</code></p><p>查看NFS共享目录</p><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">root@master </span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">~</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"># showmount -e 172.30.26.172</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">Export</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> list</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> for</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> 172.30.26.172:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">/opt/nfs/jenkins</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> *</span></span></code></pre><button class="code-block-unfold-btn"></button></div><hr><p>创建并进入jenkins目录</p><p><code>mkdir jenkins &amp;&amp; cd jenkins</code></p><p><strong>步骤 1</strong>：为 Jenkins 创建命名空间。 最好将所有 DevOps 工具分类为与其他应用程序不同的命名空间。</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>kubectl create namespace devops</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>**步骤2：**创建“serviceAccount.yaml”文件并复制以下管理员服务帐户清单。</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>apiVersion: rbac.authorization.k8s.io/v1</span></span>
+<span class="line"><span>kind: ClusterRole</span></span>
+<span class="line"><span>metadata:</span></span>
+<span class="line"><span>  name: jenkins-admin</span></span>
+<span class="line"><span>rules:</span></span>
+<span class="line"><span>  - apiGroups: [&quot;&quot;]</span></span>
+<span class="line"><span>    resources: [&quot;*&quot;]</span></span>
+<span class="line"><span>    verbs: [&quot;*&quot;]</span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span>apiVersion: v1</span></span>
+<span class="line"><span>kind: ServiceAccount</span></span>
+<span class="line"><span>metadata:</span></span>
+<span class="line"><span>  name: jenkins-admin</span></span>
+<span class="line"><span>  namespace: devops</span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span>apiVersion: rbac.authorization.k8s.io/v1</span></span>
+<span class="line"><span>kind: ClusterRoleBinding</span></span>
+<span class="line"><span>metadata:</span></span>
+<span class="line"><span>  name: jenkins-admin</span></span>
+<span class="line"><span>roleRef:</span></span>
+<span class="line"><span>  apiGroup: rbac.authorization.k8s.io</span></span>
+<span class="line"><span>  kind: ClusterRole</span></span>
+<span class="line"><span>  name: jenkins-admin</span></span>
+<span class="line"><span>subjects:</span></span>
+<span class="line"><span>- kind: ServiceAccount</span></span>
+<span class="line"><span>  name: jenkins-admin</span></span>
+<span class="line"><span>  namespace: devops</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>“serviceAccount.yaml”创建一个“jenkins-admin”集群角色，“jenkins-admin”服务帐户，并将“clusterRole”绑定到服务帐户。</p><p>“jenkins-admin”群集角色具有管理群集组件的所有权限。 您还可以通过指定单个资源操作来限制访问。</p><p>现在使用 kubectl 创建服务帐户。</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>kubectl apply -f serviceAccount.yaml</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p><strong>步骤3：</strong> 创建“volume.yaml”并复制以下持久卷清单。</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>kind: StorageClass</span></span>
+<span class="line"><span>apiVersion: storage.k8s.io/v1</span></span>
+<span class="line"><span>metadata:</span></span>
+<span class="line"><span>  name: local-storage</span></span>
+<span class="line"><span>provisioner: kubernetes.io/no-provisioner</span></span>
+<span class="line"><span>volumeBindingMode: WaitForFirstConsumer</span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span>apiVersion: v1</span></span>
+<span class="line"><span>kind: PersistentVolume</span></span>
+<span class="line"><span>metadata:</span></span>
+<span class="line"><span>  name: jenkins-pv-volume</span></span>
+<span class="line"><span>  labels:</span></span>
+<span class="line"><span>    type: local</span></span>
+<span class="line"><span>spec:</span></span>
+<span class="line"><span>  storageClassName: local-storage</span></span>
+<span class="line"><span>  claimRef:</span></span>
+<span class="line"><span>    name: jenkins-pv-claim</span></span>
+<span class="line"><span>    namespace: devops</span></span>
+<span class="line"><span>  capacity:</span></span>
+<span class="line"><span>    storage: 10Gi</span></span>
+<span class="line"><span>  accessModes:</span></span>
+<span class="line"><span>    - ReadWriteOnce</span></span>
+<span class="line"><span>  local:</span></span>
+<span class="line"><span>    path: /opt/nfs/jenkins	#之前设置的nfs存储目录</span></span>
+<span class="line"><span>  nodeAffinity:</span></span>
+<span class="line"><span>    required:</span></span>
+<span class="line"><span>      nodeSelectorTerms:</span></span>
+<span class="line"><span>      - matchExpressions:</span></span>
+<span class="line"><span>        - key: kubernetes.io/hostname</span></span>
+<span class="line"><span>          operator: In</span></span>
+<span class="line"><span>          values:</span></span>
+<span class="line"><span>          - master	#Master节点主机名</span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span>apiVersion: v1</span></span>
+<span class="line"><span>kind: PersistentVolumeClaim</span></span>
+<span class="line"><span>metadata:</span></span>
+<span class="line"><span>  name: jenkins-pv-claim</span></span>
+<span class="line"><span>  namespace: devops</span></span>
+<span class="line"><span>spec:</span></span>
+<span class="line"><span>  storageClassName: local-storage</span></span>
+<span class="line"><span>  accessModes:</span></span>
+<span class="line"><span>    - ReadWriteOnce</span></span>
+<span class="line"><span>  resources:</span></span>
+<span class="line"><span>    requests:</span></span>
+<span class="line"><span>      storage: 3Gi</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>对于卷，我们使用“本地”存储类进行演示。 这意味着，它会在“/opt/nfs/jenkins”位置下的特定节点中创建一个“PersistentVolume”卷。</p><p>由于“本地”存储类需要节点选择器，因此您需要正确指定工作节点名称，以便将 Jenkins Pod 调度到特定节点中。</p><p>如果 Pod 被删除或重新启动，数据将保留在节点卷中。 但是，如果节点被删除，您将丢失所有数据。</p><p>理想情况下，应使用云提供商提供的可用存储类或群集管理员提供的存储类来使用持久性卷，以便在节点故障时保留数据。</p><p>让我们使用 kubectl 创建卷</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>kubectl create -f volume.yaml</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>**步骤4：**创建名为“deployment.yaml”的部署文件，并复制以下部署清单。</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>apiVersion: apps/v1</span></span>
+<span class="line"><span>kind: Deployment</span></span>
+<span class="line"><span>metadata:</span></span>
+<span class="line"><span>  name: jenkins</span></span>
+<span class="line"><span>  namespace: devops</span></span>
+<span class="line"><span>spec:</span></span>
+<span class="line"><span>  replicas: 1</span></span>
+<span class="line"><span>  selector:</span></span>
+<span class="line"><span>    matchLabels:</span></span>
+<span class="line"><span>      app: jenkins-server</span></span>
+<span class="line"><span>  template:</span></span>
+<span class="line"><span>    metadata:</span></span>
+<span class="line"><span>      labels:</span></span>
+<span class="line"><span>        app: jenkins-server</span></span>
+<span class="line"><span>    spec:</span></span>
+<span class="line"><span>      nodeSelector:</span></span>
+<span class="line"><span>        jenkins: &quot;master&quot;</span></span>
+<span class="line"><span>      tolerations:</span></span>
+<span class="line"><span>      - key: &quot;node-role.kubernetes.io/control-plane&quot;</span></span>
+<span class="line"><span>        operator: &quot;Exists&quot;</span></span>
+<span class="line"><span>        effect: &quot;NoSchedule&quot;</span></span>
+<span class="line"><span>      securityContext:</span></span>
+<span class="line"><span>            fsGroup: 1000</span></span>
+<span class="line"><span>            runAsUser: 1000</span></span>
+<span class="line"><span>      serviceAccountName: jenkins-admin</span></span>
+<span class="line"><span>      containers:</span></span>
+<span class="line"><span>        - name: jenkins</span></span>
+<span class="line"><span>          image: docker.io/jenkins/jenkins:latest</span></span>
+<span class="line"><span>          imagePullPolicy: IfNotPresent</span></span>
+<span class="line"><span>          resources:</span></span>
+<span class="line"><span>            limits:</span></span>
+<span class="line"><span>              memory: &quot;2Gi&quot;</span></span>
+<span class="line"><span>              cpu: &quot;1000m&quot;</span></span>
+<span class="line"><span>            requests:</span></span>
+<span class="line"><span>              memory: &quot;500Mi&quot;</span></span>
+<span class="line"><span>              cpu: &quot;500m&quot;</span></span>
+<span class="line"><span>          ports:</span></span>
+<span class="line"><span>            - name: httpport</span></span>
+<span class="line"><span>              containerPort: 8080</span></span>
+<span class="line"><span>            - name: jnlpport</span></span>
+<span class="line"><span>              containerPort: 50000</span></span>
+<span class="line"><span>          livenessProbe:</span></span>
+<span class="line"><span>            httpGet:</span></span>
+<span class="line"><span>              path: &quot;/login&quot;</span></span>
+<span class="line"><span>              port: 8080</span></span>
+<span class="line"><span>            initialDelaySeconds: 90</span></span>
+<span class="line"><span>            periodSeconds: 10</span></span>
+<span class="line"><span>            timeoutSeconds: 5</span></span>
+<span class="line"><span>            failureThreshold: 5</span></span>
+<span class="line"><span>          readinessProbe:</span></span>
+<span class="line"><span>            httpGet:</span></span>
+<span class="line"><span>              path: &quot;/login&quot;</span></span>
+<span class="line"><span>              port: 8080</span></span>
+<span class="line"><span>            initialDelaySeconds: 60</span></span>
+<span class="line"><span>            periodSeconds: 10</span></span>
+<span class="line"><span>            timeoutSeconds: 5</span></span>
+<span class="line"><span>            failureThreshold: 3</span></span>
+<span class="line"><span>          volumeMounts:</span></span>
+<span class="line"><span>            - name: jenkins-data</span></span>
+<span class="line"><span>              subPath: jenkinsMaster</span></span>
+<span class="line"><span>              mountPath: /var/jenkins_home</span></span>
+<span class="line"><span>      volumes:</span></span>
+<span class="line"><span>        - name: jenkins-data</span></span>
+<span class="line"><span>          persistentVolumeClaim:</span></span>
+<span class="line"><span>              claimName: jenkins-pv-claim</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>在此 Jenkins Kubernetes 部署中，我们使用了以下内容：</p><ol><li>“securityContext”，以便 Jenkins pod 能够写入本地持久卷。</li><li>用于监视 Jenkins pod 运行状况的 Liveness and readiness 探测。</li><li>基于保存 Jenkins 数据路径“/var/jenkins_home”的本地存储类的本地持久性卷。</li></ol><p>使用 kubectl 创建部署。</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>kubectl apply -f deployment.yaml</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>检查部署状态。</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>kubectl get deployments -n devops</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>现在，您可以使用以下命令获取部署详细信息。</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>kubectl describe deployments --namespace=devops</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h3 id="使用-kubernetes-服务访问-jenkins" tabindex="-1">使用 Kubernetes 服务访问 Jenkins <a class="header-anchor" href="#使用-kubernetes-服务访问-jenkins" aria-label="Permalink to &quot;使用 Kubernetes 服务访问 Jenkins&quot;">​</a></h3><p>现在，我们已经创建了一个部署。 但是，它不对外界开放。 为了从外部世界访问 Jenkins 部署，我们需要创建一个服务并将其映射到部署。</p><p>创建“service.yaml”并复制以下服务清单：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>apiVersion: v1</span></span>
+<span class="line"><span>kind: Service</span></span>
+<span class="line"><span>metadata:</span></span>
+<span class="line"><span>  name: jenkins-service</span></span>
+<span class="line"><span>  namespace: devops</span></span>
+<span class="line"><span>  annotations:</span></span>
+<span class="line"><span>      prometheus.io/scrape: &#39;true&#39;</span></span>
+<span class="line"><span>      prometheus.io/path:   /</span></span>
+<span class="line"><span>      prometheus.io/port:   &#39;8080&#39;</span></span>
+<span class="line"><span>spec:</span></span>
+<span class="line"><span>  selector:</span></span>
+<span class="line"><span>    app: jenkins-server</span></span>
+<span class="line"><span>  type: NodePort</span></span>
+<span class="line"><span>  ports:</span></span>
+<span class="line"><span>  - name: httpport</span></span>
+<span class="line"><span>    port: 8080</span></span>
+<span class="line"><span>    targetPort: httpport</span></span>
+<span class="line"><span>    nodePort: 32000</span></span>
+<span class="line"><span>  - name: jnlpport</span></span>
+<span class="line"><span>    port: 50000</span></span>
+<span class="line"><span>    targetPort: jnlpport</span></span>
+<span class="line"><span>    nodePort: 32500</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>使用 kubectl 创建 Jenkins 服务。</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>kubectl apply -f service.yaml</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>现在，当浏览到端口 32000 上的任何一个节点 IP 时，您将能够访问 Jenkins 仪表板。</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>http://&lt;master-ip&gt;:32000</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>查看 jenkins 的 pod 在 running 状态，通过<a href="http://172.30.26.172:32000/%E8%AE%BF%E9%97%AE" target="_blank" rel="noreferrer">http://172.30.26.172:32000/访问</a> jenkins</p><p>查看 jenkins 初始密码<code>cat /opt/nfs/jenkins/jenkinsMaster/secrets/initialAdminPassword</code></p><p>创建用户，然后选择保存并完成</p><figure><img src="/attachment/K8sJenkinsSlaveCICD/9b336640664bd348ece99f30fbcefda0.png" alt="" loading="lazy" decoding="async"></figure><figure><img src="/attachment/K8sJenkinsSlaveCICD/946290a3c2091ddaa7b912e9ee5bd04e.png" alt="" loading="lazy" decoding="async"></figure><figure><img src="/attachment/K8sJenkinsSlaveCICD/98901ba24512e988e1ec0e4671b64197.png" alt="" loading="lazy" decoding="async"></figure><p>设置全局安全设置为任何用户可以做任何事</p><figure><img src="/attachment/K8sJenkinsSlaveCICD/372e2b973fc459b466f4aff23d8803e4.png" alt="" loading="lazy" decoding="async"></figure><h3 id="安装插件" tabindex="-1">安装插件 <a class="header-anchor" href="#安装插件" aria-label="Permalink to &quot;安装插件&quot;">​</a></h3><p>前往 系统管理-插件管理-Available plugins，搜索Kubernetes和Docker这两个插件，都进行安装，可以选择性安装Blue Ocean，这样可以更好的观察流水线的运作</p><h2 id="配置-jankinscloud" tabindex="-1">配置 JankinsCloud <a class="header-anchor" href="#配置-jankinscloud" aria-label="Permalink to &quot;配置 JankinsCloud&quot;">​</a></h2><blockquote><p>⚠️注意，所有 IP 地址请改为master 节点的 IP</p></blockquote><p>进入cloud 节点配置页面<a href="http://172.30.26.172:32000/manage/cloud/%EF%BC%88%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86-Clouds-New" target="_blank" rel="noreferrer">http://172.30.26.172:32000/manage/cloud/（系统管理-Clouds-New</a> cloud）</p><p>点击 New Cloud</p><ul><li><p>Cloud Name <code>worker1</code></p></li><li><p>Type <code>Kubernetes</code></p></li></ul><p>进入下一步</p><ul><li><p>在终端输入<code>kubectl cluster-info</code>获得 ApiServer 的地址<a href="https://172.30.26.172:6443" target="_blank" rel="noreferrer">https://172.30.26.172:6443</a></p></li><li><p>Kubernetes 地址<code>https://172.30.26.172:6443</code></p></li><li><p>Kubernetes 服务证书 key填写<code>.kube/config</code>中<code>certificate-authority-data:</code>字段的密钥</p></li></ul><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>LS0tLS1CRUdJTiBDRVJUSUZJ...(省略)</span></span></code></pre><button class="code-block-unfold-btn"></button></div><ul><li><p>勾选<code>禁用 HTTPS 证书检查</code></p></li><li><p>Kubernetes 命名空间<code>devops</code></p></li></ul><p>点击<code>连接测试</code>，显示<code>Connected to Kubernetes v1.29.0</code>即可</p><hr><ul><li><p>Jenkins 地址<code>http://172.30.26.172:32000/</code></p></li><li><p>Jenkins 通道<code>172.30.26.172:32500</code>不能加任何协议，因为是 tcp 传输协议，值就是 jenkins service 的另一个暴露的端口</p></li></ul><figure><img src="/attachment/K8sJenkinsSlaveCICD/d953a2e1c3f6ec4e582f16d80169cbd6.png" alt="" loading="lazy" decoding="async"></figure><figure><img src="/attachment/K8sJenkinsSlaveCICD/b7dc69fe9e8373ad6772bf7459c0c467.png" alt="" loading="lazy" decoding="async"></figure><p>最后点击下方 Save 保存</p><h2 id="配置-jankins-slave" tabindex="-1">配置 Jankins-Slave <a class="header-anchor" href="#配置-jankins-slave" aria-label="Permalink to &quot;配置 Jankins-Slave&quot;">​</a></h2><p>在 Jankins-Slave 架构中，Slave 节点通常由 <code>jenkins/inbound-agent</code> 镜像直接生成，在流水线完成后，此节点就会被删除，因为本项目需要构建的是 vite 项目，所以我们需要自定义一个 Slave 节点的镜像，以便项目的构建</p><h3 id="构建特殊的-agent-镜像" tabindex="-1">构建特殊的 agent 镜像 <a class="header-anchor" href="#构建特殊的-agent-镜像" aria-label="Permalink to &quot;构建特殊的 agent 镜像&quot;">​</a></h3><p>在 root 目录创建<code>inbound-agent-node</code>目录，在此目录完成镜像构建 <code>cd inbound-agent-node</code></p><p>下载 nodejs 程序 <code>wget https://nodejs.org/dist/v20.13.1/node-v20.13.1-linux-x64.tar.xz</code></p><p>编辑 Dockerfile</p><p><code>vim inbound-agent-node-Dockerfile</code></p><div class="language-dockerfile"><button title="Copy code" class="copy"></button><span class="lang">dockerfile</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">FROM</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> jenkins/inbound-agent</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">USER</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> root</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">WORKDIR</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> /usr/local</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">ADD</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> node-v20.13.1-linux-x64.tar.xz .</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">ENV</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> PATH=</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">&quot;/usr/local/node-v20.13.1-linux-x64/bin:${PATH}&quot;</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">RUN</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> npm config set registry https://registry.npmmirror.com</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">RUN</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> npm install -g pnpm</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">ENTRYPOINT</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> [</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">&quot;jenkins-agent&quot;</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">]</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>构建镜像，镜像的 tag 前面的<strong>地址</strong>需要改成自己的 <strong>Harbor 仓库地址</strong></p><p><code>docker build -t 172.30.26.172/library/inbound-agent-node:latest . -f inbound-agent-node-Dockerfile</code></p><p>推送到 Harbor <code>docker push 172.30.26.172/library/inbound-agent-node:latest</code></p><p>在 <code>worker1</code> 节点拉取这个镜像 <code>ctr -n k8s.io image pull --plain-http 172.30.26.172/library/inbound-agent-node:latest</code></p><h3 id="设置-pod-template" tabindex="-1">设置 Pod Template <a class="header-anchor" href="#设置-pod-template" aria-label="Permalink to &quot;设置 Pod Template&quot;">​</a></h3><p>Pod Template 就是 slave 节点将会启动的Pod，我们可以设置多个Pod Template 来适配多个流水线的运作，这里我们只新建一个 Pod Template</p><p>进入 系统管理-Clouds-worker1-Pod Templates，点击右上角的 Add a pod template 进入Pod template settings 页面，接下来设置 Pod Template。</p><ul><li><p>名称 <code>jenkins-slave</code></p></li><li><p>命名空间 <code>devops</code></p></li><li><p>标签列表 <code>jenkins-slave-k8s</code></p></li></ul><figure><img src="/attachment/K8sJenkinsSlaveCICD/10f7a756c0cb6faba2fe1e8503306205.png" alt="" loading="lazy" decoding="async"></figure><p>卷设置，点击<code>添加卷</code>，选择 <code>Host Path Volume</code>，接下来需要填入多个从主机映射到 Pod 中的文件</p><table><thead><tr><th>Host Path Volume</th><th>主机路径</th><th>挂载路径</th></tr></thead><tbody><tr><td>docker 命令</td><td>/usr/bin/docker</td><td>/usr/bin/docker</td></tr><tr><td>docker 套接字</td><td>/var/run/docker.sock</td><td>/var/run/docker.sock</td></tr><tr><td>kubectl 配置文件</td><td>/root/.kube</td><td>/root/.kube</td></tr><tr><td>kubectl 命令</td><td>/usr/bin/kubectl</td><td>/usr/bin/kubectl</td></tr><tr><td>ctr 命令</td><td>/usr/bin/ctr</td><td>/usr/bin/ctr</td></tr><tr><td>containerd 套接字</td><td>/run/containerd/containerd.sock</td><td>/run/containerd/containerd.sock</td></tr></tbody></table><figure><img src="/attachment/K8sJenkinsSlaveCICD/5043353c0c6a28475e97d3dfe3fd5ca3.png" alt="" loading="lazy" decoding="async"></figure><p>然后翻动页面到下方，找到<code>Run As User ID</code>和<code>Run As Group ID</code>，填入<code>0</code>，目的是让 Pod 中的容器可以正常执行 docker 和 ctr 命令。（0 是宿主机 root 用户的组 ID）</p><h4 id="设置容器" tabindex="-1">设置容器 <a class="header-anchor" href="#设置容器" aria-label="Permalink to &quot;设置容器&quot;">​</a></h4><blockquote><p>最新 Jenkins 默认如果 pod 名称不设置为 jnlp 的话，会自动启动一个 inbound-agent 镜像来</p></blockquote><p>在刚才的 Pod template settings 中找到<code>容器列表</code>选项，点击<code>添加容器</code>选择 <code>Container Template</code></p><ul><li>名称 <code>nodejs</code></li><li>Docker 镜像 <code>172.30.26.172/library/inbound-agent-node:latest</code></li><li>运行的命令 <code>sleep</code></li><li>命令参数 <code>9999999</code></li><li>勾选 <code>分配伪终端</code></li></ul><p>点击下方 Save 完成 Pod Template 的设置</p><h2 id="配置并运行流水线" tabindex="-1">配置并运行流水线 <a class="header-anchor" href="#配置并运行流水线" aria-label="Permalink to &quot;配置并运行流水线&quot;">​</a></h2><p>新建流水线，命名 ValaxyBlog</p><p>点击配置，在高级项目选项中配置流水线脚本，其中<code>environment</code>是环境变量的配置，请将<code>DOCKER_REGISTRY</code>改为 Harbor 仓库地址，<code>Checkout Code</code>步骤中的<code>git url</code>后面的仓库地址请改为自己的 Gitea 项目的 http 地址，</p><div class="language-json"><button title="Copy code" class="copy"></button><span class="lang">json</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">pipeline </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">  agent {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">    label &#39;jenkins-slave-k8s&#39;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">  }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">  environment </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        DOCKER_REGISTRY = </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">&quot;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">172.30.26.172</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">&quot;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        IMAGE_NAME = </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">&quot;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">library/valaxy</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">&quot;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        IMAGE_TAG = </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">&quot;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">dev</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">&quot;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        DOCKER_USERNAME = &#39;admin&#39;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        DOCKER_PASSWORD = &#39;Harbor12345&#39;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        DEPLOY_PORT = &#39;30080&#39;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">    }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">    stages </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        stage(&#39;Checkout Code&#39;) {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">            steps {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                git url</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">:</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> &#39;http:</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;">//172.30.26.173:3000/root/valaxy.git&#39;, branch: &#39;main&#39;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">            }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        stage(&#39;Build Application&#39;) </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">            steps {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                container (&#39;nodejs&#39;) {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                    script {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                        sh &#39;pnpm i&#39;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                        sh &#39;npm run build&#39;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">                    }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">            }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        stage(&#39;Build Docker Image&#39;) </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">            steps {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                script {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                    sh </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">&quot;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">docker build -t ${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG} .</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">&quot;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">                    }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">            }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        stage(&#39;Push Docker Image&#39;) </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">            steps {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                echo </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">&quot;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">Docker image will pushed to ${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG}</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">&quot;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                sh </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">&quot;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">echo ${DOCKER_PASSWORD} | docker login ${DOCKER_REGISTRY} -u ${DOCKER_USERNAME} --password-stdin</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">&quot;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                sh </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">&quot;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">docker push ${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG}</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">&quot;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                sh &#39;docker rmi ${DOCKER_REGISTRY</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">}</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">/$</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">IMAGE_NAME</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">}</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">:$</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">IMAGE_TAG</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">}</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> || </span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">true</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">&#39;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">            }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        stage(&#39;Deploy to Kubernetes&#39;) </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">            steps {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                script {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                    sh &#39;&#39;&#39;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                    kubectl create deployment valaxy --image=${DOCKER_REGISTRY</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">}</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">/$</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">IMAGE_NAME</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">}</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">:$</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">IMAGE_TAG</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">}</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> --dry-run=client -o yaml &gt;&gt; valaxy-manifests.yaml</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                    echo </span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">&quot;---&quot;</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> &gt;&gt; valaxy-manifests.yaml</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                    kubectl create service nodeport valaxy --tcp=</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">80</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">:</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">80</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> --node-port=$</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">DEPLOY_PORT</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">}</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> --dry-run=client -o yaml &gt;&gt; valaxy-manifests.yaml</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                    &#39;&#39;&#39;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                    sh </span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">&quot;&quot;&quot;</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">                    sed -i &#39;22a </span><span style="--shiki-light:#EA76CB;--shiki-dark:#F5C2E7;">\\</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">        imagePullPolicy: IfNotPresent&#39; valaxy-manifests.yaml</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">                    &quot;&quot;&quot;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                    sh &#39;&#39;&#39;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                    ctr -n k</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">8</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">s.io image pull --plain-http $</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">DOCKER_REGISTRY</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">}</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">/$</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">IMAGE_NAME</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">}</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">:$</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">IMAGE_TAG</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">}</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                    &#39;&#39;&#39;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                    sh &#39;&#39;&#39;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                    kubectl delete -f valaxy-manifests.yaml || </span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">true</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                    kubectl apply -f valaxy-manifests.yaml</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                    &#39;&#39;&#39;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">            }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">    }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">}</span></span></code></pre><button class="code-block-unfold-btn"></button></div><figure><img src="/attachment/K8sJenkinsSlaveCICD/807955afc089205f93637c40c8aa0e90.png" alt="" loading="lazy" decoding="async"></figure><p>点击左侧的立即构建，流水线就开始运行了</p><p>可以进入构建的 Console Output 中看到构建的详细情况</p><p>也可以进入 BlueOcean 更直观的看到构建细节</p><p>在构建过程中，我们可以在宿主机上通过<code>kubectl -n devops get po</code>指令查看临时生成的 jenkins-slave pod，它正在运行 jenkins-master 下发的流水线</p><figure><img src="/attachment/K8sJenkinsSlaveCICD/0a317e0774105ec4e51f7d1e72c43f56.png" alt="" loading="lazy" decoding="async"></figure><p>构建完成后，访问 http://172.30.26.172:30080就可以看到博客正常被测试发布了，临时的 jenkins-slave pod 也被自动删除了</p><figure><img src="/attachment/K8sJenkinsSlaveCICD/8102a2a36ddd415b5e66b5bfbee37bca.png" alt="" loading="lazy" decoding="async"></figure><p>🎉看到此页面就代表我们已经通过 agent 节点的功能完成了 CICD！</p><h1 id="the-end" tabindex="-1">The End <a class="header-anchor" href="#the-end" aria-label="Permalink to &quot;The End&quot;">​</a></h1><p>恭喜你完成了本次练习！相信你一定对 Jenkins 的使用有了更深的理解，当然上文还是倾向于实操步骤，我没有详细说明一些配置项目的作用，以及流水线的各种细节功能，这是因为我也没有完全理解 jenkins 的 pipeline 的编写，如果你还想继续深究，请前往 <a href="https://www.jenkins.io/zh/doc/" target="_blank" rel="noreferrer">Jenkins 用户手册</a>进行查阅，一定会有很多的收货！</p><p>下面是我在撰写这边文章的时候记录的测试步骤，其中包含了设置多个 Container Pod 的相关知识，如果你感兴趣可以继续往下看！</p><p>那么本文理论上就到此为止了，see u～</p><h2 id="功能测试" tabindex="-1">功能测试 <a class="header-anchor" href="#功能测试" aria-label="Permalink to &quot;功能测试&quot;">​</a></h2><h3 id="设置-pod-template-1" tabindex="-1">设置 Pod template <a class="header-anchor" href="#设置-pod-template-1" aria-label="Permalink to &quot;设置 Pod template&quot;">​</a></h3><p>进入 worker1 这个 cloud 的配置页面<a href="http://172.30.26.172:32000/manage/cloud/worker1/" target="_blank" rel="noreferrer">http://172.30.26.172:32000/manage/cloud/worker1/</a></p><p>点击 <code>Pod templates</code>-<code>Add a pod template</code></p><p>名称<code>jenkins-slave</code></p><p>命名空间<code>devops</code></p><p>标签列表<code>jenkins-slave-k8s</code></p><h4 id="容器列表" tabindex="-1">容器列表 <a class="header-anchor" href="#容器列表" aria-label="Permalink to &quot;容器列表&quot;">​</a></h4><p>点击<code>添加容器</code>-<code>Container Template</code></p><p>名称<code>jnlp</code></p><p>Docker 镜像<code>docker.io/jenkins/inbound-agent:latest</code></p><p>运行的命令<code>jenkins-agent</code></p><p>命令参数删除自带的 <code>9999999</code></p><p>☑️<code>分配伪终端</code></p><p>点击最下方 Create 完成 pod template 的创建 <img src="/attachment/K8sJenkinsSlaveCICD/3d2d07f1e7c31a845649d52cbc340692.png" alt=""></p><h3 id="测试jenkins-slave" tabindex="-1">测试jenkins-slave <a class="header-anchor" href="#测试jenkins-slave" aria-label="Permalink to &quot;测试jenkins-slave&quot;">​</a></h3><p>新建一个名为 <code>jnlp-test</code>的流水线</p><p>填写流水线脚本</p><div class="language-json"><button title="Copy code" class="copy"></button><span class="lang">json</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">pipeline </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">  agent {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">    label &#39;jenkins-slave-k8s&#39;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">  }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">  stages </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">    stage(&#39;test&#39;) {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        steps {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">            script {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">                println </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">&quot;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">Thie pipeline is run in jenkins-slave.</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">&quot;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">            }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">    }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">  }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">}</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>保存，运行流水线，点击<code>立即构建</code></p><p>查看<code>Console Output</code></p><div class="language-json"><button title="Copy code" class="copy"></button><span class="lang">json</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Started by user jenkins</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Pipeline</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> Start of Pipeline</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Pipeline</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> node</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Agent jenkins-slave-fxpzg is provisioned from template jenkins-slave</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">---</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">apiVersion: </span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">&quot;v1&quot;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">......省略</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">    name: </span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">&quot;workspace-volume&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Running on jenkins-slave-fxpzg in /home/jenkins/agent/workspace/jnlp-test</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Pipeline</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;"> {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">[Pipeline] stage</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">[Pipeline] { (test)</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">[Pipeline] script</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">[Pipeline] {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">[Pipeline] echo</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Thie pipeline is run in jenkins-slave.</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">[Pipeline] </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">}</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Pipeline</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"> // script</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Pipeline</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> }</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Pipeline</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"> // stage</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Pipeline</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> }</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Pipeline</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"> // node</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Pipeline</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> End of Pipeline</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Finished: SUCCESS</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>出现<code>Thie pipeline is run in jenkins-slave.</code>就代表使用 jenkins-slave 构建成功了！</p><p>在构建的过程中通过<code>kubectl -n devops get po</code>可以查看到有一个名为<code>jenkins-slave-5jjcw</code>的 pod 在 running 状态，当流水线运行完成后，这个 pod 又会马上消失，这代表我们确实完成了动态的 jenkins-slave 的功能实现。</p><h3 id="设置多个-pod-template" tabindex="-1">设置多个 Pod Template <a class="header-anchor" href="#设置多个-pod-template" aria-label="Permalink to &quot;设置多个 Pod Template&quot;">​</a></h3><p>进入 clouds&gt;worker1&gt;jenkins-slave 页面</p><p>点击<code>添加容器</code>-<code>Container Template</code></p><p>名称<code>nodejs</code></p><p>Docker 镜像<code>172.30.26.172/library/inbound-agent-node:latest</code></p><p>运行的命令<code>sleep</code></p><p>命令参数保持 <code>9999999</code></p><h4 id="自定义一个-agent-镜像" tabindex="-1">自定义一个 agent 镜像 <a class="header-anchor" href="#自定义一个-agent-镜像" aria-label="Permalink to &quot;自定义一个 agent 镜像&quot;">​</a></h4><blockquote><p>因为项目是基于 vite 的项目，所以构建需要 node 环境</p></blockquote><p>创建inbound-agent-node目录，在此目录完成镜像构建</p><p>下载 nodejs 程序 <code>wget https://nodejs.org/dist/v20.13.1/node-v20.13.1-linux-x64.tar.xz</code></p><p>编辑 Dockerfile</p><p><code>vim inbound-agent-node-Dockerfile</code></p><div class="language-dockerfile"><button title="Copy code" class="copy"></button><span class="lang">dockerfile</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">FROM</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> jenkins/inbound-agent</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">USER</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> root</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">WORKDIR</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> /usr/local</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">ADD</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> node-v20.13.1-linux-x64.tar.xz .</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">ENV</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> PATH=</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">&quot;/usr/local/node-v20.13.1-linux-x64/bin:${PATH}&quot;</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">RUN</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> npm config set registry https://registry.npmmirror.com</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">RUN</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> npm install -g pnpm</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">ENTRYPOINT</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> [</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">&quot;jenkins-agent&quot;</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">]</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>构建镜像 <code>docker build -t 172.30.26.172/library/inbound-agent-node:latest . -f inbound-agent-node-Dockerfile</code></p><p>推送到 Harbor <code>docker push 172.30.26.172/library/inbound-agent-node:latest</code></p><h4 id="编写流水线" tabindex="-1">编写流水线 <a class="header-anchor" href="#编写流水线" aria-label="Permalink to &quot;编写流水线&quot;">​</a></h4><blockquote><p>根据最新的 kubernetes 插件的规则进行编写，官方页面写了两种方法，这里使用第三种方法，不用手动写 Pod Template——<a href="https://plugins.jenkins.io/kubernetes/" target="_blank" rel="noreferrer">Kubernetes 的 |Jenkins 插件</a></p></blockquote><div class="language-json"><button title="Copy code" class="copy"></button><span class="lang">json</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">pipeline </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">  agent {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">    label &#39;jenkins-slave-k8s&#39;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">  }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">  stages </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">    stage(&#39;test&#39;) {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">      steps {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        container (&#39;jnlp&#39;) {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">          script {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">            println </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">&quot;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">This pipeline is run in jnlp pod.</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">&quot;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">            sh &#39;node -v || true&#39;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">          }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        container (&#39;nodejs&#39;) </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">          script {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">            println </span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">&quot;</span><span style="--shiki-light:#1E66F5;--shiki-dark:#89B4FA;">This pipeline is run in node pod.</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">&quot;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">            sh &#39;node -v&#39;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">            sh &#39;npm -v&#39;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">            sh &#39;pnpm -v&#39;</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">          }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">      }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">    }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">  }</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">}</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>运行流水线，在 Console Output 中可以看到自动生成的 yaml 文件中有了两个 Containers，证明了<code>test stage</code>中的第唯一一个<code>steps</code>中确实启动了两个容器，通过 kubectl 命令可以看到有一个 pod 在运行，说面多 pod template 模式功能测试成功。</p><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">Started</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> by</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> user</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> jenkins</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Pipeline</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> Start of Pipeline</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Pipeline</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> node</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">Agent</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> jenkins-slave-1g78h</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> is</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> provisioned</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> from</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> template</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> jenkins-slave</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">---</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">apiVersion:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &quot;v1&quot;</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#F38BA8;--shiki-dark-font-style:italic;">.....</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">.yaml</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> 省略</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">Running</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> on</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> jenkins-slave-1g78h</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> in</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> /home/jenkins/agent/workspace/jnlp-test</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#F38BA8;--shiki-dark-font-style:italic;">..</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">.省略</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Pipeline</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> echo</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">This</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> pipeline</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> is</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> run</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> in</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> jnlp</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> pod.</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Pipeline</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> sh</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">+</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> node</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -v</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">/home/jenkins/agent/workspace/jnlp-test@tmp/durable-8ed80d21/script.sh.copy:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> 1:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> node:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> not</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> found</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">+</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;"> true</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#F38BA8;--shiki-dark-font-style:italic;">..</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">.省略</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Pipeline</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> echo</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">This</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> pipeline</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> is</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> run</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> in</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> node</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> pod.</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Pipeline</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> sh</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">+</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> node</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -v</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">v20.13.1</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Pipeline</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> sh</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">+</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> npm</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -v</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">10.5.2</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">Pipeline</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> sh</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">+</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> pnpm</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -v</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">9.1.2</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#F38BA8;--shiki-dark-font-style:italic;">..</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">.省略</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">root@master </span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">~</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"># kubectl -n devops get po</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">NAME</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">                       READY</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">   STATUS</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">    RESTARTS</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">      AGE</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">jenkins-79f4445887-lncxs</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">   1/1</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">     Running</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">   2</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> (45h </span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">ago</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">)   46h</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">jenkins-slave-2zwxb</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">        2/2</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">     Running</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">   0</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">             41s</span></span></code></pre><button class="code-block-unfold-btn"></button></div><!--]--><!--]--><!----><!----></article><!--]--><!--[--><!--]--><details class="terminal-sponsor"><summary>[ + ] 饿饿，饭饭！</summary><div><!--[--><figure><img src="https://bu.dusays.com/2023/11/02/65432694e4eb5.jpg" alt="支付宝收款码" loading="lazy" width="180"><figcaption>支付宝</figcaption></figure><figure><img src="https://bu.dusays.com/2023/11/02/6543269436758.jpg" alt="微信支付收款码" loading="lazy" width="180"><figcaption>微信支付</figcaption></figure><!--]--></div></details><nav class="terminal-post-nav" aria-label="相邻文章"><a href="/posts/ubuntu22/04-k8s-deploy" class="">← 上一篇<span>ubuntu22.04-k8s-deploy</span></a><a href="/posts/KubernetesJenkinCICD" class="">下一篇 →<span>使用 Jenkins&amp;GitLab 构建 CICD</span></a></nav><!----></section><section class="terminal-comments" aria-label="评论"><h2 class="terminal-command"><span>❯</span> ./discuss <span class="terminal-muted">留言与讨论</span></h2><!----></section><!--]--><!--]--></main></div><footer class="terminal-footer"><p>© 2023<!--[-->–2026<!--]--> 皓然 <span aria-hidden="true">/</span> Powered by <a href="https://valaxy.site/" target="_blank" rel="noopener noreferrer">Valaxy</a></p><p class="terminal-footer-links"><!--[--><a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel</a><a href="https://github.com/HoronLee/horonlee.github.io" target="_blank" rel="noopener noreferrer">Source</a><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener noreferrer">开往</a><!--]--><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">浙ICP备2023037163号</a><a href="https://icp.gov.moe/?keyword=20241146" target="_blank" rel="noopener noreferrer">萌 ICP 备 20241146 号</a></p><p class="terminal-visitors"><span id="busuanzi_container_site_pv">访问 <span id="busuanzi_value_site_pv">—</span> 次</span><span id="busuanzi_container_site_uv">访客 <span id="busuanzi_value_site_uv">—</span> 人</span></p></footer><div class="terminal-statusbar"><span><span class="terminal-status-dot" aria-hidden="true">●</span> READ <span class="terminal-status-path">~/posts/K8sJenkinsSlaveCICD</span></span><span class="terminal-palette"><span class="palette-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Catppuccin <span class="palette-light">Latte</span><span class="palette-dark">Mocha</span></span></div><dialog class="terminal-search" aria-labelledby="v-0-title" aria-describedby="v-0-description" data-v-123505a2><header class="search-header" data-v-123505a2><h2 id="v-0-title" data-v-123505a2><span aria-hidden="true" data-v-123505a2>$ </span>grep -i ~/posts</h2><button type="button" class="search-close" aria-label="关闭文章搜索" data-v-123505a2>×</button></header><div class="search-body" data-v-123505a2><p id="v-0-description" class="search-description" data-v-123505a2>搜索文章标题、摘要、标签和分类。按 Enter 打开首条结果，按 Esc 关闭。</p><label class="search-field" data-v-123505a2><span aria-hidden="true" data-v-123505a2>❯</span><input value="" type="search" aria-label="搜索文章" aria-describedby="v-0-count" autocomplete="off" placeholder="输入关键词…" data-v-123505a2></label><p id="v-0-count" class="search-count" role="status" aria-live="polite" aria-atomic="true" data-v-123505a2>共 37 篇文章<span data-v-123505a2>，显示前 20 条</span></p><!----><ul class="search-results" aria-label="文章搜索结果" data-v-123505a2><!--[--><li data-v-123505a2><a href="/posts/Echo-framework-route-matching&amp;middleware" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>关于Echo框架路由匹配与中间件的坑</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #Echo  #编程笔记</span></a></li><li data-v-123505a2><a href="/posts/golang-Isekai-notebook-from-scratch" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>从零开始的Go语言异世界笔记</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #编程笔记</span></a></li><li data-v-123505a2><a href="/posts/Configuring-NoVNC-connection-to-KVM-vm" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>配置NoVNC连接Kvm虚拟机</span><!--v-if--><span class="result-labels" data-v-123505a2>#NoVNC  #Linux  #KVM</span></a></li><li data-v-123505a2><a href="/posts/Harbor-HTTPS" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Harbor配置HTTPS</span><!--v-if--><span class="result-labels" data-v-123505a2>#Harbor  #运维</span></a></li><li data-v-123505a2><a href="/posts/Troubleshooting-and-Practice-of-Docker-Container-Networking-and-Firewalld-Zone-Conflicts" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>解决Docker容器互联与Firewalld区域冲突的排查与实践</span><!--v-if--><span class="result-labels" data-v-123505a2>#Docker  #Firewall  #Docker</span></a></li><li data-v-123505a2><a href="/posts/NeoVim-personal-note" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>NeoVim个人配置笔记</span><span class="result-excerpt" data-v-123505a2>LazyVim 配置目录 shell . ├── LICENSE ├── README.md ├── init.lua #配置入口文件 ├── lazy-lock.json ├── lazyvim.json ├── lua │ ├── config #默认生成的配置目录 │ │ ├── autocmds.lua │ │ ├── keymaps.lua │ │ ├── lazy.lua │ │ └── options.lua #自定义配置可以写在这里 │ └── plugins │ ├── colorscheme.lua #自己添加的主题插件配置 │ └── example.lua └── stylua.toml</span><span class="result-labels" data-v-123505a2>#neovim  #lazyvim  #开发  #环境配置</span></a></li><li data-v-123505a2><a href="/posts/PowerShell-dev-config-note" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>PowerShell开发配置指北</span><!--v-if--><span class="result-labels" data-v-123505a2>#windows  #powershell  #开发  #环境配置</span></a></li><li data-v-123505a2><a href="/posts/KubeVirt-CDI" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>KubeVirt使用CDI来导入虚拟机镜像</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #KubeVirt  #服务器运维  #云计算  #虚拟化</span></a></li><li data-v-123505a2><a href="/posts/KubeVirt-Getting-Start" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>KubeVirt入门</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #KubeVirt  #服务器运维  #云计算  #虚拟化</span></a></li><li data-v-123505a2><a href="/posts/Online-Expansion-Ubuntu-LVM" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>LVM添加硬盘并扩容至已有分区</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #服务器运维</span></a></li><li data-v-123505a2><a href="/posts/ubuntu22/04-k8s-deploy" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>ubuntu22.04-k8s-deploy</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #Ubuntu  #服务器运维  #云计算  #k8s</span></a></li><li data-v-123505a2><a aria-current="page" href="/posts/K8sJenkinsSlaveCICD" class="router-link-active router-link-exact-active search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Jenkins的标准用法“Jenkins-Slave”</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #CICD  #Jenkins  #服务器运维  #云计算  #Jenkins</span></a></li><li data-v-123505a2><a href="/posts/KubernetesJenkinCICD" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>使用 Jenkins&amp;GitLab 构建 CICD</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #CICD  #Jenkins  #服务器运维  #云计算  #k8s  #Jenkins</span></a></li><li data-v-123505a2><a href="/posts/GormNote" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Gorm笔记</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #编程笔记</span></a></li><li data-v-123505a2><a href="/posts/CICDk8s" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>在k8s中构建CICD</span><span class="result-excerpt" data-v-123505a2>此文章已经停止更新，最新的CICD 构建位于： kubernetes 使用 Jenkins GitLab 构建 CICD - 皓然小站 (horonlee.com) 安装CICD所需资源 curl -O http://mirrors.douxuedu.com/competition/BlueOcean.tar.gz tar -zxf BlueOcean.tar.gz cp BlueOcean/tools/docker-compose-Linux-x86_64 /usr/bin/docker-compose docker-compose version tar -zxf BlueOcean/harbor-offline-installer.tar.gz -C /opt/ sh /opt/harbor/install.sh docker login -uadmin -pHarbor12345 172.16.2.90 docker load -i BlueOcean/images/maven_latest.tar docker tag maven 172.16.2.90/library/maven docker push 172.16.2.90/library/maven docker load -i BlueOcean/images/java_8-jre.tar docker load -i BlueOcean/images/jenkins_jenkins_latest.tar docker load -i BlueOcean/images/gitlab_gitlab-ce_latest.tar kubectl create ns devops</span><span class="result-labels" data-v-123505a2>#CentOS  #Linux  #Kubernetes  #服务器运维  #云计算  #Kubernetes  #CICD</span></a></li><li data-v-123505a2><a href="/posts/bridge-router-ddns" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>家庭宽带桥接并为路由器配置DDNS</span><!--v-if--><span class="result-labels" data-v-123505a2>#网络  #折腾  #网络工程</span></a></li><li data-v-123505a2><a href="/posts/Frpc-systemd-restart" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>为Systemd服务设置自动重启</span><span class="result-excerpt" data-v-123505a2>事情起因 最近给自己的双路E5搞一个Frpc，但是因为有Clash这个开机自启程序，并且我设置了系统代理，在Clash完全启动之前系统是处于断网状态的。断网状态下，Frpc会默认启动失败并且变为Inactive状态，这并不是我想看到的。</span><span class="result-labels" data-v-123505a2>#Linux  #Linux</span></a></li><li data-v-123505a2><a href="/posts/Hexo-to-valaxy" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>从Hexo切换为Valaxy感受</span><span class="result-excerpt" data-v-123505a2>最近因为Halo博客被宝塔面板爆破了，所以只能继续使用老博客Hexo（托管在githubpage上），但是GitHubPage实在是太慢了，Hexo的配置也有些乱糟糟的，于是乎就换用了由云游君大佬开发的Valaxy博客框架</span><span class="result-labels" data-v-123505a2>#Blog  #网站</span></a></li><li data-v-123505a2><a href="/posts/shell-practice" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>脚本练习1</span><span class="result-excerpt" data-v-123505a2>我觉得我写这个也太无聊了</span><span class="result-labels" data-v-123505a2>#Linux  #运维  #服务器运维</span></a></li><li data-v-123505a2><a href="/posts/Kubernetes-sh" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Kubernetes脚本部署</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #服务器运维  #云计算  #k8s</span></a></li><!--]--></ul></div></dialog></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://blog.horonlee.com/#identity","@type":"Person","name":"皓然","url":"https://blog.horonlee.com/","image":{"@id":"https://blog.horonlee.com/#/schema/image/1"},"sameAs":["/atom.xml","copy:1269024821","https://github.com/horonlee","https://music.163.com/#/user/home?id=545332010","https://www.zhihu.com/people/tie-tie-huohuo","https://space.bilibili.com/172335226","https://twitter.com/HuoTie","mailto:1269024821@qq.com","https://www.travellings.cn/go.html"]},{"@id":"https://blog.horonlee.com/#website","@type":"WebSite","dateModified":"2024-05-24T11:42:20.000Z","datePublished":"2024-05-24T11:42:20.000Z","inLanguage":"zh-CN","name":"Jenkins的标准用法“Jenkins-Slave”","url":"https://blog.horonlee.com/","publisher":{"@id":"https://blog.horonlee.com/#identity"}},{"@id":"https://blog.horonlee.com/#webpage","@type":"WebPage","description":"分享生活和技术的点滴","name":"Jenkins的标准用法“Jenkins-Slave”","url":"https://blog.horonlee.com/","about":{"@id":"https://blog.horonlee.com/#identity"},"isPartOf":{"@id":"https://blog.horonlee.com/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://blog.horonlee.com/"]}]},{"@id":"https://blog.horonlee.com/#/schema/image/1","@type":"ImageObject","contentUrl":"https://bu.dusays.com/2023/02/02/63db3598928c2.jpg","inLanguage":"zh-CN","url":"https://bu.dusays.com/2023/02/02/63db3598928c2.jpg"}]}</script>
+  
+</body>
+</html>

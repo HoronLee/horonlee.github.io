@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.fYU-KOxN.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.QTnfLwEv.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.Bt6Pg2Om.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.DDEjerd9.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.D9pkc1Q0.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.BCoX8S0I.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.DJ80LLXH.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.BE3wn5-o.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.DHGjGeo5.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.DotW1Et0.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="modulepreload" crossorigin href="/assets/theme.BE3wn5-o.js">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="modulepreload" crossorigin href="/assets/Harbor-HTTPS.C34vzjU3.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbor配置HTTPS - 皓然小站</title>
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="分享生活和技术的点滴">
+<meta property="og:description" content="分享生活和技术的点滴">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="皓然小站">
+<meta property="og:title" content="Harbor配置HTTPS">
+<meta property="og:image" content="/attachment/Harbor配置HTTPS/820a57ef8505062f1dc5ecbad020da7f.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.horonlee.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 1.0.0-beta.2">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!----><!--[--><!--]--><!----><!--]--><div class="terminal-site" style="--terminal-accent:var(--terminal-mauve);--terminal-font:&quot;Maple Mono NF&quot;, &quot;Maple Mono NF&quot;, ui-monospace, &quot;SFMono-Regular&quot;, Menlo, Monaco, Consolas, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Noto Sans CJK SC&quot;, monospace;font-variant-ligatures:normal;"><a class="skip-link" href="#terminal-main">跳到正文</a><header class="terminal-topbar"><a href="/" class="terminal-brand" aria-label="博客首页"><span class="terminal-prompt">❯</span> horonlee<span class="terminal-muted">@blog:~</span></a><div class="terminal-tools"><button type="button" class="terminal-search-trigger">搜索 <kbd>/</kbd></button><div class="terminal-appearance" role="group" aria-label="配色模式"><button type="button" aria-pressed="true">light</button><span aria-hidden="true">/</span><button type="button" aria-pressed="false">dark</button></div></div></header><div class="terminal-workspace"><aside class="terminal-sidebar"><div class="terminal-sidebar-inner"><p class="terminal-command terminal-tree-command"><span>❯</span> tree ~/blog</p><nav class="terminal-tree" aria-label="博客导航"><!--[--><a href="/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">~</span></span><span>首页</span></a><a href="/archives/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">+</span></span><span>归档/</span></a><a href="/tags/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">#</span></span><span>标签/</span></a><a href="/categories/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">+</span></span><span>分类/</span></a><a href="/links/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">@</span></span><span>友链/</span></a><a href="/about/" class=""><span class="tree-branch" aria-hidden="true">└──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">i</span></span><span>关于我.md</span></a><!--]--></nav><div class="terminal-sidebar-socials"><p class="terminal-command"><span>❯</span> cat ~/.socials</p><div class="terminal-socials terminal-socials-compact" role="group" aria-label="社交与订阅"><!--[--><!--[--><a href="/atom.xml" rel="noopener noreferrer" aria-label="RSS"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">rss</span></span><span>RSS</span></a><!----><!--]--><!--[--><button type="button" aria-label="复制 QQ 1269024821" title="点击复制 QQ 1269024821"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">qq</span></span><span>QQ</span></button><!----><!--]--><!--[--><a href="https://github.com/horonlee" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">gh</span></span><span>GitHub</span></a><!----><!--]--><!--[--><a href="https://music.163.com/#/user/home?id=545332010" target="_blank" rel="noopener noreferrer" aria-label="网易云音乐"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">♪</span></span><span>网易云</span></a><!----><!--]--><!--[--><a href="https://www.zhihu.com/people/tie-tie-huohuo" target="_blank" rel="noopener noreferrer" aria-label="知乎"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">知</span></span><span>知乎</span></a><!----><!--]--><!--[--><a href="https://space.bilibili.com/172335226" target="_blank" rel="noopener noreferrer" aria-label="哔哩哔哩"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">B</span></span><span>B站</span></a><!----><!--]--><!--[--><a href="https://twitter.com/HuoTie" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">tw</span></span><span>推特</span></a><!----><!--]--><!--[--><a href="mailto:1269024821@qq.com" rel="noopener noreferrer" aria-label="E-Mail"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">@</span></span><span>邮箱</span></a><!----><!--]--><!--[--><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener noreferrer" aria-label="Travelling"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">tr</span></span><span>开往</span></a><!----><!--]--><!--]--><span class="terminal-social-feedback" role="status" aria-live="polite" aria-atomic="true"></span></div></div><!----><p class="terminal-sidebar-note">分享生活和技术的点滴</p></div></aside><main id="terminal-main" class="terminal-main" tabindex="-1"><div class="terminal-breadcrumb"><span class="terminal-prompt">❯</span> pwd <span>~/posts/Harbor-HTTPS</span></div><!--[--><!--[--><section class="terminal-document"><header class="terminal-document-header"><div class="terminal-document-command"><p class="terminal-command"><span>❯</span> less <span class="terminal-muted">Harbor配置HTTPS.md</span></p><a href="/" class="terminal-back">[q] 返回列表</a></div><h1>Harbor配置HTTPS</h1><div class="terminal-post-meta"><time datetime="2025-09-19">2025-09-19</time><span>更新 2025-09-19</span><!--[--><span>1k 字</span><span>约 5 分钟</span><!--]--></div><div class="terminal-post-tags"><!--[--><a href="/tags/?tag=Harbor" class="">#Harbor</a><!--]--></div><nav class="terminal-post-tags" aria-label="文章分类"><!--[--><a href="/categories/?category=%E8%BF%90%E7%BB%B4" class="">运维/</a><!--]--></nav><figure class="terminal-cover" data-v-753794b7><figcaption class="cover-command" data-v-753794b7><span data-v-753794b7><span class="cover-prompt" aria-hidden="true" data-v-753794b7>❯</span> chafa cover</span><a href="/attachment/Harbor配置HTTPS/820a57ef8505062f1dc5ecbad020da7f.png" target="_blank" rel="noopener noreferrer" aria-label="查看封面原图" data-v-753794b7>[查看原图]</a></figcaption><div class="cover-viewport" data-v-753794b7><img src="/attachment/Harbor配置HTTPS/820a57ef8505062f1dc5ecbad020da7f.png" alt="Harbor配置HTTPS的封面" loading="eager" fetchpriority="high" decoding="async" data-v-753794b7></div></figure></header><!--[--><!--]--><!--[--><article class="markdown-body"><!--[--><!--[--><!--]--><!--[--><h2 id="需求" tabindex="-1">需求 <a class="header-anchor" href="#需求" aria-label="Permalink to &quot;需求&quot;">​</a></h2><p>docker部署了一个harbor，需要配置docker和k3s集群https访问harbor，主机物理地址192.168.6.166</p><p>当前在家庭网络的OpenWrt中配置了harbor.local.com指向192.168.6.166</p><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">➜</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  ssl</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> git:</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">(</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">master</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">)</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> ✗</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> kubectl</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> run</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -i</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> --tty</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> dns-test</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> --image=busybox</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> --restart=Never</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> --rm</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> --</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> sh</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">If</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> you</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> don&#39;t see a command prompt, try pressing enter.</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">/ # ping local.com</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">PING local.com (192.168.6.166): 56 data bytes</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">64 bytes from 192.168.6.166: seq=0 ttl=64 time=0.082 ms</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">--- local.com ping statistics ---</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">2 packets transmitted, 2 packets received, 0% packet loss</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">round-trip min/avg/max = 0.082/0.087/0.093 ms</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">/ # ping harbor.local.com</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">PING harbor.local.com (192.168.6.166): 56 data bytes</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">64 bytes from 192.168.6.166: seq=0 ttl=64 time=0.115 ms</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">--- harbor.local.com ping statistics ---</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">2 packets transmitted, 2 packets received, 0% packet loss</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">round-trip min/avg/max = 0.098/0.106/0.115 ms</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>可以看到在k8s中也是生效的，如果无法配置路由器，也不要紧，可以按照下文改本机和k8s集群的配置！</p><h2 id="签发证书" tabindex="-1">签发证书 <a class="header-anchor" href="#签发证书" aria-label="Permalink to &quot;签发证书&quot;">​</a></h2><p>来自未来的TIPS：这里推荐一个工具<a href="https://github.com/Fishdrowned/ssl.git" target="_blank" rel="noreferrer">本地证书生成器</a>，可以很方便得本地自签泛域名证书，适合docker和k8s内部自用 下文是来自于harbor文档的签署方法，我推荐用生成器</p><h3 id="生成-ca-私钥" tabindex="-1">生成 CA 私钥 <a class="header-anchor" href="#生成-ca-私钥" aria-label="Permalink to &quot;生成 CA 私钥&quot;">​</a></h3><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">openssl</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> genrsa</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -out</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> ca.key</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;"> 4096</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h3 id="生成自签-ca-证书" tabindex="-1">生成自签 CA 证书 <a class="header-anchor" href="#生成自签-ca-证书" aria-label="Permalink to &quot;生成自签 CA 证书&quot;">​</a></h3><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">openssl</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> req</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -x509</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -new</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -nodes</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -sha512</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -days</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;"> 3650</span><span style="--shiki-light:#EA76CB;--shiki-dark:#F5C2E7;"> \</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  -subj</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &quot;/C=CN/ST=Zhejiang/L=Hangzhou/CN=MyPersonal Root CA&quot;</span><span style="--shiki-light:#EA76CB;--shiki-dark:#F5C2E7;"> \</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  -key</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> ca.key</span><span style="--shiki-light:#EA76CB;--shiki-dark:#F5C2E7;"> \</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  -out</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> ca.crt</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h3 id="生成-harbor-域名私钥" tabindex="-1">生成 Harbor 域名私钥 <a class="header-anchor" href="#生成-harbor-域名私钥" aria-label="Permalink to &quot;生成 Harbor 域名私钥&quot;">​</a></h3><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">openssl</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> genrsa</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -out</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> harbor.local.com.key</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;"> 4096</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h3 id="生成-harbor-域名的-csr" tabindex="-1">生成 Harbor 域名的 CSR <a class="header-anchor" href="#生成-harbor-域名的-csr" aria-label="Permalink to &quot;生成 Harbor 域名的 CSR&quot;">​</a></h3><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">openssl</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> req</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -sha512</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -new</span><span style="--shiki-light:#EA76CB;--shiki-dark:#F5C2E7;"> \</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  -subj</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &quot;/C=CN/ST=Zhejiang/L=Hangzhou/CN=harbor.local.com&quot;</span><span style="--shiki-light:#EA76CB;--shiki-dark:#F5C2E7;"> \</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  -key</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> harbor.local.com.key</span><span style="--shiki-light:#EA76CB;--shiki-dark:#F5C2E7;"> \</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  -out</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> harbor.local.com.csr</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h3 id="生成-v3-ext-示例" tabindex="-1">生成 v3.ext 示例 <a class="header-anchor" href="#生成-v3-ext-示例" aria-label="Permalink to &quot;生成 v3.ext 示例&quot;">​</a></h3><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">cat</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;"> &gt;</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> v3.ext</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;"> &lt;&lt;-</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">EOF</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">authorityKeyIdentifier=keyid,issuer</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">basicConstraints=CA:FALSE</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">extendedKeyUsage = serverAuth</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">subjectAltName = @alt_names</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">[alt_names]</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">DNS.1=harbor.local.com</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">IP.1=192.168.6.166</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">EOF</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h3 id="创建-v3-ext文件" tabindex="-1">创建 v3.ext文件 <a class="header-anchor" href="#创建-v3-ext文件" aria-label="Permalink to &quot;创建 v3.ext文件&quot;">​</a></h3><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">openssl</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> x509</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -req</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -sha512</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -days</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;"> 3650</span><span style="--shiki-light:#EA76CB;--shiki-dark:#F5C2E7;"> \</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  -extfile</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> v3.ext</span><span style="--shiki-light:#EA76CB;--shiki-dark:#F5C2E7;"> \</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  -CA</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> ca.crt</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -CAkey</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> ca.key</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -CAcreateserial</span><span style="--shiki-light:#EA76CB;--shiki-dark:#F5C2E7;"> \</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  -in</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> harbor.local.com.csr</span><span style="--shiki-light:#EA76CB;--shiki-dark:#F5C2E7;"> \</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  -out</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> harbor.local.com.crt</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h2 id="添加域名解析" tabindex="-1">添加域名解析 <a class="header-anchor" href="#添加域名解析" aria-label="Permalink to &quot;添加域名解析&quot;">​</a></h2><h3 id="本机解析" tabindex="-1">本机解析 <a class="header-anchor" href="#本机解析" aria-label="Permalink to &quot;本机解析&quot;">​</a></h3><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">➜</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  ~</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> cat</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> /etc/hosts</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"># Static table lookup for hostnames.</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"># See hosts(5) for details.</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">127.0.0.1</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">        localhost</span></span>
+<span class="line"><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#F38BA8;--shiki-dark-font-style:italic;">:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">:1</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">              localhost</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">192.168.6.166</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">    harbor.local.com</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h3 id="k8s集群解析" tabindex="-1">K8S集群解析 <a class="header-anchor" href="#k8s集群解析" aria-label="Permalink to &quot;K8S集群解析&quot;">​</a></h3><p>直接编辑coredns的configmap，在hosts字段中添加所需解析</p><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">kubectl</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -n</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> kube-system</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> edit</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> configmap</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> coredns</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">hosts</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> {</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">  192.168.6.166</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> harbor.local.com</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">  fallthrough</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">}</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h2 id="docker使用证书" tabindex="-1">Docker使用证书 <a class="header-anchor" href="#docker使用证书" aria-label="Permalink to &quot;Docker使用证书&quot;">​</a></h2><p>切记，在配置文件中不能再配置<code>&quot;insecure-registries&quot;: [&quot;192.168.6.166:8088&quot;]</code>之类的字段了！</p><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">➜</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  docker</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> cat</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> daemon.json</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">{</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">        &quot;registry-mirrors&quot;</span><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#F38BA8;--shiki-dark-font-style:italic;">:</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> [</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">                &quot;https://docker.1ms.run&quot;</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">,</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">                &quot;https://docker.1panelproxy.com&quot;</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">        ]</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">}</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>创建文件夹，放入三样证书</p><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">➜</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  harbor.local.com:8082</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> pwd</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">/etc/docker/certs.d/harbor.local.com:8082</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">➜</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  harbor.local.com:8082</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> ls</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">ca.crt</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  harbor.local.com.cert</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  harbor.local.com.key</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h2 id="k3s使用证书" tabindex="-1">k3s使用证书 <a class="header-anchor" href="#k3s使用证书" aria-label="Permalink to &quot;k3s使用证书&quot;">​</a></h2><p>和docker同理，指定三样证书文件即可，但是需要额外编写配置字段，如下</p><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">➜</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  ~</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> cat</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> /etc/rancher/k3s/registries.yaml</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">mirrors:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">  harbor.local.com:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">    endpoint:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">      -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &quot;https://harbor.local.com:8082&quot;</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">configs:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">  &quot;harbor.local.com:8082&quot;</span><span style="--shiki-light:#D20F39;--shiki-light-font-style:italic;--shiki-dark:#F38BA8;--shiki-dark-font-style:italic;">:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">    auth:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">      username:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> admin</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">      password:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> horon63163798</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">    tls:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">      cert_file:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> /opt/harbor/certs.d/harbor.local.com.cert</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">      key_file:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> /opt/harbor/certs.d/harbor.local.com.key</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">      ca_file:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> /opt/harbor/certs.d/ca.crt</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h2 id="containerd使用证书" tabindex="-1">Containerd使用证书 <a class="header-anchor" href="#containerd使用证书" aria-label="Permalink to &quot;Containerd使用证书&quot;">​</a></h2><p>先创建配置文件，注意目录也需要添加端口号</p><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">root@R430:/opt/harbor#</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> mkdir</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -p</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> /etc/containerd/certs.d/harbor.local.com:8082</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">root@R430:/opt/harbor#</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> cat</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;"> &gt;</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> /etc/containerd/certs.d/harbor.local.com:8082/hosts.toml</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;"> &lt;&lt;</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> EOF</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">server = &quot;https://harbor.local.com:8082&quot;</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">[host.&quot;https://harbor.local.com:8082&quot;]</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  capabilities = [&quot;pull&quot;, &quot;resolve&quot;, &quot;push&quot;]</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  skip_verify = true</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">EOF</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>重启containerd</p><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">root@R430:/opt/harbor#</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> systemctl</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> restart</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> containerd</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>用nerdctl登录测试，其中参数<code>--insecure-registry</code>可以不加</p><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">root@R430:/opt/harbor#</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> nerdctl</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> login</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -u</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> admin</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> --insecure-registry</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> harbor.local.com:8082</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">Enter</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> Password:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">WARN[0003]</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> skipping</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> verifying</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> HTTPS</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> certs</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> for</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &quot;harbor.local.com:8082&quot;</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">Login</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> Succeeded</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>成功！</p><h2 id="k8s授权访问" tabindex="-1">k8s授权访问 <a class="header-anchor" href="#k8s授权访问" aria-label="Permalink to &quot;k8s授权访问&quot;">​</a></h2><p>使用如下命令创建一个Secret对象</p><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">kubectl</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> create</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> secret</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> docker-registry</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> registry-secret</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> --namespace=default</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> --docker-server=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">不带有协议的harbor域名</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> --docker-username=admin</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> --docker-password=</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">你的密码</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>测试</p><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">➜</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  ssl</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> git:</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">(</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">master</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">)</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> ✗</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> kubectl</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> run</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -i</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> --tty</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> dns-test</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> --image=harbor.local.com:8082/library/busybox</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> --restart=Never</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> --rm</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> --</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> sh</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">If</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> you</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> don&#39;t see a command prompt, try pressing enter.</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">/ #</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">➜  /opt kubectl describe po dns-test</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">...省略</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  Type    Reason     Age   From               Message</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  ----    ------     ----  ----               -------</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  Normal  Scheduled  14s   default-scheduler  Successfully assigned default/dns-test to r430</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  Normal  Pulling    13s   kubelet            Pulling image &quot;harbor.local.com:8082/library/busybox&quot;</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  Normal  Pulled     13s   kubelet            Successfully pulled image &quot;harbor.local.com:8082/library/busybox&quot; in 243ms (243ms including waiting). Image size: 2156518 bytes.</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  Normal  Created    13s   kubelet            Created container: dns-test</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">  Normal  Started    13s   kubelet            Started container dns-test</span></span></code></pre><button class="code-block-unfold-btn"></button></div><!--]--><!--]--><!----><!----></article><!--]--><!--[--><!--]--><details class="terminal-sponsor"><summary>[ + ] 饿饿，饭饭！</summary><div><!--[--><figure><img src="https://bu.dusays.com/2023/11/02/65432694e4eb5.jpg" alt="支付宝收款码" loading="lazy" width="180"><figcaption>支付宝</figcaption></figure><figure><img src="https://bu.dusays.com/2023/11/02/6543269436758.jpg" alt="微信支付收款码" loading="lazy" width="180"><figcaption>微信支付</figcaption></figure><!--]--></div></details><nav class="terminal-post-nav" aria-label="相邻文章"><a href="/posts/Configuring-NoVNC-connection-to-KVM-vm" class="">← 上一篇<span>配置NoVNC连接Kvm虚拟机</span></a><a href="/posts/Troubleshooting-and-Practice-of-Docker-Container-Networking-and-Firewalld-Zone-Conflicts" class="">下一篇 →<span>解决Docker容器互联与Firewalld区域冲突的排查与实践</span></a></nav><!----></section><section class="terminal-comments" aria-label="评论"><h2 class="terminal-command"><span>❯</span> ./discuss <span class="terminal-muted">留言与讨论</span></h2><!----></section><!--]--><!--]--></main></div><footer class="terminal-footer"><p>© 2023<!--[-->–2026<!--]--> 皓然 <span aria-hidden="true">/</span> Powered by <a href="https://valaxy.site/" target="_blank" rel="noopener noreferrer">Valaxy</a></p><p class="terminal-footer-links"><!--[--><a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel</a><a href="https://github.com/HoronLee/horonlee.github.io" target="_blank" rel="noopener noreferrer">Source</a><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener noreferrer">开往</a><!--]--><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">浙ICP备2023037163号</a><a href="https://icp.gov.moe/?keyword=20241146" target="_blank" rel="noopener noreferrer">萌 ICP 备 20241146 号</a></p><p class="terminal-visitors"><span id="busuanzi_container_site_pv">访问 <span id="busuanzi_value_site_pv">—</span> 次</span><span id="busuanzi_container_site_uv">访客 <span id="busuanzi_value_site_uv">—</span> 人</span></p></footer><div class="terminal-statusbar"><span><span class="terminal-status-dot" aria-hidden="true">●</span> READ <span class="terminal-status-path">~/posts/Harbor-HTTPS</span></span><span class="terminal-palette"><span class="palette-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Catppuccin <span class="palette-light">Latte</span><span class="palette-dark">Mocha</span></span></div><dialog class="terminal-search" aria-labelledby="v-0-title" aria-describedby="v-0-description" data-v-123505a2><header class="search-header" data-v-123505a2><h2 id="v-0-title" data-v-123505a2><span aria-hidden="true" data-v-123505a2>$ </span>grep -i ~/posts</h2><button type="button" class="search-close" aria-label="关闭文章搜索" data-v-123505a2>×</button></header><div class="search-body" data-v-123505a2><p id="v-0-description" class="search-description" data-v-123505a2>搜索文章标题、摘要、标签和分类。按 Enter 打开首条结果，按 Esc 关闭。</p><label class="search-field" data-v-123505a2><span aria-hidden="true" data-v-123505a2>❯</span><input value="" type="search" aria-label="搜索文章" aria-describedby="v-0-count" autocomplete="off" placeholder="输入关键词…" data-v-123505a2></label><p id="v-0-count" class="search-count" role="status" aria-live="polite" aria-atomic="true" data-v-123505a2>共 37 篇文章<span data-v-123505a2>，显示前 20 条</span></p><!----><ul class="search-results" aria-label="文章搜索结果" data-v-123505a2><!--[--><li data-v-123505a2><a href="/posts/Echo-framework-route-matching&amp;middleware" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>关于Echo框架路由匹配与中间件的坑</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #Echo  #编程笔记</span></a></li><li data-v-123505a2><a href="/posts/golang-Isekai-notebook-from-scratch" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>从零开始的Go语言异世界笔记</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #编程笔记</span></a></li><li data-v-123505a2><a href="/posts/Configuring-NoVNC-connection-to-KVM-vm" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>配置NoVNC连接Kvm虚拟机</span><!--v-if--><span class="result-labels" data-v-123505a2>#NoVNC  #Linux  #KVM</span></a></li><li data-v-123505a2><a aria-current="page" href="/posts/Harbor-HTTPS" class="router-link-active router-link-exact-active search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Harbor配置HTTPS</span><!--v-if--><span class="result-labels" data-v-123505a2>#Harbor  #运维</span></a></li><li data-v-123505a2><a href="/posts/Troubleshooting-and-Practice-of-Docker-Container-Networking-and-Firewalld-Zone-Conflicts" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>解决Docker容器互联与Firewalld区域冲突的排查与实践</span><!--v-if--><span class="result-labels" data-v-123505a2>#Docker  #Firewall  #Docker</span></a></li><li data-v-123505a2><a href="/posts/NeoVim-personal-note" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>NeoVim个人配置笔记</span><span class="result-excerpt" data-v-123505a2>LazyVim 配置目录 shell . ├── LICENSE ├── README.md ├── init.lua #配置入口文件 ├── lazy-lock.json ├── lazyvim.json ├── lua │ ├── config #默认生成的配置目录 │ │ ├── autocmds.lua │ │ ├── keymaps.lua │ │ ├── lazy.lua │ │ └── options.lua #自定义配置可以写在这里 │ └── plugins │ ├── colorscheme.lua #自己添加的主题插件配置 │ └── example.lua └── stylua.toml</span><span class="result-labels" data-v-123505a2>#neovim  #lazyvim  #开发  #环境配置</span></a></li><li data-v-123505a2><a href="/posts/PowerShell-dev-config-note" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>PowerShell开发配置指北</span><!--v-if--><span class="result-labels" data-v-123505a2>#windows  #powershell  #开发  #环境配置</span></a></li><li data-v-123505a2><a href="/posts/KubeVirt-CDI" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>KubeVirt使用CDI来导入虚拟机镜像</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #KubeVirt  #服务器运维  #云计算  #虚拟化</span></a></li><li data-v-123505a2><a href="/posts/KubeVirt-Getting-Start" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>KubeVirt入门</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #KubeVirt  #服务器运维  #云计算  #虚拟化</span></a></li><li data-v-123505a2><a href="/posts/Online-Expansion-Ubuntu-LVM" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>LVM添加硬盘并扩容至已有分区</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #服务器运维</span></a></li><li data-v-123505a2><a href="/posts/ubuntu22/04-k8s-deploy" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>ubuntu22.04-k8s-deploy</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #Ubuntu  #服务器运维  #云计算  #k8s</span></a></li><li data-v-123505a2><a href="/posts/K8sJenkinsSlaveCICD" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Jenkins的标准用法“Jenkins-Slave”</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #CICD  #Jenkins  #服务器运维  #云计算  #Jenkins</span></a></li><li data-v-123505a2><a href="/posts/KubernetesJenkinCICD" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>使用 Jenkins&amp;GitLab 构建 CICD</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #CICD  #Jenkins  #服务器运维  #云计算  #k8s  #Jenkins</span></a></li><li data-v-123505a2><a href="/posts/GormNote" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Gorm笔记</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #编程笔记</span></a></li><li data-v-123505a2><a href="/posts/CICDk8s" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>在k8s中构建CICD</span><span class="result-excerpt" data-v-123505a2>此文章已经停止更新，最新的CICD 构建位于： kubernetes 使用 Jenkins GitLab 构建 CICD - 皓然小站 (horonlee.com) 安装CICD所需资源 curl -O http://mirrors.douxuedu.com/competition/BlueOcean.tar.gz tar -zxf BlueOcean.tar.gz cp BlueOcean/tools/docker-compose-Linux-x86_64 /usr/bin/docker-compose docker-compose version tar -zxf BlueOcean/harbor-offline-installer.tar.gz -C /opt/ sh /opt/harbor/install.sh docker login -uadmin -pHarbor12345 172.16.2.90 docker load -i BlueOcean/images/maven_latest.tar docker tag maven 172.16.2.90/library/maven docker push 172.16.2.90/library/maven docker load -i BlueOcean/images/java_8-jre.tar docker load -i BlueOcean/images/jenkins_jenkins_latest.tar docker load -i BlueOcean/images/gitlab_gitlab-ce_latest.tar kubectl create ns devops</span><span class="result-labels" data-v-123505a2>#CentOS  #Linux  #Kubernetes  #服务器运维  #云计算  #Kubernetes  #CICD</span></a></li><li data-v-123505a2><a href="/posts/bridge-router-ddns" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>家庭宽带桥接并为路由器配置DDNS</span><!--v-if--><span class="result-labels" data-v-123505a2>#网络  #折腾  #网络工程</span></a></li><li data-v-123505a2><a href="/posts/Frpc-systemd-restart" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>为Systemd服务设置自动重启</span><span class="result-excerpt" data-v-123505a2>事情起因 最近给自己的双路E5搞一个Frpc，但是因为有Clash这个开机自启程序，并且我设置了系统代理，在Clash完全启动之前系统是处于断网状态的。断网状态下，Frpc会默认启动失败并且变为Inactive状态，这并不是我想看到的。</span><span class="result-labels" data-v-123505a2>#Linux  #Linux</span></a></li><li data-v-123505a2><a href="/posts/Hexo-to-valaxy" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>从Hexo切换为Valaxy感受</span><span class="result-excerpt" data-v-123505a2>最近因为Halo博客被宝塔面板爆破了，所以只能继续使用老博客Hexo（托管在githubpage上），但是GitHubPage实在是太慢了，Hexo的配置也有些乱糟糟的，于是乎就换用了由云游君大佬开发的Valaxy博客框架</span><span class="result-labels" data-v-123505a2>#Blog  #网站</span></a></li><li data-v-123505a2><a href="/posts/shell-practice" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>脚本练习1</span><span class="result-excerpt" data-v-123505a2>我觉得我写这个也太无聊了</span><span class="result-labels" data-v-123505a2>#Linux  #运维  #服务器运维</span></a></li><li data-v-123505a2><a href="/posts/Kubernetes-sh" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Kubernetes脚本部署</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #服务器运维  #云计算  #k8s</span></a></li><!--]--></ul></div></dialog></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://blog.horonlee.com/#identity","@type":"Person","name":"皓然","url":"https://blog.horonlee.com/","image":{"@id":"https://blog.horonlee.com/#/schema/image/1"},"sameAs":["/atom.xml","copy:1269024821","https://github.com/horonlee","https://music.163.com/#/user/home?id=545332010","https://www.zhihu.com/people/tie-tie-huohuo","https://space.bilibili.com/172335226","https://twitter.com/HuoTie","mailto:1269024821@qq.com","https://www.travellings.cn/go.html"]},{"@id":"https://blog.horonlee.com/#website","@type":"WebSite","dateModified":"2025-09-19T14:29:01.000Z","datePublished":"2025-09-19T14:29:01.000Z","inLanguage":"zh-CN","name":"Harbor配置HTTPS","url":"https://blog.horonlee.com/","publisher":{"@id":"https://blog.horonlee.com/#identity"}},{"@id":"https://blog.horonlee.com/#webpage","@type":"WebPage","description":"分享生活和技术的点滴","name":"Harbor配置HTTPS","url":"https://blog.horonlee.com/","about":{"@id":"https://blog.horonlee.com/#identity"},"isPartOf":{"@id":"https://blog.horonlee.com/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://blog.horonlee.com/"]}]},{"@id":"https://blog.horonlee.com/#/schema/image/1","@type":"ImageObject","contentUrl":"https://bu.dusays.com/2023/02/02/63db3598928c2.jpg","inLanguage":"zh-CN","url":"https://bu.dusays.com/2023/02/02/63db3598928c2.jpg"}]}</script>
+  
+</body>
+</html>

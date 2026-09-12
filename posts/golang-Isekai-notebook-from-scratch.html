@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.fYU-KOxN.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.QTnfLwEv.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.Bt6Pg2Om.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.DDEjerd9.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.D9pkc1Q0.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.BCoX8S0I.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.DJ80LLXH.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.BE3wn5-o.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.DHGjGeo5.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.DotW1Et0.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="modulepreload" crossorigin href="/assets/theme.BE3wn5-o.js">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="modulepreload" crossorigin href="/assets/golang-Isekai-notebook-from-scratch.B0pWsq-s.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>从零开始的Go语言异世界笔记 - 皓然小站</title>
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="分享生活和技术的点滴">
+<meta property="og:description" content="分享生活和技术的点滴">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="皓然小站">
+<meta property="og:title" content="从零开始的Go语言异世界笔记">
+<meta property="og:image" content="/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.horonlee.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 1.0.0-beta.2">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!----><!--[--><!--]--><!----><!--]--><div class="terminal-site" style="--terminal-accent:var(--terminal-mauve);--terminal-font:&quot;Maple Mono NF&quot;, &quot;Maple Mono NF&quot;, ui-monospace, &quot;SFMono-Regular&quot;, Menlo, Monaco, Consolas, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Noto Sans CJK SC&quot;, monospace;font-variant-ligatures:normal;"><a class="skip-link" href="#terminal-main">跳到正文</a><header class="terminal-topbar"><a href="/" class="terminal-brand" aria-label="博客首页"><span class="terminal-prompt">❯</span> horonlee<span class="terminal-muted">@blog:~</span></a><div class="terminal-tools"><button type="button" class="terminal-search-trigger">搜索 <kbd>/</kbd></button><div class="terminal-appearance" role="group" aria-label="配色模式"><button type="button" aria-pressed="true">light</button><span aria-hidden="true">/</span><button type="button" aria-pressed="false">dark</button></div></div></header><div class="terminal-workspace"><aside class="terminal-sidebar"><div class="terminal-sidebar-inner"><p class="terminal-command terminal-tree-command"><span>❯</span> tree ~/blog</p><nav class="terminal-tree" aria-label="博客导航"><!--[--><a href="/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">~</span></span><span>首页</span></a><a href="/archives/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">+</span></span><span>归档/</span></a><a href="/tags/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">#</span></span><span>标签/</span></a><a href="/categories/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">+</span></span><span>分类/</span></a><a href="/links/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">@</span></span><span>友链/</span></a><a href="/about/" class=""><span class="tree-branch" aria-hidden="true">└──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">i</span></span><span>关于我.md</span></a><!--]--></nav><div class="terminal-sidebar-socials"><p class="terminal-command"><span>❯</span> cat ~/.socials</p><div class="terminal-socials terminal-socials-compact" role="group" aria-label="社交与订阅"><!--[--><!--[--><a href="/atom.xml" rel="noopener noreferrer" aria-label="RSS"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">rss</span></span><span>RSS</span></a><!----><!--]--><!--[--><button type="button" aria-label="复制 QQ 1269024821" title="点击复制 QQ 1269024821"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">qq</span></span><span>QQ</span></button><!----><!--]--><!--[--><a href="https://github.com/horonlee" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">gh</span></span><span>GitHub</span></a><!----><!--]--><!--[--><a href="https://music.163.com/#/user/home?id=545332010" target="_blank" rel="noopener noreferrer" aria-label="网易云音乐"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">♪</span></span><span>网易云</span></a><!----><!--]--><!--[--><a href="https://www.zhihu.com/people/tie-tie-huohuo" target="_blank" rel="noopener noreferrer" aria-label="知乎"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">知</span></span><span>知乎</span></a><!----><!--]--><!--[--><a href="https://space.bilibili.com/172335226" target="_blank" rel="noopener noreferrer" aria-label="哔哩哔哩"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">B</span></span><span>B站</span></a><!----><!--]--><!--[--><a href="https://twitter.com/HuoTie" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">tw</span></span><span>推特</span></a><!----><!--]--><!--[--><a href="mailto:1269024821@qq.com" rel="noopener noreferrer" aria-label="E-Mail"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">@</span></span><span>邮箱</span></a><!----><!--]--><!--[--><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener noreferrer" aria-label="Travelling"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">tr</span></span><span>开往</span></a><!----><!--]--><!--]--><span class="terminal-social-feedback" role="status" aria-live="polite" aria-atomic="true"></span></div></div><!----><p class="terminal-sidebar-note">分享生活和技术的点滴</p></div></aside><main id="terminal-main" class="terminal-main" tabindex="-1"><div class="terminal-breadcrumb"><span class="terminal-prompt">❯</span> pwd <span>~/posts/golang-Isekai-notebook-from-scratch</span></div><!--[--><!--[--><section class="terminal-document"><header class="terminal-document-header"><div class="terminal-document-command"><p class="terminal-command"><span>❯</span> less <span class="terminal-muted">从零开始的Go语言异世界笔记.md</span></p><a href="/" class="terminal-back">[q] 返回列表</a></div><h1>从零开始的Go语言异世界笔记</h1><div class="terminal-post-meta"><time datetime="2025-11-28">2025-11-28</time><span>更新 2025-11-28</span><!--[--><span>1.1k 字</span><span>约 5 分钟</span><!--]--></div><div class="terminal-post-tags"><!--[--><a href="/tags/?tag=Go" class="">#Go</a><!--]--></div><nav class="terminal-post-tags" aria-label="文章分类"><!--[--><a href="/categories/?category=%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0" class="">编程笔记/</a><!--]--></nav><!----></header><!--[--><!--]--><!--[--><article class="markdown-body"><!--[--><!--[--><!--]--><!--[--><h2 id="基本数据类型-标识符" tabindex="-1">基本数据类型&amp;标识符 <a class="header-anchor" href="#基本数据类型-标识符" aria-label="Permalink to &quot;基本数据类型&amp;标识符&quot;">​</a></h2><ol><li>不允许将数组定义为常量</li><li>常量标识符无法取址</li><li><code>_</code>为匿名标识符，不能被使用，只能被赋值</li><li>关于iota定义常量的知识点 <ol><li><code>2 * iota</code>可以设置常量为偶数索引</li></ol></li></ol><div class="language-go"><button title="Copy code" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">const</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;"> (</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">	a</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;"> =</span><span style="--shiki-light:#D20F39;--shiki-dark:#F38BA8;"> iota</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"> // == 0</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">	b</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"> // == 1</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">	c</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"> // == 2</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">	d</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;"> =</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;"> 567</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"> // iota被打断</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">	e</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"> // == 567</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">	f</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;"> =</span><span style="--shiki-light:#D20F39;--shiki-dark:#F38BA8;"> iota</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"> // == 6 还是从最开始计数</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">	g</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"> // == 7</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">const</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;"> (</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">	a</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;"> =</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;"> 123</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">	b</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"> // == 123</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">	c</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"> // == 123</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">	d</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;"> =</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;"> 567</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">	e</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"> // == 567</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">	f</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;"> =</span><span style="--shiki-light:#D20F39;--shiki-dark:#F38BA8;"> iota</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"> // == 5 仍旧从开头计数</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;">	// 如果想从0开始，那就减去5：iota - 5</span></span>
+<span class="line"><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;">	g</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"> // == 6</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">)</span></span></code></pre><button class="code-block-unfold-btn"></button></div><ol start="5"><li>双引号<code>&quot;abc&quot;</code>是字符串string；单引号<code>&#39;a&#39;</code>是rune类型，仅能为一个字符</li><li>可以通过<code>b, c = c, b</code>来交换变量，前提是类型相同</li><li>预定义的函数，它并不是一个关键字，因此我们可以将new等预定义函数的名字重新定义为别的类型</li></ol><h2 id="运算符" tabindex="-1">运算符 <a class="header-anchor" href="#运算符" aria-label="Permalink to &quot;运算符&quot;">​</a></h2><ol><li>除法运算符<code>/</code>的行为则依赖于操作数是否全为整数，比如<code>5.0/4.0</code>的结果是1.25，但是5/4的结果是1，因为整数除法会向着0方向截断余数。</li></ol><h2 id="选择-分支-循环" tabindex="-1">选择&amp;分支&amp;循环 <a class="header-anchor" href="#选择-分支-循环" aria-label="Permalink to &quot;选择&amp;分支&amp;循环&quot;">​</a></h2><ol><li>Go1.22后循环体中的循环变量的生命周期仅存在当前循环的一趟中</li><li>for-range语句对字符串遍历会按照单个字符遍历，而不是for语句的按照字节遍历</li></ol><h2 id="数组-切片" tabindex="-1">数组&amp;切片 <a class="header-anchor" href="#数组-切片" aria-label="Permalink to &quot;数组&amp;切片&quot;">​</a></h2><ol><li>go语言的数组元素可变但是长度是不可变的，长度和容量也是相同的，其中元素可被索引，是顺序表存储结构</li><li>定义数组的时候必须明确大小，后续无法更改</li><li><code>var b [3]int</code>的类型是<code>[3]int</code>，意为长度和容量为3的数组类型</li><li><code>arr := [2][3]int{}</code>这个二维数组中第一维的类型就是<code>[3]int</code></li><li>数组的地址就是数组中首元素的地址</li><li><code>a2 := a1</code>数组的拷贝就是值拷贝，创建完整的副本</li><li><code>&amp;a[0]</code>取的是数组中第一个元素的地址；<code>(&amp;a)[0]</code>是取这个数组的索引值，等价于<code>a[0]</code></li></ol><hr><ol><li>切片是顺序表，线性结构，采用和数组一样的访问方式</li><li><code>var s1 []int</code>和<code>s2 := []int{}</code>不一样，前者没有建立底层的数据结构但是后者有，前者的指针是指向0地址的</li><li><code>s3 := make(type, len, cap)</code>容量cap必须&gt;长度len</li><li>切片扩容实际上是新建一个相同的容量更大的数组</li><li>用切片赋值给新切片只复制Header副本，实际上共用同个底层数组；方法传参切片也只是复制Header</li><li>切片索引右边界<strong>缺省值</strong>是<strong>长度</strong>，<strong>最大值</strong>是<strong>容量</strong></li><li></li></ol><h2 id="字符串数组" tabindex="-1">字符串数组 <a class="header-anchor" href="#字符串数组" aria-label="Permalink to &quot;字符串数组&quot;">​</a></h2><ol><li>字符串数组比较特殊，内部每个元素不是直接存储字符串内容，而是存储了内容的元数据和指向内存中另一部分的字符串的指针，元数据表示有多长，真正存储的内容在别的内存空间中，所以字符串数组不管每个元素的大小差别有多大，间隔的内存地址还是一样长的。以下是字符串本身的源码，需要注意的是字符串本身就是一个<strong>常量</strong>，也是<strong>不可变</strong>的！</li></ol><div class="language-go"><button title="Copy code" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">type</span><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;"> string</span><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;"> struct</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;"> {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">    Data </span><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">uintptr</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"> // 指向实际字符串数据的指针</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">    Len  </span><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">int</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;">     // 字符串的长度</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">}</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h1 id="指针" tabindex="-1">指针 <a class="header-anchor" href="#指针" aria-label="Permalink to &quot;指针&quot;">​</a></h1><ol><li>任何类型的指针的零值都是nil。如果p指向某个有效变量，那么<code>p != nil</code>测试为真。指针之间也是可以进行相等测试的，只有当它们指向同一个变量或全部是nil时才相等。</li></ol><div class="language-go"><button title="Copy code" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">var</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> x</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">,</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> y </span><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">int</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">fmt</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">.</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">Println</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">(</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">&amp;</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">x </span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">==</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;"> &amp;</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">x</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">,</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;"> &amp;</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">x </span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">==</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;"> &amp;</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">y</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">,</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;"> &amp;</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">x </span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">==</span><span style="--shiki-light:#D20F39;--shiki-dark:#F38BA8;"> nil</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">)</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"> // &quot;true false false&quot;</span></span></code></pre><button class="code-block-unfold-btn"></button></div><ol start="2"><li>指针指向方法的局部变量是有效的</li></ol><div class="language-go"><button title="Copy code" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">var</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> p </span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">=</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;"> f</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">()</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">func</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;"> f</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">()</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;"> *</span><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">int</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;"> {</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">    v </span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:=</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;"> 1</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">    return</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;"> &amp;</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">v</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">}</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>这个方法每次返回的p是不同的，指向的是不同地址，虽然其值是相同 3. 在方法中更改指针指向变量的值</p><div class="language-go"><button title="Copy code" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">func</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;"> incr</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">(</span><span style="--shiki-light:#E64553;--shiki-light-font-style:italic;--shiki-dark:#EBA0AC;--shiki-dark-font-style:italic;">p</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;"> *</span><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">int</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">)</span><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;"> int</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;"> {</span></span>
+<span class="line"><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">    *</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">p</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">++</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"> // 非常重要：只是增加p指向的变量的值，并不改变p指针！！！</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">    return</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;"> *</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">p</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">}</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">v </span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">:=</span><span style="--shiki-light:#FE640B;--shiki-dark:#FAB387;"> 1</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">incr</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">(</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">&amp;</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">v</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">)</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;">              // side effect: v is now 2</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">fmt</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">.</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">Println</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">(</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">incr</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">(</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">&amp;</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">v</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">))</span><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"> // &quot;3&quot; (and v is 3)</span></span></code></pre><button class="code-block-unfold-btn"></button></div><!--]--><!--]--><!----><!----></article><!--]--><!--[--><!--]--><details class="terminal-sponsor"><summary>[ + ] 饿饿，饭饭！</summary><div><!--[--><figure><img src="https://bu.dusays.com/2023/11/02/65432694e4eb5.jpg" alt="支付宝收款码" loading="lazy" width="180"><figcaption>支付宝</figcaption></figure><figure><img src="https://bu.dusays.com/2023/11/02/6543269436758.jpg" alt="微信支付收款码" loading="lazy" width="180"><figcaption>微信支付</figcaption></figure><!--]--></div></details><nav class="terminal-post-nav" aria-label="相邻文章"><a href="/posts/Echo-framework-route-matching&amp;middleware" class="">← 上一篇<span>关于Echo框架路由匹配与中间件的坑</span></a><a href="/posts/Configuring-NoVNC-connection-to-KVM-vm" class="">下一篇 →<span>配置NoVNC连接Kvm虚拟机</span></a></nav><!----></section><section class="terminal-comments" aria-label="评论"><h2 class="terminal-command"><span>❯</span> ./discuss <span class="terminal-muted">留言与讨论</span></h2><!----></section><!--]--><!--]--></main></div><footer class="terminal-footer"><p>© 2023<!--[-->–2026<!--]--> 皓然 <span aria-hidden="true">/</span> Powered by <a href="https://valaxy.site/" target="_blank" rel="noopener noreferrer">Valaxy</a></p><p class="terminal-footer-links"><!--[--><a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel</a><a href="https://github.com/HoronLee/horonlee.github.io" target="_blank" rel="noopener noreferrer">Source</a><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener noreferrer">开往</a><!--]--><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">浙ICP备2023037163号</a><a href="https://icp.gov.moe/?keyword=20241146" target="_blank" rel="noopener noreferrer">萌 ICP 备 20241146 号</a></p><p class="terminal-visitors"><span id="busuanzi_container_site_pv">访问 <span id="busuanzi_value_site_pv">—</span> 次</span><span id="busuanzi_container_site_uv">访客 <span id="busuanzi_value_site_uv">—</span> 人</span></p></footer><div class="terminal-statusbar"><span><span class="terminal-status-dot" aria-hidden="true">●</span> READ <span class="terminal-status-path">~/posts/golang-Isekai-notebook-from-scratch</span></span><span class="terminal-palette"><span class="palette-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Catppuccin <span class="palette-light">Latte</span><span class="palette-dark">Mocha</span></span></div><dialog class="terminal-search" aria-labelledby="v-0-title" aria-describedby="v-0-description" data-v-123505a2><header class="search-header" data-v-123505a2><h2 id="v-0-title" data-v-123505a2><span aria-hidden="true" data-v-123505a2>$ </span>grep -i ~/posts</h2><button type="button" class="search-close" aria-label="关闭文章搜索" data-v-123505a2>×</button></header><div class="search-body" data-v-123505a2><p id="v-0-description" class="search-description" data-v-123505a2>搜索文章标题、摘要、标签和分类。按 Enter 打开首条结果，按 Esc 关闭。</p><label class="search-field" data-v-123505a2><span aria-hidden="true" data-v-123505a2>❯</span><input value="" type="search" aria-label="搜索文章" aria-describedby="v-0-count" autocomplete="off" placeholder="输入关键词…" data-v-123505a2></label><p id="v-0-count" class="search-count" role="status" aria-live="polite" aria-atomic="true" data-v-123505a2>共 37 篇文章<span data-v-123505a2>，显示前 20 条</span></p><!----><ul class="search-results" aria-label="文章搜索结果" data-v-123505a2><!--[--><li data-v-123505a2><a href="/posts/Echo-framework-route-matching&amp;middleware" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>关于Echo框架路由匹配与中间件的坑</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #Echo  #编程笔记</span></a></li><li data-v-123505a2><a aria-current="page" href="/posts/golang-Isekai-notebook-from-scratch" class="router-link-active router-link-exact-active search-result" data-v-123505a2><span class="result-title" data-v-123505a2>从零开始的Go语言异世界笔记</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #编程笔记</span></a></li><li data-v-123505a2><a href="/posts/Configuring-NoVNC-connection-to-KVM-vm" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>配置NoVNC连接Kvm虚拟机</span><!--v-if--><span class="result-labels" data-v-123505a2>#NoVNC  #Linux  #KVM</span></a></li><li data-v-123505a2><a href="/posts/Harbor-HTTPS" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Harbor配置HTTPS</span><!--v-if--><span class="result-labels" data-v-123505a2>#Harbor  #运维</span></a></li><li data-v-123505a2><a href="/posts/Troubleshooting-and-Practice-of-Docker-Container-Networking-and-Firewalld-Zone-Conflicts" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>解决Docker容器互联与Firewalld区域冲突的排查与实践</span><!--v-if--><span class="result-labels" data-v-123505a2>#Docker  #Firewall  #Docker</span></a></li><li data-v-123505a2><a href="/posts/NeoVim-personal-note" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>NeoVim个人配置笔记</span><span class="result-excerpt" data-v-123505a2>LazyVim 配置目录 shell . ├── LICENSE ├── README.md ├── init.lua #配置入口文件 ├── lazy-lock.json ├── lazyvim.json ├── lua │ ├── config #默认生成的配置目录 │ │ ├── autocmds.lua │ │ ├── keymaps.lua │ │ ├── lazy.lua │ │ └── options.lua #自定义配置可以写在这里 │ └── plugins │ ├── colorscheme.lua #自己添加的主题插件配置 │ └── example.lua └── stylua.toml</span><span class="result-labels" data-v-123505a2>#neovim  #lazyvim  #开发  #环境配置</span></a></li><li data-v-123505a2><a href="/posts/PowerShell-dev-config-note" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>PowerShell开发配置指北</span><!--v-if--><span class="result-labels" data-v-123505a2>#windows  #powershell  #开发  #环境配置</span></a></li><li data-v-123505a2><a href="/posts/KubeVirt-CDI" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>KubeVirt使用CDI来导入虚拟机镜像</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #KubeVirt  #服务器运维  #云计算  #虚拟化</span></a></li><li data-v-123505a2><a href="/posts/KubeVirt-Getting-Start" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>KubeVirt入门</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #KubeVirt  #服务器运维  #云计算  #虚拟化</span></a></li><li data-v-123505a2><a href="/posts/Online-Expansion-Ubuntu-LVM" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>LVM添加硬盘并扩容至已有分区</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #服务器运维</span></a></li><li data-v-123505a2><a href="/posts/ubuntu22/04-k8s-deploy" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>ubuntu22.04-k8s-deploy</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #Ubuntu  #服务器运维  #云计算  #k8s</span></a></li><li data-v-123505a2><a href="/posts/K8sJenkinsSlaveCICD" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Jenkins的标准用法“Jenkins-Slave”</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #CICD  #Jenkins  #服务器运维  #云计算  #Jenkins</span></a></li><li data-v-123505a2><a href="/posts/KubernetesJenkinCICD" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>使用 Jenkins&amp;GitLab 构建 CICD</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #CICD  #Jenkins  #服务器运维  #云计算  #k8s  #Jenkins</span></a></li><li data-v-123505a2><a href="/posts/GormNote" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Gorm笔记</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #编程笔记</span></a></li><li data-v-123505a2><a href="/posts/CICDk8s" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>在k8s中构建CICD</span><span class="result-excerpt" data-v-123505a2>此文章已经停止更新，最新的CICD 构建位于： kubernetes 使用 Jenkins GitLab 构建 CICD - 皓然小站 (horonlee.com) 安装CICD所需资源 curl -O http://mirrors.douxuedu.com/competition/BlueOcean.tar.gz tar -zxf BlueOcean.tar.gz cp BlueOcean/tools/docker-compose-Linux-x86_64 /usr/bin/docker-compose docker-compose version tar -zxf BlueOcean/harbor-offline-installer.tar.gz -C /opt/ sh /opt/harbor/install.sh docker login -uadmin -pHarbor12345 172.16.2.90 docker load -i BlueOcean/images/maven_latest.tar docker tag maven 172.16.2.90/library/maven docker push 172.16.2.90/library/maven docker load -i BlueOcean/images/java_8-jre.tar docker load -i BlueOcean/images/jenkins_jenkins_latest.tar docker load -i BlueOcean/images/gitlab_gitlab-ce_latest.tar kubectl create ns devops</span><span class="result-labels" data-v-123505a2>#CentOS  #Linux  #Kubernetes  #服务器运维  #云计算  #Kubernetes  #CICD</span></a></li><li data-v-123505a2><a href="/posts/bridge-router-ddns" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>家庭宽带桥接并为路由器配置DDNS</span><!--v-if--><span class="result-labels" data-v-123505a2>#网络  #折腾  #网络工程</span></a></li><li data-v-123505a2><a href="/posts/Frpc-systemd-restart" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>为Systemd服务设置自动重启</span><span class="result-excerpt" data-v-123505a2>事情起因 最近给自己的双路E5搞一个Frpc，但是因为有Clash这个开机自启程序，并且我设置了系统代理，在Clash完全启动之前系统是处于断网状态的。断网状态下，Frpc会默认启动失败并且变为Inactive状态，这并不是我想看到的。</span><span class="result-labels" data-v-123505a2>#Linux  #Linux</span></a></li><li data-v-123505a2><a href="/posts/Hexo-to-valaxy" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>从Hexo切换为Valaxy感受</span><span class="result-excerpt" data-v-123505a2>最近因为Halo博客被宝塔面板爆破了，所以只能继续使用老博客Hexo（托管在githubpage上），但是GitHubPage实在是太慢了，Hexo的配置也有些乱糟糟的，于是乎就换用了由云游君大佬开发的Valaxy博客框架</span><span class="result-labels" data-v-123505a2>#Blog  #网站</span></a></li><li data-v-123505a2><a href="/posts/shell-practice" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>脚本练习1</span><span class="result-excerpt" data-v-123505a2>我觉得我写这个也太无聊了</span><span class="result-labels" data-v-123505a2>#Linux  #运维  #服务器运维</span></a></li><li data-v-123505a2><a href="/posts/Kubernetes-sh" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Kubernetes脚本部署</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #服务器运维  #云计算  #k8s</span></a></li><!--]--></ul></div></dialog></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://blog.horonlee.com/#identity","@type":"Person","name":"皓然","url":"https://blog.horonlee.com/","image":{"@id":"https://blog.horonlee.com/#/schema/image/1"},"sameAs":["/atom.xml","copy:1269024821","https://github.com/horonlee","https://music.163.com/#/user/home?id=545332010","https://www.zhihu.com/people/tie-tie-huohuo","https://space.bilibili.com/172335226","https://twitter.com/HuoTie","mailto:1269024821@qq.com","https://www.travellings.cn/go.html"]},{"@id":"https://blog.horonlee.com/#website","@type":"WebSite","dateModified":"2025-11-28T12:27:51.000Z","datePublished":"2025-11-28T12:27:51.000Z","inLanguage":"zh-CN","name":"从零开始的Go语言异世界笔记","url":"https://blog.horonlee.com/","publisher":{"@id":"https://blog.horonlee.com/#identity"}},{"@id":"https://blog.horonlee.com/#webpage","@type":"WebPage","description":"分享生活和技术的点滴","name":"从零开始的Go语言异世界笔记","url":"https://blog.horonlee.com/","about":{"@id":"https://blog.horonlee.com/#identity"},"isPartOf":{"@id":"https://blog.horonlee.com/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://blog.horonlee.com/"]}]},{"@id":"https://blog.horonlee.com/#/schema/image/1","@type":"ImageObject","contentUrl":"https://bu.dusays.com/2023/02/02/63db3598928c2.jpg","inLanguage":"zh-CN","url":"https://bu.dusays.com/2023/02/02/63db3598928c2.jpg"}]}</script>
+  
+</body>
+</html>

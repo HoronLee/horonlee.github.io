@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.fYU-KOxN.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.QTnfLwEv.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.Bt6Pg2Om.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.DDEjerd9.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.D9pkc1Q0.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.BCoX8S0I.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.DJ80LLXH.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.BE3wn5-o.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.DHGjGeo5.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.DotW1Et0.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="modulepreload" crossorigin href="/assets/theme.BE3wn5-o.js">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="modulepreload" crossorigin href="/assets/Ubuntu-OpenStack-Yoga-Zed.CLTC-Oc4.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ubuntu搭建OpenStack-Yoga(Zed) - 皓然小站</title>
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="分享生活和技术的点滴">
+<meta property="og:description" content="分享生活和技术的点滴">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="皓然小站">
+<meta property="og:title" content="Ubuntu搭建OpenStack-Yoga(Zed)">
+<meta property="og:image" content="https://tse1-mm.cn.bing.net/th/id/OIP-C.CZwj5SbW0RXNrztZceTZtwHaEK?pid=ImgDet&rs=1">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.horonlee.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 1.0.0-beta.2">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!----><!--[--><!--]--><!----><!--]--><div class="terminal-site" style="--terminal-accent:var(--terminal-mauve);--terminal-font:&quot;Maple Mono NF&quot;, &quot;Maple Mono NF&quot;, ui-monospace, &quot;SFMono-Regular&quot;, Menlo, Monaco, Consolas, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Noto Sans CJK SC&quot;, monospace;font-variant-ligatures:normal;"><a class="skip-link" href="#terminal-main">跳到正文</a><header class="terminal-topbar"><a href="/" class="terminal-brand" aria-label="博客首页"><span class="terminal-prompt">❯</span> horonlee<span class="terminal-muted">@blog:~</span></a><div class="terminal-tools"><button type="button" class="terminal-search-trigger">搜索 <kbd>/</kbd></button><div class="terminal-appearance" role="group" aria-label="配色模式"><button type="button" aria-pressed="true">light</button><span aria-hidden="true">/</span><button type="button" aria-pressed="false">dark</button></div></div></header><div class="terminal-workspace"><aside class="terminal-sidebar"><div class="terminal-sidebar-inner"><p class="terminal-command terminal-tree-command"><span>❯</span> tree ~/blog</p><nav class="terminal-tree" aria-label="博客导航"><!--[--><a href="/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">~</span></span><span>首页</span></a><a href="/archives/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">+</span></span><span>归档/</span></a><a href="/tags/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">#</span></span><span>标签/</span></a><a href="/categories/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">+</span></span><span>分类/</span></a><a href="/links/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">@</span></span><span>友链/</span></a><a href="/about/" class=""><span class="tree-branch" aria-hidden="true">└──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">i</span></span><span>关于我.md</span></a><!--]--></nav><div class="terminal-sidebar-socials"><p class="terminal-command"><span>❯</span> cat ~/.socials</p><div class="terminal-socials terminal-socials-compact" role="group" aria-label="社交与订阅"><!--[--><!--[--><a href="/atom.xml" rel="noopener noreferrer" aria-label="RSS"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">rss</span></span><span>RSS</span></a><!----><!--]--><!--[--><button type="button" aria-label="复制 QQ 1269024821" title="点击复制 QQ 1269024821"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">qq</span></span><span>QQ</span></button><!----><!--]--><!--[--><a href="https://github.com/horonlee" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">gh</span></span><span>GitHub</span></a><!----><!--]--><!--[--><a href="https://music.163.com/#/user/home?id=545332010" target="_blank" rel="noopener noreferrer" aria-label="网易云音乐"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">♪</span></span><span>网易云</span></a><!----><!--]--><!--[--><a href="https://www.zhihu.com/people/tie-tie-huohuo" target="_blank" rel="noopener noreferrer" aria-label="知乎"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">知</span></span><span>知乎</span></a><!----><!--]--><!--[--><a href="https://space.bilibili.com/172335226" target="_blank" rel="noopener noreferrer" aria-label="哔哩哔哩"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">B</span></span><span>B站</span></a><!----><!--]--><!--[--><a href="https://twitter.com/HuoTie" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">tw</span></span><span>推特</span></a><!----><!--]--><!--[--><a href="mailto:1269024821@qq.com" rel="noopener noreferrer" aria-label="E-Mail"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">@</span></span><span>邮箱</span></a><!----><!--]--><!--[--><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener noreferrer" aria-label="Travelling"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">tr</span></span><span>开往</span></a><!----><!--]--><!--]--><span class="terminal-social-feedback" role="status" aria-live="polite" aria-atomic="true"></span></div></div><!----><p class="terminal-sidebar-note">分享生活和技术的点滴</p></div></aside><main id="terminal-main" class="terminal-main" tabindex="-1"><div class="terminal-breadcrumb"><span class="terminal-prompt">❯</span> pwd <span>~/posts/Ubuntu-OpenStack-Yoga-Zed</span></div><!--[--><!--[--><section class="terminal-document"><header class="terminal-document-header"><div class="terminal-document-command"><p class="terminal-command"><span>❯</span> less <span class="terminal-muted">Ubuntu搭建OpenStack-Yoga(Zed).md</span></p><a href="/" class="terminal-back">[q] 返回列表</a></div><h1>Ubuntu搭建OpenStack-Yoga(Zed)</h1><div class="terminal-post-meta"><time datetime="2023-02-23">2023-02-23</time><span>更新 2023-02-23</span><!--[--><span>1.3k 字</span><span>约 6 分钟</span><!--]--></div><div class="terminal-post-tags"><!--[--><a href="/tags/?tag=CentOS" class="">#CentOS</a><a href="/tags/?tag=Linux" class="">#Linux</a><a href="/tags/?tag=OpenStack" class="">#OpenStack</a><!--]--></div><nav class="terminal-post-tags" aria-label="文章分类"><!--[--><a href="/categories/?category=%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4" class="">服务器运维/</a><a href="/categories/?category=%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/%E9%9B%86%E7%BE%A4" class="">集群/</a><a href="/categories/?category=%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/%E9%9B%86%E7%BE%A4/OpenStack-Yoga(Zed)" class="">OpenStack-Yoga(Zed)/</a><!--]--></nav><figure class="terminal-cover" data-v-753794b7><figcaption class="cover-command" data-v-753794b7><span data-v-753794b7><span class="cover-prompt" aria-hidden="true" data-v-753794b7>❯</span> chafa cover</span><a href="https://tse1-mm.cn.bing.net/th/id/OIP-C.CZwj5SbW0RXNrztZceTZtwHaEK?pid=ImgDet&amp;rs=1" target="_blank" rel="noopener noreferrer" aria-label="查看封面原图" data-v-753794b7>[查看原图]</a></figcaption><div class="cover-viewport" data-v-753794b7><img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.CZwj5SbW0RXNrztZceTZtwHaEK?pid=ImgDet&amp;rs=1" alt="Ubuntu搭建OpenStack-Yoga(Zed)的封面" loading="eager" fetchpriority="high" decoding="async" data-v-753794b7></div></figure></header><!--[--><!--]--><!--[--><article class="markdown-body"><!--[--><!--[--><!--]--><!--[--><h1 id="ubuntu搭建openstack-zed" tabindex="-1">Ubuntu搭建OpenStack-Zed <a class="header-anchor" href="#ubuntu搭建openstack-zed" aria-label="Permalink to &quot;Ubuntu搭建OpenStack-Zed&quot;">​</a></h1><p>注意：本篇只作为个人笔记，记录搭建过程的一些坑和问题，仅供参考！ 所有服务的密码都是123456。</p><h1 id="网络配置" tabindex="-1">网络配置 <a class="header-anchor" href="#网络配置" aria-label="Permalink to &quot;网络配置&quot;">​</a></h1><ol><li>Nat网卡用于下载文件：192.168.74.128~131</li><li>仅主机：192.168.100.*</li><li>仅主机：192.168.200.* 子网掩码：255.255.255.0(/24) 以下是网卡静态配置，ens34和ens35就是两张仅主机网卡（配置为静态），ens33是NAT网卡（无所谓）。</li></ol><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span># This is the network config written by &#39;subiquity&#39;</span></span>
+<span class="line"><span>network:</span></span>
+<span class="line"><span>  ethernets:</span></span>
+<span class="line"><span>    ens33:</span></span>
+<span class="line"><span>      dhcp4: true</span></span>
+<span class="line"><span>    ens34:</span></span>
+<span class="line"><span>      addresses: [192.168.100.129/24]</span></span>
+<span class="line"><span>      dhcp4: false</span></span>
+<span class="line"><span>      nameservers:</span></span>
+<span class="line"><span>        addresses: [114.114.114.114]</span></span>
+<span class="line"><span>    ens35:</span></span>
+<span class="line"><span>      addresses: [192.168.200.129/24]</span></span>
+<span class="line"><span>      dhcp4: false</span></span>
+<span class="line"><span>      nameservers:</span></span>
+<span class="line"><span>        addresses: [114.114.114.114]</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h2 id="hosts" tabindex="-1">hosts <a class="header-anchor" href="#hosts" aria-label="Permalink to &quot;hosts&quot;">​</a></h2><p>127.0.0.1 localhost 192.168.100.128 controller 192.168.100.129 computer 192.168.100.130 computer1 192.168.100.131 block 配置完之后每个节点互相用host名ping一下看看能不能互相ping通</p><blockquote><p>官网的配置 10.0.0.11 controller 10.0.0.31 compute1 10.0.0.41 block1</p></blockquote><h1 id="controller" tabindex="-1">controller <a class="header-anchor" href="#controller" aria-label="Permalink to &quot;controller&quot;">​</a></h1><h2 id="网卡" tabindex="-1">网卡 <a class="header-anchor" href="#网卡" aria-label="Permalink to &quot;网卡&quot;">​</a></h2><ol><li>nes33：192.168.74.128</li><li>ens34：192.168.100.128</li><li>ens35：192.168.200.128</li></ol><h2 id="ntp服务" tabindex="-1">NTP服务 <a class="header-anchor" href="#ntp服务" aria-label="Permalink to &quot;NTP服务&quot;">​</a></h2><blockquote><p>重点：local stratum 10 # 开启，即使server指令中时间服务器不可用，也允许将本地时间作为标准时间授予其他客户端</p></blockquote><p>在chronyd.conf文件中务必加上<code>local stratum 10</code>，参数，否则会造成有NTP服务的连接但是同步数据，即为0ns延迟！(其实写个1也可以的)</p><h2 id="安装" tabindex="-1">安装 <a class="header-anchor" href="#安装" aria-label="Permalink to &quot;安装&quot;">​</a></h2><p>add-apt-repository cloud-archive:zed apt install python3-openstackclient</p><h2 id="sql数据库" tabindex="-1">SQL数据库 <a class="header-anchor" href="#sql数据库" aria-label="Permalink to &quot;SQL数据库&quot;">​</a></h2><p>apt install mariadb-server python3-pymysql 执行<code>mysql_secure_installation</code>的过程中我没有禁止root账户远程登录数据库。</p><h2 id="消息队列" tabindex="-1">消息队列 <a class="header-anchor" href="#消息队列" aria-label="Permalink to &quot;消息队列&quot;">​</a></h2><p>apt install rabbitmq-server 记得密码123456和给权限</p><h2 id="memcached" tabindex="-1">Memcached <a class="header-anchor" href="#memcached" aria-label="Permalink to &quot;Memcached&quot;">​</a></h2><p>apt install memcached python3-memcache -l 192.168.100.128</p><h2 id="etcd" tabindex="-1">Etcd <a class="header-anchor" href="#etcd" aria-label="Permalink to &quot;Etcd&quot;">​</a></h2><p>apt install etcd</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>ETCD_NAME=&quot;controller&quot;</span></span>
+<span class="line"><span>ETCD_DATA_DIR=&quot;/var/lib/etcd&quot;</span></span>
+<span class="line"><span>ETCD_INITIAL_CLUSTER_STATE=&quot;new&quot;</span></span>
+<span class="line"><span>ETCD_INITIAL_CLUSTER_TOKEN=&quot;etcd-cluster-01&quot;</span></span>
+<span class="line"><span>ETCD_INITIAL_CLUSTER=&quot;controller=http://192.168.100.128:2380&quot;</span></span>
+<span class="line"><span>ETCD_INITIAL_ADVERTISE_PEER_URLS=&quot;http://192.168.100.128:2380&quot;</span></span>
+<span class="line"><span>ETCD_ADVERTISE_CLIENT_URLS=&quot;http://192.168.100.128:2379&quot;</span></span>
+<span class="line"><span>ETCD_LISTEN_PEER_URLS=&quot;http://0.0.0.0:2380&quot;     #存疑</span></span>
+<span class="line"><span>ETCD_LISTEN_CLIENT_URLS=&quot;http://192.168.100.128:2379&quot;</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h2 id="出大问题" tabindex="-1">出大问题 <a class="header-anchor" href="#出大问题" aria-label="Permalink to &quot;出大问题&quot;">​</a></h2><p>OpenStack官网没有Zed的OpenStack主体安装指南？我还没法用<code>add-apt-repository cloud-archive:yoga</code>来换软件源，啊！ 还好后来找到了（</p><h2 id="keystone" tabindex="-1">Keystone <a class="header-anchor" href="#keystone" aria-label="Permalink to &quot;Keystone&quot;">​</a></h2><p>数据库巴拉巴拉 Apache Http服务加一个ServerName controller 老规矩新建admin-openrc作为keystone的管理员认证变量</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>export OS_USERNAME=admin</span></span>
+<span class="line"><span>export OS_PASSWORD=123456</span></span>
+<span class="line"><span>export OS_PROJECT_NAME=admin</span></span>
+<span class="line"><span>export OS_USER_DOMAIN_NAME=Default</span></span>
+<span class="line"><span>export OS_PROJECT_DOMAIN_NAME=Default</span></span>
+<span class="line"><span>export OS_AUTH_URL=http://controller:5000/v3</span></span>
+<span class="line"><span>export OS_IDENTITY_API_VERSION=3</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h2 id="glance" tabindex="-1">Glance <a class="header-anchor" href="#glance" aria-label="Permalink to &quot;Glance&quot;">​</a></h2><p>数据库巴拉巴拉 注册限额设置就不设置了（怕麻烦bushi）</p><p>不确定：在/etc/glance/glance-api.conf中，配置对梯形失真的访问权限：[oslo_limit]</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>[oslo_limit]</span></span>
+<span class="line"><span>auth_url = http://controller:5000</span></span>
+<span class="line"><span>auth_type = password</span></span>
+<span class="line"><span>user_domain_id = default</span></span>
+<span class="line"><span>username = MY_SERVICE #不知道需不需要改为123456，文档没说要改</span></span>
+<span class="line"><span>system_scope = all</span></span>
+<span class="line"><span>password = MY_PASSWORD  #不知道需不需要改为123456，文档没说要改</span></span>
+<span class="line"><span>endpoint_id = ENDPOINT_ID</span></span>
+<span class="line"><span>region_name = RegionOne</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>不确定：确保MY_SERVICE帐户具有读者访问权限 系统范围资源（如限制）：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>root@controller:/home/controller# openstack role add --user MY_SERVICE --user-domain Default --system all reader</span></span>
+<span class="line"><span>No user with a name or ID of &#39;MY_SERVICE&#39; exists.</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>吐槽一句，文档给的测试镜像cirros下载实在是太慢了，我用香港的服务器下载才好一点，国内科学上网还是慢。</p><h2 id="placement" tabindex="-1">Placement <a class="header-anchor" href="#placement" aria-label="Permalink to &quot;Placement&quot;">​</a></h2><p>数据库巴拉巴拉</p><h2 id="nova" tabindex="-1">Nova <a class="header-anchor" href="#nova" aria-label="Permalink to &quot;Nova&quot;">​</a></h2><p>数据库巴拉巴拉</p><h2 id="将计算节点添加到单元数据库" tabindex="-1">将计算节点添加到单元数据库 <a class="header-anchor" href="#将计算节点添加到单元数据库" aria-label="Permalink to &quot;将计算节点添加到单元数据库&quot;">​</a></h2><p><strong>注意，本操作需要在所有computer节点配置好nova服务之后执行！</strong></p><ul><li>列出来nove节点：<code>openstack compute service list --service nova-compute</code><ul><li>我这里就会出现三个节点，其中两个是computer和computer1，当然controller也会有一个/</li></ul></li><li>列出当前所有服务节点：<code>openstack compute service list</code></li><li>列出当前所有服务的API端点<code>openstack catalog list</code></li><li>列出当前所有镜像<code>openstack image list</code></li></ul><p>添加新计算节点时，必须在控制器节点上运行以注册这些新计算 节点。或者，您可以在 中设置适当的间隔：nova-manage cell_v2 discover_hosts/etc/nova/nova.conf</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>[scheduler]</span></span>
+<span class="line"><span>discover_hosts_in_cells_interval = 300</span></span></code></pre><button class="code-block-unfold-btn"></button></div><h2 id="neutron" tabindex="-1">Neutron <a class="header-anchor" href="#neutron" aria-label="Permalink to &quot;Neutron&quot;">​</a></h2><p>先配置controller再配置其他节点 <strong>注意</strong>：一般使用<code>网络选项 2：自助服务网络</code>来配置网络</p><p>出大问题，执行<code>openstack extension list --network</code>指令验证网络操作结果输出<code>Faild to retreieve extensions list from Network API</code>，这不纯纯的寄了吗？这都最后一个服务了啊，就差一个面板了，啊啊啊啊啊啊！！！！</p><h1 id="computer" tabindex="-1">computer <a class="header-anchor" href="#computer" aria-label="Permalink to &quot;computer&quot;">​</a></h1><h2 id="网卡-1" tabindex="-1">网卡 <a class="header-anchor" href="#网卡-1" aria-label="Permalink to &quot;网卡&quot;">​</a></h2><ol><li>nes33：192.168.74.129</li><li>ens34：192.168.100.129</li><li>ens35：192.168.200.129</li></ol><h2 id="安装-1" tabindex="-1">安装 <a class="header-anchor" href="#安装-1" aria-label="Permalink to &quot;安装&quot;">​</a></h2><p>add-apt-repository cloud-archive:zed apt install nova-compute apt install mariadb-server python3-pymysql</p><h2 id="nova-1" tabindex="-1">nova <a class="header-anchor" href="#nova-1" aria-label="Permalink to &quot;nova&quot;">​</a></h2><p>数据库巴拉巴拉</p><blockquote><p>[vnc] 如果用于访问远程控制台的 Web 浏览器驻留在 无法解析主机名，必须替换为 控制器节点。controller</p></blockquote><p>确定计算节点是否支持硬件加速 虚拟机：</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>egrep -c &#39;(vmx|svm)&#39; /proc/cpuinfo</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>结果我输出了12？1是支持，0是不支持，那我12是支持还是不支持？暂且假设大于1就是支持吧，那就不用配置为QEMU了。</p><h1 id="computer1" tabindex="-1">computer1 <a class="header-anchor" href="#computer1" aria-label="Permalink to &quot;computer1&quot;">​</a></h1><h2 id="网卡-2" tabindex="-1">网卡 <a class="header-anchor" href="#网卡-2" aria-label="Permalink to &quot;网卡&quot;">​</a></h2><ol><li>nes33：192.168.74.130</li><li>ens34：192.168.100.130</li><li>ens35：192.168.200.130</li></ol><h2 id="安装-2" tabindex="-1">安装 <a class="header-anchor" href="#安装-2" aria-label="Permalink to &quot;安装&quot;">​</a></h2><p>add-apt-repository cloud-archive:zed apt install nova-compute</p><h1 id="block" tabindex="-1">block <a class="header-anchor" href="#block" aria-label="Permalink to &quot;block&quot;">​</a></h1><h2 id="网卡-3" tabindex="-1">网卡 <a class="header-anchor" href="#网卡-3" aria-label="Permalink to &quot;网卡&quot;">​</a></h2><ol><li>nes33：192.168.74.131</li><li>ens34：192.168.100.131</li><li>ens35：92.168.200.131</li></ol><h2 id="安装-3" tabindex="-1">安装 <a class="header-anchor" href="#安装-3" aria-label="Permalink to &quot;安装&quot;">​</a></h2><p>add-apt-repository cloud-archive:zed apt install python3-openstackclient</p><!--]--><!--]--><!----><!----></article><!--]--><!--[--><!--]--><details class="terminal-sponsor"><summary>[ + ] 饿饿，饭饭！</summary><div><!--[--><figure><img src="https://bu.dusays.com/2023/11/02/65432694e4eb5.jpg" alt="支付宝收款码" loading="lazy" width="180"><figcaption>支付宝</figcaption></figure><figure><img src="https://bu.dusays.com/2023/11/02/6543269436758.jpg" alt="微信支付收款码" loading="lazy" width="180"><figcaption>微信支付</figcaption></figure><!--]--></div></details><nav class="terminal-post-nav" aria-label="相邻文章"><a href="/posts/Manjaro-note" class="">← 上一篇<span>Manjaro简易使用笔记</span></a><a href="/posts/XiaoMi-Book-12-4" class="">下一篇 →<span>XiaoMi Book 12.4二合一上手体验</span></a></nav><!----></section><section class="terminal-comments" aria-label="评论"><h2 class="terminal-command"><span>❯</span> ./discuss <span class="terminal-muted">留言与讨论</span></h2><!----></section><!--]--><!--]--></main></div><footer class="terminal-footer"><p>© 2023<!--[-->–2026<!--]--> 皓然 <span aria-hidden="true">/</span> Powered by <a href="https://valaxy.site/" target="_blank" rel="noopener noreferrer">Valaxy</a></p><p class="terminal-footer-links"><!--[--><a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel</a><a href="https://github.com/HoronLee/horonlee.github.io" target="_blank" rel="noopener noreferrer">Source</a><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener noreferrer">开往</a><!--]--><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">浙ICP备2023037163号</a><a href="https://icp.gov.moe/?keyword=20241146" target="_blank" rel="noopener noreferrer">萌 ICP 备 20241146 号</a></p><p class="terminal-visitors"><span id="busuanzi_container_site_pv">访问 <span id="busuanzi_value_site_pv">—</span> 次</span><span id="busuanzi_container_site_uv">访客 <span id="busuanzi_value_site_uv">—</span> 人</span></p></footer><div class="terminal-statusbar"><span><span class="terminal-status-dot" aria-hidden="true">●</span> READ <span class="terminal-status-path">~/posts/Ubuntu-OpenStack-Yoga-Zed</span></span><span class="terminal-palette"><span class="palette-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Catppuccin <span class="palette-light">Latte</span><span class="palette-dark">Mocha</span></span></div><dialog class="terminal-search" aria-labelledby="v-0-title" aria-describedby="v-0-description" data-v-123505a2><header class="search-header" data-v-123505a2><h2 id="v-0-title" data-v-123505a2><span aria-hidden="true" data-v-123505a2>$ </span>grep -i ~/posts</h2><button type="button" class="search-close" aria-label="关闭文章搜索" data-v-123505a2>×</button></header><div class="search-body" data-v-123505a2><p id="v-0-description" class="search-description" data-v-123505a2>搜索文章标题、摘要、标签和分类。按 Enter 打开首条结果，按 Esc 关闭。</p><label class="search-field" data-v-123505a2><span aria-hidden="true" data-v-123505a2>❯</span><input value="" type="search" aria-label="搜索文章" aria-describedby="v-0-count" autocomplete="off" placeholder="输入关键词…" data-v-123505a2></label><p id="v-0-count" class="search-count" role="status" aria-live="polite" aria-atomic="true" data-v-123505a2>共 37 篇文章<span data-v-123505a2>，显示前 20 条</span></p><!----><ul class="search-results" aria-label="文章搜索结果" data-v-123505a2><!--[--><li data-v-123505a2><a href="/posts/Echo-framework-route-matching&amp;middleware" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>关于Echo框架路由匹配与中间件的坑</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #Echo  #编程笔记</span></a></li><li data-v-123505a2><a href="/posts/golang-Isekai-notebook-from-scratch" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>从零开始的Go语言异世界笔记</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #编程笔记</span></a></li><li data-v-123505a2><a href="/posts/Configuring-NoVNC-connection-to-KVM-vm" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>配置NoVNC连接Kvm虚拟机</span><!--v-if--><span class="result-labels" data-v-123505a2>#NoVNC  #Linux  #KVM</span></a></li><li data-v-123505a2><a href="/posts/Harbor-HTTPS" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Harbor配置HTTPS</span><!--v-if--><span class="result-labels" data-v-123505a2>#Harbor  #运维</span></a></li><li data-v-123505a2><a href="/posts/Troubleshooting-and-Practice-of-Docker-Container-Networking-and-Firewalld-Zone-Conflicts" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>解决Docker容器互联与Firewalld区域冲突的排查与实践</span><!--v-if--><span class="result-labels" data-v-123505a2>#Docker  #Firewall  #Docker</span></a></li><li data-v-123505a2><a href="/posts/NeoVim-personal-note" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>NeoVim个人配置笔记</span><span class="result-excerpt" data-v-123505a2>LazyVim 配置目录 shell . ├── LICENSE ├── README.md ├── init.lua #配置入口文件 ├── lazy-lock.json ├── lazyvim.json ├── lua │ ├── config #默认生成的配置目录 │ │ ├── autocmds.lua │ │ ├── keymaps.lua │ │ ├── lazy.lua │ │ └── options.lua #自定义配置可以写在这里 │ └── plugins │ ├── colorscheme.lua #自己添加的主题插件配置 │ └── example.lua └── stylua.toml</span><span class="result-labels" data-v-123505a2>#neovim  #lazyvim  #开发  #环境配置</span></a></li><li data-v-123505a2><a href="/posts/PowerShell-dev-config-note" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>PowerShell开发配置指北</span><!--v-if--><span class="result-labels" data-v-123505a2>#windows  #powershell  #开发  #环境配置</span></a></li><li data-v-123505a2><a href="/posts/KubeVirt-CDI" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>KubeVirt使用CDI来导入虚拟机镜像</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #KubeVirt  #服务器运维  #云计算  #虚拟化</span></a></li><li data-v-123505a2><a href="/posts/KubeVirt-Getting-Start" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>KubeVirt入门</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #KubeVirt  #服务器运维  #云计算  #虚拟化</span></a></li><li data-v-123505a2><a href="/posts/Online-Expansion-Ubuntu-LVM" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>LVM添加硬盘并扩容至已有分区</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #服务器运维</span></a></li><li data-v-123505a2><a href="/posts/ubuntu22/04-k8s-deploy" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>ubuntu22.04-k8s-deploy</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #Ubuntu  #服务器运维  #云计算  #k8s</span></a></li><li data-v-123505a2><a href="/posts/K8sJenkinsSlaveCICD" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Jenkins的标准用法“Jenkins-Slave”</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #CICD  #Jenkins  #服务器运维  #云计算  #Jenkins</span></a></li><li data-v-123505a2><a href="/posts/KubernetesJenkinCICD" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>使用 Jenkins&amp;GitLab 构建 CICD</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #CICD  #Jenkins  #服务器运维  #云计算  #k8s  #Jenkins</span></a></li><li data-v-123505a2><a href="/posts/GormNote" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Gorm笔记</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #编程笔记</span></a></li><li data-v-123505a2><a href="/posts/CICDk8s" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>在k8s中构建CICD</span><span class="result-excerpt" data-v-123505a2>此文章已经停止更新，最新的CICD 构建位于： kubernetes 使用 Jenkins GitLab 构建 CICD - 皓然小站 (horonlee.com) 安装CICD所需资源 curl -O http://mirrors.douxuedu.com/competition/BlueOcean.tar.gz tar -zxf BlueOcean.tar.gz cp BlueOcean/tools/docker-compose-Linux-x86_64 /usr/bin/docker-compose docker-compose version tar -zxf BlueOcean/harbor-offline-installer.tar.gz -C /opt/ sh /opt/harbor/install.sh docker login -uadmin -pHarbor12345 172.16.2.90 docker load -i BlueOcean/images/maven_latest.tar docker tag maven 172.16.2.90/library/maven docker push 172.16.2.90/library/maven docker load -i BlueOcean/images/java_8-jre.tar docker load -i BlueOcean/images/jenkins_jenkins_latest.tar docker load -i BlueOcean/images/gitlab_gitlab-ce_latest.tar kubectl create ns devops</span><span class="result-labels" data-v-123505a2>#CentOS  #Linux  #Kubernetes  #服务器运维  #云计算  #Kubernetes  #CICD</span></a></li><li data-v-123505a2><a href="/posts/bridge-router-ddns" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>家庭宽带桥接并为路由器配置DDNS</span><!--v-if--><span class="result-labels" data-v-123505a2>#网络  #折腾  #网络工程</span></a></li><li data-v-123505a2><a href="/posts/Frpc-systemd-restart" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>为Systemd服务设置自动重启</span><span class="result-excerpt" data-v-123505a2>事情起因 最近给自己的双路E5搞一个Frpc，但是因为有Clash这个开机自启程序，并且我设置了系统代理，在Clash完全启动之前系统是处于断网状态的。断网状态下，Frpc会默认启动失败并且变为Inactive状态，这并不是我想看到的。</span><span class="result-labels" data-v-123505a2>#Linux  #Linux</span></a></li><li data-v-123505a2><a href="/posts/Hexo-to-valaxy" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>从Hexo切换为Valaxy感受</span><span class="result-excerpt" data-v-123505a2>最近因为Halo博客被宝塔面板爆破了，所以只能继续使用老博客Hexo（托管在githubpage上），但是GitHubPage实在是太慢了，Hexo的配置也有些乱糟糟的，于是乎就换用了由云游君大佬开发的Valaxy博客框架</span><span class="result-labels" data-v-123505a2>#Blog  #网站</span></a></li><li data-v-123505a2><a href="/posts/shell-practice" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>脚本练习1</span><span class="result-excerpt" data-v-123505a2>我觉得我写这个也太无聊了</span><span class="result-labels" data-v-123505a2>#Linux  #运维  #服务器运维</span></a></li><li data-v-123505a2><a href="/posts/Kubernetes-sh" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Kubernetes脚本部署</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #服务器运维  #云计算  #k8s</span></a></li><!--]--></ul></div></dialog></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://blog.horonlee.com/#identity","@type":"Person","name":"皓然","url":"https://blog.horonlee.com/","image":{"@id":"https://blog.horonlee.com/#/schema/image/1"},"sameAs":["/atom.xml","copy:1269024821","https://github.com/horonlee","https://music.163.com/#/user/home?id=545332010","https://www.zhihu.com/people/tie-tie-huohuo","https://space.bilibili.com/172335226","https://twitter.com/HuoTie","mailto:1269024821@qq.com","https://www.travellings.cn/go.html"]},{"@id":"https://blog.horonlee.com/#website","@type":"WebSite","dateModified":"2023-02-23T22:30:44.000Z","datePublished":"2023-02-23T22:30:44.000Z","inLanguage":"zh-CN","name":"Ubuntu搭建OpenStack-Yoga(Zed)","url":"https://blog.horonlee.com/","publisher":{"@id":"https://blog.horonlee.com/#identity"}},{"@id":"https://blog.horonlee.com/#webpage","@type":"WebPage","description":"分享生活和技术的点滴","name":"Ubuntu搭建OpenStack-Yoga(Zed)","url":"https://blog.horonlee.com/","about":{"@id":"https://blog.horonlee.com/#identity"},"isPartOf":{"@id":"https://blog.horonlee.com/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://blog.horonlee.com/"]}]},{"@id":"https://blog.horonlee.com/#/schema/image/1","@type":"ImageObject","contentUrl":"https://bu.dusays.com/2023/02/02/63db3598928c2.jpg","inLanguage":"zh-CN","url":"https://bu.dusays.com/2023/02/02/63db3598928c2.jpg"}]}</script>
+  
+</body>
+</html>

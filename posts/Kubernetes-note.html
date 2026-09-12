@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.fYU-KOxN.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.QTnfLwEv.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.Bt6Pg2Om.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.DDEjerd9.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.D9pkc1Q0.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.BCoX8S0I.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.DJ80LLXH.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.BE3wn5-o.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.DHGjGeo5.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.DotW1Et0.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="modulepreload" crossorigin href="/assets/theme.BE3wn5-o.js">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="modulepreload" crossorigin href="/assets/Kubernetes-note.BVcpIdLa.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>初试Kubernetes笔记 - 皓然小站</title>
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="分享生活和技术的点滴">
+<meta property="og:description" content="分享生活和技术的点滴">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="皓然小站">
+<meta property="og:title" content="初试Kubernetes笔记">
+<meta property="og:image" content="https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.horonlee.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 1.0.0-beta.2">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!----><!--[--><!--]--><!----><!--]--><div class="terminal-site" style="--terminal-accent:var(--terminal-mauve);--terminal-font:&quot;Maple Mono NF&quot;, &quot;Maple Mono NF&quot;, ui-monospace, &quot;SFMono-Regular&quot;, Menlo, Monaco, Consolas, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Noto Sans CJK SC&quot;, monospace;font-variant-ligatures:normal;"><a class="skip-link" href="#terminal-main">跳到正文</a><header class="terminal-topbar"><a href="/" class="terminal-brand" aria-label="博客首页"><span class="terminal-prompt">❯</span> horonlee<span class="terminal-muted">@blog:~</span></a><div class="terminal-tools"><button type="button" class="terminal-search-trigger">搜索 <kbd>/</kbd></button><div class="terminal-appearance" role="group" aria-label="配色模式"><button type="button" aria-pressed="true">light</button><span aria-hidden="true">/</span><button type="button" aria-pressed="false">dark</button></div></div></header><div class="terminal-workspace"><aside class="terminal-sidebar"><div class="terminal-sidebar-inner"><p class="terminal-command terminal-tree-command"><span>❯</span> tree ~/blog</p><nav class="terminal-tree" aria-label="博客导航"><!--[--><a href="/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">~</span></span><span>首页</span></a><a href="/archives/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">+</span></span><span>归档/</span></a><a href="/tags/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">#</span></span><span>标签/</span></a><a href="/categories/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">+</span></span><span>分类/</span></a><a href="/links/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">@</span></span><span>友链/</span></a><a href="/about/" class=""><span class="tree-branch" aria-hidden="true">└──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">i</span></span><span>关于我.md</span></a><!--]--></nav><div class="terminal-sidebar-socials"><p class="terminal-command"><span>❯</span> cat ~/.socials</p><div class="terminal-socials terminal-socials-compact" role="group" aria-label="社交与订阅"><!--[--><!--[--><a href="/atom.xml" rel="noopener noreferrer" aria-label="RSS"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">rss</span></span><span>RSS</span></a><!----><!--]--><!--[--><button type="button" aria-label="复制 QQ 1269024821" title="点击复制 QQ 1269024821"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">qq</span></span><span>QQ</span></button><!----><!--]--><!--[--><a href="https://github.com/horonlee" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">gh</span></span><span>GitHub</span></a><!----><!--]--><!--[--><a href="https://music.163.com/#/user/home?id=545332010" target="_blank" rel="noopener noreferrer" aria-label="网易云音乐"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">♪</span></span><span>网易云</span></a><!----><!--]--><!--[--><a href="https://www.zhihu.com/people/tie-tie-huohuo" target="_blank" rel="noopener noreferrer" aria-label="知乎"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">知</span></span><span>知乎</span></a><!----><!--]--><!--[--><a href="https://space.bilibili.com/172335226" target="_blank" rel="noopener noreferrer" aria-label="哔哩哔哩"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">B</span></span><span>B站</span></a><!----><!--]--><!--[--><a href="https://twitter.com/HuoTie" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">tw</span></span><span>推特</span></a><!----><!--]--><!--[--><a href="mailto:1269024821@qq.com" rel="noopener noreferrer" aria-label="E-Mail"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">@</span></span><span>邮箱</span></a><!----><!--]--><!--[--><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener noreferrer" aria-label="Travelling"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">tr</span></span><span>开往</span></a><!----><!--]--><!--]--><span class="terminal-social-feedback" role="status" aria-live="polite" aria-atomic="true"></span></div></div><!----><p class="terminal-sidebar-note">分享生活和技术的点滴</p></div></aside><main id="terminal-main" class="terminal-main" tabindex="-1"><div class="terminal-breadcrumb"><span class="terminal-prompt">❯</span> pwd <span>~/posts/Kubernetes-note</span></div><!--[--><!--[--><section class="terminal-document"><header class="terminal-document-header"><div class="terminal-document-command"><p class="terminal-command"><span>❯</span> less <span class="terminal-muted">初试Kubernetes笔记.md</span></p><a href="/" class="terminal-back">[q] 返回列表</a></div><h1>初试Kubernetes笔记</h1><div class="terminal-post-meta"><time datetime="2023-04-04">2023-04-04</time><span>更新 2023-04-04</span><!--[--><span>1.1k 字</span><span>约 6 分钟</span><!--]--></div><div class="terminal-post-tags"><!--[--><a href="/tags/?tag=Linux" class="">#Linux</a><a href="/tags/?tag=Kubernetes" class="">#Kubernetes</a><a href="/tags/?tag=%E4%BA%91%E8%AE%A1%E7%AE%97" class="">#云计算</a><!--]--></div><nav class="terminal-post-tags" aria-label="文章分类"><!--[--><a href="/categories/?category=%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4" class="">服务器运维/</a><a href="/categories/?category=%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/%E4%BA%91%E8%AE%A1%E7%AE%97" class="">云计算/</a><a href="/categories/?category=%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/%E4%BA%91%E8%AE%A1%E7%AE%97/k8s" class="">k8s/</a><!--]--></nav><figure class="terminal-cover" data-v-753794b7><figcaption class="cover-command" data-v-753794b7><span data-v-753794b7><span class="cover-prompt" aria-hidden="true" data-v-753794b7>❯</span> chafa cover</span><a href="https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg" target="_blank" rel="noopener noreferrer" aria-label="查看封面原图" data-v-753794b7>[查看原图]</a></figcaption><div class="cover-viewport" data-v-753794b7><img src="https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg" alt="初试Kubernetes笔记的封面" loading="eager" fetchpriority="high" decoding="async" data-v-753794b7></div></figure></header><!--[--><!--]--><!--[--><article class="markdown-body"><!--[--><!--[--><!--]--><!--[--><h1 id="关于k8s镜像的下载" tabindex="-1">关于k8s镜像的下载 <a class="header-anchor" href="#关于k8s镜像的下载" aria-label="Permalink to &quot;关于k8s镜像的下载&quot;">​</a></h1><blockquote><p>说实话我真的吐了，没有科学上网真的寸步难行，没办法直接拉取k8s.gcr.io的镜像，所以只能先用阿里云的 但是后续的安装没办法直接使用阿里云的镜像，所以还得改tag</p></blockquote><p>有个小坑，k8s官方镜像的coredns是<code>k8s.gcr.io/coredns/coredns:v1.8.6</code>而阿里的却是<code>registry.aliyuncs.com/google_containers/coredns:v1.8.6</code>，官方的多套了一层<code>/coredns</code>，这直接导致我研究了半天<code>报错 pull access denied</code>，我发现后就把阿里的镜像给删掉了一层。</p><p>因为总共要下载7个镜像（master节点），所以我打算写一个shell脚本来批量操作，经过一番高强度网上冲浪，我给整出来了：</p><div class="language-shell"><button title="Copy code" class="copy"></button><span class="lang">shell</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#EA76CB;--shiki-light-font-style:italic;--shiki-dark:#F5C2E7;--shiki-dark-font-style:italic;"> #!/bin/bash</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">images_list</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">&#39;</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">k8s.gcr.io/kube-apiserver:v1.24.0</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">k8s.gcr.io/kube-controller-manager:v1.24.0</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">k8s.gcr.io/kube-scheduler:v1.24.0</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">k8s.gcr.io/kube-proxy:v1.24.0</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">k8s.gcr.io/pause:3.7</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">k8s.gcr.io/etcd:3.5.3-0</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">k8s.gcr.io/coredns/coredns:v1.8.6</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">ali_images_list</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">&#39;</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">registry.aliyuncs.com/google_containers/kube-apiserver:v1.24.0</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">registry.aliyuncs.com/google_containers/kube-controller-manager:v1.24.0</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">registry.aliyuncs.com/google_containers/kube-scheduler:v1.24.0</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">registry.aliyuncs.com/google_containers/kube-proxy:v1.24.0</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">registry.aliyuncs.com/google_containers/pause:3.7</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">registry.aliyuncs.com/google_containers/etcd:3.5.3-0</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">registry.aliyuncs.com/google_containers/coredns:v1.8.6</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"># 批量下载阿里镜像并且更改tag为k8s标准镜像</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">for</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> i </span><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">in</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> $ali_images_list</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">do</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">        docker</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> pull</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> $i</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">        for</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> j </span><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">in</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> $images_list</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">        do</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">                docker</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> tag</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> $i $j</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">        done</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">done</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"># 删除阿里镜像</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">for</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> i </span><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">in</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> $ali_images_list</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">do</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">        docker</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> image</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> rm</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> $i</span></span>
+<span class="line"><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">done</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-light-font-style:italic;--shiki-dark:#9399B2;--shiki-dark-font-style:italic;"># 导出k8s镜像为tar包</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">docker</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> save</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> -o</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> k8s-1-24-0.tar</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> $images_list</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>第一次写脚本这样应该很不错了吧（汗</p><h1 id="关于kubeadm-init的报错" tabindex="-1">关于kubeadm init的报错 <a class="header-anchor" href="#关于kubeadm-init的报错" aria-label="Permalink to &quot;关于kubeadm init的报错&quot;">​</a></h1><blockquote><p>先前安装的kubeadm等组件使用了<code>yum -y install kubeadm kubelet kubectl</code>，默认版本比较高 所以引发了下面一系列错误</p></blockquote><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">root@k8s-master01 </span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">~</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"># kubeadm init --kubernetes-version</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">v1.24.0</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> --pod-network-cidr</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">10.224.0.0/16</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> --apiserver-advertise-address</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">192.168.100.100</span><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">  --cri-socket</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> unix:///var/run/cri-dockerd.sock</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">this</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> version</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> of</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> kubeadm</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> only</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> supports</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> deploying</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> clusters</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> with</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> the</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> control</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> plane</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> version</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;"> &gt;</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> 1.25.0.</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> Current</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> version:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> v1.24.0</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">To</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> see</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> the</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> stack</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> trace</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> of</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> this</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> error</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> execute</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> with</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> --v=5</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> or</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> higher</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>需要版本高于v1.25.0的control plane，但是我升级了组件镜像为v1.25.0也同样报错！ 所以我采用指定yum安装kubeadm、kubelet和kubectl：</p><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">root@k8s-master01 </span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">~</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"># yum -y remove  kubeadm  kubelet kubectl</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">root@k8s-master01 </span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">~</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"># yum install -y kubelet-1.25.0 kubeadm-1.25.0 kubectl-1.25.0</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>不出意外又是报错</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>[preflight] Running pre-flight checks</span></span>
+<span class="line"><span>error execution phase preflight: [preflight] Some fatal errors occurred:</span></span>
+<span class="line"><span>        [ERROR KubeletVersion]: the kubelet version is higher than the control plane version. This is not a supported version skew and may lead to a malfunctional cluster. Kubelet version: &quot;1.25.0&quot; Control plane version: &quot;1.24.0&quot;</span></span>
+<span class="line"><span>[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`</span></span>
+<span class="line"><span>To see the stack trace of this error execute with --v=5 or higher</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>意思是kubeadm还是高于panel组件的版本，这里我尝试降级kubeadm、kubelet和kubectl：</p><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">root@k8s-master01 </span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">~</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"># yum remove -y kubelet-1.25.0 kubeadm-1.25.0 kubectl-1.25.0</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">root@k8s-master01 </span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">~</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"># yum install -y kubelet-1.24.0 kubeadm-1.24.0 kubectl-1.24.0</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>更换kubeadm、kubelet、kubectl版本为v1.24.0之后：</p><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">init</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> Using Kubernetes version: v1.24.0</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">preflight</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> Running pre-flight checks</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">preflight</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> Pulling images required </span><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">for</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> setting up a Kubernetes cluster</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">preflight</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> This might take a minute or two, depending on the speed of your internet connection</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">preflight</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> You can also perform this action in beforehand using </span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">&#39;kubeadm config images pull&#39;</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>这里问题不大，我一开始拉了一点v1.25.0的镜像，我给全部换成v1.24.0就好了 PS：记得再次修改配置：</p><div class="language-vim"><button title="Copy code" class="copy"></button><span class="lang">vim</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">#</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> vim </span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">/etc/</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">sysconfig/kubelet</span></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">KUBELET_EXTRA_ARGS</span><span style="--shiki-light:#179299;--shiki-dark:#94E2D5;">=</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">&quot;--cgroup-driver=systemd&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">systemctl enable kubelet</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>然后就可以正常初始化了…吗？</p><div class="language-bash"><button title="Copy code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">wait-control-plane</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> Waiting </span><span style="--shiki-light:#8839EF;--shiki-dark:#CBA6F7;">for</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> the kubelet to boot up the control plane as static Pods from directory </span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">&quot;/etc/kubernetes/manifests&quot;</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">. This can take up to 4m0s</span></span>
+<span class="line"><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">[</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">kubelet-check</span><span style="--shiki-light:#7C7F93;--shiki-dark:#9399B2;">]</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> Initial timeout of 40s passed.</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">Unfortunately,</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> an</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> error</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> has</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> occurred:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">        timed</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> out</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> waiting</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> for</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> the</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> condition</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">This</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> error</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> is</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> likely</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> caused</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> by:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">        -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> The</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> kubelet</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> is</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> not</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> running</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">        -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> The</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> kubelet</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> is</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> unhealthy</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> due</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> to</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> a</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> misconfiguration</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> of</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> the</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> node</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> in</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> some</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> way</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;"> (required </span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">cgroups</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> disabled</span><span style="--shiki-light:#4C4F69;--shiki-dark:#CDD6F4;">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">If</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> you</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> are</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> on</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> a</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> systemd-powered</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> system,</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> you</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> can</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> try</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> to</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> troubleshoot</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> the</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> error</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> with</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> the</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> following</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> commands:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">        -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &#39;systemctl status kubelet&#39;</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">        -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &#39;journalctl -xeu kubelet&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">Additionally,</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> a</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> control</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> plane</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> component</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> may</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> have</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> crashed</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> or</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> exited</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> when</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> started</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> by</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> the</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> container</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> runtime.</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">To</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> troubleshoot,</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> list</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> all</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> containers</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> using</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> your</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> preferred</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> container</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> runtimes</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> CLI.</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">Here</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> is</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> one</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> example</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> how</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> you</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> may</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> list</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> all</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> running</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> Kubernetes</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> containers</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> by</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> using</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> crictl:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">        -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &#39;crictl --runtime-endpoint unix:///var/run/cri-dockerd.sock ps -a | grep kube | grep -v pause&#39;</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">        Once</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> you</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> have</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> found</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> the</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> failing</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> container,</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> you</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> can</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> inspect</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> its</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> logs</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> with:</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">        -</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> &#39;crictl --runtime-endpoint unix:///var/run/cri-dockerd.sock logs CONTAINERID&#39;</span></span>
+<span class="line"><span style="--shiki-light:#1E66F5;--shiki-light-font-style:italic;--shiki-dark:#89B4FA;--shiki-dark-font-style:italic;">error</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> execution</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> phase</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> wait-control-plane:</span><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;"> couldn&#39;t initialize a Kubernetes cluster</span></span>
+<span class="line"><span style="--shiki-light:#40A02B;--shiki-dark:#A6E3A1;">To see the stack trace of this error execute with --v=5 or higher</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>初始化control-plane超时了 至此，问题还没有解决。</p><!--]--><!--]--><!----><!----></article><!--]--><!--[--><!--]--><details class="terminal-sponsor"><summary>[ + ] 饿饿，饭饭！</summary><div><!--[--><figure><img src="https://bu.dusays.com/2023/11/02/65432694e4eb5.jpg" alt="支付宝收款码" loading="lazy" width="180"><figcaption>支付宝</figcaption></figure><figure><img src="https://bu.dusays.com/2023/11/02/6543269436758.jpg" alt="微信支付收款码" loading="lazy" width="180"><figcaption>微信支付</figcaption></figure><!--]--></div></details><nav class="terminal-post-nav" aria-label="相邻文章"><a href="/posts/Ubuntu-Nginx-useage" class="">← 上一篇<span>Ubuntu安装配置Nginx及基础用法</span></a><a href="/posts/Ecs-Cos-Cloudreve" class="">下一篇 →<span>Ecs+Cos+Cloudreve</span></a></nav><!----></section><section class="terminal-comments" aria-label="评论"><h2 class="terminal-command"><span>❯</span> ./discuss <span class="terminal-muted">留言与讨论</span></h2><!----></section><!--]--><!--]--></main></div><footer class="terminal-footer"><p>© 2023<!--[-->–2026<!--]--> 皓然 <span aria-hidden="true">/</span> Powered by <a href="https://valaxy.site/" target="_blank" rel="noopener noreferrer">Valaxy</a></p><p class="terminal-footer-links"><!--[--><a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel</a><a href="https://github.com/HoronLee/horonlee.github.io" target="_blank" rel="noopener noreferrer">Source</a><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener noreferrer">开往</a><!--]--><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">浙ICP备2023037163号</a><a href="https://icp.gov.moe/?keyword=20241146" target="_blank" rel="noopener noreferrer">萌 ICP 备 20241146 号</a></p><p class="terminal-visitors"><span id="busuanzi_container_site_pv">访问 <span id="busuanzi_value_site_pv">—</span> 次</span><span id="busuanzi_container_site_uv">访客 <span id="busuanzi_value_site_uv">—</span> 人</span></p></footer><div class="terminal-statusbar"><span><span class="terminal-status-dot" aria-hidden="true">●</span> READ <span class="terminal-status-path">~/posts/Kubernetes-note</span></span><span class="terminal-palette"><span class="palette-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Catppuccin <span class="palette-light">Latte</span><span class="palette-dark">Mocha</span></span></div><dialog class="terminal-search" aria-labelledby="v-0-title" aria-describedby="v-0-description" data-v-123505a2><header class="search-header" data-v-123505a2><h2 id="v-0-title" data-v-123505a2><span aria-hidden="true" data-v-123505a2>$ </span>grep -i ~/posts</h2><button type="button" class="search-close" aria-label="关闭文章搜索" data-v-123505a2>×</button></header><div class="search-body" data-v-123505a2><p id="v-0-description" class="search-description" data-v-123505a2>搜索文章标题、摘要、标签和分类。按 Enter 打开首条结果，按 Esc 关闭。</p><label class="search-field" data-v-123505a2><span aria-hidden="true" data-v-123505a2>❯</span><input value="" type="search" aria-label="搜索文章" aria-describedby="v-0-count" autocomplete="off" placeholder="输入关键词…" data-v-123505a2></label><p id="v-0-count" class="search-count" role="status" aria-live="polite" aria-atomic="true" data-v-123505a2>共 37 篇文章<span data-v-123505a2>，显示前 20 条</span></p><!----><ul class="search-results" aria-label="文章搜索结果" data-v-123505a2><!--[--><li data-v-123505a2><a href="/posts/Echo-framework-route-matching&amp;middleware" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>关于Echo框架路由匹配与中间件的坑</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #Echo  #编程笔记</span></a></li><li data-v-123505a2><a href="/posts/golang-Isekai-notebook-from-scratch" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>从零开始的Go语言异世界笔记</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #编程笔记</span></a></li><li data-v-123505a2><a href="/posts/Configuring-NoVNC-connection-to-KVM-vm" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>配置NoVNC连接Kvm虚拟机</span><!--v-if--><span class="result-labels" data-v-123505a2>#NoVNC  #Linux  #KVM</span></a></li><li data-v-123505a2><a href="/posts/Harbor-HTTPS" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Harbor配置HTTPS</span><!--v-if--><span class="result-labels" data-v-123505a2>#Harbor  #运维</span></a></li><li data-v-123505a2><a href="/posts/Troubleshooting-and-Practice-of-Docker-Container-Networking-and-Firewalld-Zone-Conflicts" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>解决Docker容器互联与Firewalld区域冲突的排查与实践</span><!--v-if--><span class="result-labels" data-v-123505a2>#Docker  #Firewall  #Docker</span></a></li><li data-v-123505a2><a href="/posts/NeoVim-personal-note" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>NeoVim个人配置笔记</span><span class="result-excerpt" data-v-123505a2>LazyVim 配置目录 shell . ├── LICENSE ├── README.md ├── init.lua #配置入口文件 ├── lazy-lock.json ├── lazyvim.json ├── lua │ ├── config #默认生成的配置目录 │ │ ├── autocmds.lua │ │ ├── keymaps.lua │ │ ├── lazy.lua │ │ └── options.lua #自定义配置可以写在这里 │ └── plugins │ ├── colorscheme.lua #自己添加的主题插件配置 │ └── example.lua └── stylua.toml</span><span class="result-labels" data-v-123505a2>#neovim  #lazyvim  #开发  #环境配置</span></a></li><li data-v-123505a2><a href="/posts/PowerShell-dev-config-note" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>PowerShell开发配置指北</span><!--v-if--><span class="result-labels" data-v-123505a2>#windows  #powershell  #开发  #环境配置</span></a></li><li data-v-123505a2><a href="/posts/KubeVirt-CDI" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>KubeVirt使用CDI来导入虚拟机镜像</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #KubeVirt  #服务器运维  #云计算  #虚拟化</span></a></li><li data-v-123505a2><a href="/posts/KubeVirt-Getting-Start" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>KubeVirt入门</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #KubeVirt  #服务器运维  #云计算  #虚拟化</span></a></li><li data-v-123505a2><a href="/posts/Online-Expansion-Ubuntu-LVM" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>LVM添加硬盘并扩容至已有分区</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #服务器运维</span></a></li><li data-v-123505a2><a href="/posts/ubuntu22/04-k8s-deploy" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>ubuntu22.04-k8s-deploy</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #Ubuntu  #服务器运维  #云计算  #k8s</span></a></li><li data-v-123505a2><a href="/posts/K8sJenkinsSlaveCICD" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Jenkins的标准用法“Jenkins-Slave”</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #CICD  #Jenkins  #服务器运维  #云计算  #Jenkins</span></a></li><li data-v-123505a2><a href="/posts/KubernetesJenkinCICD" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>使用 Jenkins&amp;GitLab 构建 CICD</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #CICD  #Jenkins  #服务器运维  #云计算  #k8s  #Jenkins</span></a></li><li data-v-123505a2><a href="/posts/GormNote" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Gorm笔记</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #编程笔记</span></a></li><li data-v-123505a2><a href="/posts/CICDk8s" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>在k8s中构建CICD</span><span class="result-excerpt" data-v-123505a2>此文章已经停止更新，最新的CICD 构建位于： kubernetes 使用 Jenkins GitLab 构建 CICD - 皓然小站 (horonlee.com) 安装CICD所需资源 curl -O http://mirrors.douxuedu.com/competition/BlueOcean.tar.gz tar -zxf BlueOcean.tar.gz cp BlueOcean/tools/docker-compose-Linux-x86_64 /usr/bin/docker-compose docker-compose version tar -zxf BlueOcean/harbor-offline-installer.tar.gz -C /opt/ sh /opt/harbor/install.sh docker login -uadmin -pHarbor12345 172.16.2.90 docker load -i BlueOcean/images/maven_latest.tar docker tag maven 172.16.2.90/library/maven docker push 172.16.2.90/library/maven docker load -i BlueOcean/images/java_8-jre.tar docker load -i BlueOcean/images/jenkins_jenkins_latest.tar docker load -i BlueOcean/images/gitlab_gitlab-ce_latest.tar kubectl create ns devops</span><span class="result-labels" data-v-123505a2>#CentOS  #Linux  #Kubernetes  #服务器运维  #云计算  #Kubernetes  #CICD</span></a></li><li data-v-123505a2><a href="/posts/bridge-router-ddns" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>家庭宽带桥接并为路由器配置DDNS</span><!--v-if--><span class="result-labels" data-v-123505a2>#网络  #折腾  #网络工程</span></a></li><li data-v-123505a2><a href="/posts/Frpc-systemd-restart" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>为Systemd服务设置自动重启</span><span class="result-excerpt" data-v-123505a2>事情起因 最近给自己的双路E5搞一个Frpc，但是因为有Clash这个开机自启程序，并且我设置了系统代理，在Clash完全启动之前系统是处于断网状态的。断网状态下，Frpc会默认启动失败并且变为Inactive状态，这并不是我想看到的。</span><span class="result-labels" data-v-123505a2>#Linux  #Linux</span></a></li><li data-v-123505a2><a href="/posts/Hexo-to-valaxy" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>从Hexo切换为Valaxy感受</span><span class="result-excerpt" data-v-123505a2>最近因为Halo博客被宝塔面板爆破了，所以只能继续使用老博客Hexo（托管在githubpage上），但是GitHubPage实在是太慢了，Hexo的配置也有些乱糟糟的，于是乎就换用了由云游君大佬开发的Valaxy博客框架</span><span class="result-labels" data-v-123505a2>#Blog  #网站</span></a></li><li data-v-123505a2><a href="/posts/shell-practice" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>脚本练习1</span><span class="result-excerpt" data-v-123505a2>我觉得我写这个也太无聊了</span><span class="result-labels" data-v-123505a2>#Linux  #运维  #服务器运维</span></a></li><li data-v-123505a2><a href="/posts/Kubernetes-sh" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Kubernetes脚本部署</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #服务器运维  #云计算  #k8s</span></a></li><!--]--></ul></div></dialog></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://blog.horonlee.com/#identity","@type":"Person","name":"皓然","url":"https://blog.horonlee.com/","image":{"@id":"https://blog.horonlee.com/#/schema/image/1"},"sameAs":["/atom.xml","copy:1269024821","https://github.com/horonlee","https://music.163.com/#/user/home?id=545332010","https://www.zhihu.com/people/tie-tie-huohuo","https://space.bilibili.com/172335226","https://twitter.com/HuoTie","mailto:1269024821@qq.com","https://www.travellings.cn/go.html"]},{"@id":"https://blog.horonlee.com/#website","@type":"WebSite","dateModified":"2023-04-04T13:27:28.000Z","datePublished":"2023-04-04T13:27:28.000Z","inLanguage":"zh-CN","name":"初试Kubernetes笔记","url":"https://blog.horonlee.com/","publisher":{"@id":"https://blog.horonlee.com/#identity"}},{"@id":"https://blog.horonlee.com/#webpage","@type":"WebPage","description":"分享生活和技术的点滴","name":"初试Kubernetes笔记","url":"https://blog.horonlee.com/","about":{"@id":"https://blog.horonlee.com/#identity"},"isPartOf":{"@id":"https://blog.horonlee.com/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://blog.horonlee.com/"]}]},{"@id":"https://blog.horonlee.com/#/schema/image/1","@type":"ImageObject","contentUrl":"https://bu.dusays.com/2023/02/02/63db3598928c2.jpg","inLanguage":"zh-CN","url":"https://bu.dusays.com/2023/02/02/63db3598928c2.jpg"}]}</script>
+  
+</body>
+</html>

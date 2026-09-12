@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.fYU-KOxN.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.QTnfLwEv.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.Bt6Pg2Om.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.DDEjerd9.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.D9pkc1Q0.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.BCoX8S0I.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.DJ80LLXH.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.BE3wn5-o.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.DHGjGeo5.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.DotW1Et0.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="modulepreload" crossorigin href="/assets/theme.BE3wn5-o.js">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="modulepreload" crossorigin href="/assets/K8S1.27.0-deploy.BsflsIBj.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>K8S1.27.0集群部署要点 - 皓然小站</title>
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="分享生活和技术的点滴">
+<meta property="og:description" content="分享生活和技术的点滴">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="皓然小站">
+<meta property="og:title" content="K8S1.27.0集群部署要点">
+<meta property="og:image" content="https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.horonlee.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 1.0.0-beta.2">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!----><!--[--><!--]--><!----><!--]--><div class="terminal-site" style="--terminal-accent:var(--terminal-mauve);--terminal-font:&quot;Maple Mono NF&quot;, &quot;Maple Mono NF&quot;, ui-monospace, &quot;SFMono-Regular&quot;, Menlo, Monaco, Consolas, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Noto Sans CJK SC&quot;, monospace;font-variant-ligatures:normal;"><a class="skip-link" href="#terminal-main">跳到正文</a><header class="terminal-topbar"><a href="/" class="terminal-brand" aria-label="博客首页"><span class="terminal-prompt">❯</span> horonlee<span class="terminal-muted">@blog:~</span></a><div class="terminal-tools"><button type="button" class="terminal-search-trigger">搜索 <kbd>/</kbd></button><div class="terminal-appearance" role="group" aria-label="配色模式"><button type="button" aria-pressed="true">light</button><span aria-hidden="true">/</span><button type="button" aria-pressed="false">dark</button></div></div></header><div class="terminal-workspace"><aside class="terminal-sidebar"><div class="terminal-sidebar-inner"><p class="terminal-command terminal-tree-command"><span>❯</span> tree ~/blog</p><nav class="terminal-tree" aria-label="博客导航"><!--[--><a href="/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">~</span></span><span>首页</span></a><a href="/archives/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">+</span></span><span>归档/</span></a><a href="/tags/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">#</span></span><span>标签/</span></a><a href="/categories/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">+</span></span><span>分类/</span></a><a href="/links/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">@</span></span><span>友链/</span></a><a href="/about/" class=""><span class="tree-branch" aria-hidden="true">└──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">i</span></span><span>关于我.md</span></a><!--]--></nav><div class="terminal-sidebar-socials"><p class="terminal-command"><span>❯</span> cat ~/.socials</p><div class="terminal-socials terminal-socials-compact" role="group" aria-label="社交与订阅"><!--[--><!--[--><a href="/atom.xml" rel="noopener noreferrer" aria-label="RSS"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">rss</span></span><span>RSS</span></a><!----><!--]--><!--[--><button type="button" aria-label="复制 QQ 1269024821" title="点击复制 QQ 1269024821"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">qq</span></span><span>QQ</span></button><!----><!--]--><!--[--><a href="https://github.com/horonlee" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">gh</span></span><span>GitHub</span></a><!----><!--]--><!--[--><a href="https://music.163.com/#/user/home?id=545332010" target="_blank" rel="noopener noreferrer" aria-label="网易云音乐"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">♪</span></span><span>网易云</span></a><!----><!--]--><!--[--><a href="https://www.zhihu.com/people/tie-tie-huohuo" target="_blank" rel="noopener noreferrer" aria-label="知乎"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">知</span></span><span>知乎</span></a><!----><!--]--><!--[--><a href="https://space.bilibili.com/172335226" target="_blank" rel="noopener noreferrer" aria-label="哔哩哔哩"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">B</span></span><span>B站</span></a><!----><!--]--><!--[--><a href="https://twitter.com/HuoTie" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">tw</span></span><span>推特</span></a><!----><!--]--><!--[--><a href="mailto:1269024821@qq.com" rel="noopener noreferrer" aria-label="E-Mail"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">@</span></span><span>邮箱</span></a><!----><!--]--><!--[--><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener noreferrer" aria-label="Travelling"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">tr</span></span><span>开往</span></a><!----><!--]--><!--]--><span class="terminal-social-feedback" role="status" aria-live="polite" aria-atomic="true"></span></div></div><!----><p class="terminal-sidebar-note">分享生活和技术的点滴</p></div></aside><main id="terminal-main" class="terminal-main" tabindex="-1"><div class="terminal-breadcrumb"><span class="terminal-prompt">❯</span> pwd <span>~/posts/K8S1/27/0-deploy</span></div><!--[--><!--[--><section class="terminal-document"><header class="terminal-document-header"><div class="terminal-document-command"><p class="terminal-command"><span>❯</span> less <span class="terminal-muted">K8S1.27.0集群部署要点.md</span></p><a href="/" class="terminal-back">[q] 返回列表</a></div><h1>K8S1.27.0集群部署要点</h1><div class="terminal-post-meta"><time datetime="2023-06-10">2023-06-10</time><span>更新 2023-06-10</span><!--[--><span>2.2k 字</span><span>约 11 分钟</span><!--]--></div><div class="terminal-post-tags"><!--[--><a href="/tags/?tag=Linux" class="">#Linux</a><a href="/tags/?tag=Kubernetes" class="">#Kubernetes</a><a href="/tags/?tag=%E4%BA%91%E8%AE%A1%E7%AE%97" class="">#云计算</a><!--]--></div><nav class="terminal-post-tags" aria-label="文章分类"><!--[--><a href="/categories/?category=%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4" class="">服务器运维/</a><a href="/categories/?category=%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/%E4%BA%91%E8%AE%A1%E7%AE%97" class="">云计算/</a><a href="/categories/?category=%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/%E4%BA%91%E8%AE%A1%E7%AE%97/k8s" class="">k8s/</a><!--]--></nav><figure class="terminal-cover" data-v-753794b7><figcaption class="cover-command" data-v-753794b7><span data-v-753794b7><span class="cover-prompt" aria-hidden="true" data-v-753794b7>❯</span> chafa cover</span><a href="https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg" target="_blank" rel="noopener noreferrer" aria-label="查看封面原图" data-v-753794b7>[查看原图]</a></figcaption><div class="cover-viewport" data-v-753794b7><img src="https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg" alt="K8S1.27.0集群部署要点的封面" loading="eager" fetchpriority="high" decoding="async" data-v-753794b7></div></figure></header><!--[--><!--]--><!--[--><article class="markdown-body"><!--[--><!--[--><!--]--><!--[--><p>⚠️注意：本文已经严重过时且不具备任何参考价值，最新 k8s 部署请参考<a href="https://blog.horonlee.com/posts/ubuntu22.04-k8s-deploy" target="_blank" rel="noreferrer">Ubuntu22.04部署K8S - 皓然小站 (horonlee.com)</a><a href="./ubuntu22.04-k8s-deploy">ubuntu22.04-k8s-deploy</a></p><!-- more --><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubeadm config images pull --kubernetes-version=v1.27.0</span></span>
+<span class="line"><span>W0609 23:21:18.405148    2447 images.go:80] could not find officially supported version of etcd for Kubernetes v1.27.0, falling back to the nearest etcd version (3.5.7-0)</span></span>
+<span class="line"><span>[config/images] Pulled registry.k8s.io/kube-apiserver:v1.27.0</span></span>
+<span class="line"><span>[config/images] Pulled registry.k8s.io/kube-controller-manager:v1.27.0</span></span>
+<span class="line"><span>[config/images] Pulled registry.k8s.io/kube-scheduler:v1.27.0</span></span>
+<span class="line"><span>[config/images] Pulled registry.k8s.io/kube-proxy:v1.27.0</span></span>
+<span class="line"><span>[config/images] Pulled registry.k8s.io/pause:3.9</span></span>
+<span class="line"><span>[config/images] Pulled registry.k8s.io/etcd:3.5.7-0</span></span>
+<span class="line"><span>[config/images] Pulled registry.k8s.io/coredns/coredns:v1.10.1</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubeadm init --kubernetes-version=v1.27.0 --pod-network-cidr=10.224.0.0/16 --apiserver-advertise-address=192.168.1.200</span></span>
+<span class="line"><span>[init] Using Kubernetes version: v1.27.0</span></span>
+<span class="line"><span>[preflight] Running pre-flight checks</span></span>
+<span class="line"><span>[preflight] Pulling images required for setting up a Kubernetes cluster</span></span>
+<span class="line"><span>[preflight] This might take a minute or two, depending on the speed of your internet connection</span></span>
+<span class="line"><span>[preflight] You can also perform this action in beforehand using &#39;kubeadm config images pull&#39;</span></span>
+<span class="line"><span>W0609 23:23:47.717937    2546 images.go:80] could not find officially supported version of etcd for Kubernetes v1.27.0, falling back to the nearest etcd version (3.5.7-0)</span></span>
+<span class="line"><span>W0609 23:23:47.891888    2546 checks.go:835] detected that the sandbox image &quot;registry.k8s.io/pause:3.6&quot; of the container runtime is inconsistent with that used by kubeadm. It is recommended that using &quot;registry.k8s.io/pause:3.9&quot; as the CRI sandbox image.</span></span>
+<span class="line"><span>[certs] Using certificateDir folder &quot;/etc/kubernetes/pki&quot;</span></span>
+<span class="line"><span>[certs] Generating &quot;ca&quot; certificate and key</span></span>
+<span class="line"><span>[certs] Generating &quot;apiserver&quot; certificate and key</span></span>
+<span class="line"><span>[certs] apiserver serving cert is signed for DNS names [k8s-master kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.1.200]</span></span>
+<span class="line"><span>[certs] Generating &quot;apiserver-kubelet-client&quot; certificate and key</span></span>
+<span class="line"><span>[certs] Generating &quot;front-proxy-ca&quot; certificate and key</span></span>
+<span class="line"><span>[certs] Generating &quot;front-proxy-client&quot; certificate and key</span></span>
+<span class="line"><span>[certs] Generating &quot;etcd/ca&quot; certificate and key</span></span>
+<span class="line"><span>[certs] Generating &quot;etcd/server&quot; certificate and key</span></span>
+<span class="line"><span>[certs] etcd/server serving cert is signed for DNS names [k8s-master localhost] and IPs [192.168.1.200 127.0.0.1 ::1]</span></span>
+<span class="line"><span>[certs] Generating &quot;etcd/peer&quot; certificate and key</span></span>
+<span class="line"><span>[certs] etcd/peer serving cert is signed for DNS names [k8s-master localhost] and IPs [192.168.1.200 127.0.0.1 ::1]</span></span>
+<span class="line"><span>[certs] Generating &quot;etcd/healthcheck-client&quot; certificate and key</span></span>
+<span class="line"><span>[certs] Generating &quot;apiserver-etcd-client&quot; certificate and key</span></span>
+<span class="line"><span>[certs] Generating &quot;sa&quot; key and public key</span></span>
+<span class="line"><span>[kubeconfig] Using kubeconfig folder &quot;/etc/kubernetes&quot;</span></span>
+<span class="line"><span>[kubeconfig] Writing &quot;admin.conf&quot; kubeconfig file</span></span>
+<span class="line"><span>[kubeconfig] Writing &quot;kubelet.conf&quot; kubeconfig file</span></span>
+<span class="line"><span>[kubeconfig] Writing &quot;controller-manager.conf&quot; kubeconfig file</span></span>
+<span class="line"><span>[kubeconfig] Writing &quot;scheduler.conf&quot; kubeconfig file</span></span>
+<span class="line"><span>[kubelet-start] Writing kubelet environment file with flags to file &quot;/var/lib/kubelet/kubeadm-flags.env&quot;</span></span>
+<span class="line"><span>[kubelet-start] Writing kubelet configuration to file &quot;/var/lib/kubelet/config.yaml&quot;</span></span>
+<span class="line"><span>[kubelet-start] Starting the kubelet</span></span>
+<span class="line"><span>[control-plane] Using manifest folder &quot;/etc/kubernetes/manifests&quot;</span></span>
+<span class="line"><span>[control-plane] Creating static Pod manifest for &quot;kube-apiserver&quot;</span></span>
+<span class="line"><span>[control-plane] Creating static Pod manifest for &quot;kube-controller-manager&quot;</span></span>
+<span class="line"><span>[control-plane] Creating static Pod manifest for &quot;kube-scheduler&quot;</span></span>
+<span class="line"><span>[etcd] Creating static Pod manifest for local etcd in &quot;/etc/kubernetes/manifests&quot;</span></span>
+<span class="line"><span>W0609 23:23:52.692177    2546 images.go:80] could not find officially supported version of etcd for Kubernetes v1.27.0, falling back to the nearest etcd version (3.5.7-0)</span></span>
+<span class="line"><span>[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory &quot;/etc/kubernetes/manifests&quot;. This can take up to 4m0s</span></span>
+<span class="line"><span>[apiclient] All control plane components are healthy after 10.502621 seconds</span></span>
+<span class="line"><span>[upload-config] Storing the configuration used in ConfigMap &quot;kubeadm-config&quot; in the &quot;kube-system&quot; Namespace</span></span>
+<span class="line"><span>[kubelet] Creating a ConfigMap &quot;kubelet-config&quot; in namespace kube-system with the configuration for the kubelets in the cluster</span></span>
+<span class="line"><span>[upload-certs] Skipping phase. Please see --upload-certs</span></span>
+<span class="line"><span>[mark-control-plane] Marking the node k8s-master as control-plane by adding the labels: [node-role.kubernetes.io/control-plane node.kubernetes.io/exclude-from-external-load-balancers]</span></span>
+<span class="line"><span>[mark-control-plane] Marking the node k8s-master as control-plane by adding the taints [node-role.kubernetes.io/control-plane:NoSchedule]</span></span>
+<span class="line"><span>[bootstrap-token] Using token: ux83mg.qlhot371w5rtub2u</span></span>
+<span class="line"><span>[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles</span></span>
+<span class="line"><span>[bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to get nodes</span></span>
+<span class="line"><span>[bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials</span></span>
+<span class="line"><span>[bootstrap-token] Configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token</span></span>
+<span class="line"><span>[bootstrap-token] Configured RBAC rules to allow certificate rotation for all node client certificates in the cluster</span></span>
+<span class="line"><span>[bootstrap-token] Creating the &quot;cluster-info&quot; ConfigMap in the &quot;kube-public&quot; namespace</span></span>
+<span class="line"><span>[kubelet-finalize] Updating &quot;/etc/kubernetes/kubelet.conf&quot; to point to a rotatable kubelet client certificate and key</span></span>
+<span class="line"><span>[addons] Applied essential addon: CoreDNS</span></span>
+<span class="line"><span>[addons] Applied essential addon: kube-proxy</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Your Kubernetes control-plane has initialized successfully!</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>To start using your cluster, you need to run the following as a regular user:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  mkdir -p $HOME/.kube</span></span>
+<span class="line"><span>  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config</span></span>
+<span class="line"><span>  sudo chown $(id -u):$(id -g) $HOME/.kube/config</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Alternatively, if you are the root user, you can run:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  export KUBECONFIG=/etc/kubernetes/admin.conf</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>You should now deploy a pod network to the cluster.</span></span>
+<span class="line"><span>Run &quot;kubectl apply -f [podnetwork].yaml&quot; with one of the options listed at:</span></span>
+<span class="line"><span>  https://kubernetes.io/docs/concepts/cluster-administration/addons/</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Then you can join any number of worker nodes by running the following on each as root:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>kubeadm join 192.168.1.200:6443 --token ux83mg.qlhot371w5rtub2u \</span></span>
+<span class="line"><span>        --discovery-token-ca-cert-hash sha256:7adc6b2a7551f204371d38c6a6da34d7deb321fda863b54bfe2b4d9b1811f680</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>[root@k8s-worker ~]# kubeadm join 192.168.1.200:6443 --token ux83mg.qlhot371w5rtub2u \</span></span>
+<span class="line"><span>        --discovery-token-ca-cert-hash sha256:7adc6b2a7551f204371d38c6a6da34d7deb321fda863b54bfe2b4d9b1811f680</span></span>
+<span class="line"><span>[preflight] Running pre-flight checks</span></span>
+<span class="line"><span>[preflight] Reading configuration from the cluster...</span></span>
+<span class="line"><span>[preflight] FYI: You can look at this config file with &#39;kubectl -n kube-system get cm kubeadm-config -o yaml&#39;</span></span>
+<span class="line"><span>[kubelet-start] Writing kubelet configuration to file &quot;/var/lib/kubelet/config.yaml&quot;</span></span>
+<span class="line"><span>[kubelet-start] Writing kubelet environment file with flags to file &quot;/var/lib/kubelet/kubeadm-flags.env&quot;</span></span>
+<span class="line"><span>[kubelet-start] Starting the kubelet</span></span>
+<span class="line"><span>[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>This node has joined the cluster:</span></span>
+<span class="line"><span>* Certificate signing request was sent to apiserver and a response was received.</span></span>
+<span class="line"><span>* The Kubelet was informed of the new secure connection details.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Run &#39;kubectl get nodes&#39; on the control-plane to see this node join the cluster.</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl get node # 这里是因为需要管理权限的环境变量才可以执行管理命令，这一点和OpenStack十分相似</span></span>
+<span class="line"><span>E0609 23:28:28.548179    3302 memcache.go:265] couldn&#39;t get current server API group list: Get &quot;http://localhost:8080/api?timeout=32s&quot;: dial tcp [::1]:8080: connect: connection refused</span></span>
+<span class="line"><span>E0609 23:28:28.548907    3302 memcache.go:265] couldn&#39;t get current server API group list: Get &quot;http://localhost:8080/api?timeout=32s&quot;: dial tcp [::1]:8080: connect: connection refused</span></span>
+<span class="line"><span>E0609 23:28:28.550827    3302 memcache.go:265] couldn&#39;t get current server API group list: Get &quot;http://localhost:8080/api?timeout=32s&quot;: dial tcp [::1]:8080: connect: connection refused</span></span>
+<span class="line"><span>E0609 23:28:28.552839    3302 memcache.go:265] couldn&#39;t get current server API group list: Get &quot;http://localhost:8080/api?timeout=32s&quot;: dial tcp [::1]:8080: connect: connection refused</span></span>
+<span class="line"><span>E0609 23:28:28.554668    3302 memcache.go:265] couldn&#39;t get current server API group list: Get &quot;http://localhost:8080/api?timeout=32s&quot;: dial tcp [::1]:8080: connect: connection refused</span></span>
+<span class="line"><span>The connection to the server localhost:8080 was refused - did you specify the right host or port?</span></span>
+<span class="line"><span>[root@k8s-master ~]# export KUBECONFIG=/etc/kubernetes/admin.conf</span></span>
+<span class="line"><span>[root@k8s-master ~]# kubectl get node</span></span>
+<span class="line"><span>NAME         STATUS     ROLES           AGE     VERSION</span></span>
+<span class="line"><span>k8s-master   NotReady   control-plane   4m42s   v1.27.0</span></span>
+<span class="line"><span>k8s-worker   NotReady   &lt;none&gt;          48s     v1.27.0</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>vim /etc/containerd/config.toml</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>未更改：sandbox_image = &quot;registry.aliyuncs.com/google_containers/pause:3.6&quot;</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl apply -f calico.yaml</span></span>
+<span class="line"><span>poddisruptionbudget.policy/calico-kube-controllers created</span></span>
+<span class="line"><span>serviceaccount/calico-kube-controllers created</span></span>
+<span class="line"><span>serviceaccount/calico-node created</span></span>
+<span class="line"><span>configmap/calico-config created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/bgpconfigurations.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/bgppeers.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/blockaffinities.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/caliconodestatuses.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/clusterinformations.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/felixconfigurations.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/globalnetworkpolicies.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/globalnetworksets.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/hostendpoints.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/ipamblocks.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/ipamconfigs.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/ipamhandles.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/ippools.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/ipreservations.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/kubecontrollersconfigurations.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/networkpolicies.crd.projectcalico.org created</span></span>
+<span class="line"><span>customresourcedefinition.apiextensions.k8s.io/networksets.crd.projectcalico.org created</span></span>
+<span class="line"><span>clusterrole.rbac.authorization.k8s.io/calico-kube-controllers created</span></span>
+<span class="line"><span>clusterrole.rbac.authorization.k8s.io/calico-node created</span></span>
+<span class="line"><span>clusterrolebinding.rbac.authorization.k8s.io/calico-kube-controllers created</span></span>
+<span class="line"><span>clusterrolebinding.rbac.authorization.k8s.io/calico-node created</span></span>
+<span class="line"><span>daemonset.apps/calico-node created</span></span>
+<span class="line"><span>deployment.apps/calico-kube-controllers created</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl get pod -n kube-system</span></span>
+<span class="line"><span>NAME                                       READY   STATUS     RESTARTS   AGE</span></span>
+<span class="line"><span>calico-kube-controllers-6849cf9bcf-gsbzr   0/1     Pending    0          30s</span></span>
+<span class="line"><span>calico-node-bdshx                          0/1     Init:0/3   0          30s</span></span>
+<span class="line"><span>calico-node-mmjfl                          0/1     Init:0/3   0          30s</span></span>
+<span class="line"><span>coredns-5d78c9869d-spj6w                   0/1     Pending    0          16m</span></span>
+<span class="line"><span>coredns-5d78c9869d-td7nt                   0/1     Pending    0          16m</span></span>
+<span class="line"><span>etcd-k8s-master                            1/1     Running    0          16m</span></span>
+<span class="line"><span>kube-apiserver-k8s-master                  1/1     Running    0          16m</span></span>
+<span class="line"><span>kube-controller-manager-k8s-master         1/1     Running    0          16m</span></span>
+<span class="line"><span>kube-proxy-sfkrl                           1/1     Running    0          16m</span></span>
+<span class="line"><span>kube-proxy-wm8mk                           1/1     Running    0          12m</span></span>
+<span class="line"><span>kube-scheduler-k8s-master                  1/1     Running    0          16m</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl apply -f dashboard.yaml</span></span>
+<span class="line"><span>namespace/kubernetes-dashboard created</span></span>
+<span class="line"><span>serviceaccount/kubernetes-dashboard created</span></span>
+<span class="line"><span>service/kubernetes-dashboard created</span></span>
+<span class="line"><span>secret/kubernetes-dashboard-certs created</span></span>
+<span class="line"><span>secret/kubernetes-dashboard-csrf created</span></span>
+<span class="line"><span>secret/kubernetes-dashboard-key-holder created</span></span>
+<span class="line"><span>configmap/kubernetes-dashboard-settings created</span></span>
+<span class="line"><span>role.rbac.authorization.k8s.io/kubernetes-dashboard created</span></span>
+<span class="line"><span>clusterrole.rbac.authorization.k8s.io/kubernetes-dashboard created</span></span>
+<span class="line"><span>rolebinding.rbac.authorization.k8s.io/kubernetes-dashboard created</span></span>
+<span class="line"><span>clusterrolebinding.rbac.authorization.k8s.io/kubernetes-dashboard created</span></span>
+<span class="line"><span>deployment.apps/kubernetes-dashboard created</span></span>
+<span class="line"><span>service/dashboard-metrics-scraper created</span></span>
+<span class="line"><span>deployment.apps/dashboard-metrics-scraper created</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl get pod -n kubernetes-dashboard -o wide</span></span>
+<span class="line"><span>NAME                                         READY   STATUS             RESTARTS   AGE   IP               NODE         NOMINATED NODE   READINESS GATES</span></span>
+<span class="line"><span>dashboard-metrics-scraper-5cb4f4bb9c-tvqlt   0/1     ImagePullBackOff   0          26s   10.224.254.132   k8s-worker   &lt;none&gt;           &lt;none&gt;</span></span>
+<span class="line"><span>kubernetes-dashboard-6967859bff-nrtsl        0/1     ImagePullBackOff   0          26s   10.224.254.133   k8s-worker   &lt;none&gt;           &lt;none&gt;</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl get svc -n kubernetes-dashboard</span></span>
+<span class="line"><span>NAME                        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE</span></span>
+<span class="line"><span>dashboard-metrics-scraper   ClusterIP   10.106.18.213   &lt;none&gt;        8000/TCP   2m5s</span></span>
+<span class="line"><span>kubernetes-dashboard        ClusterIP   10.103.7.49     &lt;none&gt;        443/TCP    2m6s</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl edit svc kubernetes-dashboard -n kubernetes-dashboard</span></span>
+<span class="line"><span>service/kubernetes-dashboard edited # 将ClusterIP 改为NodePort</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl get svc -n kubernetes-dashboard</span></span>
+<span class="line"><span>NAME                        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)         AGE</span></span>
+<span class="line"><span>dashboard-metrics-scraper   ClusterIP   10.106.18.213   &lt;none&gt;        8000/TCP        3m40s</span></span>
+<span class="line"><span>kubernetes-dashboard        NodePort    10.103.7.49     &lt;none&gt;        443:30571/TCP   3m41s</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl apply -f dashboard-user.yaml</span></span>
+<span class="line"><span>serviceaccount/admin-user created</span></span>
+<span class="line"><span>clusterrolebinding.rbac.authorization.k8s.io/admin-user created</span></span></code></pre><button class="code-block-unfold-btn"></button></div><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl -n kubernetes-dashboard create token admin-user</span></span>
+<span class="line"><span>eyJhbGciOiJSUzI1NiIsImtpZCI6InVCZUlsckJGWUZoMTJfRDA2eVFsMm85d3lEYml4WmQxV2RmNGtNWGlzZUEifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxNjg2MzI1NzA3LCJpYXQiOjE2ODYzMjIxMDcsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsInNlcnZpY2VhY2NvdW50Ijp7Im5hbWUiOiJhZG1pbi11c2VyIiwidWlkIjoiYzAzOTI4OWEtMTc1MS00ZDY3LWFiNTgtMzE2ZTYzNWQ3NWEzIn19LCJuYmYiOjE2ODYzMjIxMDcsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlcm5ldGVzLWRhc2hib2FyZDphZG1pbi11c2VyIn0.BOa9nhIPfx_qWoQOn8hbfA70Y2fIeO_xcjK5wJJdrgS2yeSFIqD07LwHyw6eT9a03leNUaSA6gj3kYeAQnbCpw8pacdGJAaBBL-Y6Y31p4uVNSH9bs9TJuVAGyfKzJ4G8eyj3bZ11PlEtLNXeCr7bB_tO_8Z93lCK-F8h9VfQV5TGxCRAmjWXX3c1tpox236lIVsDA8UC8LqrWO4TW5p22om5ES9RsgVypoYQPwZ0O7hy9k_7mMe2Nh2hdiibhuezwGcm2fl_fgBsK9REaer0NZF420p1crxUBiE0LfxfvgTTGHAnbwWlw_M2pFehvx82Lx6jmduNnq-0cPcReb4cw</span></span></code></pre><button class="code-block-unfold-btn"></button></div><p>访问Web页面相关问题，Web页面的端口是随机的，需要手动查看容器状态，可以看到下面dashboard映射出来的端口是30571</p><div class="language-"><button title="Copy code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes catppuccin-latte catppuccin-mocha vp-code"><code v-pre><span class="line"><span>[root@k8s-master ~]# kubectl get svc -A -o wide</span></span>
+<span class="line"><span>NAMESPACE              NAME                        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                  AGE   SELECTOR</span></span>
+<span class="line"><span>default                kubernetes                  ClusterIP   10.96.0.1       &lt;none&gt;        443/TCP                  32m   &lt;none&gt;</span></span>
+<span class="line"><span>kube-system            kube-dns                    ClusterIP   10.96.0.10      &lt;none&gt;        53/UDP,53/TCP,9153/TCP   32m   k8s-app=kube-dns</span></span>
+<span class="line"><span>kubernetes-dashboard   dashboard-metrics-scraper   ClusterIP   10.106.18.213   &lt;none&gt;        8000/TCP                 12m   k8s-app=dashboard-metrics-scraper</span></span>
+<span class="line"><span>kubernetes-dashboard   kubernetes-dashboard        NodePort    10.103.7.49     &lt;none&gt;        443:30571/TCP            13m   k8s-app=kubernetes-dashboard</span></span></code></pre><button class="code-block-unfold-btn"></button></div><!--]--><!--]--><!----><!----></article><!--]--><!--[--><!--]--><details class="terminal-sponsor"><summary>[ + ] 饿饿，饭饭！</summary><div><!--[--><figure><img src="https://bu.dusays.com/2023/11/02/65432694e4eb5.jpg" alt="支付宝收款码" loading="lazy" width="180"><figcaption>支付宝</figcaption></figure><figure><img src="https://bu.dusays.com/2023/11/02/6543269436758.jpg" alt="微信支付收款码" loading="lazy" width="180"><figcaption>微信支付</figcaption></figure><!--]--></div></details><nav class="terminal-post-nav" aria-label="相邻文章"><a href="/posts/OpenStack-note" class="">← 上一篇<span>OpenStack运维笔记</span></a><a href="/posts/PHP-Nginx-website" class="">下一篇 →<span>使用PHP+Nginx搭建网页</span></a></nav><!----></section><section class="terminal-comments" aria-label="评论"><h2 class="terminal-command"><span>❯</span> ./discuss <span class="terminal-muted">留言与讨论</span></h2><!----></section><!--]--><!--]--></main></div><footer class="terminal-footer"><p>© 2023<!--[-->–2026<!--]--> 皓然 <span aria-hidden="true">/</span> Powered by <a href="https://valaxy.site/" target="_blank" rel="noopener noreferrer">Valaxy</a></p><p class="terminal-footer-links"><!--[--><a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel</a><a href="https://github.com/HoronLee/horonlee.github.io" target="_blank" rel="noopener noreferrer">Source</a><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener noreferrer">开往</a><!--]--><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">浙ICP备2023037163号</a><a href="https://icp.gov.moe/?keyword=20241146" target="_blank" rel="noopener noreferrer">萌 ICP 备 20241146 号</a></p><p class="terminal-visitors"><span id="busuanzi_container_site_pv">访问 <span id="busuanzi_value_site_pv">—</span> 次</span><span id="busuanzi_container_site_uv">访客 <span id="busuanzi_value_site_uv">—</span> 人</span></p></footer><div class="terminal-statusbar"><span><span class="terminal-status-dot" aria-hidden="true">●</span> READ <span class="terminal-status-path">~/posts/K8S1/27/0-deploy</span></span><span class="terminal-palette"><span class="palette-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Catppuccin <span class="palette-light">Latte</span><span class="palette-dark">Mocha</span></span></div><dialog class="terminal-search" aria-labelledby="v-0-title" aria-describedby="v-0-description" data-v-123505a2><header class="search-header" data-v-123505a2><h2 id="v-0-title" data-v-123505a2><span aria-hidden="true" data-v-123505a2>$ </span>grep -i ~/posts</h2><button type="button" class="search-close" aria-label="关闭文章搜索" data-v-123505a2>×</button></header><div class="search-body" data-v-123505a2><p id="v-0-description" class="search-description" data-v-123505a2>搜索文章标题、摘要、标签和分类。按 Enter 打开首条结果，按 Esc 关闭。</p><label class="search-field" data-v-123505a2><span aria-hidden="true" data-v-123505a2>❯</span><input value="" type="search" aria-label="搜索文章" aria-describedby="v-0-count" autocomplete="off" placeholder="输入关键词…" data-v-123505a2></label><p id="v-0-count" class="search-count" role="status" aria-live="polite" aria-atomic="true" data-v-123505a2>共 37 篇文章<span data-v-123505a2>，显示前 20 条</span></p><!----><ul class="search-results" aria-label="文章搜索结果" data-v-123505a2><!--[--><li data-v-123505a2><a href="/posts/Echo-framework-route-matching&amp;middleware" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>关于Echo框架路由匹配与中间件的坑</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #Echo  #编程笔记</span></a></li><li data-v-123505a2><a href="/posts/golang-Isekai-notebook-from-scratch" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>从零开始的Go语言异世界笔记</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #编程笔记</span></a></li><li data-v-123505a2><a href="/posts/Configuring-NoVNC-connection-to-KVM-vm" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>配置NoVNC连接Kvm虚拟机</span><!--v-if--><span class="result-labels" data-v-123505a2>#NoVNC  #Linux  #KVM</span></a></li><li data-v-123505a2><a href="/posts/Harbor-HTTPS" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Harbor配置HTTPS</span><!--v-if--><span class="result-labels" data-v-123505a2>#Harbor  #运维</span></a></li><li data-v-123505a2><a href="/posts/Troubleshooting-and-Practice-of-Docker-Container-Networking-and-Firewalld-Zone-Conflicts" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>解决Docker容器互联与Firewalld区域冲突的排查与实践</span><!--v-if--><span class="result-labels" data-v-123505a2>#Docker  #Firewall  #Docker</span></a></li><li data-v-123505a2><a href="/posts/NeoVim-personal-note" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>NeoVim个人配置笔记</span><span class="result-excerpt" data-v-123505a2>LazyVim 配置目录 shell . ├── LICENSE ├── README.md ├── init.lua #配置入口文件 ├── lazy-lock.json ├── lazyvim.json ├── lua │ ├── config #默认生成的配置目录 │ │ ├── autocmds.lua │ │ ├── keymaps.lua │ │ ├── lazy.lua │ │ └── options.lua #自定义配置可以写在这里 │ └── plugins │ ├── colorscheme.lua #自己添加的主题插件配置 │ └── example.lua └── stylua.toml</span><span class="result-labels" data-v-123505a2>#neovim  #lazyvim  #开发  #环境配置</span></a></li><li data-v-123505a2><a href="/posts/PowerShell-dev-config-note" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>PowerShell开发配置指北</span><!--v-if--><span class="result-labels" data-v-123505a2>#windows  #powershell  #开发  #环境配置</span></a></li><li data-v-123505a2><a href="/posts/KubeVirt-CDI" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>KubeVirt使用CDI来导入虚拟机镜像</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #KubeVirt  #服务器运维  #云计算  #虚拟化</span></a></li><li data-v-123505a2><a href="/posts/KubeVirt-Getting-Start" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>KubeVirt入门</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #KubeVirt  #服务器运维  #云计算  #虚拟化</span></a></li><li data-v-123505a2><a href="/posts/Online-Expansion-Ubuntu-LVM" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>LVM添加硬盘并扩容至已有分区</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #服务器运维</span></a></li><li data-v-123505a2><a href="/posts/ubuntu22/04-k8s-deploy" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>ubuntu22.04-k8s-deploy</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #Ubuntu  #服务器运维  #云计算  #k8s</span></a></li><li data-v-123505a2><a href="/posts/K8sJenkinsSlaveCICD" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Jenkins的标准用法“Jenkins-Slave”</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #CICD  #Jenkins  #服务器运维  #云计算  #Jenkins</span></a></li><li data-v-123505a2><a href="/posts/KubernetesJenkinCICD" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>使用 Jenkins&amp;GitLab 构建 CICD</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #CICD  #Jenkins  #服务器运维  #云计算  #k8s  #Jenkins</span></a></li><li data-v-123505a2><a href="/posts/GormNote" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Gorm笔记</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #编程笔记</span></a></li><li data-v-123505a2><a href="/posts/CICDk8s" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>在k8s中构建CICD</span><span class="result-excerpt" data-v-123505a2>此文章已经停止更新，最新的CICD 构建位于： kubernetes 使用 Jenkins GitLab 构建 CICD - 皓然小站 (horonlee.com) 安装CICD所需资源 curl -O http://mirrors.douxuedu.com/competition/BlueOcean.tar.gz tar -zxf BlueOcean.tar.gz cp BlueOcean/tools/docker-compose-Linux-x86_64 /usr/bin/docker-compose docker-compose version tar -zxf BlueOcean/harbor-offline-installer.tar.gz -C /opt/ sh /opt/harbor/install.sh docker login -uadmin -pHarbor12345 172.16.2.90 docker load -i BlueOcean/images/maven_latest.tar docker tag maven 172.16.2.90/library/maven docker push 172.16.2.90/library/maven docker load -i BlueOcean/images/java_8-jre.tar docker load -i BlueOcean/images/jenkins_jenkins_latest.tar docker load -i BlueOcean/images/gitlab_gitlab-ce_latest.tar kubectl create ns devops</span><span class="result-labels" data-v-123505a2>#CentOS  #Linux  #Kubernetes  #服务器运维  #云计算  #Kubernetes  #CICD</span></a></li><li data-v-123505a2><a href="/posts/bridge-router-ddns" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>家庭宽带桥接并为路由器配置DDNS</span><!--v-if--><span class="result-labels" data-v-123505a2>#网络  #折腾  #网络工程</span></a></li><li data-v-123505a2><a href="/posts/Frpc-systemd-restart" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>为Systemd服务设置自动重启</span><span class="result-excerpt" data-v-123505a2>事情起因 最近给自己的双路E5搞一个Frpc，但是因为有Clash这个开机自启程序，并且我设置了系统代理，在Clash完全启动之前系统是处于断网状态的。断网状态下，Frpc会默认启动失败并且变为Inactive状态，这并不是我想看到的。</span><span class="result-labels" data-v-123505a2>#Linux  #Linux</span></a></li><li data-v-123505a2><a href="/posts/Hexo-to-valaxy" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>从Hexo切换为Valaxy感受</span><span class="result-excerpt" data-v-123505a2>最近因为Halo博客被宝塔面板爆破了，所以只能继续使用老博客Hexo（托管在githubpage上），但是GitHubPage实在是太慢了，Hexo的配置也有些乱糟糟的，于是乎就换用了由云游君大佬开发的Valaxy博客框架</span><span class="result-labels" data-v-123505a2>#Blog  #网站</span></a></li><li data-v-123505a2><a href="/posts/shell-practice" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>脚本练习1</span><span class="result-excerpt" data-v-123505a2>我觉得我写这个也太无聊了</span><span class="result-labels" data-v-123505a2>#Linux  #运维  #服务器运维</span></a></li><li data-v-123505a2><a href="/posts/Kubernetes-sh" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Kubernetes脚本部署</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #服务器运维  #云计算  #k8s</span></a></li><!--]--></ul></div></dialog></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://blog.horonlee.com/#identity","@type":"Person","name":"皓然","url":"https://blog.horonlee.com/","image":{"@id":"https://blog.horonlee.com/#/schema/image/1"},"sameAs":["/atom.xml","copy:1269024821","https://github.com/horonlee","https://music.163.com/#/user/home?id=545332010","https://www.zhihu.com/people/tie-tie-huohuo","https://space.bilibili.com/172335226","https://twitter.com/HuoTie","mailto:1269024821@qq.com","https://www.travellings.cn/go.html"]},{"@id":"https://blog.horonlee.com/#website","@type":"WebSite","dateModified":"2023-06-10T00:43:16.000Z","datePublished":"2023-06-10T00:43:16.000Z","inLanguage":"zh-CN","name":"K8S1.27.0集群部署要点","url":"https://blog.horonlee.com/","publisher":{"@id":"https://blog.horonlee.com/#identity"}},{"@id":"https://blog.horonlee.com/#webpage","@type":"WebPage","description":"分享生活和技术的点滴","name":"K8S1.27.0集群部署要点","url":"https://blog.horonlee.com/","about":{"@id":"https://blog.horonlee.com/#identity"},"isPartOf":{"@id":"https://blog.horonlee.com/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://blog.horonlee.com/"]}]},{"@id":"https://blog.horonlee.com/#/schema/image/1","@type":"ImageObject","contentUrl":"https://bu.dusays.com/2023/02/02/63db3598928c2.jpg","inLanguage":"zh-CN","url":"https://bu.dusays.com/2023/02/02/63db3598928c2.jpg"}]}</script>
+  
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html  lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg">
+    <script>
+    ;(function () {
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+    </script>
+  <style type="text/css">
+    :root { color-scheme: light dark; --va-c-bg: #fff; }
+    html.dark { --va-c-bg: #000; }
+    html { background-color: var(--va-c-bg); }
+  </style><style id="valaxy-fouc">body{opacity:0!important}</style><style>body{transition:opacity .15s ease}</style><noscript><style>body{opacity:1!important}</style></noscript><script>(function foucGuardScript(maxDuration) {
+  var done = 0;
+  function reveal() {
+    if (done) return;
+    done = 1;
+    var s = document.getElementById("valaxy-fouc");
+    if (s) s.remove();
+  }
+  function check() {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (!links[i].sheet) return;
+    }
+    reveal();
+  }
+  new MutationObserver(check).observe(document.head, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ["media", "rel"]
+  });
+  addEventListener("load", reveal);
+  if (maxDuration)
+    setTimeout(reveal, maxDuration);
+})(5000)</script>
+    <script>
+    const locale = localStorage.getItem('valaxy-locale') || 'zh-CN';
+    document.documentElement.setAttribute('lang', locale);
+    </script>
+    
+  <script type="module" crossorigin src="/assets/index.fYU-KOxN.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime.QTnfLwEv.js">
+  <link rel="modulepreload" crossorigin href="/assets/framework.Bt6Pg2Om.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-i18n.DDEjerd9.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/vue-router.D9pkc1Q0.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/dayjs.BCoX8S0I.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/pinia.DJ80LLXH.js">
+  <link rel="modulepreload" crossorigin href="/assets/theme.BE3wn5-o.js">
+  <link rel="modulepreload" crossorigin href="/assets/chunks/nprogress.DHGjGeo5.js">
+  <link rel="stylesheet" crossorigin href="/assets/style.DotW1Et0.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="modulepreload" crossorigin href="/assets/theme.BE3wn5-o.js">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="modulepreload" crossorigin href="/assets/tags.DZiQeG2M.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>皓然的小标签 - 皓然小站</title>
+<meta property="og:locale:alternate" content="en">
+<meta name="description" content="分享生活和技术的点滴">
+<meta property="og:description" content="分享生活和技术的点滴">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="皓然小站">
+<meta property="og:title" content="皓然的小标签">
+<meta property="og:image" content="/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.horonlee.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="generator" content="Valaxy 1.0.0-beta.2">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <div id="app"><!--[--><!--[--><!----><!--[--><!--]--><!----><!--]--><div class="terminal-site" style="--terminal-accent:var(--terminal-mauve);--terminal-font:&quot;Maple Mono NF&quot;, &quot;Maple Mono NF&quot;, ui-monospace, &quot;SFMono-Regular&quot;, Menlo, Monaco, Consolas, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Noto Sans CJK SC&quot;, monospace;font-variant-ligatures:normal;"><a class="skip-link" href="#terminal-main">跳到正文</a><header class="terminal-topbar"><a href="/" class="terminal-brand" aria-label="博客首页"><span class="terminal-prompt">❯</span> horonlee<span class="terminal-muted">@blog:~</span></a><div class="terminal-tools"><button type="button" class="terminal-search-trigger">搜索 <kbd>/</kbd></button><div class="terminal-appearance" role="group" aria-label="配色模式"><button type="button" aria-pressed="true">light</button><span aria-hidden="true">/</span><button type="button" aria-pressed="false">dark</button></div></div></header><div class="terminal-workspace"><aside class="terminal-sidebar"><div class="terminal-sidebar-inner"><p class="terminal-command terminal-tree-command"><span>❯</span> tree ~/blog</p><nav class="terminal-tree" aria-label="博客导航"><!--[--><a href="/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">~</span></span><span>首页</span></a><a href="/archives/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">+</span></span><span>归档/</span></a><a aria-current="page" href="/tags/" class="router-link-active router-link-exact-active is-active"><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">#</span></span><span>标签/</span></a><a href="/categories/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">+</span></span><span>分类/</span></a><a href="/links/" class=""><span class="tree-branch" aria-hidden="true">├──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">@</span></span><span>友链/</span></a><a href="/about/" class=""><span class="tree-branch" aria-hidden="true">└──</span><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">i</span></span><span>关于我.md</span></a><!--]--></nav><div class="terminal-sidebar-socials"><p class="terminal-command"><span>❯</span> cat ~/.socials</p><div class="terminal-socials terminal-socials-compact" role="group" aria-label="社交与订阅"><!--[--><!--[--><a href="/atom.xml" rel="noopener noreferrer" aria-label="RSS"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">rss</span></span><span>RSS</span></a><!----><!--]--><!--[--><button type="button" aria-label="复制 QQ 1269024821" title="点击复制 QQ 1269024821"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">qq</span></span><span>QQ</span></button><!----><!--]--><!--[--><a href="https://github.com/horonlee" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">gh</span></span><span>GitHub</span></a><!----><!--]--><!--[--><a href="https://music.163.com/#/user/home?id=545332010" target="_blank" rel="noopener noreferrer" aria-label="网易云音乐"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">♪</span></span><span>网易云</span></a><!----><!--]--><!--[--><a href="https://www.zhihu.com/people/tie-tie-huohuo" target="_blank" rel="noopener noreferrer" aria-label="知乎"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">知</span></span><span>知乎</span></a><!----><!--]--><!--[--><a href="https://space.bilibili.com/172335226" target="_blank" rel="noopener noreferrer" aria-label="哔哩哔哩"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">B</span></span><span>B站</span></a><!----><!--]--><!--[--><a href="https://twitter.com/HuoTie" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">tw</span></span><span>推特</span></a><!----><!--]--><!--[--><a href="mailto:1269024821@qq.com" rel="noopener noreferrer" aria-label="E-Mail"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">@</span></span><span>邮箱</span></a><!----><!--]--><!--[--><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener noreferrer" aria-label="Travelling"><span class="terminal-icon" aria-hidden="true"><span class="terminal-nerd"></span><span class="terminal-icon-fallback">tr</span></span><span>开往</span></a><!----><!--]--><!--]--><span class="terminal-social-feedback" role="status" aria-live="polite" aria-atomic="true"></span></div></div><!----><p class="terminal-sidebar-note">分享生活和技术的点滴</p></div></aside><main id="terminal-main" class="terminal-main" tabindex="-1"><div class="terminal-breadcrumb"><span class="terminal-prompt">❯</span> pwd <span>~/tags</span></div><!--[--><!--[--><section class="terminal-taxonomy" aria-label="文章标签" data-v-d2dbb1bd><p class="taxonomy-command" data-v-d2dbb1bd><span aria-hidden="true" data-v-d2dbb1bd>❯</span><code data-v-d2dbb1bd>ls ~/tags</code><span class="taxonomy-count" data-v-d2dbb1bd>31 个标签</span></p><h1 class="taxonomy-title" data-v-d2dbb1bd>皓然的小标签</h1><nav class="taxonomy-terms" aria-label="按标签筛选" data-v-d2dbb1bd><a aria-current="true" href="/tags/" class="router-link-active router-link-exact-active selected" data-v-d2dbb1bd>[全部]<span data-v-d2dbb1bd>37</span></a><!--[--><a href="/tags/?tag=Linux" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#Linux<span data-v-d2dbb1bd>25</span></a><a href="/tags/?tag=Kubernetes" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#Kubernetes<span data-v-d2dbb1bd>9</span></a><a href="/tags/?tag=%E4%BA%91%E8%AE%A1%E7%AE%97" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#云计算<span data-v-d2dbb1bd>8</span></a><a href="/tags/?tag=CentOS" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#CentOS<span data-v-d2dbb1bd>7</span></a><a href="/tags/?tag=Ubuntu" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#Ubuntu<span data-v-d2dbb1bd>5</span></a><a href="/tags/?tag=Go" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#Go<span data-v-d2dbb1bd>3</span></a><a href="/tags/?tag=OpenStack" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#OpenStack<span data-v-d2dbb1bd>3</span></a><a href="/tags/?tag=CICD" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#CICD<span data-v-d2dbb1bd>2</span></a><a href="/tags/?tag=Jenkins" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#Jenkins<span data-v-d2dbb1bd>2</span></a><a href="/tags/?tag=KubeVirt" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#KubeVirt<span data-v-d2dbb1bd>2</span></a><a href="/tags/?tag=Nginx" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#Nginx<span data-v-d2dbb1bd>2</span></a><a href="/tags/?tag=%E7%94%9F%E6%B4%BB" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#生活<span data-v-d2dbb1bd>1</span></a><a href="/tags/?tag=%E7%BD%91%E7%BB%9C" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#网络<span data-v-d2dbb1bd>1</span></a><a href="/tags/?tag=%E8%BF%90%E7%BB%B4" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#运维<span data-v-d2dbb1bd>1</span></a><a href="/tags/?tag=%E6%8A%98%E8%85%BE" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#折腾<span data-v-d2dbb1bd>1</span></a><a href="/tags/?tag=Blog" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#Blog<span data-v-d2dbb1bd>1</span></a><a href="/tags/?tag=Cloudreve" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#Cloudreve<span data-v-d2dbb1bd>1</span></a><a href="/tags/?tag=COS" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#COS<span data-v-d2dbb1bd>1</span></a><a href="/tags/?tag=Docker" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#Docker<span data-v-d2dbb1bd>1</span></a><a href="/tags/?tag=Echo" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#Echo<span data-v-d2dbb1bd>1</span></a><a href="/tags/?tag=Firewall" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#Firewall<span data-v-d2dbb1bd>1</span></a><a href="/tags/?tag=Harbor" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#Harbor<span data-v-d2dbb1bd>1</span></a><a href="/tags/?tag=Java" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#Java<span data-v-d2dbb1bd>1</span></a><a href="/tags/?tag=lazyvim" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#lazyvim<span data-v-d2dbb1bd>1</span></a><a href="/tags/?tag=Manjaro" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#Manjaro<span data-v-d2dbb1bd>1</span></a><a href="/tags/?tag=neovim" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#neovim<span data-v-d2dbb1bd>1</span></a><a href="/tags/?tag=NextCloud" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#NextCloud<span data-v-d2dbb1bd>1</span></a><a href="/tags/?tag=NoVNC" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#NoVNC<span data-v-d2dbb1bd>1</span></a><a href="/tags/?tag=PHP" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#PHP<span data-v-d2dbb1bd>1</span></a><a href="/tags/?tag=powershell" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#powershell<span data-v-d2dbb1bd>1</span></a><a href="/tags/?tag=windows" class="router-link-active router-link-exact-active" data-v-d2dbb1bd>#windows<span data-v-d2dbb1bd>1</span></a><!--]--></nav><div class="taxonomy-results" data-v-d2dbb1bd><h2 data-v-d2dbb1bd>全部文章<span data-v-d2dbb1bd>37 篇</span></h2><ol data-v-d2dbb1bd><!--[--><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/Echo-framework-route-matching&amp;middleware" class="" data-v-d2dbb1bd>关于Echo框架路由匹配与中间件的坑</a><time datetime="2025-12-25" data-v-d2dbb1bd>2025-12-25</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/golang-Isekai-notebook-from-scratch" class="" data-v-d2dbb1bd>从零开始的Go语言异世界笔记</a><time datetime="2025-11-28" data-v-d2dbb1bd>2025-11-28</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/Configuring-NoVNC-connection-to-KVM-vm" class="" data-v-d2dbb1bd>配置NoVNC连接Kvm虚拟机</a><time datetime="2025-09-19" data-v-d2dbb1bd>2025-09-19</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/Harbor-HTTPS" class="" data-v-d2dbb1bd>Harbor配置HTTPS</a><time datetime="2025-09-19" data-v-d2dbb1bd>2025-09-19</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/Troubleshooting-and-Practice-of-Docker-Container-Networking-and-Firewalld-Zone-Conflicts" class="" data-v-d2dbb1bd>解决Docker容器互联与Firewalld区域冲突的排查与实践</a><time datetime="2025-09-19" data-v-d2dbb1bd>2025-09-19</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/NeoVim-personal-note" class="" data-v-d2dbb1bd>NeoVim个人配置笔记</a><time datetime="2024-10-18" data-v-d2dbb1bd>2024-10-18</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/PowerShell-dev-config-note" class="" data-v-d2dbb1bd>PowerShell开发配置指北</a><time datetime="2024-10-10" data-v-d2dbb1bd>2024-10-10</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/KubeVirt-CDI" class="" data-v-d2dbb1bd>KubeVirt使用CDI来导入虚拟机镜像</a><time datetime="2024-06-28" data-v-d2dbb1bd>2024-06-28</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/KubeVirt-Getting-Start" class="" data-v-d2dbb1bd>KubeVirt入门</a><time datetime="2024-05-30" data-v-d2dbb1bd>2024-05-30</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/Online-Expansion-Ubuntu-LVM" class="" data-v-d2dbb1bd>LVM添加硬盘并扩容至已有分区</a><time datetime="2024-05-28" data-v-d2dbb1bd>2024-05-28</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/ubuntu22/04-k8s-deploy" class="" data-v-d2dbb1bd>ubuntu22.04-k8s-deploy</a><time datetime="2024-05-25" data-v-d2dbb1bd>2024-05-25</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/K8sJenkinsSlaveCICD" class="" data-v-d2dbb1bd>Jenkins的标准用法“Jenkins-Slave”</a><time datetime="2024-05-24" data-v-d2dbb1bd>2024-05-24</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/KubernetesJenkinCICD" class="" data-v-d2dbb1bd>使用 Jenkins&amp;GitLab 构建 CICD</a><time datetime="2024-05-20" data-v-d2dbb1bd>2024-05-20</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/GormNote" class="" data-v-d2dbb1bd>Gorm笔记</a><time datetime="2024-04-25" data-v-d2dbb1bd>2024-04-25</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/CICDk8s" class="" data-v-d2dbb1bd>在k8s中构建CICD</a><time datetime="2024-02-27" data-v-d2dbb1bd>2024-02-27</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/bridge-router-ddns" class="" data-v-d2dbb1bd>家庭宽带桥接并为路由器配置DDNS</a><time datetime="2024-01-30" data-v-d2dbb1bd>2024-01-30</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/Frpc-systemd-restart" class="" data-v-d2dbb1bd>为Systemd服务设置自动重启</a><time datetime="2024-01-21" data-v-d2dbb1bd>2024-01-21</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/Hexo-to-valaxy" class="" data-v-d2dbb1bd>从Hexo切换为Valaxy感受</a><time datetime="2024-01-19" data-v-d2dbb1bd>2024-01-19</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/shell-practice" class="" data-v-d2dbb1bd>脚本练习1</a><time datetime="2023-10-09" data-v-d2dbb1bd>2023-10-09</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/Kubernetes-sh" class="" data-v-d2dbb1bd>Kubernetes脚本部署</a><time datetime="2023-07-11" data-v-d2dbb1bd>2023-07-11</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/OpenStack-note" class="" data-v-d2dbb1bd>OpenStack运维笔记</a><time datetime="2023-07-02" data-v-d2dbb1bd>2023-07-02</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/K8S1/27/0-deploy" class="" data-v-d2dbb1bd>K8S1.27.0集群部署要点</a><time datetime="2023-06-10" data-v-d2dbb1bd>2023-06-10</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/PHP-Nginx-website" class="" data-v-d2dbb1bd>使用PHP+Nginx搭建网页</a><time datetime="2023-04-21" data-v-d2dbb1bd>2023-04-21</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/Ubuntu-Nginx-useage" class="" data-v-d2dbb1bd>Ubuntu安装配置Nginx及基础用法</a><time datetime="2023-04-20" data-v-d2dbb1bd>2023-04-20</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/Kubernetes-note" class="" data-v-d2dbb1bd>初试Kubernetes笔记</a><time datetime="2023-04-04" data-v-d2dbb1bd>2023-04-04</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/Ecs-Cos-Cloudreve" class="" data-v-d2dbb1bd>Ecs+Cos+Cloudreve</a><time datetime="2023-04-03" data-v-d2dbb1bd>2023-04-03</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/Manjaro-note" class="" data-v-d2dbb1bd>Manjaro简易使用笔记</a><time datetime="2023-03-06" data-v-d2dbb1bd>2023-03-06</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/Ubuntu-OpenStack-Yoga-Zed" class="" data-v-d2dbb1bd>Ubuntu搭建OpenStack-Yoga(Zed)</a><time datetime="2023-02-23" data-v-d2dbb1bd>2023-02-23</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/XiaoMi-Book-12-4" class="" data-v-d2dbb1bd>XiaoMi Book 12.4二合一上手体验</a><time datetime="2023-02-18" data-v-d2dbb1bd>2023-02-18</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/Docker-NextCloud" class="" data-v-d2dbb1bd>使用Docker部署NextCloud</a><time datetime="2022-12-20" data-v-d2dbb1bd>2022-12-20</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/Linux-volume" class="" data-v-d2dbb1bd>Linux在线扩容磁盘</a><time datetime="2022-12-19" data-v-d2dbb1bd>2022-12-19</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/CentOS-OpenStack-Queen-note" class="" data-v-d2dbb1bd>CentOS搭建OpenStack-Queen手记</a><time datetime="2022-12-06" data-v-d2dbb1bd>2022-12-06</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/Ubuntu-Docker-Compose" class="" data-v-d2dbb1bd>Ubuntu安装配置Docker&amp;Compose</a><time datetime="2022-12-02" data-v-d2dbb1bd>2022-12-02</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/Docker-images" class="" data-v-d2dbb1bd>Docker镜像的封装和制作</a><time datetime="2022-11-29" data-v-d2dbb1bd>2022-11-29</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/CentOS7-docker" class="" data-v-d2dbb1bd>CentOS7安装配置docker</a><time datetime="2022-11-27" data-v-d2dbb1bd>2022-11-27</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/SRS-liveStream" class="" data-v-d2dbb1bd>通过SRS实现在线直播</a><time datetime="2022-11-27" data-v-d2dbb1bd>2022-11-27</time></li><li data-v-d2dbb1bd><span class="result-arrow" aria-hidden="true" data-v-d2dbb1bd>&gt;</span><a href="/posts/Java-note" class="" data-v-d2dbb1bd>Java学习-String</a><time datetime="2022-11-10" data-v-d2dbb1bd>2022-11-10</time></li><!--]--></ol></div></section><section class="terminal-comments" aria-label="评论"><h2 class="terminal-command"><span>❯</span> ./discuss <span class="terminal-muted">留言与讨论</span></h2><!----></section><!--]--><!--]--></main></div><footer class="terminal-footer"><p>© 2023<!--[-->–2026<!--]--> 皓然 <span aria-hidden="true">/</span> Powered by <a href="https://valaxy.site/" target="_blank" rel="noopener noreferrer">Valaxy</a></p><p class="terminal-footer-links"><!--[--><a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel</a><a href="https://github.com/HoronLee/horonlee.github.io" target="_blank" rel="noopener noreferrer">Source</a><a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener noreferrer">开往</a><!--]--><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">浙ICP备2023037163号</a><a href="https://icp.gov.moe/?keyword=20241146" target="_blank" rel="noopener noreferrer">萌 ICP 备 20241146 号</a></p><p class="terminal-visitors"><span id="busuanzi_container_site_pv">访问 <span id="busuanzi_value_site_pv">—</span> 次</span><span id="busuanzi_container_site_uv">访客 <span id="busuanzi_value_site_uv">—</span> 人</span></p></footer><div class="terminal-statusbar"><span><span class="terminal-status-dot" aria-hidden="true">●</span> NORMAL <span class="terminal-status-path">~/tags</span></span><span class="terminal-palette"><span class="palette-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Catppuccin <span class="palette-light">Latte</span><span class="palette-dark">Mocha</span></span></div><dialog class="terminal-search" aria-labelledby="v-0-title" aria-describedby="v-0-description" data-v-123505a2><header class="search-header" data-v-123505a2><h2 id="v-0-title" data-v-123505a2><span aria-hidden="true" data-v-123505a2>$ </span>grep -i ~/posts</h2><button type="button" class="search-close" aria-label="关闭文章搜索" data-v-123505a2>×</button></header><div class="search-body" data-v-123505a2><p id="v-0-description" class="search-description" data-v-123505a2>搜索文章标题、摘要、标签和分类。按 Enter 打开首条结果，按 Esc 关闭。</p><label class="search-field" data-v-123505a2><span aria-hidden="true" data-v-123505a2>❯</span><input value="" type="search" aria-label="搜索文章" aria-describedby="v-0-count" autocomplete="off" placeholder="输入关键词…" data-v-123505a2></label><p id="v-0-count" class="search-count" role="status" aria-live="polite" aria-atomic="true" data-v-123505a2>共 37 篇文章<span data-v-123505a2>，显示前 20 条</span></p><!----><ul class="search-results" aria-label="文章搜索结果" data-v-123505a2><!--[--><li data-v-123505a2><a href="/posts/Echo-framework-route-matching&amp;middleware" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>关于Echo框架路由匹配与中间件的坑</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #Echo  #编程笔记</span></a></li><li data-v-123505a2><a href="/posts/golang-Isekai-notebook-from-scratch" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>从零开始的Go语言异世界笔记</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #编程笔记</span></a></li><li data-v-123505a2><a href="/posts/Configuring-NoVNC-connection-to-KVM-vm" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>配置NoVNC连接Kvm虚拟机</span><!--v-if--><span class="result-labels" data-v-123505a2>#NoVNC  #Linux  #KVM</span></a></li><li data-v-123505a2><a href="/posts/Harbor-HTTPS" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Harbor配置HTTPS</span><!--v-if--><span class="result-labels" data-v-123505a2>#Harbor  #运维</span></a></li><li data-v-123505a2><a href="/posts/Troubleshooting-and-Practice-of-Docker-Container-Networking-and-Firewalld-Zone-Conflicts" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>解决Docker容器互联与Firewalld区域冲突的排查与实践</span><!--v-if--><span class="result-labels" data-v-123505a2>#Docker  #Firewall  #Docker</span></a></li><li data-v-123505a2><a href="/posts/NeoVim-personal-note" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>NeoVim个人配置笔记</span><span class="result-excerpt" data-v-123505a2>LazyVim 配置目录 shell . ├── LICENSE ├── README.md ├── init.lua #配置入口文件 ├── lazy-lock.json ├── lazyvim.json ├── lua │ ├── config #默认生成的配置目录 │ │ ├── autocmds.lua │ │ ├── keymaps.lua │ │ ├── lazy.lua │ │ └── options.lua #自定义配置可以写在这里 │ └── plugins │ ├── colorscheme.lua #自己添加的主题插件配置 │ └── example.lua └── stylua.toml</span><span class="result-labels" data-v-123505a2>#neovim  #lazyvim  #开发  #环境配置</span></a></li><li data-v-123505a2><a href="/posts/PowerShell-dev-config-note" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>PowerShell开发配置指北</span><!--v-if--><span class="result-labels" data-v-123505a2>#windows  #powershell  #开发  #环境配置</span></a></li><li data-v-123505a2><a href="/posts/KubeVirt-CDI" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>KubeVirt使用CDI来导入虚拟机镜像</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #KubeVirt  #服务器运维  #云计算  #虚拟化</span></a></li><li data-v-123505a2><a href="/posts/KubeVirt-Getting-Start" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>KubeVirt入门</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #KubeVirt  #服务器运维  #云计算  #虚拟化</span></a></li><li data-v-123505a2><a href="/posts/Online-Expansion-Ubuntu-LVM" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>LVM添加硬盘并扩容至已有分区</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #服务器运维</span></a></li><li data-v-123505a2><a href="/posts/ubuntu22/04-k8s-deploy" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>ubuntu22.04-k8s-deploy</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #Ubuntu  #服务器运维  #云计算  #k8s</span></a></li><li data-v-123505a2><a href="/posts/K8sJenkinsSlaveCICD" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Jenkins的标准用法“Jenkins-Slave”</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #CICD  #Jenkins  #服务器运维  #云计算  #Jenkins</span></a></li><li data-v-123505a2><a href="/posts/KubernetesJenkinCICD" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>使用 Jenkins&amp;GitLab 构建 CICD</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #CICD  #Jenkins  #服务器运维  #云计算  #k8s  #Jenkins</span></a></li><li data-v-123505a2><a href="/posts/GormNote" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Gorm笔记</span><!--v-if--><span class="result-labels" data-v-123505a2>#Go  #编程笔记</span></a></li><li data-v-123505a2><a href="/posts/CICDk8s" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>在k8s中构建CICD</span><span class="result-excerpt" data-v-123505a2>此文章已经停止更新，最新的CICD 构建位于： kubernetes 使用 Jenkins GitLab 构建 CICD - 皓然小站 (horonlee.com) 安装CICD所需资源 curl -O http://mirrors.douxuedu.com/competition/BlueOcean.tar.gz tar -zxf BlueOcean.tar.gz cp BlueOcean/tools/docker-compose-Linux-x86_64 /usr/bin/docker-compose docker-compose version tar -zxf BlueOcean/harbor-offline-installer.tar.gz -C /opt/ sh /opt/harbor/install.sh docker login -uadmin -pHarbor12345 172.16.2.90 docker load -i BlueOcean/images/maven_latest.tar docker tag maven 172.16.2.90/library/maven docker push 172.16.2.90/library/maven docker load -i BlueOcean/images/java_8-jre.tar docker load -i BlueOcean/images/jenkins_jenkins_latest.tar docker load -i BlueOcean/images/gitlab_gitlab-ce_latest.tar kubectl create ns devops</span><span class="result-labels" data-v-123505a2>#CentOS  #Linux  #Kubernetes  #服务器运维  #云计算  #Kubernetes  #CICD</span></a></li><li data-v-123505a2><a href="/posts/bridge-router-ddns" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>家庭宽带桥接并为路由器配置DDNS</span><!--v-if--><span class="result-labels" data-v-123505a2>#网络  #折腾  #网络工程</span></a></li><li data-v-123505a2><a href="/posts/Frpc-systemd-restart" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>为Systemd服务设置自动重启</span><span class="result-excerpt" data-v-123505a2>事情起因 最近给自己的双路E5搞一个Frpc，但是因为有Clash这个开机自启程序，并且我设置了系统代理，在Clash完全启动之前系统是处于断网状态的。断网状态下，Frpc会默认启动失败并且变为Inactive状态，这并不是我想看到的。</span><span class="result-labels" data-v-123505a2>#Linux  #Linux</span></a></li><li data-v-123505a2><a href="/posts/Hexo-to-valaxy" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>从Hexo切换为Valaxy感受</span><span class="result-excerpt" data-v-123505a2>最近因为Halo博客被宝塔面板爆破了，所以只能继续使用老博客Hexo（托管在githubpage上），但是GitHubPage实在是太慢了，Hexo的配置也有些乱糟糟的，于是乎就换用了由云游君大佬开发的Valaxy博客框架</span><span class="result-labels" data-v-123505a2>#Blog  #网站</span></a></li><li data-v-123505a2><a href="/posts/shell-practice" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>脚本练习1</span><span class="result-excerpt" data-v-123505a2>我觉得我写这个也太无聊了</span><span class="result-labels" data-v-123505a2>#Linux  #运维  #服务器运维</span></a></li><li data-v-123505a2><a href="/posts/Kubernetes-sh" class="search-result" data-v-123505a2><span class="result-title" data-v-123505a2>Kubernetes脚本部署</span><!--v-if--><span class="result-labels" data-v-123505a2>#Linux  #Kubernetes  #云计算  #服务器运维  #云计算  #k8s</span></a></li><!--]--></ul></div></dialog></div><!--]--></div><script>window.__INITIAL_STATE__='{"pinia":{"app":{"showLoading":true},"site":{},"routerStore":{}}}'</script><script type="application/ld+json" data-hid="schema-org-graph">{"@context":"https://schema.org","@graph":[{"@id":"https://blog.horonlee.com/#identity","@type":"Person","name":"皓然","url":"https://blog.horonlee.com/","image":{"@id":"https://blog.horonlee.com/#/schema/image/1"},"sameAs":["/atom.xml","copy:1269024821","https://github.com/horonlee","https://music.163.com/#/user/home?id=545332010","https://www.zhihu.com/people/tie-tie-huohuo","https://space.bilibili.com/172335226","https://twitter.com/HuoTie","mailto:1269024821@qq.com","https://www.travellings.cn/go.html"]},{"@id":"https://blog.horonlee.com/#website","@type":"WebSite","dateModified":"2026-09-12T15:57:51.803Z","datePublished":"2026-09-12T15:57:51.803Z","inLanguage":"zh-CN","name":"皓然的小标签","url":"https://blog.horonlee.com/","publisher":{"@id":"https://blog.horonlee.com/#identity"}},{"@id":"https://blog.horonlee.com/#webpage","@type":"WebPage","description":"分享生活和技术的点滴","name":"皓然的小标签","url":"https://blog.horonlee.com/","about":{"@id":"https://blog.horonlee.com/#identity"},"isPartOf":{"@id":"https://blog.horonlee.com/#website"},"potentialAction":[{"@type":"ReadAction","target":["https://blog.horonlee.com/"]}]},{"@id":"https://blog.horonlee.com/#/schema/image/1","@type":"ImageObject","contentUrl":"https://bu.dusays.com/2023/02/02/63db3598928c2.jpg","inLanguage":"zh-CN","url":"https://bu.dusays.com/2023/02/02/63db3598928c2.jpg"}]}</script>
+  
+</body>
+</html>
