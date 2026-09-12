@@ -18,7 +18,7 @@ export default defineSiteConfig({
       color: 'orange',
     },
     {
-      name: 'QQ 群 1269024821',
+      name: 'QQ 1269024821',
       link: 'https://',
       icon: 'i-ri-qq-line',
       color: '#12B7F5',

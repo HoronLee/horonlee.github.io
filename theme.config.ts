@@ -10,7 +10,7 @@ export default defineThemeConfig({
   home: { intro: '在这里，记录折腾的过程，\n也给日常留一个可以回来的地方。' },
   profile: {
     name: '皓然 / HoronLee',
-    // age: 21, // 填写当前希望公开的年龄；省略时不显示。
+    age: 24, // 填写当前希望公开的年龄；省略时不显示。
     hobbies: ['编程', '钢琴', '音乐'], // 例如 ['开源', '技术', '游戏']，按自己的意愿公开。
     bio: '分享生活和技术的点滴',
     shell: 'fish',
