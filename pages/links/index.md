@@ -116,6 +116,12 @@ links:
     name: shysta
     blog: shysta
     desc: 关注塔菲喵
+  - url: https://www.zhihailib.com
+    avatar: https://www.zhihailib.com/favicon.ico
+    name: 知海图书馆
+    desc: 17万+精选中文电子书馆藏与免下载在线阅读平台
+    email: zhihailib@163.com
+    color: “#3B82F6”
 
 
 # 也可以是一个 JSON 链接
