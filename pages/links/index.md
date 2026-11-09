@@ -116,6 +116,11 @@ links:
     name: shysta
     blog: shysta
     desc: 关注塔菲喵
+  - url: https://www.ssean.cn/
+    avatar: https://img.mvr.cc/cdn/PandaBot.png
+    name: Sseaan
+    blog: Sseaan
+    desc: 山河见证长久，片刻亦能生辉。
 
 
 # 也可以是一个 JSON 链接
